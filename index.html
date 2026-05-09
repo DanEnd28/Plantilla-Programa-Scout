@@ -267,8 +267,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 4.5in;
-      height: 4.5in;
+      width: 8in;
+      height: 8in;
       pointer-events: none;
       z-index: 0;
     }
@@ -281,7 +281,7 @@
       filter: blur(1.5px) grayscale(20%);
     }
 
-    .page-content>* {
+    .page-content>*:not(.wm) {
       position: relative;
       z-index: 1;
     }
@@ -520,7 +520,7 @@
       border-top: none;
       border-radius: 0 0 4px 4px;
       padding: 7px 9px;
-      background: white;
+      background: transparent;
       font-size: 11px;
       font-family: var(--ff-b);
       line-height: 1.65;
@@ -530,7 +530,7 @@
 
     .sec-body:focus {
       outline: 2px solid var(--cm, #622599);
-      background: #faf8ff;
+      background: rgba(98,37,153,.04);
     }
 
     /* ── INFO TABLE ESTILO SECCIÓN ── */
@@ -586,7 +586,7 @@
 
     .info-sec-val:focus {
       outline: 2px solid var(--cm, #622599);
-      background: #faf8ff;
+      background: rgba(98,37,153,.04);
     }
 
     /* ── INDICADORES ── */
@@ -722,7 +722,7 @@
     }
 
     .obj-val {
-      background: white;
+      background: transparent;
       font-family: var(--ff-b);
       color: #333;
       line-height: 1.6;
@@ -731,7 +731,7 @@
 
     .obj-val:focus {
       outline: 2px solid var(--cm, #622599);
-      background: #faf8ff;
+      background: rgba(98,37,153,.04);
     }
 
     /* ── ODS ── */
@@ -740,10 +740,8 @@
       flex-wrap: wrap;
       gap: 3px;
       padding: 7px 9px;
-      border: 1px solid var(--cm-bd, #c9a8e8);
       border-top: none;
       border-radius: 0 0 4px 4px;
-      background: white;
     }
 
     .ods-chip {
@@ -981,9 +979,33 @@
       display: block;
     }
 
-    /* Ocultar sección Prog. Mundial cuando está vacía (mostrar en edición) */
-    .sec:has([data-key="prog-mundial"]:empty) { display: none; }
-    .edit-mode .sec:has([data-key="prog-mundial"]:empty) { display: block; }
+
+    /* ── GRUPO DE SECCIONES ── */
+    .sec-group {
+      border: 1px solid var(--cm-bd, #c9a8e8);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 9px;
+      page-break-inside: avoid;
+    }
+    .sec-group .sec { margin-bottom: 0; }
+    .sec-group .sec-head { border-radius: 0; }
+    .sec-group .sec:first-child .sec-head { border-radius: 4px 4px 0 0; }
+    .sec-group .sec-body {
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid var(--cm-bd, #c9a8e8);
+      border-radius: 0;
+    }
+    .sec-group .ods-wrap {
+      padding: 7px 9px;
+      border-bottom: 1px solid var(--cm-bd, #c9a8e8);
+    }
+    .sec-group .sec:last-child .sec-body,
+    .sec-group .sec:last-child .ods-wrap { border-bottom: none; }
+    /* ocultar sec prog-mundial vacío dentro del grupo */
+    .sec-group .sec:has([data-key="prog-mundial"]:empty) { display: none; }
+    .edit-mode .sec-group .sec:has([data-key="prog-mundial"]:empty) { display: block; }
 
     /* ── FOOTER ── */
     .page-footer {
@@ -1409,7 +1431,11 @@
       .sec-body,
       [contenteditable] {
         outline: none !important;
-        background: inherit !important;
+        background: transparent !important;
+      }
+
+      .ambientacion-bar {
+        background: transparent !important;
       }
 
       body {
@@ -1504,10 +1530,6 @@
 
       <!-- ═══ PÁGINA 1 ═══ -->
       <div class="page-block" id="blk1">
-        <div class="wm"><img id="wm1"
-            src="images/logo-flor.png"
-            alt=""></div>
-
         <!-- Header: logos + título + nombre actividad + código -->
         <div class="ficha-header">
           <div class="logo-slot" data-tip="Click para cambiar logo del grupo">
@@ -1544,6 +1566,7 @@
         </div>
 
         <div class="page-content">
+          <div class="wm"><img id="wm1" src="images/logo-flor.png" alt=""></div>
           <!-- Datos generales con estilo de sección -->
           <div style="margin-bottom:10px;margin-top:10px;">
             <div class="info-sec-grid">
@@ -1585,38 +1608,39 @@
             </div>
           </div>
 
-          <div class="sec">
-            <div class="sec-head">🌱 Oportunidad de Aprendizaje</div>
-            <div class="sec-body" data-edit="true" data-key="oportunidad"
-              data-ph="Describe la oportunidad de aprendizaje..."></div>
-          </div>
-          <div class="sec">
-            <div class="sec-head">🎯 Objetivo General</div>
-            <div class="sec-body" data-edit="true" data-key="obj-general" data-ph="Escribe el objetivo general...">
+          <div class="sec-group">
+            <div class="sec">
+              <div class="sec-head">🌱 Oportunidad de Aprendizaje</div>
+              <div class="sec-body" data-edit="true" data-key="oportunidad"
+                data-ph="Describe la oportunidad de aprendizaje..."></div>
             </div>
-          </div>
-          <div class="sec">
-            <div class="sec-head">📋 Objetivos Específicos</div>
-            <div class="sec-body" data-edit="true" data-key="obj-especificos"
-              data-ph="1. Primer objetivo&#10;2. Segundo objetivo"></div>
-          </div>
-          <div class="sec">
-            <div class="sec-head">🌍 ODS Relacionados</div>
-            <div class="ods-wrap" id="ods-wrap"></div>
-          </div>
-          <div class="sec">
-            <div class="sec-head">🌐 Programa Mundial / Iniciativas</div>
-            <div class="sec-body" data-edit="true" data-key="prog-mundial" data-ph="Ej: Guardianes de la Tierra"></div>
-          </div>
-          <div class="sec">
-            <div class="sec-head">🏆 Metas</div>
-            <div class="sec-body" data-edit="true" data-key="metas"
-              data-ph="Alcance, producto, aprendizaje esperado..."></div>
-          </div>
-          <div class="sec">
-            <div class="sec-head">💡 Enfoque de Impacto</div>
-            <div class="sec-body" data-edit="true" data-key="enfoque"
-              data-ph="Ej: Adquisición de habilidades y competencias"></div>
+            <div class="sec">
+              <div class="sec-head">🎯 Objetivo General</div>
+              <div class="sec-body" data-edit="true" data-key="obj-general" data-ph="Escribe el objetivo general..."></div>
+            </div>
+            <div class="sec">
+              <div class="sec-head">📋 Objetivos Específicos</div>
+              <div class="sec-body" data-edit="true" data-key="obj-especificos"
+                data-ph="1. Primer objetivo&#10;2. Segundo objetivo"></div>
+            </div>
+            <div class="sec">
+              <div class="sec-head">🌍 ODS Relacionados</div>
+              <div class="ods-wrap" id="ods-wrap"></div>
+            </div>
+            <div class="sec">
+              <div class="sec-head">🌐 Programa Mundial / Iniciativas</div>
+              <div class="sec-body" data-edit="true" data-key="prog-mundial" data-ph="Ej: Guardianes de la Tierra"></div>
+            </div>
+            <div class="sec">
+              <div class="sec-head">🏆 Metas</div>
+              <div class="sec-body" data-edit="true" data-key="metas"
+                data-ph="Alcance, producto, aprendizaje esperado..."></div>
+            </div>
+            <div class="sec">
+              <div class="sec-head">💡 Enfoque de Impacto</div>
+              <div class="sec-body" data-edit="true" data-key="enfoque"
+                data-ph="Ej: Adquisición de habilidades y competencias"></div>
+            </div>
           </div>
         </div>
 
@@ -1645,6 +1669,7 @@
         <div class="ambientacion-bar" style="opacity:0;pointer-events:none;padding:3px 0;"></div>
 
         <div class="page-content">
+          <div class="wm"><img src="images/logo-flor.png" alt=""></div>
           <div style="height:10px;"></div>
           <div class="sec">
             <div class="sec-head">📋 Programa de la Actividad
