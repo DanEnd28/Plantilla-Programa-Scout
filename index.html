@@ -65,12 +65,12 @@
     }
 
     :root {
-  --ff-h:'Montserrat',sans-serif;
-  --ff-b:'Noto Sans',sans-serif;
-  --page-w:8.5in;
-  --page-pad-x:0.28in;
-  --page-pad-b:0.35in;
-}
+      --ff-h: 'Montserrat', sans-serif;
+      --ff-b: 'Noto Sans', sans-serif;
+      --page-w: 8.5in;
+      --page-pad-x: 0.28in;
+      --page-pad-b: 0.35in;
+    }
 
     *,
     *::before,
@@ -90,7 +90,9 @@
     /* ── TOOLBAR ── */
     .toolbar {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       background: linear-gradient(135deg, #1a0840 0%, #3a1060 60%, #622599 100%);
       display: flex;
       align-items: center;
@@ -98,7 +100,7 @@
       padding: 0 14px;
       z-index: 1000;
       height: 44px;
-      box-shadow: 0 2px 20px rgba(26,8,64,.8);
+      box-shadow: 0 2px 20px rgba(26, 8, 64, .8);
       gap: 0;
     }
 
@@ -115,6 +117,7 @@
       gap: 7px;
       text-decoration: none;
     }
+
     .tb-brand img {
       height: 45px;
       width: 45px;
@@ -136,7 +139,7 @@
     .tb-sep {
       width: 1px;
       height: 20px;
-      background: rgba(255,255,255,.18);
+      background: rgba(255, 255, 255, .18);
       margin: 0 5px;
       flex-shrink: 0;
     }
@@ -162,33 +165,43 @@
       border-radius: 6px;
       transition: background .15s;
     }
-    .tb-hamburger:hover { background: rgba(255,255,255,.1); }
+
+    .tb-hamburger:hover {
+      background: rgba(255, 255, 255, .1);
+    }
 
     /* ── DRAWER MÓVIL ── */
     .tb-drawer {
       display: none;
       position: fixed;
-      top: 44px; left: 0; right: 0;
+      top: 44px;
+      left: 0;
+      right: 0;
       background: linear-gradient(160deg, #1a0840 0%, #3a1060 60%, #622599 100%);
       z-index: 998;
       padding: 12px 14px;
       flex-direction: column;
       gap: 10px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.5);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .5);
       transform: translateY(-110%);
-      transition: transform .25s cubic-bezier(.4,0,.2,1);
+      transition: transform .25s cubic-bezier(.4, 0, .2, 1);
     }
-    .tb-drawer.open { transform: translateY(0); }
+
+    .tb-drawer.open {
+      transform: translateY(0);
+    }
+
     .tb-drawer-lbl {
       font-family: var(--ff-h);
       font-size: 7.5px;
-      color: rgba(255,255,255,.38);
+      color: rgba(255, 255, 255, .38);
       text-transform: uppercase;
       letter-spacing: 1.2px;
-      border-bottom: 1px solid rgba(255,255,255,.1);
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
       padding-bottom: 4px;
       margin-bottom: 2px;
     }
+
     .tb-drawer-row {
       display: flex;
       gap: 6px;
@@ -205,6 +218,7 @@
       gap: 10px;
       z-index: 900;
     }
+
     .fab {
       width: 52px;
       height: 52px;
@@ -215,18 +229,32 @@
       align-items: center;
       justify-content: center;
       font-size: 20px;
-      box-shadow: 0 4px 16px rgba(0,0,0,.4);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .4);
       transition: transform .18s, box-shadow .18s;
       position: relative;
     }
-    .fab:hover { transform: scale(1.1); box-shadow: 0 6px 22px rgba(0,0,0,.5); }
-    .fab-pdf { background: #08a715; color: #0d1533; }
-    .fab-html { background: rgba(30,50,110,.95); color: white; border: 1px solid rgba(255,255,255,.25); }
+
+    .fab:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 22px rgba(0, 0, 0, .5);
+    }
+
+    .fab-pdf {
+      background: #08a715;
+      color: #0d1533;
+    }
+
+    .fab-html {
+      background: rgba(30, 50, 110, .95);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, .25);
+    }
+
     .fab::after {
       content: attr(data-label);
       position: absolute;
       right: 58px;
-      background: rgba(13,21,51,.92);
+      background: rgba(13, 21, 51, .92);
       color: white;
       font-family: var(--ff-h);
       font-size: 9px;
@@ -238,15 +266,33 @@
       opacity: 0;
       transition: opacity .15s;
     }
-    .fab:hover::after { opacity: 1; }
+
+    .fab:hover::after {
+      opacity: 1;
+    }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 880px) {
-      .tb-center { display: none !important; }
-      .tb-right { display: none !important; }
-      .tb-hamburger { display: flex; align-items: center; }
-      .tb-drawer { display: flex; }
-      .fab-html { display: none; }
+      .tb-center {
+        display: none !important;
+      }
+
+      .tb-right {
+        display: none !important;
+      }
+
+      .tb-hamburger {
+        display: flex;
+        align-items: center;
+      }
+
+      .tb-drawer {
+        display: flex;
+      }
+
+      .fab-html {
+        display: none;
+      }
     }
 
     .btn {
@@ -309,6 +355,11 @@
       background: rgba(168, 216, 255, .1);
       color: #a8d8ff;
       border: 1px solid rgba(168, 216, 255, .22);
+    }
+
+    .btn-help:hover {
+      background: rgba(168, 216, 255, .22);
+      color: #d0eeff;
     }
 
     .file-lbl {
@@ -466,7 +517,6 @@
       font-size: 18px;
       color: white;
       letter-spacing: 6px;
-      text-transform: uppercase;
       text-shadow: 0 1px 4px rgba(0, 0, 0, .3);
     }
 
@@ -522,6 +572,7 @@
       color: var(--ca, #F3E22B);
       font-size: 7.5px;
       letter-spacing: .5px;
+      margin-right: 5px;
     }
 
     .cr-v {
@@ -643,7 +694,7 @@
 
     .sec-body:focus {
       outline: 2px solid var(--cm, #622599);
-      background: rgba(98,37,153,.04);
+      background: rgba(98, 37, 153, .04);
     }
 
     /* ── INFO TABLE ESTILO SECCIÓN ── */
@@ -699,7 +750,7 @@
 
     .info-sec-val:focus {
       outline: 2px solid var(--cm, #622599);
-      background: rgba(98,37,153,.04);
+      background: rgba(98, 37, 153, .04);
     }
 
     /* ── INDICADORES ── */
@@ -844,7 +895,7 @@
 
     .obj-val:focus {
       outline: 2px solid var(--cm, #622599);
-      background: rgba(98,37,153,.04);
+      background: rgba(98, 37, 153, .04);
     }
 
     /* ── ODS ── */
@@ -982,6 +1033,9 @@
       color: var(--cm, #622599);
       font-size: 9.5px;
       width: 60px;
+      word-break: break-word;
+      white-space: normal;
+      overflow-wrap: break-word;
     }
 
     /* Columnas solo en pantalla — NUNCA en print */
@@ -1069,6 +1123,16 @@
       padding: 2px 4px;
     }
 
+    .edit-mode .hdr-title-doc {
+      outline: 2px dashed rgba(243, 226, 43, .7) !important;
+      background: rgba(255, 255, 255, .08) !important;
+      border-radius: 3px;
+      padding: 2px 6px;
+      cursor: text;
+      min-width: 40px;
+      display: inline-block;
+    }
+
     .edit-mode .amb-val {
       outline: 2px dashed #e67e22 !important;
       background: #fffaf5 !important;
@@ -1101,48 +1165,84 @@
       margin-bottom: 9px;
       page-break-inside: avoid;
     }
-    .sec-group .sec { margin-bottom: 0; }
-    .sec-group .sec-head { border-radius: 0; }
-    .sec-group .sec:first-child .sec-head { border-radius: 4px 4px 0 0; }
+
+    .sec-group .sec {
+      margin-bottom: 0;
+    }
+
+    .sec-group .sec-head {
+      border-radius: 0;
+    }
+
+    .sec-group .sec:first-child .sec-head {
+      border-radius: 4px 4px 0 0;
+    }
+
     .sec-group .sec-body {
       border-left: none;
       border-right: none;
       border-bottom: 1px solid var(--cm-bd, #c9a8e8);
       border-radius: 0;
     }
+
     .sec-group .ods-wrap {
       padding: 7px 9px;
       border-bottom: 1px solid var(--cm-bd, #c9a8e8);
     }
+
     .sec-group .sec:last-child .sec-body,
-    .sec-group .sec:last-child .ods-wrap { border-bottom: none; }
+    .sec-group .sec:last-child .ods-wrap {
+      border-bottom: none;
+    }
+
     /* ocultar sec prog-mundial vacío dentro del grupo */
-    .sec-group .sec:has([data-key="prog-mundial"]:empty) { display: none; }
-    .edit-mode .sec-group .sec:has([data-key="prog-mundial"]:empty) { display: block; }
+    .sec-group .sec:has([data-key="prog-mundial"]:empty) {
+      display: none;
+    }
+
+    .edit-mode .sec-group .sec:has([data-key="prog-mundial"]:empty) {
+      display: block;
+    }
 
 
 
     /* ── PÁGINAS EXTRA ── */
-    .extra-page-wrap { position: relative; }
+    .extra-page-wrap {
+      position: relative;
+    }
+
     .extra-page-wrap .ep-del {
       position: absolute;
-      top: 6px; right: 6px;
-      background: rgba(180,13,21,.85);
+      top: 6px;
+      right: 6px;
+      background: rgba(180, 13, 21, .85);
       color: white;
       border: none;
       border-radius: 50%;
-      width: 26px; height: 26px;
+      width: 26px;
+      height: 26px;
       font-size: 13px;
       cursor: pointer;
       z-index: 10;
       display: none;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,.3);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
     }
-    .edit-mode .extra-page-wrap .ep-del { display: flex; }
-    .extra-page-wrap:has(.ep-body:empty) .ep-del { display: flex; }
-    @media print { .extra-page-wrap .ep-del { display: none !important; } }
+
+    .edit-mode .extra-page-wrap .ep-del {
+      display: flex;
+    }
+
+    .extra-page-wrap:has(.ep-body:empty) .ep-del {
+      display: flex;
+    }
+
+    @media print {
+      .extra-page-wrap .ep-del {
+        display: none !important;
+      }
+    }
 
     .ep-titulo {
       font-family: var(--ff-h);
@@ -1154,8 +1254,17 @@
       margin-bottom: 14px;
       outline: none;
     }
-    .ep-titulo:empty::before { content: attr(data-ph); color: #ccc; font-weight: 400; }
-    .edit-mode .ep-titulo { outline: 2px dashed rgba(98,37,153,.2); border-radius: 4px 4px 0 0; }
+
+    .ep-titulo:empty::before {
+      content: attr(data-ph);
+      color: #ccc;
+      font-weight: 400;
+    }
+
+    .edit-mode .ep-titulo {
+      outline: 2px dashed rgba(98, 37, 153, .2);
+      border-radius: 4px 4px 0 0;
+    }
 
     .ep-body {
       min-height: 7.5in;
@@ -1166,12 +1275,25 @@
       outline: none;
       white-space: pre-wrap;
     }
-    .ep-body:empty::before { content: attr(data-ph); color: #bbb; font-style: italic; pointer-events: none; }
-    .edit-mode .ep-body { outline: 2px dashed rgba(98,37,153,.2); border-radius: 4px; background: rgba(98,37,153,.02); }
+
+    .ep-body:empty::before {
+      content: attr(data-ph);
+      color: #bbb;
+      font-style: italic;
+      pointer-events: none;
+    }
+
+    .edit-mode .ep-body {
+      outline: 2px dashed rgba(98, 37, 153, .2);
+      border-radius: 4px;
+      background: rgba(98, 37, 153, .02);
+    }
 
     /* Ocultar en impresión si cuerpo vacío */
     @media print {
-      .extra-page-wrap:has(.ep-body:empty) { display: none !important; }
+      .extra-page-wrap:has(.ep-body:empty) {
+        display: none !important;
+      }
     }
 
     /* Botón añadir página */
@@ -1189,47 +1311,99 @@
       font-weight: 700;
       font-size: 11px;
       cursor: pointer;
-      box-shadow: 0 4px 14px rgba(98,37,153,.4);
+      box-shadow: 0 4px 14px rgba(98, 37, 153, .4);
       transition: all .2s;
       letter-spacing: .5px;
     }
-    .add-page-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(98,37,153,.5); }
-    @media print { .add-page-btn { display: none !important; } }
+
+    .add-page-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(98, 37, 153, .5);
+    }
+
+    @media print {
+      .add-page-btn {
+        display: none !important;
+      }
+    }
 
 
     /* ── MODO GRUPAL ── */
     .rama-grupal {
-      --cm: #622599; --cm-dk: #3a1060; --cm-md: #7c35b5;
-      --cm-lt: #f3eafa; --cm-bd: #c9a8e8;
-      --ca: #F3E22B; --ca-dk: #c8a800;
-      --hdr-a: #1a0840; --hdr-b: #622599; --hdr-m: #3a1060;
+      --cm: #622599;
+      --cm-dk: #3a1060;
+      --cm-md: #7c35b5;
+      --cm-lt: #f3eafa;
+      --cm-bd: #c9a8e8;
+      --ca: #F3E22B;
+      --ca-dk: #c8a800;
+      --hdr-a: #1a0840;
+      --hdr-b: #622599;
+      --hdr-m: #3a1060;
     }
 
     /* Logos normales y grupales */
-    .logo-grupal  { display: none !important; }
-    .logo-comunidad { display: none !important; }
-    .rama-grupal .logo-normal  { display: none !important; }
-    .rama-grupal .logo-grupal:not(.logo-comunidad) { display: flex !important; }
-    .rama-grupal .logo-slot    { width: 52px; height: 52px; }
+    .logo-grupal {
+      display: none !important;
+    }
+
+    .logo-comunidad {
+      display: none !important;
+    }
+
+    .rama-grupal .logo-normal {
+      display: none !important;
+    }
+
+    .rama-grupal .logo-grupal:not(.logo-comunidad) {
+      display: flex !important;
+    }
+
+    .rama-grupal .logo-slot {
+      width: 52px;
+      height: 52px;
+    }
 
     /* Orden flexbox: 3 logos izquierda, título derecha */
-    .rama-grupal .ficha-header .hdr-center { order: 5; }
-    .rama-grupal .ficha-header .cod-box    { order: 20; }
+    .rama-grupal .ficha-header .hdr-center {
+      order: 5;
+    }
+
+    .rama-grupal .ficha-header .cod-box {
+      order: 20;
+    }
+
     /* clan (order 0 default) queda antes del título */
 
     /* 4 logos: comunidad + clan pasan a la derecha del título */
-    .grupal-con-comunidad .logo-comunidad { display: flex !important; order: 10; }
-    .grupal-con-comunidad .logo-clan      { order: 11; }
+    .grupal-con-comunidad .logo-comunidad {
+      display: flex !important;
+      order: 10;
+    }
+
+    .grupal-con-comunidad .logo-clan {
+      order: 11;
+    }
 
     /* En modo grupal, blk1 oculta el sec-group (va en blk-g2) */
-    .rama-grupal #blk1 .sec-group { display: none !important; }
+    .rama-grupal #blk1 .sec-group {
+      display: none !important;
+    }
 
     /* blk-g2 oculto por defecto */
-    #blk-g2-wrap { display: none; }
-    .rama-grupal #blk-g2-wrap { display: block; }
+    #blk-g2-wrap {
+      display: none;
+    }
+
+    .rama-grupal #blk-g2-wrap {
+      display: block;
+    }
 
     /* Checkbox comunidad en config */
-    #cfg-grupal-opts { display: none; margin-top: 8px; }
+    #cfg-grupal-opts {
+      display: none;
+      margin-top: 8px;
+    }
 
 
     /* Indicadores editables en tabla */
@@ -1240,11 +1414,29 @@
       display: inline-block;
       width: 100%;
     }
-    .ind-editable:hover  { background: rgba(98,37,153,.06); }
-    .ind-editable:focus  { background: rgba(98,37,153,.1); outline: 1px dashed rgba(98,37,153,.4); }
-    .col-ind { position: relative; }
-    .col-ind .del-btn { position: absolute; top: 4px; right: 2px; }
-    .col-ind .ind-editable { padding-right: 18px; }
+
+    .ind-editable:hover {
+      background: rgba(98, 37, 153, .06);
+    }
+
+    .ind-editable:focus {
+      background: rgba(98, 37, 153, .1);
+      outline: 1px dashed rgba(98, 37, 153, .4);
+    }
+
+    .col-ind {
+      position: relative;
+    }
+
+    .col-ind .del-btn {
+      position: absolute;
+      top: 4px;
+      right: 2px;
+    }
+
+    .col-ind .ind-editable {
+      padding-right: 18px;
+    }
 
     /* ── FOOTER ── */
     .page-footer {
@@ -1398,6 +1590,7 @@
       margin-top: 10px;
       padding-top: 8px;
     }
+
     .ind-manual-title {
       font-family: var(--ff-h);
       font-weight: 700;
@@ -1410,8 +1603,14 @@
       user-select: none;
       padding: 3px 0;
     }
-    .ind-manual-title:hover { color: #3d1a66; }
-    .ind-manual-form { padding-top: 8px; }
+
+    .ind-manual-title:hover {
+      color: #3d1a66;
+    }
+
+    .ind-manual-form {
+      padding-top: 8px;
+    }
 
     .ind-grp {
       margin-bottom: 7px;
@@ -1656,6 +1855,59 @@
       line-height: 1.55;
     }
 
+    /* ── TOOLTIPS (solo pantalla, nunca impresión) ── */
+    .tip-noprint {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: var(--ff-h);
+      font-size: 8px;
+      font-weight: 600;
+      color: #a0b4d0;
+      background: rgba(168, 216, 255, .08);
+      border: 1px solid rgba(168, 216, 255, .18);
+      border-radius: 10px;
+      padding: 2px 7px 2px 5px;
+      margin-left: 6px;
+      cursor: default;
+      vertical-align: middle;
+      position: relative;
+      white-space: nowrap;
+      transition: background .15s;
+    }
+
+    .tip-noprint:hover {
+      background: rgba(168, 216, 255, .16);
+    }
+
+    .tip-noprint::before {
+      content: 'ℹ';
+      font-style: normal;
+      opacity: .7;
+    }
+
+    .tip-noprint[data-tip]:hover::after {
+      content: attr(data-tip);
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0d1533;
+      color: #e0eeff;
+      font-size: 9px;
+      font-weight: 500;
+      white-space: normal;
+      max-width: 220px;
+      min-width: 140px;
+      padding: 6px 9px;
+      border-radius: 7px;
+      border: 1px solid rgba(168, 216, 255, .2);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .5);
+      z-index: 9999;
+      pointer-events: none;
+      line-height: 1.5;
+    }
+
     /* ╔══════════════════════════════════════════════════╗
    ║  PRINT — TODO AL RAS, SIN COLUMNAS DE CONTROL   ║
    ╚══════════════════════════════════════════════════╝ */
@@ -1674,6 +1926,8 @@
       .help-page,
       .pg-div,
       .ind-hint,
+      .tip-noprint,
+      .print-hide,
       .ods-chip:not(.on) {
         display: none !important;
       }
@@ -1714,14 +1968,14 @@
       }
 
       .page-block {
-  width: var(--page-w);
-  background: white;
-  position: relative;
-  min-height: 11in;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
+        width: var(--page-w);
+        background: white;
+        position: relative;
+        min-height: 11in;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
 
       .page-block:last-of-type {
         page-break-after: avoid;
@@ -1768,12 +2022,15 @@
       <div class="tb-sep"></div>
       <button class="btn btn-g" onclick="doExportJSON()">📤 Exportar datos</button>
       <label class="btn btn-g file-lbl">📥 Importar datos<input type="file" accept=".json"
-        onchange="doImportJSON(this.files[0])"></label>
+          onchange="doImportJSON(this.files[0])"></label>
       <div class="tb-sep"></div>
-      <button class="btn btn-tico" onclick="window.open('https://gemini.google.com/gem/18qK5lPkpBpcvJ7w3_1L-9LLxglc9BWsq?usp=sharing','_blank')">🤖 Preguntarle a Tico</button>
+      <button class="btn btn-tico"
+        onclick="window.open('https://gemini.google.com/gem/18qK5lPkpBpcvJ7w3_1L-9LLxglc9BWsq?usp=sharing','_blank')">🤖
+        Preguntarle a Tico</button>
     </div>
 
     <div class="tb-right">
+      <button class="btn btn-help" onclick="window.open('ayuda.html','_blank')">❓ Ayuda</button>
       <button class="btn btn-r" onclick="openM('mReset')">🗑️ Restablecer</button>
       <div class="tb-status" id="tbSt">● Listo</div>
     </div>
@@ -1798,10 +2055,13 @@
     <div class="tb-drawer-row">
       <button class="btn btn-g" onclick="doExportJSON();closeDrawer()">📤 Exportar datos</button>
       <label class="btn btn-g file-lbl">📥 Importar datos<input type="file" accept=".json"
-        onchange="doImportJSON(this.files[0]);closeDrawer()"></label>
+          onchange="doImportJSON(this.files[0]);closeDrawer()"></label>
     </div>
     <div class="tb-drawer-row" style="margin-top:4px;">
-      <button class="btn btn-tico" onclick="window.open('https://gemini.google.com/gem/18qK5lPkpBpcvJ7w3_1L-9LLxglc9BWsq?usp=sharing','_blank');closeDrawer()">🤖 Preguntarle a Tico</button>
+      <button class="btn btn-tico"
+        onclick="window.open('https://gemini.google.com/gem/18qK5lPkpBpcvJ7w3_1L-9LLxglc9BWsq?usp=sharing','_blank');closeDrawer()">🤖
+        Preguntarle a Tico</button>
+      <button class="btn btn-help" onclick="window.open('ayuda.html','_blank');closeDrawer()">❓ Ayuda</button>
       <button class="btn btn-r" onclick="openM('mReset');closeDrawer()">🗑️ Restablecer</button>
     </div>
   </div>
@@ -1830,20 +2090,29 @@
             <input type="file" accept="image/*" onchange="setLogo('logo-rama',this)">
           </div>
           <!-- Logos grupales (ocultos en modo normal) -->
-          <div class="logo-slot logo-grupal" data-tip="Click para cambiar logo Manada"><img src="images/rama-manada.jpg" alt="Manada" data-logo-key="rama-manada"><input type="file" accept="image/*" onchange="setLogo('rama-manada',this)"></div>
-          <div class="logo-slot logo-grupal" data-tip="Click para cambiar logo Tropa"><img src="images/rama-tropa.jpg" alt="Tropa" data-logo-key="rama-tropa"><input type="file" accept="image/*" onchange="setLogo('rama-tropa',this)"></div>
+          <div class="logo-slot logo-grupal" data-tip="Click para cambiar logo Manada"><img src="images/rama-manada.jpg"
+              alt="Manada" data-logo-key="rama-manada"><input type="file" accept="image/*"
+              onchange="setLogo('rama-manada',this)"></div>
+          <div class="logo-slot logo-grupal" data-tip="Click para cambiar logo Tropa"><img src="images/rama-tropa.jpg"
+              alt="Tropa" data-logo-key="rama-tropa"><input type="file" accept="image/*"
+              onchange="setLogo('rama-tropa',this)"></div>
           <!-- Logos derecha (solo en modo 4) — orden CSS los mueve después del título -->
-          <div class="logo-slot logo-grupal logo-comunidad" data-tip="Click para cambiar logo Comunidad"><img src="images/rama-comunidad.jpg" alt="Comunidad" data-logo-key="rama-comunidad"><input type="file" accept="image/*" onchange="setLogo('rama-comunidad',this)"></div>
-          <div class="logo-slot logo-grupal logo-clan" data-tip="Click para cambiar logo Clan"><img src="images/rama-clan.jpg" alt="Clan" data-logo-key="rama-clan"><input type="file" accept="image/*" onchange="setLogo('rama-clan',this)"></div>
+          <div class="logo-slot logo-grupal logo-comunidad" data-tip="Click para cambiar logo Comunidad"><img
+              src="images/rama-comunidad.jpg" alt="Comunidad" data-logo-key="rama-comunidad"><input type="file"
+              accept="image/*" onchange="setLogo('rama-comunidad',this)"></div>
+          <div class="logo-slot logo-grupal logo-clan" data-tip="Click para cambiar logo Clan"><img
+              src="images/rama-clan.jpg" alt="Clan" data-logo-key="rama-clan"><input type="file" accept="image/*"
+              onchange="setLogo('rama-clan',this)"></div>
           <div class="hdr-center">
-            <div class="hdr-title" id="doc-title">FICHA TÉCNICA</div>
+            <div class="hdr-title hdr-title-doc" id="doc-title">FICHA TÉCNICA</div>
             <div class="hdr-line"></div>
             <!-- Nombre actividad editable inline dentro del header -->
             <div class="hdr-nombre" id="hdr-nombre-act" data-ph="Nombre de la actividad"></div>
           </div>
           <div class="cod-box">
             <div class="cr"><span class="cr-l">CÓDIGO</span><span class="cr-v" id="cod-a">—</span></div>
-            <div class="cr"><span class="cr-l">GRUPO</span><span class="cr-v" data-edit="true" data-key="hdr-grupo" data-ph="Grupo Scout">La Salle Guaparo</span></div>
+            <div class="cr"><span class="cr-l">GRUPO</span><span class="cr-v" data-edit="true" data-key="hdr-grupo"
+                data-ph="Grupo Scout">La Salle Guaparo</span></div>
             <div class="cr"><span class="cr-l">UNIDAD</span><span class="cr-v" data-edit="true" data-key="unidad"
                 data-ph="Manada">Manada</span></div>
             <div class="cr"><span class="cr-l">RESPONSABLE</span><span class="cr-v" data-edit="true"
@@ -1860,6 +2129,11 @@
         <div class="page-content">
           <!-- Datos generales con estilo de sección -->
           <div style="margin-bottom:10px;margin-top:10px;">
+            <div style="margin-bottom:4px;">
+              <span class="tip-noprint"
+                data-tip="Activa el modo Editar (botón ✏️ en la barra) para escribir en estos campos. Los cambios se guardan automáticamente en el navegador.">Campos
+                editables</span>
+            </div>
             <div class="info-sec-grid">
               <div class="info-sec-item">
                 <div class="info-sec-lbl">Lugar</div>
@@ -1883,6 +2157,9 @@
           <div class="sec">
             <div class="sec-head">📊 Áreas de Crecimiento e Indicadores de Logro
               <span class="ind-hint" style="font-size:8px;opacity:.6;font-weight:400">← botón Indicadores</span>
+              <span class="tip-noprint"
+                data-tip="Usa el botón 📊 Indicadores de logro en la barra para seleccionar indicadores por Área y Estadio. También puedes escribir uno manual.">¿Cómo
+                agregar?</span>
             </div>
             <div style="border:1px solid var(--cm-bd,#c9a8e8);border-top:none;border-radius:0 0 4px 4px;">
               <table class="ind-table" style="border-radius:0;box-shadow:none;">
@@ -1900,34 +2177,40 @@
           </div>
 
           <div class="sec-group" id="main-sec-group">
-            <div class="sec">
+            <div class="sec" data-optional="true">
               <div class="sec-head">🌱 Oportunidad de Aprendizaje</div>
               <div class="sec-body" data-edit="true" data-key="oportunidad"
                 data-ph="Describe la oportunidad de aprendizaje..."></div>
             </div>
-            <div class="sec">
+            <div class="sec" data-optional="true">
               <div class="sec-head">🎯 Objetivo General</div>
-              <div class="sec-body" data-edit="true" data-key="obj-general" data-ph="Escribe el objetivo general..."></div>
+              <div class="sec-body" data-edit="true" data-key="obj-general" data-ph="Escribe el objetivo general...">
+              </div>
             </div>
-            <div class="sec">
+            <div class="sec" data-optional="true">
               <div class="sec-head">📋 Objetivos Específicos</div>
               <div class="sec-body" data-edit="true" data-key="obj-especificos"
                 data-ph="1. Primer objetivo&#10;2. Segundo objetivo"></div>
             </div>
             <div class="sec">
-              <div class="sec-head">🌍 ODS Relacionados</div>
+              <div class="sec-head">🌍 ODS Relacionados
+                <span class="tip-noprint"
+                  data-tip="Haz clic en cada chip para activar o desactivar un ODS. Solo los activados aparecen en la impresión.">Clic
+                  para activar</span>
+              </div>
               <div class="ods-wrap" id="ods-wrap"></div>
             </div>
-            <div class="sec">
+            <div class="sec" data-optional="true">
               <div class="sec-head">🌐 Programa Mundial / Iniciativas</div>
-              <div class="sec-body" data-edit="true" data-key="prog-mundial" data-ph="Ej: Guardianes de la Tierra"></div>
+              <div class="sec-body" data-edit="true" data-key="prog-mundial" data-ph="Ej: Guardianes de la Tierra">
+              </div>
             </div>
-            <div class="sec">
+            <div class="sec" data-optional="true">
               <div class="sec-head">🏆 Metas</div>
               <div class="sec-body" data-edit="true" data-key="metas"
                 data-ph="Alcance, producto, aprendizaje esperado..."></div>
             </div>
-            <div class="sec">
+            <div class="sec" data-optional="true">
               <div class="sec-head">💡 Enfoque de Impacto</div>
               <div class="sec-body" data-edit="true" data-key="enfoque"
                 data-ph="Ej: Adquisición de habilidades y competencias"></div>
@@ -1943,17 +2226,29 @@
         <div class="pg-div"></div>
         <div class="page-block" id="blk-g2">
           <div class="ficha-header">
-            <div class="logo-slot" data-tip="Click para cambiar logo del grupo"><img id="logo-grupo-g2" class="zoom-logo"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSe5CtHjlCiRvxDNPNKURbyHIccBa860M11Q&s" alt=""><input type="file" accept="image/*" onchange="setLogo('logo-grupo',this)"></div>
-            <div class="logo-slot logo-normal" data-tip="Click para cambiar logo de rama"><img id="logo-rama-g2" src="images/logo-rama.jpg" alt=""><input type="file" accept="image/*" onchange="setLogo('logo-rama',this)"></div>
-          <!-- Logos grupales (ocultos en modo normal) -->
-          <div class="logo-slot logo-grupal" data-tip="Click para cambiar logo Manada"><img src="images/rama-manada.jpg" alt="Manada" data-logo-key="rama-manada"><input type="file" accept="image/*" onchange="setLogo('rama-manada',this)"></div>
-          <div class="logo-slot logo-grupal" data-tip="Click para cambiar logo Tropa"><img src="images/rama-tropa.jpg" alt="Tropa" data-logo-key="rama-tropa"><input type="file" accept="image/*" onchange="setLogo('rama-tropa',this)"></div>
-          <!-- Logos derecha (solo en modo 4) — orden CSS los mueve después del título -->
-          <div class="logo-slot logo-grupal logo-comunidad" data-tip="Click para cambiar logo Comunidad"><img src="images/rama-comunidad.jpg" alt="Comunidad" data-logo-key="rama-comunidad"><input type="file" accept="image/*" onchange="setLogo('rama-comunidad',this)"></div>
-          <div class="logo-slot logo-grupal logo-clan" data-tip="Click para cambiar logo Clan"><img src="images/rama-clan.jpg" alt="Clan" data-logo-key="rama-clan"><input type="file" accept="image/*" onchange="setLogo('rama-clan',this)"></div>
+            <div class="logo-slot" data-tip="Click para cambiar logo del grupo"><img id="logo-grupo-g2"
+                class="zoom-logo"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSe5CtHjlCiRvxDNPNKURbyHIccBa860M11Q&s"
+                alt=""><input type="file" accept="image/*" onchange="setLogo('logo-grupo',this)"></div>
+            <div class="logo-slot logo-normal" data-tip="Click para cambiar logo de rama"><img id="logo-rama-g2"
+                src="images/logo-rama.jpg" alt=""><input type="file" accept="image/*"
+                onchange="setLogo('logo-rama',this)"></div>
+            <!-- Logos grupales (ocultos en modo normal) -->
+            <div class="logo-slot logo-grupal" data-tip="Click para cambiar logo Manada"><img
+                src="images/rama-manada.jpg" alt="Manada" data-logo-key="rama-manada"><input type="file"
+                accept="image/*" onchange="setLogo('rama-manada',this)"></div>
+            <div class="logo-slot logo-grupal" data-tip="Click para cambiar logo Tropa"><img src="images/rama-tropa.jpg"
+                alt="Tropa" data-logo-key="rama-tropa"><input type="file" accept="image/*"
+                onchange="setLogo('rama-tropa',this)"></div>
+            <!-- Logos derecha (solo en modo 4) — orden CSS los mueve después del título -->
+            <div class="logo-slot logo-grupal logo-comunidad" data-tip="Click para cambiar logo Comunidad"><img
+                src="images/rama-comunidad.jpg" alt="Comunidad" data-logo-key="rama-comunidad"><input type="file"
+                accept="image/*" onchange="setLogo('rama-comunidad',this)"></div>
+            <div class="logo-slot logo-grupal logo-clan" data-tip="Click para cambiar logo Clan"><img
+                src="images/rama-clan.jpg" alt="Clan" data-logo-key="rama-clan"><input type="file" accept="image/*"
+                onchange="setLogo('rama-clan',this)"></div>
             <div class="hdr-center">
-              <div class="hdr-title">FICHA TÉCNICA</div>
+              <div class="hdr-title hdr-title-doc">FICHA TÉCNICA</div>
               <div class="hdr-line"></div>
               <div class="hdr-nombre" id="g2-nombre" data-ph="Nombre de la actividad"></div>
             </div>
@@ -1976,16 +2271,27 @@
         <div class="ficha-header">
           <div class="logo-slot" data-tip="Click para cambiar logo del grupo"><img id="logo-grupo-p2" class="zoom-logo"
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSe5CtHjlCiRvxDNPNKURbyHIccBa860M11Q&s" alt="">
-            <input type="file" accept="image/*" onchange="setLogo('logo-grupo',this)"></div>
-          <div class="logo-slot logo-normal" data-tip="Click para cambiar logo de rama"><img id="logo-rama-p2" src="images/logo-rama.jpg" alt=""><input type="file" accept="image/*" onchange="setLogo('logo-rama',this)"></div>
+            <input type="file" accept="image/*" onchange="setLogo('logo-grupo',this)">
+          </div>
+          <div class="logo-slot logo-normal" data-tip="Click para cambiar logo de rama"><img id="logo-rama-p2"
+              src="images/logo-rama.jpg" alt=""><input type="file" accept="image/*"
+              onchange="setLogo('logo-rama',this)"></div>
           <!-- Logos grupales (ocultos en modo normal) -->
-          <div class="logo-slot logo-grupal" data-tip="Click para cambiar logo Manada"><img src="images/rama-manada.jpg" alt="Manada" data-logo-key="rama-manada"><input type="file" accept="image/*" onchange="setLogo('rama-manada',this)"></div>
-          <div class="logo-slot logo-grupal" data-tip="Click para cambiar logo Tropa"><img src="images/rama-tropa.jpg" alt="Tropa" data-logo-key="rama-tropa"><input type="file" accept="image/*" onchange="setLogo('rama-tropa',this)"></div>
+          <div class="logo-slot logo-grupal" data-tip="Click para cambiar logo Manada"><img src="images/rama-manada.jpg"
+              alt="Manada" data-logo-key="rama-manada"><input type="file" accept="image/*"
+              onchange="setLogo('rama-manada',this)"></div>
+          <div class="logo-slot logo-grupal" data-tip="Click para cambiar logo Tropa"><img src="images/rama-tropa.jpg"
+              alt="Tropa" data-logo-key="rama-tropa"><input type="file" accept="image/*"
+              onchange="setLogo('rama-tropa',this)"></div>
           <!-- Logos derecha (solo en modo 4) — orden CSS los mueve después del título -->
-          <div class="logo-slot logo-grupal logo-comunidad" data-tip="Click para cambiar logo Comunidad"><img src="images/rama-comunidad.jpg" alt="Comunidad" data-logo-key="rama-comunidad"><input type="file" accept="image/*" onchange="setLogo('rama-comunidad',this)"></div>
-          <div class="logo-slot logo-grupal logo-clan" data-tip="Click para cambiar logo Clan"><img src="images/rama-clan.jpg" alt="Clan" data-logo-key="rama-clan"><input type="file" accept="image/*" onchange="setLogo('rama-clan',this)"></div>
+          <div class="logo-slot logo-grupal logo-comunidad" data-tip="Click para cambiar logo Comunidad"><img
+              src="images/rama-comunidad.jpg" alt="Comunidad" data-logo-key="rama-comunidad"><input type="file"
+              accept="image/*" onchange="setLogo('rama-comunidad',this)"></div>
+          <div class="logo-slot logo-grupal logo-clan" data-tip="Click para cambiar logo Clan"><img
+              src="images/rama-clan.jpg" alt="Clan" data-logo-key="rama-clan"><input type="file" accept="image/*"
+              onchange="setLogo('rama-clan',this)"></div>
           <div class="hdr-center">
-            <div class="hdr-title" id="doc-title-p2">FICHA TÉCNICA</div>
+            <div class="hdr-title hdr-title-doc" id="doc-title-p2">FICHA TÉCNICA</div>
             <div class="hdr-line"></div>
             <div class="hdr-nombre" id="p2-nombre" data-ph="Nombre de la actividad"></div>
           </div>
@@ -2001,6 +2307,9 @@
           <div class="sec">
             <div class="sec-head">📋 Programa de la Actividad
               <span id="prog-hdr" style="font-size:8px;font-weight:400;opacity:.75"></span>
+              <span class="tip-noprint"
+                data-tip="La hora se calcula automáticamente según la duración de cada momento. Puedes escribir una hora manual en el campo 'Hora' al agregar. Arrastra ☰ para reordenar filas.">Hora
+                automática · arrastrar</span>
             </div>
             <div style="border:1px solid var(--cm-bd,#c9a8e8);border-top:none;border-radius:0 0 4px 4px;">
               <table class="prog-table" id="prog-table">
@@ -2034,462 +2343,501 @@
       <button class="add-page-btn" id="addPageBtn" onclick="addExtraPage()">➕ Añadir página extra</button>
     </div><!-- /fichaWrap -->
 
-  <!-- MODALES -->
-  <div class="overlay" id="mConfig">
-    <div class="modal">
-      <div class="modal-h">
-        <div class="modal-title">⚙️ Configuración General</div><button class="modal-x"
-          onclick="closeM('mConfig')">✕</button>
-      </div>
-      <div class="frow">
-        <div class="fg"><label class="fl">Nombre del Grupo</label><input type="text" class="fi" id="cfg-grupo"
-            placeholder="Grupo Scout La Salle Guaparo"></div>
-        <div class="fg"><label class="fl">Rama</label>
-          <select class="fs" id="cfg-rama" onchange="onRamaChange(this.value)">
-            <option value="Manada">🟡 Manada</option>
-            <option value="Tropa">🟢 Tropa</option>
-            <option value="Comunidad">🟣 Comunidad</option>
-            <option value="Clan">🔴 Clan</option>
-            <option value="Grupal">⚪ Grupal</option>
-          </select>
-          <div id="cfg-grupal-opts">
-            <label style="display:flex;align-items:center;gap:6px;font-size:10px;color:#555;cursor:pointer;">
-              <input type="checkbox" id="cfg-grupal-comunidad">
-              Incluir Comunidad (por defecto solo Manada, Tropa y Clan)
-            </label>
+    <!-- MODALES -->
+    <div class="overlay" id="mConfig">
+      <div class="modal">
+        <div class="modal-h">
+          <div class="modal-title">⚙️ Configuración General</div><button class="modal-x"
+            onclick="closeM('mConfig')">✕</button>
+        </div>
+        <div class="frow">
+          <div class="fg"><label class="fl">Nombre del Grupo</label><input type="text" class="fi" id="cfg-grupo"
+              placeholder="Grupo Scout La Salle Guaparo"></div>
+          <div class="fg"><label class="fl">Rama</label>
+            <select class="fs" id="cfg-rama" onchange="onRamaChange(this.value)">
+              <option value="Manada">🟡 Manada</option>
+              <option value="Tropa">🟢 Tropa</option>
+              <option value="Comunidad">🟣 Comunidad</option>
+              <option value="Clan">🔴 Clan</option>
+              <option value="Grupal">⚪ Grupal</option>
+            </select>
+            <div id="cfg-grupal-opts">
+              <label style="display:flex;align-items:center;gap:6px;font-size:10px;color:#555;cursor:pointer;">
+                <input type="checkbox" id="cfg-grupal-comunidad">
+                Incluir Comunidad (por defecto solo Manada, Tropa y Clan)
+              </label>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="frow">
-        <div class="fg"><label class="fl">Fecha de Inicio</label><input type="date" class="fi" id="cfg-fecha-ini"></div>
-        <div class="fg"><label class="fl">Fecha de Fin</label><input type="date" class="fi" id="cfg-fecha-fin"></div>
-      </div>
-      <div class="frow">
-        <div class="fg"><label class="fl">Hora Inicio (Día 1)</label><input type="time" class="fi" id="cfg-hi"
-            value="10:00"></div>
-        <div class="fg"><label class="fl">Hora Cierre (último día)</label><input type="time" class="fi" id="cfg-hc"
-            value="13:00"></div>
-      </div>
-      <div class="fg"><label class="fl">Responsable</label><input type="text" class="fi" id="cfg-resp"
-          placeholder="Akela"></div>
-      <div class="fg"><label class="fl">Código (vacío = DDMMAA-R automático)</label><input type="text" class="fi"
-          id="cfg-cod" placeholder="Ej: 010526-M"></div>
-      <div class="fg"><label class="fl">Título del Documento</label><input type="text" class="fi" id="cfg-titulo"
-          value="FICHA TÉCNICA"></div>
-      <div id="multiday-info"
-        style="display:none;background:#f0f8ff;border:1px solid #aad;border-radius:6px;padding:9px 11px;font-size:10px;color:#336;margin-bottom:8px;">
-        📅 <strong>Multi-día detectado</strong> — el programa mostrará secciones separadas por día. Puedes agregar filas
-        al programa de cada día con el botón <strong>➕ Programa</strong>.
-      </div>
-      <div class="mf"><button class="btn btn-g" onclick="closeM('mConfig')">Cancelar</button><button class="btn btn-y"
-          onclick="applyConfig()">Aplicar</button></div>
-    </div>
-  </div>
-
-  <div class="overlay" id="mInd">
-    <div class="modal" style="max-width:600px">
-      <div class="modal-h">
-        <div class="modal-title">📊 Indicadores de Logro</div><button class="modal-x"
-          onclick="closeM('mInd')">✕</button>
-      </div>
-      <div class="fg"><label class="fl">Rama</label>
-        <select class="fs" id="ind-rama" onchange="renderIndPanel()">
-          <option value="manada">🟡 Manada</option>
-          <option value="tropa">🟢 Tropa</option>
-          <option value="comunidad">🟣 Comunidad</option>
-          <option value="clan">🔴 Clan</option>
-        </select>
-      </div>
-      <div class="ind-panel" id="ind-panel"></div>
-      <div class="ind-manual-wrap">
-        <div class="ind-manual-title" onclick="toggleManualInd()">✏️ Agregar manualmente <span id="manual-arrow">▶</span></div>
-        <div class="ind-manual-form" id="ind-manual-form" style="display:none">
-          <div class="frow">
-            <div class="fg"><label class="fl">Área</label><input type="text" class="fi" id="ind-m-area" placeholder="Corporalidad"></div>
-            <div class="fg" style="max-width:80px"><label class="fl">Etapa</label><input type="text" class="fi" id="ind-m-etapa" placeholder="E1"></div>
+        <div class="frow">
+          <div class="fg"><label class="fl">Fecha de Inicio</label><input type="date" class="fi" id="cfg-fecha-ini">
           </div>
-          <div class="fg"><label class="fl">Indicador</label><textarea class="fta" id="ind-m-texto" placeholder="Texto del indicador..."></textarea></div>
-          <button class="btn btn-y" style="margin-top:6px;width:100%" onclick="addIndManual()">➕ Agregar indicador</button>
+          <div class="fg"><label class="fl">Fecha de Fin</label><input type="date" class="fi" id="cfg-fecha-fin"></div>
         </div>
-      </div>
-      <div class="mf"><button class="btn btn-g" onclick="closeM('mInd')">Cancelar</button><button class="btn btn-y"
-          onclick="applyInd()">Agregar seleccionados</button></div>
-    </div>
-  </div>
-
-  <div class="overlay" id="mProg">
-    <div class="modal">
-      <div class="modal-h">
-        <div class="modal-title">➕ Agregar momento al programa</div><button class="modal-x"
-          onclick="closeM('mProg')">✕</button>
-      </div>
-      <div class="frow">
-        <div class="fg"><label class="fl">Hora (auto si vacío)</label><input type="text" class="fi" id="p-hora"
-            placeholder="Auto"></div>
-        <div class="fg"><label class="fl">Duración</label><input type="text" class="fi" id="p-dur"
-            placeholder="30 min / 1h / 1h 30min"></div>
-      </div>
-      <div id="p-day-group" style="display:none">
-        <div class="fg"><label class="fl">Día (para multi-día)</label>
-          <select class="fs" id="p-day"></select>
+        <div class="frow">
+          <div class="fg"><label class="fl">Hora Inicio (Día 1)</label><input type="time" class="fi" id="cfg-hi"
+              value="10:00"></div>
+          <div class="fg"><label class="fl">Hora Cierre (último día)</label><input type="time" class="fi" id="cfg-hc"
+              value="13:00"></div>
         </div>
-      </div>
-      <div class="fg"><label class="fl">Actividad</label><input type="text" class="fi" id="p-act"></div>
-      <div class="fg"><label class="fl">Descripción</label><textarea class="fta" id="p-desc"></textarea></div>
-      <div class="frow">
-        <div class="fg"><label class="fl">Materiales</label><input type="text" class="fi" id="p-mat"></div>
-        <div class="fg"><label class="fl">Responsable</label><input type="text" class="fi" id="p-resp"
+        <div class="fg"><label class="fl">Responsable</label><input type="text" class="fi" id="cfg-resp"
             placeholder="Akela"></div>
+        <div class="fg"><label class="fl">Código (vacío = DDMMAA-R automático)</label><input type="text" class="fi"
+            id="cfg-cod" placeholder="Ej: 010526-M"></div>
+        <div class="fg"><label class="fl">Título del Documento</label><input type="text" class="fi" id="cfg-titulo"
+            value="FICHA TÉCNICA"></div>
+        <div id="multiday-info"
+          style="display:none;background:#f0f8ff;border:1px solid #aad;border-radius:6px;padding:9px 11px;font-size:10px;color:#336;margin-bottom:8px;">
+          📅 <strong>Multi-día detectado</strong> — el programa mostrará secciones separadas por día. Puedes agregar
+          filas
+          al programa de cada día con el botón <strong>➕ Programa</strong>.
+        </div>
+        <div class="mf"><button class="btn btn-g" onclick="closeM('mConfig')">Cancelar</button><button class="btn btn-y"
+            onclick="applyConfig()">Aplicar</button></div>
       </div>
-      <div class="mf"><button class="btn btn-g" onclick="closeM('mProg')">Cancelar</button><button class="btn btn-y"
-          onclick="addProgRow()">Agregar</button></div>
     </div>
-  </div>
 
-  <div class="overlay" id="mReset">
-    <div class="modal" style="max-width:440px">
-      <div class="modal-h">
-        <div class="modal-title" style="color:#B40D15">🗑️ Restablecer plantilla</div><button class="modal-x"
-          onclick="closeM('mReset')">✕</button>
+    <div class="overlay" id="mInd">
+      <div class="modal" style="max-width:600px">
+        <div class="modal-h">
+          <div class="modal-title">📊 Indicadores de Logro</div><button class="modal-x"
+            onclick="closeM('mInd')">✕</button>
+        </div>
+        <div class="fg"><label class="fl">Rama</label>
+          <select class="fs" id="ind-rama" onchange="renderIndPanel()">
+            <option value="manada">🟡 Manada</option>
+            <option value="tropa">🟢 Tropa</option>
+            <option value="comunidad">🟣 Comunidad</option>
+            <option value="clan">🔴 Clan</option>
+          </select>
+        </div>
+        <div class="ind-panel" id="ind-panel"></div>
+        <div class="ind-manual-wrap">
+          <div class="ind-manual-title" onclick="toggleManualInd()">✏️ Agregar manualmente <span
+              id="manual-arrow">▶</span></div>
+          <div class="ind-manual-form" id="ind-manual-form" style="display:none">
+            <div class="frow">
+              <div class="fg"><label class="fl">Área</label><input type="text" class="fi" id="ind-m-area"
+                  placeholder="Corporalidad"></div>
+              <div class="fg" style="max-width:80px"><label class="fl">Etapa</label><input type="text" class="fi"
+                  id="ind-m-etapa" placeholder="E1"></div>
+            </div>
+            <div class="fg"><label class="fl">Indicador</label><textarea class="fta" id="ind-m-texto"
+                placeholder="Texto del indicador..."></textarea></div>
+            <button class="btn btn-y" style="margin-top:6px;width:100%" onclick="addIndManual()">➕ Agregar
+              indicador</button>
+          </div>
+        </div>
+        <div class="mf"><button class="btn btn-g" onclick="closeM('mInd')">Cancelar</button><button class="btn btn-y"
+            onclick="applyInd()">Agregar seleccionados</button></div>
       </div>
-      <p style="font-size:10.5px;color:#555;margin-bottom:10px">Borrará todos los campos. <strong>Indicadores cargados y
-          logos se conservan.</strong></p>
-      <div class="reset-opts">
-        <label class="reset-opt"><input type="checkbox" id="rst-html" checked>
-          <div class="reset-opt-text"><strong>💾 Descargar HTML</strong><span>Guarda antes de limpiar.</span></div>
-        </label>
-        <label class="reset-opt"><input type="checkbox" id="rst-pdf">
-          <div class="reset-opt-text"><strong>📄 Abrir PDF</strong><span>Abre ventana de impresión.</span></div>
-        </label>
-      </div>
-      <div class="reset-warn">⚠️ Irreversible. Solo borra el localStorage de la ficha.</div>
-      <div class="mf"><button class="btn btn-g" onclick="closeM('mReset')">Cancelar</button><button class="btn btn-r"
-          onclick="doReset()">Sí, restablecer</button></div>
     </div>
-  </div>
 
-  <script>
-    /* ─── DATOS EMBEBIDOS ─── */
-    const RAMA_LOGOS = {
-      manada: 'images/rama-manada.jpg',
-      tropa: 'images/rama-tropa.jpg',
-      comunidad: 'images/rama-comunidad.jpg',
-      clan: 'images/rama-clan.jpg'
-    };
-    const LOGO_GRUPO_DEF = 'images/logo-grupo-def.png';
-    const LOGO_FLOR = 'images/logo-flor.png';
-    let INDICADORES = { "manada": { "Corporalidad": { "E1": ["Cumple las tareas en la oportunidad en que se le pide.", "Define para cuál fecha desea tener una insignia y trabaja para obtenerla.", "Usa la lectura como mecanismo para el descanso.", "Describe las diferencias que observa entre su organismo y el de otros.", "Pide a familiares y adultos Scouts la ayuda que requiere para adquirir habilidades y las practica.", "Mantiene en su casa la clasificación de ciertos desperdicios sólidos.", "Se da cuenta de los cambios en su organismo cuando hace un esfuerzo.", "Elabora un horario para sus actividades diarias en época de estudios.", "Disfruta las actividades de agilidad tanto física como mental.", "Elabora objetos utilitarios escogidos libremente.", "Se esfuerza por aprender habilidades que requiere en excursiones y acantonamientos.", "Identifica elementos propios del lugar donde realiza las excursiones.", "Identifica las destrezas que ha adquirido.", "Disfruta de sus actividades.", "Desarrolla acciones de higiene personal sin que se le solicite.", "Cumple con una rutina de limpieza, después de jugar.", "Asume la limpieza y el orden de áreas comunes en su casa."], "E2": ["Elabora y lleva a cabo un cronograma de trabajo ante una tarea a ejecutar.", "Se asegura de mantener en buenas condiciones el lugar donde ha realizado actividades.", "Interviene en definir qué hacer y cuándo hacerlo, para aprender junto a otros.", "Utiliza diversas formas para lograr el descanso con la aprobación familiar.", "Utiliza sus cinco sentidos en su relación con su familia y escuela.", "Cumple las actividades que se le asignan, en el tiempo señalado, con la ayuda de otros.", "Participa espontáneamente en actividades que requieren sus capacidades.", "Participa en actividades que le enseñen a mejorar la calidad de vida.", "Practica actividades individuales y en grupo, de carácter físico y mental.", "Integra su creatividad mental y su destreza física para provecho de su entorno.", "Se integra a actividades efectuadas en ambiente natural y ayuda a otros.", "Aprende y disfruta de su relación con el medio natural, sin destruirlo.", "Describe cabalmente diferentes partes de su cuerpo y cómo le permiten disfrutar la vida.", "Utiliza su cuerpo y su mente de forma que se siente satisfecho consigo mismo.", "Cumple diariamente con acciones para mantenerse limpio.", "Mantiene limpio y en orden su espacio físico, según lo solicitado."] }, "Creatividad": { "E1": ["Divulga a otros pasajes de su vida familiar.", "Se esfuerza por no desperdiciar los materiales que utiliza.", "Relata una vivencia, exponiendo los hechos en secuencia.", "Participa en la invención colectiva de actividades para la Manada.", "Participa en la discusión de cómo mejorar una actividad ya efectuada.", "Utiliza la creación a través de la mano para dar a conocer sus sentimientos.", "Contribuye con otros en el orden y limpieza del local de la unidad.", "Elabora un dibujo donde refleja su comunidad local.", "Crea objetos que demuestran su interés en que no se maltrate el entorno.", "Participa con gusto en actividades con sus iguales de otras Unidades.", "Representa su comprensión de fechas importantes.", "Acompaña de buena gana a sus padres cuando van a eventos de otras organizaciones.", "Expresa gráficamente cómo debe vivir el hombre en su medio ambiente.", "Se esfuerza por mejorar su labor en su casa."], "E2": ["Crea historietas para explicar cómo resolver situaciones de su comunidad.", "Describe manifestaciones culturales del país y sus protagonistas.", "Utiliza la representación gráfica para mostrar la labor que cumple en su casa.", "Amplía las ideas de otros, complementándolas con las suyas.", "Elabora objetos de su invención, para decorar su cuarto.", "Aprovecha actividades fuera de casa para conocer la geografía, la gente y el medio natural.", "Obtiene insignias libremente escogidas y apoyado por sinodales de la comunidad.", "Recurre a la verbalización para dar a conocer sus ideas sobre cómo resolver un problema.", "Asume tareas específicas en la decoración y limpieza de su hogar.", "Estudia su entorno cuando realiza actividades en ambientes naturales, sin modificarlos.", "Se integra a equipos de acción de su escuela.", "Ayuda a los más jóvenes a prepararse para trabajar en el mantenimiento del local.", "Entiende por qué se deben botar los desperdicios en lugares destinados a ello.", "Se mantiene activo e integrado cuando acude a actividades de otras organizaciones.", "Describe cambios que ha visto en su barrio que son buenos para su familia.", "Prepara ciertos alimentos para su familia."] }, "Carácter": { "E1": ["Identifica cuando una conducta está de acuerdo con los valores Scouts.", "Escoge el momento en que desea pasar las pruebas en la Manada.", "Explica a los más nuevos qué quiere decir la Ley de la Manada.", "Explica la Ley y la Promesa refiriéndose a conductas válidas en la sociedad.", "Ofrece a sus padres su ayuda para las tareas derivadas de la vida familiar.", "Acepta las normas impuestas por los adultos para mejorar la calidad de vida.", "Sigue las sugerencias de sus mayores para mejorar su conducta.", "Informa a sus mayores cómo va a realizar una tarea que se le asigna.", "Informa a los adultos scouts las pruebas y especialidades que quiere aprender.", "Describe qué le gusta más de lo que hace y explica su utilidad.", "Lista lo que le gusta y lo que no le gusta de sus resultados.", "Escucha a sus mayores cuando le dicen que debe hacer mejor alguna cosa.", "Hace dibujos de su familia y se expone a sí mismo como parte de ella.", "Participa con ideas cuando se analiza la conducta de los miembros de su Unidad.", "Pide participar en actividades nuevas.", "Obedece las normas en juegos y vida al aire libre."], "E2": ["Demuestra que aplica los valores Scouts en sus actividades con su familia.", "Describe con propiedad las instituciones de su comunidad con las que está vinculado.", "Da reconocimiento a sus pares cuando otro niño se destaca ejecutando acciones diferentes.", "Opina sobre su conducta ante normativas escolares y familiares.", "Determina el conocimiento y las habilidades con las cuales quiere pasar a la siguiente Unidad.", "Elabora un conjunto de normas para hacer bien sus tareas.", "Identifica un error y trabaja para corregirlo.", "Da a conocer cuando ha terminado una tarea, para que otros aprendan cómo hacerlo.", "Participa en la toma de decisiones para definir las habilidades que quiere aprender.", "Ofrece su ayuda en las actividades que realiza con habilidad.", "Reconoce a sus pares cuando estos se destacan actuando con valores scouts.", "Enuncia una cosa que desea hacer mejor y solicita ayuda para ello.", "Manifiesta su alegría cuando es llamado a colaborar.", "Asume una tarea de orden dentro de su casa, y la cumple a cabalidad.", "Se plantea lo que desea hacer cuando se integra a un grupo de iguales.", "Repite las tareas hasta que está satisfecho con su logro.", "Participa en actos públicos donde demuestra lo que sabe hacer bien."] }, "Afectividad": { "E1": ["Se observa a sí mismo y comprende que es único.", "Realiza actividades de diversión cuidando no dañar animales y plantas.", "Le interesa conocer a otros.", "Plantea sus ideas francamente.", "Comparte con niños y niñas de su edad en un ambiente de amistad.", "Comparte con alegría el afecto de sus padres y hermanos.", "Comparte sus éxitos con su familia y acepta sus fracasos como parte del crecimiento.", "Ejerce su capacidad de cambio a la vez que se siente tranquilo.", "Describe cómo le gustaría fuera su escuela, para aprender mejor.", "Explica cómo se puede mantener la belleza de la naturaleza."], "E2": ["Se quiere a sí mismo y descubre su propia capacidad para relacionarse con otros.", "Elabora objetos que expresan sentimientos positivos ante el país.", "Se relaciona con otras personas francamente (sin manipular).", "Muestra afecto a los demás sin dejar de apreciarse a sí mismo.", "Disfruta actividades con niños y niñas de su edad, en un ambiente social.", "Participa en la vida familiar demostrando amor por cada uno.", "Comparte con sus hermanos actividades y objetos, siendo cuidadoso.", "Describe las costumbres de grupos indígenas del país, de partes lejanas.", "Expresa sus sentimientos libremente.", "Expresa sus pensamientos y acepta nuevas ideas.", "Conversa con sus familiares para saber qué piensan de su labor en la casa.", "Cuida animales y plantas a su alcance."] }, "Sociabilidad": { "E1": ["Muestra respeto por el país y las personas que en él habitan.", "Conversa con sus padres sobre las normas que se le piden cumpla.", "Aplica la Ley de la Manada en su vida diaria.", "Reconoce los platos típicos de diferentes partes del país.", "Cuida el uso del material, de acuerdo con lo que se le pide.", "Explica a otros cómo mejorar el medio ambiente de su comunidad.", "Se acerca a nuevos miembros de su Unidad y salón para entablar amistad.", "Expresa oralmente consejos que daría a un familiar para un buen trabajo.", "Contribuye al mantenimiento del equipo de la Unidad.", "Muestra un comportamiento adecuado al viajar en transporte público.", "Obedece las instrucciones que le son dadas.", "Identifica las normas que debe cumplir para vivir en su barrio, edificio, calle.", "Cumple con las tareas que se le asignan.", "Rehace de buen grado el trabajo cuando se le orienta a mejorar.", "Expresa ante varias personas lo que deduce de su observación sobre las tareas de un artesano.", "Conoce a miembros de su comunidad que son originarios de otros países.", "Comprende la importancia de la paz entre los pueblos.", "Obedece las órdenes de sus padres y maestros.", "Apoya a la Unidad en su trabajo, para el mantenimiento de local y equipo.", "Demuestra amistad a los miembros de otros grupos Scouts.", "Participa en actos conmemorativos patrios.", "Discute con sus iguales en qué contribuyen al bienestar de las personas.", "Acepta las normas de su casa, escuela y su Unidad."], "E2": ["Comprende las razones de las normas que debe cumplir.", "Comparte con otros miembros expresiones de cultura de otros países.", "Aplica las normas de conducta.", "Aplica en las actividades lo aprendido para hacer buen uso de los equipos.", "Se acerca a personas de la sociedad que contribuyen al bienestar colectivo.", "Se acerca a niños de su edad, para realizar juegos y actividades.", "Conversa con sus padres sobre la importancia de cuidar las áreas verdes.", "Cuida los materiales que le entrega el Grupo, para hacer actividades.", "Ayuda a personas no conocidas al hacer uso del transporte público.", "Se interesa en adquirir habilidades de acuerdo a su edad e intereses.", "Pregunta a sus padres y maestros cómo se efectúan las tareas asignadas.", "Observa con cuidado las normas que le son dadas cuando se le asigna una tarea.", "Se esfuerza por mejorar sus tiempos y cantidad de trabajo.", "Utiliza los símbolos de la hermandad mundial y conoce su significado.", "Reconoce a figuras de otros países que han hecho aportes a Venezuela.", "Disfruta de compartir con personas de otras latitudes.", "Reconoce en los adultos la experiencia que tienen.", "Participa a gusto en actividades con sus iguales de otras unidades.", "Expresa cómo su familia y él conviven en armonía con la naturaleza.", "Propone a su familia adoptar normas que le han dado resultado en otros medios."] }, "Espiritualidad": { "E1": ["Acepta el derecho de los demás a tener diferentes intereses.", "Reconoce los símbolos Patrios y les rinde honores.", "En juegos y representaciones comparte con todos sin distingo.", "Inventa relatos sobre la amistad entre el hombre y la naturaleza.", "Le interesa conocer la vida en la naturaleza.", "Se esfuerza por hacer bien las cosas.", "Explica cómo hacer feliz a Dios.", "Reconoce las obligaciones que le impone su Fe y su Iglesia.", "Conoce sus orígenes y las tradiciones de la familia."], "E2": ["Se integra a diferentes grupos humanos conociendo los gustos de sus miembros.", "Ejemplifica la importancia de mantener el equilibrio ecológico entre los seres vivos.", "Da algunas ideas de cómo se puede hacer para restituir la vida en algún lugar.", "Se muestra contento al participar en actividades con iguales de otras instituciones.", "Practica en su grupo de pares la igualdad de derechos y deberes.", "Busca dentro de sí las razones para su conducta y se esfuerza por cumplir lo mejor.", "Cuida a animales o plantas para que crezcan sanos.", "Vive en armonía con sus vecinos, se preocupa por ellos.", "Descubre cualidades en otras personas.", "Cumple los deberes que se derivan de su Fe y respeta la de los demás.", "Participa en actividades con personas de otro género para observar sus características."] } }, "tropa": { "Corporalidad": { "E3": ["Elabora junto a los otros, el cronograma de trabajo del Consejo de Patrulla y vigila su cumplimiento.", "Programa junto a sus padres el uso de su tiempo libre.", "Utiliza la conversación con otros como medio para descansar.", "Determina la alimentación que requiere según su edad y actividad.", "Elabora su horario de actividades, dando especial atención a las que contribuyen a su desarrollo.", "Explica los cambios orgánicos que observa en quienes son mayores que él o ella.", "Identifica los cambios que suceden en su organismo producto de su desarrollo, y las diferencias con los de otro sexo.", "Invierte por lo menos 8 horas de sueño para descansar.", "Realiza actividades fuertes sin excederse.", "Se vincula a grupos para realizar las actividades de su interés.", "Cumple un horario de estudios que le permite cumplir con lo que se le pide.", "Se prepara en la ciudad para los eventos al aire libre.", "Enseña a otros sus habilidades para vivir al aire libre.", "Mantiene orden y limpieza en el campamento.", "Se plantea cómo quiere ser y actúa para lograrlo.", "Participa junto a sus mayores en la elaboración de la lista de alimentos y en la compra de los mismos.", "Describe lo que quiere lograr en la vida y cómo lo está logrando.", "Periódicamente, limpia a profundidad su cuarto y otras áreas de su casa.", "Incluye en sus actividades diarias la limpieza y el orden de sus objetos.", "Participa en actividades de la Unidad para restituir el orden y la limpieza de los locales que utiliza."], "E4": ["Ejecuta un programa de sus actividades de una semana, para cumplir con los diferentes roles que ejerce (familia, scouts, estudios / trabajo).", "Participa activamente en la decisión de cómo invertir su tiempo.", "Compagina las formas de descanso que le gustan con las obligaciones que le son propias.", "Razona cuales actividades son perjudiciales para su desarrollo social.", "Expresa su sexualidad en actividades sociales de forma de mantener buena autoestima y respetando la individualidad de quienes le rodean.", "Comprende los riesgos físicos y emocionales de una conducta sin autocontrol.", "Comprende como sus actividades afectan su desarrollo, y escoge las que les permitan preservar su organismo.", "Distribuye su tiempo entre actividades físicas y mentales, entre acción y pasividad, entre la soledad y el compartir.", "Acude con frecuencia al aire libre para efectuar actividades deportivas o recreativas y disfruta su relación con el medio natural.", "Aprovecha los recursos del aire libre y sus capacidades y evita utilizar los del medio urbano.", "Comprende cómo su accionar afecta el medio, se esfuerza por mejorarlo.", "Comprende lo perfecto de su persona y agradece a Dios por sus posibilidades y potencialidades.", "Identifica las actividades que son cónsonas con la imagen que desea de sí y las lleva a cabo.", "Se involucra en su comunidad para mejorarla.", "Ejecuta acciones para lograr beneplácito e higiene a través del baño y el orden.", "Manifiesta en su accionar su preocupación por cuidar objetos y espacios."] }, "Creatividad": { "E3": ["Resuelve problemas de ingenio.", "Aporta ideas propias a las actividades de Patrulla, razonando su escogencia.", "Crea objetos que son útiles en la vida al aire libre, para tener bienestar.", "Elabora reportes sobre sus aprendizajes sobre la conservación del entorno y los da a conocer a otros.", "Realiza actividades con sus iguales, para conocer nuevos lugares y explorarlos.", "Utiliza medios no verbales para divulgar su punto de vista.", "Contribuye con otros en la mejora de su habitación y hogar.", "Asume nuevas tareas en su patrulla una vez que domina y ejerce con propiedad las anteriores.", "Trabaja solo y en Patrulla para adquirir habilidades y conocimientos nuevos.", "Diseña actividades para acercarse a otras nacionalidades y las disfruta.", "Comparte con otros miembros de su Patrulla una labor determinada.", "Participa activamente en el Consejo de Patrulla asumiendo una tarea concreta.", "Escoge su participación en un servicio, tomando en cuenta sus intereses y los demás miembros de la Patrulla."], "E4": ["Participa en la solución de problemas y tareas buscando vías nuevas en cada ocasión.", "Promueve y participa en visitas a centros de trabajo junto con sus iguales.", "Recopila y/o utiliza bienes de servicios relacionados con su interés laboral y determina ventajas y desventajas observadas.", "Resume los puntos que considera importantes de una charla o visita y expresa por qué los escogió.", "Aprovecha ideas de otros para crear nuevas soluciones a situaciones de rutina.", "Elabora un listado de normas que deben regir la producción de un bien o servicio.", "Expone verbalmente a sus iguales, cómo se siente ante situaciones novedosas.", "Organiza en su Patrulla un proyecto de mejora del medio ambiente y lo lleva a cabo.", "Prepara el ambiente de reuniones, de forma que los asistentes lo perciban grato.", "Describe con propiedad los aportes de Venezuela a la comunidad internacional de hoy.", "Contribuye a la mejora de su hogar a través de reparación de algo específico.", "Comparte con miembros de otras Tropas, un servicio.", "Participa en labores nuevas que le reportan aprendizaje de nuevos conocimientos y destrezas.", "Busca información sobre los orígenes de la nación moderna, e interpreta la interdependencia de los hechos.", "Informa a sus mayores los logros en sus tareas del equipo.", "Participa en eventos fuera de su Unidad, y comparte con personas diferentes a las habituales.", "Se informa de los cambios positivos que se observan en su comunidad.", "Se encarga de ciertos trabajos de mantenimiento, bajo guía de un conocedor.", "Promueve en la Tropa la ejecución de actividades fuera de lo urbano, a lugares no conocidos."] }, "Carácter": { "E3": ["Demuestra en sus actos lealtad y veracidad.", "Asume una tarea específica en su Patrulla y la lleva a cabo en forma constante y cada vez mejor.", "Acepta las decisiones de la Patrulla cuando están de acuerdo con los valores Scouts.", "Razona sus respuestas.", "Elabora un horario para adquirir habilidades y lo lleva a cabo junto con otros miembros de la Unidad.", "Solicita a sus mayores, opinión sobre sus logros y medios para perfeccionarlas.", "Se propone alcanzar algo definiendo cuan bien lo quiere hacer.", "Toma decisiones para mejorar una tarea que ha realizado.", "Asume funciones para las cuales se ha preparado.", "Evita comprometerse con responsabilidades para las cuales no posee las habilidades necesarias.", "Acepta los comentarios positivos que los demás hagan de sí, de una manera constructiva.", "Identifica tanto las cosas buenas que ha hecho, como las que debe mejorar.", "Mantiene al día el control de su progreso personal, en aquello que le gusta."], "E4": ["Explica con ejemplos la importancia de vivir de acuerdo con la Ley y la Promesa, y los utiliza en su vida cotidiana.", "Reconoce el valor de la heterogeneidad de los miembros de la patrulla.", "Aplica los valores Scouts cuando determina las normas que deben regir a la Patrulla.", "Evalúa sus acciones en relación con las normas que ha ayudado a definir.", "Se plantea nuevas formas de vida para su vida adulta y se prepara para ella.", "Vigila el correcto uso y mantenimiento de los aparatos eléctricos del hogar, para ahorro de energía.", "Identifica un defecto en su forma de ser y planifica como corregirlo.", "Emprende una tarea y consulta cómo puede hacerla mejor que en el pasado.", "Colabora con otros para que dominen una tarea que sabe hacer bien.", "Acepta las observaciones de oro cuando se le pide mejorar su desempeño.", "Se muestra satisfecho cuando hace un esfuerzo por actuar bien, sin importar el resultado.", "Describe todos los logros que ha alcanzado hasta este momento de su vida y cuales quiere alcanzar.", "Se prepara con ahínco y acepta los resultados como expresión de su mejor esfuerzo."] }, "Afectividad": { "E3": ["Identifica los cambios en su desarrollo sexual y los acepta con tranquilidad.", "Se involucra en proyectos conservacionistas organizados por la Unidad.", "Acepta su realidad y es feliz en ella.", "Se acerca a los demás sin temor a ideas nuevas y sin timidez.", "Descubre que el amor es la base de las relaciones humanas y centro de su felicidad.", "Acepta la autoridad de sus padres basada en su experiencia y en el amor.", "Comprende que su futuro está fuera de su casa actual y con el amor de los suyos.", "Piensa independientemente.", "Lee para buscar su desarrollo personal.", "Diseña actividades con sus iguales para preservar la naturaleza.", "Practica expresiones de afecto."], "E4": ["Explica su desarrollo sexual, así como el de otro sexo.", "Colabora en la preservación de espacios para la vida natural.", "Acepta y comprende el punto de vista y la verdad de los demás.", "Expresa su visión del mundo y la acepta como propia.", "Participa en actividades que pretenden la felicidad ajena, entendiendo en ellas un acto de amor.", "Manifiesta alegría por los logros de sus familiares.", "Acude a sus padres y hermanos mayores en busca de respuestas a sus inquietudes.", "Obedece con disciplina y razonadamente.", "Escoge lo que quiere leer.", "Expresa satisfacción por los nuevos conocimientos y habilidades adquiridas.", "Expresa amor sin imponer condiciones apoyado en la pareja.", "Vela por el cumplimiento de normas y costumbres del país, dentro de su unidad.", "Conversa con sus padres y profesores o tutores los intereses del momento y su visión de su futuro."] }, "Sociabilidad": { "E3": ["Solicita la ayuda de personas ajenas al Grupo para aprender habilidades que requieran a un experto.", "Ayuda a la patrulla a evaluar cómo es la conducta de sus integrantes y propone correctivos.", "Hace esfuerzos por ser ejemplo de la conducta que se acuerde en su equipo de iguales.", "Comparte con sus iguales las vivencias en otras partes del país.", "Pone en práctica lo que aprende para hacer buen uso de los materiales que utiliza en su casa y en la escuela.", "Acude a sus mayores cuando considera que se ha violado un derecho de alguien cercano.", "Comparte con otros jóvenes de su edad, en forma grata, aún sin ser amigos.", "Junto con sus iguales adopta el cuidado de un ser vivo de su comunidad.", "Identifica lo que la sociedad le da para su beneficio.", "Identifica por lo menos una labor productiva de su interés e investiga oportunidades en su entorno.", "Utiliza con cuidado los recursos del medio que debe utilizar en su escuela.", "Hace buen uso de las áreas comunes y de los parques públicos.", "Acepta la dirección de personas más experimentadas, cuando asume tareas nuevas.", "Conoce sus habilidades y las que quisiera tener.", "Identifica cuales tareas puede asumir con mínima preparación sin que se corran riesgos.", "Se fija niveles de excelencia al aprender nuevas destrezas.", "Promueve la participación de su Patrulla en las actividades Institucionales.", "Conoce el aporte de figuras venezolanas a otros países del continente.", "Respeta las opiniones diferentes a la suya y busca puntos de encuentro.", "Asume las tareas y deberes que se derivan de su vinculación a la Patrulla.", "Participa en actividades destinadas a mejorar el entorno, con Patrullas de otros Grupos.", "Identifica normas concretas de convivencia con animales y plantas que no están en cautiverio.", "Reconoce las manifestaciones culturales de su región, en aspectos como canto, danza, artesanía.", "Practica algunas manifestaciones de cultura de su región.", "Explica normas o costumbres del país, que identifican a sus habitantes.", "Propone y discute con su Patrulla las normas que deben regir sus tareas dentro de ella.", "Se prepara junto a su Patrulla para participar en actividades conservacionistas.", "Cumple las normas básicas para la convivencia armónica con su medio social."], "E4": ["Integra a sus actividades Scouts recursos provenientes de la comunidad, sin perjuicio de ésta.", "Se interesa por comprender como se cumplen las normas en la comunidad donde vive, y busca el origen de su vigencia actual.", "Se preocupa por mejorar su vivencia de los valores éticos.", "Utiliza los recursos disponibles en el lugar del campamento, impactando lo menos posible el ambiente.", "Adquiere conocimientos para hacer buen uso de los recursos necesarios para lograr bienestar.", "Valora positivamente los esfuerzos que se hagan en el país, para su mejora.", "Asiste a eventos en su comunidad para conocer mejor su país.", "Se relaciona con integrantes de otras organizaciones para conocer su labor.", "Reconoce las instituciones de servicio de su comunidad y el papel que deben jugar.", "Comprende al aporte de Venezuela al desarrollo de otros países.", "Reconoce los recursos de su comunidad local y como puede acceder a ellos.", "Orienta a sus iguales para utilizar adecuadamente las instalaciones de uso comunitario.", "Participa activamente en proyectos elaborados por los más experimentados, y para los cuales puede dar aportes positivos.", "Asume tareas concretas cuando está seguro de que tiene suficiente preparación.", "Busca conocer las habilidades y conocimientos para asumir tareas que son delicadas o que solo pueden hacerse previa preparación personal.", "Se involucra con nuevas tareas cuando domina las que puede realizar en un momento determinado.", "Se interesa por conocer las características del Escultismo en otras latitudes.", "Estudia la realidad de otros pueblos.", "Defiende la libre expresión de los hombres.", "Plantea a sus padres y Adultos scouts sus opiniones, acatando las instrucciones que le son dadas.", "Aplica en su casa actitudes, habilidades y conocimientos desarrolladas en los Scouts.", "Identifica cuales acciones conservacionistas deben realizarse para mejorar su localidad.", "Participa en proyectos desarrollo comunitario de carácter interinstitucional.", "Promueve en la Unidad actividades de educación de la comunidad en el cuido del medio ambiente.", "Contribuye en el establecimiento de reglas y normas de los grupos a los cuales pertenece."] }, "Espiritualidad": { "E3": ["Se alegra de formar parte de un grupo y se comporta con camaradería.", "Explica como su comportamiento conservacionista lo ayuda a mejorar la calidad de vida de su familia.", "Acepta que cada persona es única, identifica las virtudes de cada quien.", "Demuestra por qué un medio ambiente perdió las condiciones para albergar vida.", "Demuestra que se esfuerza por dar un paso más, por acercarse a quienes no se le acercan.", "Participa en el Consejo de Patrulla, llegando a acuerdos sobre cómo conducirse.", "Hace de su medio un lugar que refleje la obra de Dios.", "Cumple con sus responsabilidades en la Patrulla, para que los demás sean felices.", "Reconoce en su medio a personajes que se entregan al servicio de los demás, e identifica sus cualidades.", "Comprende la importancia del respeto por la Vida.", "Compara sus principios religiosos con los Valores Scouts.", "Comprende las conmemoraciones de fechas patrias, al conocer las razones y logros del evento.", "Se esfuerza en mejorar sus habilidades.", "Tiene una visión positiva del país y con gran potencial."], "E4": ["Establece comunicación con las personas más diversas con franca confianza en sí mismo y en sus ideas.", "Conoce las virtudes de diferentes razas, credos y clases sociales, aceptándolas en su realidad.", "Investiga la opinión de otros y relata las conclusiones, aun cuando difieran de las suyas.", "Realiza junto a su Unidad las acciones necesarias para restituir las condiciones de vida de un lugar.", "Protege el medio para que perdure por la eternidad.", "Participa en celebraciones de tradición en su casa y en las de sus amigos.", "Busca el avance propio y el avance de quienes le rodean, a través de valores que mejoran la calidad de vida.", "Se inspira en Dios para asumir su papel en la sociedad.", "Analiza la importancia de que el hombre viva en armonía con la naturaleza.", "Participa en actividades donde refleja su apego a la Vida.", "Participa en proyectos que le permitan mejorar la calidad de convivencia con el medio ambiente.", "Expresa abiertamente su Credo de manera cotidiana según las costumbres de su Iglesia y respetando a quienes tengan otra religión."] } } };
-    const ODS_LIST = [{ "num": 1, "nombre": "Fin de la pobreza", "color": "#E5243B" }, { "num": 2, "nombre": "Hambre cero", "color": "#DDA63A" }, { "num": 3, "nombre": "Salud y bienestar", "color": "#4C9F38" }, { "num": 4, "nombre": "Educación de calidad", "color": "#C5192D" }, { "num": 5, "nombre": "Igualdad de género", "color": "#FF3A21" }, { "num": 6, "nombre": "Agua limpia y saneamiento", "color": "#26BDE2" }, { "num": 7, "nombre": "Energía asequible y no contaminante", "color": "#FCC30B" }, { "num": 8, "nombre": "Trabajo decente y crecimiento económico", "color": "#A21942" }, { "num": 9, "nombre": "Industria, innovación e infraestructura", "color": "#FD6925" }, { "num": 10, "nombre": "Reducción de las desigualdades", "color": "#DD1367" }, { "num": 11, "nombre": "Ciudades y comunidades sostenibles", "color": "#FD9D24" }, { "num": 12, "nombre": "Producción y consumo responsables", "color": "#BF8B2E" }, { "num": 13, "nombre": "Acción por el clima", "color": "#3F7E44" }, { "num": 14, "nombre": "Vida submarina", "color": "#0A97D9" }, { "num": 15, "nombre": "Vida de ecosistemas terrestres", "color": "#56C02B" }, { "num": 16, "nombre": "Paz, justicia e instituciones sólidas", "color": "#00689D" }, { "num": 17, "nombre": "Alianzas para lograr los objetivos", "color": "#19486A" }];
-    const AREA_CLS = {
-      'Corporalidad': 'a-corp', 'Creatividad': 'a-crea', 'Carácter': 'a-cara',
-      'Afectividad': 'a-afec', 'Sociabilidad': 'a-soci', 'Espiritualidad': 'a-espi'
-    };
+    <div class="overlay" id="mProg">
+      <div class="modal">
+        <div class="modal-h">
+          <div class="modal-title">➕ Agregar momento al programa</div><button class="modal-x"
+            onclick="closeM('mProg')">✕</button>
+        </div>
+        <div class="frow">
+          <div class="fg"><label class="fl">Hora <span style="font-weight:400;opacity:.6">(vacío =
+                automático)</span></label><input type="text" class="fi" id="p-hora"
+              placeholder="Ej: 10:30 — déjalo vacío para calcular solo"></div>
+          <div class="fg"><label class="fl">Duración</label><input type="text" class="fi" id="p-dur"
+              placeholder="30 min / 1h / 1h 30min"></div>
+        </div>
+        <div id="p-day-group" style="display:none">
+          <div class="fg"><label class="fl">Día (para multi-día)</label>
+            <select class="fs" id="p-day"></select>
+          </div>
+        </div>
+        <div class="fg"><label class="fl">Actividad</label><input type="text" class="fi" id="p-act"></div>
+        <div class="fg"><label class="fl">Descripción</label><textarea class="fta" id="p-desc"></textarea></div>
+        <div class="frow">
+          <div class="fg"><label class="fl">Materiales</label><input type="text" class="fi" id="p-mat"></div>
+          <div class="fg"><label class="fl">Responsable</label><input type="text" class="fi" id="p-resp"
+              placeholder="Akela"></div>
+        </div>
+        <div class="mf"><button class="btn btn-g" onclick="closeM('mProg')">Cancelar</button><button class="btn btn-y"
+            onclick="addProgRow()">Agregar</button></div>
+      </div>
+    </div>
 
-    /* ─── ESTADO ─── */
-    let editMode = false, customLogos = {}, odsActivos = new Set(),
-      progRows = [], indRows = [], ramaActual = 'manada';
-    let fechaIni = null, fechaFin = null, horaIniDia1 = '10:00', horaCierreUltimo = '13:00';
+    <div class="overlay" id="mReset">
+      <div class="modal" style="max-width:440px">
+        <div class="modal-h">
+          <div class="modal-title" style="color:#B40D15">🗑️ Restablecer plantilla</div><button class="modal-x"
+            onclick="closeM('mReset')">✕</button>
+        </div>
+        <p style="font-size:10.5px;color:#555;margin-bottom:10px">Borrará todos los campos. <strong>Indicadores cargados
+            y
+            logos se conservan.</strong></p>
+        <div class="reset-opts">
+          <label class="reset-opt"><input type="checkbox" id="rst-html" checked>
+            <div class="reset-opt-text"><strong>💾 Descargar HTML</strong><span>Guarda antes de limpiar.</span></div>
+          </label>
+          <label class="reset-opt"><input type="checkbox" id="rst-pdf">
+            <div class="reset-opt-text"><strong>📄 Abrir PDF</strong><span>Abre ventana de impresión.</span></div>
+          </label>
+        </div>
+        <div class="reset-warn">⚠️ Irreversible. Solo borra el localStorage de la ficha.</div>
+        <div class="mf"><button class="btn btn-g" onclick="closeM('mReset')">Cancelar</button><button class="btn btn-r"
+            onclick="doReset()">Sí, restablecer</button></div>
+      </div>
+    </div>
 
-    /* ─── INIT ─── */
-    document.addEventListener('DOMContentLoaded', () => {
-      loadStorage(); renderODS(); renderProg(); renderInd(); syncSec(); initDrag(); scalePages(); loadExtraPages();
-    });
+    <script>
+      /* ─── DATOS EMBEBIDOS ─── */
+      const RAMA_LOGOS = {
+        manada: 'images/rama-manada.jpg',
+        tropa: 'images/rama-tropa.jpg',
+        comunidad: 'images/rama-comunidad.jpg',
+        clan: 'images/rama-clan.jpg'
+      };
+      const LOGO_GRUPO_DEF = 'images/logo-grupo-def.png';
+      const LOGO_FLOR = 'images/logo-flor.png';
+      let INDICADORES = { "manada": { "Corporalidad": { "E1": ["Cumple las tareas en la oportunidad en que se le pide.", "Define para cuál fecha desea tener una insignia y trabaja para obtenerla.", "Usa la lectura como mecanismo para el descanso.", "Describe las diferencias que observa entre su organismo y el de otros.", "Pide a familiares y adultos Scouts la ayuda que requiere para adquirir habilidades y las practica.", "Mantiene en su casa la clasificación de ciertos desperdicios sólidos.", "Se da cuenta de los cambios en su organismo cuando hace un esfuerzo.", "Elabora un horario para sus actividades diarias en época de estudios.", "Disfruta las actividades de agilidad tanto física como mental.", "Elabora objetos utilitarios escogidos libremente.", "Se esfuerza por aprender habilidades que requiere en excursiones y acantonamientos.", "Identifica elementos propios del lugar donde realiza las excursiones.", "Identifica las destrezas que ha adquirido.", "Disfruta de sus actividades.", "Desarrolla acciones de higiene personal sin que se le solicite.", "Cumple con una rutina de limpieza, después de jugar.", "Asume la limpieza y el orden de áreas comunes en su casa."], "E2": ["Elabora y lleva a cabo un cronograma de trabajo ante una tarea a ejecutar.", "Se asegura de mantener en buenas condiciones el lugar donde ha realizado actividades.", "Interviene en definir qué hacer y cuándo hacerlo, para aprender junto a otros.", "Utiliza diversas formas para lograr el descanso con la aprobación familiar.", "Utiliza sus cinco sentidos en su relación con su familia y escuela.", "Cumple las actividades que se le asignan, en el tiempo señalado, con la ayuda de otros.", "Participa espontáneamente en actividades que requieren sus capacidades.", "Participa en actividades que le enseñen a mejorar la calidad de vida.", "Practica actividades individuales y en grupo, de carácter físico y mental.", "Integra su creatividad mental y su destreza física para provecho de su entorno.", "Se integra a actividades efectuadas en ambiente natural y ayuda a otros.", "Aprende y disfruta de su relación con el medio natural, sin destruirlo.", "Describe cabalmente diferentes partes de su cuerpo y cómo le permiten disfrutar la vida.", "Utiliza su cuerpo y su mente de forma que se siente satisfecho consigo mismo.", "Cumple diariamente con acciones para mantenerse limpio.", "Mantiene limpio y en orden su espacio físico, según lo solicitado."] }, "Creatividad": { "E1": ["Divulga a otros pasajes de su vida familiar.", "Se esfuerza por no desperdiciar los materiales que utiliza.", "Relata una vivencia, exponiendo los hechos en secuencia.", "Participa en la invención colectiva de actividades para la Manada.", "Participa en la discusión de cómo mejorar una actividad ya efectuada.", "Utiliza la creación a través de la mano para dar a conocer sus sentimientos.", "Contribuye con otros en el orden y limpieza del local de la unidad.", "Elabora un dibujo donde refleja su comunidad local.", "Crea objetos que demuestran su interés en que no se maltrate el entorno.", "Participa con gusto en actividades con sus iguales de otras Unidades.", "Representa su comprensión de fechas importantes.", "Acompaña de buena gana a sus padres cuando van a eventos de otras organizaciones.", "Expresa gráficamente cómo debe vivir el hombre en su medio ambiente.", "Se esfuerza por mejorar su labor en su casa."], "E2": ["Crea historietas para explicar cómo resolver situaciones de su comunidad.", "Describe manifestaciones culturales del país y sus protagonistas.", "Utiliza la representación gráfica para mostrar la labor que cumple en su casa.", "Amplía las ideas de otros, complementándolas con las suyas.", "Elabora objetos de su invención, para decorar su cuarto.", "Aprovecha actividades fuera de casa para conocer la geografía, la gente y el medio natural.", "Obtiene insignias libremente escogidas y apoyado por sinodales de la comunidad.", "Recurre a la verbalización para dar a conocer sus ideas sobre cómo resolver un problema.", "Asume tareas específicas en la decoración y limpieza de su hogar.", "Estudia su entorno cuando realiza actividades en ambientes naturales, sin modificarlos.", "Se integra a equipos de acción de su escuela.", "Ayuda a los más jóvenes a prepararse para trabajar en el mantenimiento del local.", "Entiende por qué se deben botar los desperdicios en lugares destinados a ello.", "Se mantiene activo e integrado cuando acude a actividades de otras organizaciones.", "Describe cambios que ha visto en su barrio que son buenos para su familia.", "Prepara ciertos alimentos para su familia."] }, "Carácter": { "E1": ["Identifica cuando una conducta está de acuerdo con los valores Scouts.", "Escoge el momento en que desea pasar las pruebas en la Manada.", "Explica a los más nuevos qué quiere decir la Ley de la Manada.", "Explica la Ley y la Promesa refiriéndose a conductas válidas en la sociedad.", "Ofrece a sus padres su ayuda para las tareas derivadas de la vida familiar.", "Acepta las normas impuestas por los adultos para mejorar la calidad de vida.", "Sigue las sugerencias de sus mayores para mejorar su conducta.", "Informa a sus mayores cómo va a realizar una tarea que se le asigna.", "Informa a los adultos scouts las pruebas y especialidades que quiere aprender.", "Describe qué le gusta más de lo que hace y explica su utilidad.", "Lista lo que le gusta y lo que no le gusta de sus resultados.", "Escucha a sus mayores cuando le dicen que debe hacer mejor alguna cosa.", "Hace dibujos de su familia y se expone a sí mismo como parte de ella.", "Participa con ideas cuando se analiza la conducta de los miembros de su Unidad.", "Pide participar en actividades nuevas.", "Obedece las normas en juegos y vida al aire libre."], "E2": ["Demuestra que aplica los valores Scouts en sus actividades con su familia.", "Describe con propiedad las instituciones de su comunidad con las que está vinculado.", "Da reconocimiento a sus pares cuando otro niño se destaca ejecutando acciones diferentes.", "Opina sobre su conducta ante normativas escolares y familiares.", "Determina el conocimiento y las habilidades con las cuales quiere pasar a la siguiente Unidad.", "Elabora un conjunto de normas para hacer bien sus tareas.", "Identifica un error y trabaja para corregirlo.", "Da a conocer cuando ha terminado una tarea, para que otros aprendan cómo hacerlo.", "Participa en la toma de decisiones para definir las habilidades que quiere aprender.", "Ofrece su ayuda en las actividades que realiza con habilidad.", "Reconoce a sus pares cuando estos se destacan actuando con valores scouts.", "Enuncia una cosa que desea hacer mejor y solicita ayuda para ello.", "Manifiesta su alegría cuando es llamado a colaborar.", "Asume una tarea de orden dentro de su casa, y la cumple a cabalidad.", "Se plantea lo que desea hacer cuando se integra a un grupo de iguales.", "Repite las tareas hasta que está satisfecho con su logro.", "Participa en actos públicos donde demuestra lo que sabe hacer bien."] }, "Afectividad": { "E1": ["Se observa a sí mismo y comprende que es único.", "Realiza actividades de diversión cuidando no dañar animales y plantas.", "Le interesa conocer a otros.", "Plantea sus ideas francamente.", "Comparte con niños y niñas de su edad en un ambiente de amistad.", "Comparte con alegría el afecto de sus padres y hermanos.", "Comparte sus éxitos con su familia y acepta sus fracasos como parte del crecimiento.", "Ejerce su capacidad de cambio a la vez que se siente tranquilo.", "Describe cómo le gustaría fuera su escuela, para aprender mejor.", "Explica cómo se puede mantener la belleza de la naturaleza."], "E2": ["Se quiere a sí mismo y descubre su propia capacidad para relacionarse con otros.", "Elabora objetos que expresan sentimientos positivos ante el país.", "Se relaciona con otras personas francamente (sin manipular).", "Muestra afecto a los demás sin dejar de apreciarse a sí mismo.", "Disfruta actividades con niños y niñas de su edad, en un ambiente social.", "Participa en la vida familiar demostrando amor por cada uno.", "Comparte con sus hermanos actividades y objetos, siendo cuidadoso.", "Describe las costumbres de grupos indígenas del país, de partes lejanas.", "Expresa sus sentimientos libremente.", "Expresa sus pensamientos y acepta nuevas ideas.", "Conversa con sus familiares para saber qué piensan de su labor en la casa.", "Cuida animales y plantas a su alcance."] }, "Sociabilidad": { "E1": ["Muestra respeto por el país y las personas que en él habitan.", "Conversa con sus padres sobre las normas que se le piden cumpla.", "Aplica la Ley de la Manada en su vida diaria.", "Reconoce los platos típicos de diferentes partes del país.", "Cuida el uso del material, de acuerdo con lo que se le pide.", "Explica a otros cómo mejorar el medio ambiente de su comunidad.", "Se acerca a nuevos miembros de su Unidad y salón para entablar amistad.", "Expresa oralmente consejos que daría a un familiar para un buen trabajo.", "Contribuye al mantenimiento del equipo de la Unidad.", "Muestra un comportamiento adecuado al viajar en transporte público.", "Obedece las instrucciones que le son dadas.", "Identifica las normas que debe cumplir para vivir en su barrio, edificio, calle.", "Cumple con las tareas que se le asignan.", "Rehace de buen grado el trabajo cuando se le orienta a mejorar.", "Expresa ante varias personas lo que deduce de su observación sobre las tareas de un artesano.", "Conoce a miembros de su comunidad que son originarios de otros países.", "Comprende la importancia de la paz entre los pueblos.", "Obedece las órdenes de sus padres y maestros.", "Apoya a la Unidad en su trabajo, para el mantenimiento de local y equipo.", "Demuestra amistad a los miembros de otros grupos Scouts.", "Participa en actos conmemorativos patrios.", "Discute con sus iguales en qué contribuyen al bienestar de las personas.", "Acepta las normas de su casa, escuela y su Unidad."], "E2": ["Comprende las razones de las normas que debe cumplir.", "Comparte con otros miembros expresiones de cultura de otros países.", "Aplica las normas de conducta.", "Aplica en las actividades lo aprendido para hacer buen uso de los equipos.", "Se acerca a personas de la sociedad que contribuyen al bienestar colectivo.", "Se acerca a niños de su edad, para realizar juegos y actividades.", "Conversa con sus padres sobre la importancia de cuidar las áreas verdes.", "Cuida los materiales que le entrega el Grupo, para hacer actividades.", "Ayuda a personas no conocidas al hacer uso del transporte público.", "Se interesa en adquirir habilidades de acuerdo a su edad e intereses.", "Pregunta a sus padres y maestros cómo se efectúan las tareas asignadas.", "Observa con cuidado las normas que le son dadas cuando se le asigna una tarea.", "Se esfuerza por mejorar sus tiempos y cantidad de trabajo.", "Utiliza los símbolos de la hermandad mundial y conoce su significado.", "Reconoce a figuras de otros países que han hecho aportes a Venezuela.", "Disfruta de compartir con personas de otras latitudes.", "Reconoce en los adultos la experiencia que tienen.", "Participa a gusto en actividades con sus iguales de otras unidades.", "Expresa cómo su familia y él conviven en armonía con la naturaleza.", "Propone a su familia adoptar normas que le han dado resultado en otros medios."] }, "Espiritualidad": { "E1": ["Acepta el derecho de los demás a tener diferentes intereses.", "Reconoce los símbolos Patrios y les rinde honores.", "En juegos y representaciones comparte con todos sin distingo.", "Inventa relatos sobre la amistad entre el hombre y la naturaleza.", "Le interesa conocer la vida en la naturaleza.", "Se esfuerza por hacer bien las cosas.", "Explica cómo hacer feliz a Dios.", "Reconoce las obligaciones que le impone su Fe y su Iglesia.", "Conoce sus orígenes y las tradiciones de la familia."], "E2": ["Se integra a diferentes grupos humanos conociendo los gustos de sus miembros.", "Ejemplifica la importancia de mantener el equilibrio ecológico entre los seres vivos.", "Da algunas ideas de cómo se puede hacer para restituir la vida en algún lugar.", "Se muestra contento al participar en actividades con iguales de otras instituciones.", "Practica en su grupo de pares la igualdad de derechos y deberes.", "Busca dentro de sí las razones para su conducta y se esfuerza por cumplir lo mejor.", "Cuida a animales o plantas para que crezcan sanos.", "Vive en armonía con sus vecinos, se preocupa por ellos.", "Descubre cualidades en otras personas.", "Cumple los deberes que se derivan de su Fe y respeta la de los demás.", "Participa en actividades con personas de otro género para observar sus características."] } }, "tropa": { "Corporalidad": { "E3": ["Elabora junto a los otros, el cronograma de trabajo del Consejo de Patrulla y vigila su cumplimiento.", "Programa junto a sus padres el uso de su tiempo libre.", "Utiliza la conversación con otros como medio para descansar.", "Determina la alimentación que requiere según su edad y actividad.", "Elabora su horario de actividades, dando especial atención a las que contribuyen a su desarrollo.", "Explica los cambios orgánicos que observa en quienes son mayores que él o ella.", "Identifica los cambios que suceden en su organismo producto de su desarrollo, y las diferencias con los de otro sexo.", "Invierte por lo menos 8 horas de sueño para descansar.", "Realiza actividades fuertes sin excederse.", "Se vincula a grupos para realizar las actividades de su interés.", "Cumple un horario de estudios que le permite cumplir con lo que se le pide.", "Se prepara en la ciudad para los eventos al aire libre.", "Enseña a otros sus habilidades para vivir al aire libre.", "Mantiene orden y limpieza en el campamento.", "Se plantea cómo quiere ser y actúa para lograrlo.", "Participa junto a sus mayores en la elaboración de la lista de alimentos y en la compra de los mismos.", "Describe lo que quiere lograr en la vida y cómo lo está logrando.", "Periódicamente, limpia a profundidad su cuarto y otras áreas de su casa.", "Incluye en sus actividades diarias la limpieza y el orden de sus objetos.", "Participa en actividades de la Unidad para restituir el orden y la limpieza de los locales que utiliza."], "E4": ["Ejecuta un programa de sus actividades de una semana, para cumplir con los diferentes roles que ejerce (familia, scouts, estudios / trabajo).", "Participa activamente en la decisión de cómo invertir su tiempo.", "Compagina las formas de descanso que le gustan con las obligaciones que le son propias.", "Razona cuales actividades son perjudiciales para su desarrollo social.", "Expresa su sexualidad en actividades sociales de forma de mantener buena autoestima y respetando la individualidad de quienes le rodean.", "Comprende los riesgos físicos y emocionales de una conducta sin autocontrol.", "Comprende como sus actividades afectan su desarrollo, y escoge las que les permitan preservar su organismo.", "Distribuye su tiempo entre actividades físicas y mentales, entre acción y pasividad, entre la soledad y el compartir.", "Acude con frecuencia al aire libre para efectuar actividades deportivas o recreativas y disfruta su relación con el medio natural.", "Aprovecha los recursos del aire libre y sus capacidades y evita utilizar los del medio urbano.", "Comprende cómo su accionar afecta el medio, se esfuerza por mejorarlo.", "Comprende lo perfecto de su persona y agradece a Dios por sus posibilidades y potencialidades.", "Identifica las actividades que son cónsonas con la imagen que desea de sí y las lleva a cabo.", "Se involucra en su comunidad para mejorarla.", "Ejecuta acciones para lograr beneplácito e higiene a través del baño y el orden.", "Manifiesta en su accionar su preocupación por cuidar objetos y espacios."] }, "Creatividad": { "E3": ["Resuelve problemas de ingenio.", "Aporta ideas propias a las actividades de Patrulla, razonando su escogencia.", "Crea objetos que son útiles en la vida al aire libre, para tener bienestar.", "Elabora reportes sobre sus aprendizajes sobre la conservación del entorno y los da a conocer a otros.", "Realiza actividades con sus iguales, para conocer nuevos lugares y explorarlos.", "Utiliza medios no verbales para divulgar su punto de vista.", "Contribuye con otros en la mejora de su habitación y hogar.", "Asume nuevas tareas en su patrulla una vez que domina y ejerce con propiedad las anteriores.", "Trabaja solo y en Patrulla para adquirir habilidades y conocimientos nuevos.", "Diseña actividades para acercarse a otras nacionalidades y las disfruta.", "Comparte con otros miembros de su Patrulla una labor determinada.", "Participa activamente en el Consejo de Patrulla asumiendo una tarea concreta.", "Escoge su participación en un servicio, tomando en cuenta sus intereses y los demás miembros de la Patrulla."], "E4": ["Participa en la solución de problemas y tareas buscando vías nuevas en cada ocasión.", "Promueve y participa en visitas a centros de trabajo junto con sus iguales.", "Recopila y/o utiliza bienes de servicios relacionados con su interés laboral y determina ventajas y desventajas observadas.", "Resume los puntos que considera importantes de una charla o visita y expresa por qué los escogió.", "Aprovecha ideas de otros para crear nuevas soluciones a situaciones de rutina.", "Elabora un listado de normas que deben regir la producción de un bien o servicio.", "Expone verbalmente a sus iguales, cómo se siente ante situaciones novedosas.", "Organiza en su Patrulla un proyecto de mejora del medio ambiente y lo lleva a cabo.", "Prepara el ambiente de reuniones, de forma que los asistentes lo perciban grato.", "Describe con propiedad los aportes de Venezuela a la comunidad internacional de hoy.", "Contribuye a la mejora de su hogar a través de reparación de algo específico.", "Comparte con miembros de otras Tropas, un servicio.", "Participa en labores nuevas que le reportan aprendizaje de nuevos conocimientos y destrezas.", "Busca información sobre los orígenes de la nación moderna, e interpreta la interdependencia de los hechos.", "Informa a sus mayores los logros en sus tareas del equipo.", "Participa en eventos fuera de su Unidad, y comparte con personas diferentes a las habituales.", "Se informa de los cambios positivos que se observan en su comunidad.", "Se encarga de ciertos trabajos de mantenimiento, bajo guía de un conocedor.", "Promueve en la Tropa la ejecución de actividades fuera de lo urbano, a lugares no conocidos."] }, "Carácter": { "E3": ["Demuestra en sus actos lealtad y veracidad.", "Asume una tarea específica en su Patrulla y la lleva a cabo en forma constante y cada vez mejor.", "Acepta las decisiones de la Patrulla cuando están de acuerdo con los valores Scouts.", "Razona sus respuestas.", "Elabora un horario para adquirir habilidades y lo lleva a cabo junto con otros miembros de la Unidad.", "Solicita a sus mayores, opinión sobre sus logros y medios para perfeccionarlas.", "Se propone alcanzar algo definiendo cuan bien lo quiere hacer.", "Toma decisiones para mejorar una tarea que ha realizado.", "Asume funciones para las cuales se ha preparado.", "Evita comprometerse con responsabilidades para las cuales no posee las habilidades necesarias.", "Acepta los comentarios positivos que los demás hagan de sí, de una manera constructiva.", "Identifica tanto las cosas buenas que ha hecho, como las que debe mejorar.", "Mantiene al día el control de su progreso personal, en aquello que le gusta."], "E4": ["Explica con ejemplos la importancia de vivir de acuerdo con la Ley y la Promesa, y los utiliza en su vida cotidiana.", "Reconoce el valor de la heterogeneidad de los miembros de la patrulla.", "Aplica los valores Scouts cuando determina las normas que deben regir a la Patrulla.", "Evalúa sus acciones en relación con las normas que ha ayudado a definir.", "Se plantea nuevas formas de vida para su vida adulta y se prepara para ella.", "Vigila el correcto uso y mantenimiento de los aparatos eléctricos del hogar, para ahorro de energía.", "Identifica un defecto en su forma de ser y planifica como corregirlo.", "Emprende una tarea y consulta cómo puede hacerla mejor que en el pasado.", "Colabora con otros para que dominen una tarea que sabe hacer bien.", "Acepta las observaciones de oro cuando se le pide mejorar su desempeño.", "Se muestra satisfecho cuando hace un esfuerzo por actuar bien, sin importar el resultado.", "Describe todos los logros que ha alcanzado hasta este momento de su vida y cuales quiere alcanzar.", "Se prepara con ahínco y acepta los resultados como expresión de su mejor esfuerzo."] }, "Afectividad": { "E3": ["Identifica los cambios en su desarrollo sexual y los acepta con tranquilidad.", "Se involucra en proyectos conservacionistas organizados por la Unidad.", "Acepta su realidad y es feliz en ella.", "Se acerca a los demás sin temor a ideas nuevas y sin timidez.", "Descubre que el amor es la base de las relaciones humanas y centro de su felicidad.", "Acepta la autoridad de sus padres basada en su experiencia y en el amor.", "Comprende que su futuro está fuera de su casa actual y con el amor de los suyos.", "Piensa independientemente.", "Lee para buscar su desarrollo personal.", "Diseña actividades con sus iguales para preservar la naturaleza.", "Practica expresiones de afecto."], "E4": ["Explica su desarrollo sexual, así como el de otro sexo.", "Colabora en la preservación de espacios para la vida natural.", "Acepta y comprende el punto de vista y la verdad de los demás.", "Expresa su visión del mundo y la acepta como propia.", "Participa en actividades que pretenden la felicidad ajena, entendiendo en ellas un acto de amor.", "Manifiesta alegría por los logros de sus familiares.", "Acude a sus padres y hermanos mayores en busca de respuestas a sus inquietudes.", "Obedece con disciplina y razonadamente.", "Escoge lo que quiere leer.", "Expresa satisfacción por los nuevos conocimientos y habilidades adquiridas.", "Expresa amor sin imponer condiciones apoyado en la pareja.", "Vela por el cumplimiento de normas y costumbres del país, dentro de su unidad.", "Conversa con sus padres y profesores o tutores los intereses del momento y su visión de su futuro."] }, "Sociabilidad": { "E3": ["Solicita la ayuda de personas ajenas al Grupo para aprender habilidades que requieran a un experto.", "Ayuda a la patrulla a evaluar cómo es la conducta de sus integrantes y propone correctivos.", "Hace esfuerzos por ser ejemplo de la conducta que se acuerde en su equipo de iguales.", "Comparte con sus iguales las vivencias en otras partes del país.", "Pone en práctica lo que aprende para hacer buen uso de los materiales que utiliza en su casa y en la escuela.", "Acude a sus mayores cuando considera que se ha violado un derecho de alguien cercano.", "Comparte con otros jóvenes de su edad, en forma grata, aún sin ser amigos.", "Junto con sus iguales adopta el cuidado de un ser vivo de su comunidad.", "Identifica lo que la sociedad le da para su beneficio.", "Identifica por lo menos una labor productiva de su interés e investiga oportunidades en su entorno.", "Utiliza con cuidado los recursos del medio que debe utilizar en su escuela.", "Hace buen uso de las áreas comunes y de los parques públicos.", "Acepta la dirección de personas más experimentadas, cuando asume tareas nuevas.", "Conoce sus habilidades y las que quisiera tener.", "Identifica cuales tareas puede asumir con mínima preparación sin que se corran riesgos.", "Se fija niveles de excelencia al aprender nuevas destrezas.", "Promueve la participación de su Patrulla en las actividades Institucionales.", "Conoce el aporte de figuras venezolanas a otros países del continente.", "Respeta las opiniones diferentes a la suya y busca puntos de encuentro.", "Asume las tareas y deberes que se derivan de su vinculación a la Patrulla.", "Participa en actividades destinadas a mejorar el entorno, con Patrullas de otros Grupos.", "Identifica normas concretas de convivencia con animales y plantas que no están en cautiverio.", "Reconoce las manifestaciones culturales de su región, en aspectos como canto, danza, artesanía.", "Practica algunas manifestaciones de cultura de su región.", "Explica normas o costumbres del país, que identifican a sus habitantes.", "Propone y discute con su Patrulla las normas que deben regir sus tareas dentro de ella.", "Se prepara junto a su Patrulla para participar en actividades conservacionistas.", "Cumple las normas básicas para la convivencia armónica con su medio social."], "E4": ["Integra a sus actividades Scouts recursos provenientes de la comunidad, sin perjuicio de ésta.", "Se interesa por comprender como se cumplen las normas en la comunidad donde vive, y busca el origen de su vigencia actual.", "Se preocupa por mejorar su vivencia de los valores éticos.", "Utiliza los recursos disponibles en el lugar del campamento, impactando lo menos posible el ambiente.", "Adquiere conocimientos para hacer buen uso de los recursos necesarios para lograr bienestar.", "Valora positivamente los esfuerzos que se hagan en el país, para su mejora.", "Asiste a eventos en su comunidad para conocer mejor su país.", "Se relaciona con integrantes de otras organizaciones para conocer su labor.", "Reconoce las instituciones de servicio de su comunidad y el papel que deben jugar.", "Comprende al aporte de Venezuela al desarrollo de otros países.", "Reconoce los recursos de su comunidad local y como puede acceder a ellos.", "Orienta a sus iguales para utilizar adecuadamente las instalaciones de uso comunitario.", "Participa activamente en proyectos elaborados por los más experimentados, y para los cuales puede dar aportes positivos.", "Asume tareas concretas cuando está seguro de que tiene suficiente preparación.", "Busca conocer las habilidades y conocimientos para asumir tareas que son delicadas o que solo pueden hacerse previa preparación personal.", "Se involucra con nuevas tareas cuando domina las que puede realizar en un momento determinado.", "Se interesa por conocer las características del Escultismo en otras latitudes.", "Estudia la realidad de otros pueblos.", "Defiende la libre expresión de los hombres.", "Plantea a sus padres y Adultos scouts sus opiniones, acatando las instrucciones que le son dadas.", "Aplica en su casa actitudes, habilidades y conocimientos desarrolladas en los Scouts.", "Identifica cuales acciones conservacionistas deben realizarse para mejorar su localidad.", "Participa en proyectos desarrollo comunitario de carácter interinstitucional.", "Promueve en la Unidad actividades de educación de la comunidad en el cuido del medio ambiente.", "Contribuye en el establecimiento de reglas y normas de los grupos a los cuales pertenece."] }, "Espiritualidad": { "E3": ["Se alegra de formar parte de un grupo y se comporta con camaradería.", "Explica como su comportamiento conservacionista lo ayuda a mejorar la calidad de vida de su familia.", "Acepta que cada persona es única, identifica las virtudes de cada quien.", "Demuestra por qué un medio ambiente perdió las condiciones para albergar vida.", "Demuestra que se esfuerza por dar un paso más, por acercarse a quienes no se le acercan.", "Participa en el Consejo de Patrulla, llegando a acuerdos sobre cómo conducirse.", "Hace de su medio un lugar que refleje la obra de Dios.", "Cumple con sus responsabilidades en la Patrulla, para que los demás sean felices.", "Reconoce en su medio a personajes que se entregan al servicio de los demás, e identifica sus cualidades.", "Comprende la importancia del respeto por la Vida.", "Compara sus principios religiosos con los Valores Scouts.", "Comprende las conmemoraciones de fechas patrias, al conocer las razones y logros del evento.", "Se esfuerza en mejorar sus habilidades.", "Tiene una visión positiva del país y con gran potencial."], "E4": ["Establece comunicación con las personas más diversas con franca confianza en sí mismo y en sus ideas.", "Conoce las virtudes de diferentes razas, credos y clases sociales, aceptándolas en su realidad.", "Investiga la opinión de otros y relata las conclusiones, aun cuando difieran de las suyas.", "Realiza junto a su Unidad las acciones necesarias para restituir las condiciones de vida de un lugar.", "Protege el medio para que perdure por la eternidad.", "Participa en celebraciones de tradición en su casa y en las de sus amigos.", "Busca el avance propio y el avance de quienes le rodean, a través de valores que mejoran la calidad de vida.", "Se inspira en Dios para asumir su papel en la sociedad.", "Analiza la importancia de que el hombre viva en armonía con la naturaleza.", "Participa en actividades donde refleja su apego a la Vida.", "Participa en proyectos que le permitan mejorar la calidad de convivencia con el medio ambiente.", "Expresa abiertamente su Credo de manera cotidiana según las costumbres de su Iglesia y respetando a quienes tengan otra religión."] } } };
+      const ODS_LIST = [{ "num": 1, "nombre": "Fin de la pobreza", "color": "#E5243B" }, { "num": 2, "nombre": "Hambre cero", "color": "#DDA63A" }, { "num": 3, "nombre": "Salud y bienestar", "color": "#4C9F38" }, { "num": 4, "nombre": "Educación de calidad", "color": "#C5192D" }, { "num": 5, "nombre": "Igualdad de género", "color": "#FF3A21" }, { "num": 6, "nombre": "Agua limpia y saneamiento", "color": "#26BDE2" }, { "num": 7, "nombre": "Energía asequible y no contaminante", "color": "#FCC30B" }, { "num": 8, "nombre": "Trabajo decente y crecimiento económico", "color": "#A21942" }, { "num": 9, "nombre": "Industria, innovación e infraestructura", "color": "#FD6925" }, { "num": 10, "nombre": "Reducción de las desigualdades", "color": "#DD1367" }, { "num": 11, "nombre": "Ciudades y comunidades sostenibles", "color": "#FD9D24" }, { "num": 12, "nombre": "Producción y consumo responsables", "color": "#BF8B2E" }, { "num": 13, "nombre": "Acción por el clima", "color": "#3F7E44" }, { "num": 14, "nombre": "Vida submarina", "color": "#0A97D9" }, { "num": 15, "nombre": "Vida de ecosistemas terrestres", "color": "#56C02B" }, { "num": 16, "nombre": "Paz, justicia e instituciones sólidas", "color": "#00689D" }, { "num": 17, "nombre": "Alianzas para lograr los objetivos", "color": "#19486A" }];
+      const AREA_CLS = {
+        'Corporalidad': 'a-corp', 'Creatividad': 'a-crea', 'Carácter': 'a-cara',
+        'Afectividad': 'a-afec', 'Sociabilidad': 'a-soci', 'Espiritualidad': 'a-espi'
+      };
 
-    /* ─── UTIL FECHAS ─── */
-    function daysBetween(a, b) {
-      const d1 = new Date(a + 'T00:00:00'), d2 = new Date(b + 'T00:00:00');
-      return Math.round((d2 - d1) / (1000 * 60 * 60 * 24));
-    }
-    function fmtDate(iso) {
-      const d = new Date(iso + 'T00:00:00');
-      return d.toLocaleDateString('es-VE', { weekday: 'long', day: '2-digit', month: 'long' });
-    }
-    function isMultiday() {
-      return fechaIni && fechaFin && daysBetween(fechaIni, fechaFin) > 0;
-    }
-    function getDays() {
-      if (!isMultiday()) return [];
-      const days = [];
-      const n = daysBetween(fechaIni, fechaFin) + 1;
-      for (let i = 0; i < n; i++) {
-        const d = new Date(fechaIni + 'T00:00:00');
-        d.setDate(d.getDate() + i);
-        days.push({
-          idx: i,
-          label: 'Día ' + (i + 1) + ' — ' + d.toLocaleDateString('es-VE', { weekday: 'long', day: '2-digit', month: 'long' })
+      /* ─── ESTADO ─── */
+      let editMode = false, customLogos = {}, odsActivos = new Set(),
+        progRows = [], indRows = [], ramaActual = 'manada';
+      let fechaIni = null, fechaFin = null, horaIniDia1 = '10:00', horaCierreUltimo = '13:00';
+
+      /* ─── INIT ─── */
+      document.addEventListener('DOMContentLoaded', () => {
+        loadStorage(); renderODS(); renderProg(); renderInd(); syncSec(); syncEmpty(); initDrag(); scalePages(); loadExtraPages();
+      });
+
+      /* ─── UTIL FECHAS ─── */
+      function daysBetween(a, b) {
+        const d1 = new Date(a + 'T00:00:00'), d2 = new Date(b + 'T00:00:00');
+        return Math.round((d2 - d1) / (1000 * 60 * 60 * 24));
+      }
+      function fmtDate(iso) {
+        const d = new Date(iso + 'T00:00:00');
+        return d.toLocaleDateString('es-VE', { weekday: 'long', day: '2-digit', month: 'long' });
+      }
+      function isMultiday() {
+        return fechaIni && fechaFin && daysBetween(fechaIni, fechaFin) > 0;
+      }
+      function getDays() {
+        if (!isMultiday()) return [];
+        const days = [];
+        const n = daysBetween(fechaIni, fechaFin) + 1;
+        for (let i = 0; i < n; i++) {
+          const d = new Date(fechaIni + 'T00:00:00');
+          d.setDate(d.getDate() + i);
+          days.push({
+            idx: i,
+            label: 'Día ' + (i + 1) + ' — ' + d.toLocaleDateString('es-VE', { weekday: 'long', day: '2-digit', month: 'long' })
+          });
+        }
+        return days;
+      }
+
+      /* ─── EDIT ─── */
+      function toggleEdit() {
+        editMode = !editMode;
+        document.body.classList.toggle('edit-mode', editMode);
+        const btn = document.getElementById('editBtn');
+        btn.textContent = editMode ? '✅ Guardar' : '✏️ Editar';
+        btn.classList.toggle('on', editMode);
+        // Campos generales
+        document.querySelectorAll('[data-edit="true"]').forEach(el => {
+          el.contentEditable = editMode ? 'true' : 'false';
+          if (editMode) el.oninput = () => {
+            const v = el.innerHTML || el.textContent;
+            localStorage.setItem('sf_' + el.dataset.key, v);
+            if (el.dataset.key === 'hora-inicio') { horaIniDia1 = el.textContent.trim() || '10:00'; recalcHoras(); }
+            if (el.dataset.key === 'hora-cierre') { horaCierreUltimo = el.textContent.trim() || '13:00'; }
+            syncSec(); recalcHoras();
+          };
+        });
+        // Nombre actividad en header
+        const na = document.getElementById('hdr-nombre-act');
+        if (na) {
+          na.contentEditable = editMode ? 'true' : 'false';
+          if (editMode) na.oninput = () => {
+            const v = na.innerHTML || na.textContent;
+            localStorage.setItem('sf_nombre-act', v);
+            syncSec();
+          };
+        }
+        // Título del documento
+        document.querySelectorAll('.hdr-title-doc').forEach(dtEl => {
+          dtEl.contentEditable = editMode ? 'true' : 'false';
+          if (editMode) dtEl.oninput = () => {
+            const v = dtEl.textContent.trim();
+            document.querySelectorAll('.hdr-title-doc').forEach(e => { if (e !== dtEl) e.textContent = v; });
+            localStorage.setItem(SF('doc-title'), v);
+          };
+        });
+        // Ambientación
+        const am = document.getElementById('hdr-ambientacion');
+        if (am) {
+          am.contentEditable = editMode ? 'true' : 'false';
+          if (editMode) am.oninput = () => { localStorage.setItem('sf_ambientacion', am.innerHTML || am.textContent); syncEmpty(); };
+        }
+        // Celdas del programa
+        enableProgEdit(editMode);
+        if (!editMode) { saveStorage(); syncSec(); st('✅ Guardado'); }
+      }
+
+      function enableProgEdit(on) {
+        document.querySelectorAll('#prog-tbody td.p-dur,#prog-tbody td.p-act,#prog-tbody td.p-desc-cell,#prog-tbody td.p-mat,#prog-tbody td.p-resp').forEach(td => {
+          td.contentEditable = on ? 'true' : 'false';
+          td.classList.toggle('editable', on);
+          if (on) td.oninput = () => { syncProgRows(); if (td.classList.contains('p-dur')) recalcHoras(); };
+        });
+        // Separadores de día editables
+        document.querySelectorAll('#prog-tbody tr.day-sep td:first-child').forEach(td => {
+          td.contentEditable = on ? 'true' : 'false';
         });
       }
-      return days;
-    }
 
-    /* ─── EDIT ─── */
-    function toggleEdit() {
-      editMode = !editMode;
-      document.body.classList.toggle('edit-mode', editMode);
-      const btn = document.getElementById('editBtn');
-      btn.textContent = editMode ? '✅ Guardar' : '✏️ Editar';
-      btn.classList.toggle('on', editMode);
-      // Campos generales
-      document.querySelectorAll('[data-edit="true"]').forEach(el => {
-        el.contentEditable = editMode ? 'true' : 'false';
-        if (editMode) el.oninput = () => { localStorage.setItem('sf_' + el.dataset.key, el.innerHTML); syncSec(); recalcHoras(); };
-      });
-      // Nombre actividad en header
-      const na = document.getElementById('hdr-nombre-act');
-      if (na) {
-        na.contentEditable = editMode ? 'true' : 'false';
-        if (editMode) na.oninput = () => {
-          const v = na.innerHTML || na.textContent;
-          localStorage.setItem('sf_nombre-act', v);
-          syncSec();
-        };
+      /* ─── STORAGE ─── */
+      const SF = k => 'sf_' + k;
+      function saveStorage() {
+        document.querySelectorAll('[data-key]').forEach(el => localStorage.setItem(SF(el.dataset.key), el.innerHTML || el.textContent));
+        const na = document.getElementById('hdr-nombre-act'); if (na) localStorage.setItem(SF('nombre-act'), na.innerHTML || na.textContent);
+        const am = document.getElementById('hdr-ambientacion'); if (am) localStorage.setItem(SF('ambientacion'), am.innerHTML || am.textContent);
+        localStorage.setItem(SF('logos'), JSON.stringify(customLogos));
+        localStorage.setItem(SF('ods'), JSON.stringify([...odsActivos]));
+        localStorage.setItem(SF('prog'), JSON.stringify(progRows));
+        localStorage.setItem(SF('ind'), JSON.stringify(indRows));
+        localStorage.setItem(SF('rama'), ramaActual);
+        localStorage.setItem(SF('fecha-ini'), fechaIni || '');
+        localStorage.setItem(SF('fecha-fin'), fechaFin || '');
+        localStorage.setItem(SF('hora-ini-d1'), horaIniDia1);
+        localStorage.setItem(SF('hora-cierre-ul'), horaCierreUltimo);
+        const dtSave = document.getElementById('doc-title'); if (dtSave) localStorage.setItem(SF('doc-title'), dtSave.textContent.trim());
+        const extra = Object.fromEntries(Object.entries(INDICADORES).filter(([k]) => !['manada', 'tropa'].includes(k)));
+        if (Object.keys(extra).length) localStorage.setItem(SF('ind_extra'), JSON.stringify(extra));
       }
-      // Ambientación
-      const am = document.getElementById('hdr-ambientacion');
-      if (am) {
-        am.contentEditable = editMode ? 'true' : 'false';
-        if (editMode) am.oninput = () => { localStorage.setItem('sf_ambientacion', am.innerHTML || am.textContent); };
-      }
-      // Celdas del programa
-      enableProgEdit(editMode);
-      if (!editMode) { saveStorage(); syncSec(); st('✅ Guardado'); }
-    }
-
-    function enableProgEdit(on) {
-      document.querySelectorAll('#prog-tbody td.p-dur,#prog-tbody td.p-act,#prog-tbody td.p-desc-cell,#prog-tbody td.p-mat,#prog-tbody td.p-resp').forEach(td => {
-        td.contentEditable = on ? 'true' : 'false';
-        td.classList.toggle('editable', on);
-        if (on) td.oninput = () => { syncProgRows(); if (td.classList.contains('p-dur')) recalcHoras(); };
-      });
-      // Separadores de día editables
-      document.querySelectorAll('#prog-tbody tr.day-sep td:first-child').forEach(td => {
-        td.contentEditable = on ? 'true' : 'false';
-      });
-    }
-
-    /* ─── STORAGE ─── */
-    const SF = k => 'sf_' + k;
-    function saveStorage() {
-      document.querySelectorAll('[data-key]').forEach(el => localStorage.setItem(SF(el.dataset.key), el.innerHTML || el.textContent));
-      const na = document.getElementById('hdr-nombre-act'); if (na) localStorage.setItem(SF('nombre-act'), na.innerHTML || na.textContent);
-      const am = document.getElementById('hdr-ambientacion'); if (am) localStorage.setItem(SF('ambientacion'), am.innerHTML || am.textContent);
-      localStorage.setItem(SF('logos'), JSON.stringify(customLogos));
-      localStorage.setItem(SF('ods'), JSON.stringify([...odsActivos]));
-      localStorage.setItem(SF('prog'), JSON.stringify(progRows));
-      localStorage.setItem(SF('ind'), JSON.stringify(indRows));
-      localStorage.setItem(SF('rama'), ramaActual);
-      localStorage.setItem(SF('fecha-ini'), fechaIni || '');
-      localStorage.setItem(SF('fecha-fin'), fechaFin || '');
-      localStorage.setItem(SF('hora-ini-d1'), horaIniDia1);
-      localStorage.setItem(SF('hora-cierre-ul'), horaCierreUltimo);
-      const extra = Object.fromEntries(Object.entries(INDICADORES).filter(([k]) => !['manada', 'tropa'].includes(k)));
-      if (Object.keys(extra).length) localStorage.setItem(SF('ind_extra'), JSON.stringify(extra));
-    }
-    function loadStorage() {
-      document.querySelectorAll('[data-key]').forEach(el => { const v = localStorage.getItem(SF(el.dataset.key)); if (v !== null) el.innerHTML = v; });
-      const na = localStorage.getItem(SF('nombre-act')); if (na) { ['hdr-nombre-act', 'p2-nombre', 'p3-nombre', 'g2-nombre'].forEach(id => { const el = document.getElementById(id); if (el) el.innerHTML = na; }); }
-      const am = localStorage.getItem(SF('ambientacion')); if (am) { const el = document.getElementById('hdr-ambientacion'); if (el) el.innerHTML = am; }
-      const logos = localStorage.getItem(SF('logos')); if (logos) { customLogos = JSON.parse(logos); Object.entries(customLogos).forEach(([id, src]) => applyLogo(id, src)); }
-      const ods = localStorage.getItem(SF('ods')); if (ods) odsActivos = new Set(JSON.parse(ods));
-      const prog = localStorage.getItem(SF('prog')); if (prog) progRows = JSON.parse(prog);
-      const ind = localStorage.getItem(SF('ind')); if (ind) indRows = JSON.parse(ind);
-      const rama = localStorage.getItem(SF('rama')); if (rama) { ramaActual = rama; applyRama(rama); }
+      function loadStorage() {
+        document.querySelectorAll('[data-key]').forEach(el => { const v = localStorage.getItem(SF(el.dataset.key)); if (v !== null) el.innerHTML = v; });
+        const na = localStorage.getItem(SF('nombre-act')); if (na) { ['hdr-nombre-act', 'p2-nombre', 'p3-nombre', 'g2-nombre'].forEach(id => { const el = document.getElementById(id); if (el) el.innerHTML = na; }); }
+        const am = localStorage.getItem(SF('ambientacion')); if (am) { const el = document.getElementById('hdr-ambientacion'); if (el) el.innerHTML = am; }
+        const logos = localStorage.getItem(SF('logos')); if (logos) { customLogos = JSON.parse(logos); Object.entries(customLogos).forEach(([id, src]) => applyLogo(id, src)); }
+        const ods = localStorage.getItem(SF('ods')); if (ods) odsActivos = new Set(JSON.parse(ods));
+        const prog = localStorage.getItem(SF('prog')); if (prog) progRows = JSON.parse(prog);
+        const ind = localStorage.getItem(SF('ind')); if (ind) indRows = JSON.parse(ind);
+        const rama = localStorage.getItem(SF('rama')); if (rama) { ramaActual = rama; applyRama(rama); }
         const gc = localStorage.getItem(SF('grupal-comunidad')); if (gc === '1' && ramaActual === 'grupal') { setComunidadGrupal(true); document.getElementById('cfg-grupal-comunidad').checked = true; }
         if (ramaActual === 'grupal') document.getElementById('cfg-grupal-opts').style.display = 'block';
-      fechaIni = localStorage.getItem(SF('fecha-ini')) || null;
-      fechaFin = localStorage.getItem(SF('fecha-fin')) || null;
-      horaIniDia1 = localStorage.getItem(SF('hora-ini-d1')) || '10:00';
-      horaCierreUltimo = localStorage.getItem(SF('hora-cierre-ul')) || '13:00';
-      const extra = localStorage.getItem(SF('ind_extra')); if (extra) Object.assign(INDICADORES, JSON.parse(extra));
-    }
-
-    /* ─── RESET ─── */
-    function doReset() {
-      if (document.getElementById('rst-pdf').checked) window.print();
-      if (document.getElementById('rst-html').checked) doSaveHTML(true);
-      const keep = [SF('ind_extra'), SF('rama')];
-      Object.keys(localStorage).filter(k => k.startsWith('sf_') && !keep.includes(k)).forEach(k => localStorage.removeItem(k));
-      customLogos = {}; odsActivos = new Set(); progRows = []; indRows = [];
-      fechaIni = null; fechaFin = null;
-      document.querySelectorAll('[data-key]').forEach(el => el.innerHTML = '');
-      ['hdr-nombre-act', 'hdr-ambientacion', 'p2-nombre'].forEach(id => { const el = document.getElementById(id); if (el) el.innerHTML = ''; });
-      document.getElementById('ind-tbody').innerHTML = '';
-      document.getElementById('prog-tbody').innerHTML = '';
-      renderODS(); applyRama(ramaActual);
-      document.querySelectorAll('img[id^="logo-grupo"]').forEach(el => el.src = LOGO_GRUPO_DEF); document.querySelectorAll('.ep-logo-g').forEach(el => el.src = LOGO_GRUPO_DEF);
-      syncSec(); closeM('mReset'); st('Plantilla restablecida 🗑️');
-    }
-
-    /* ─── RAMAS ─── */
-    function applyRama(rama) {
-      ramaActual = rama.toLowerCase();
-      const fw = document.getElementById('fichaWrap');
-      const wasComunidad = fw.classList.contains('grupal-con-comunidad');
-      fw.className = 'rama-' + ramaActual;
-      if (wasComunidad && ramaActual === 'grupal') fw.classList.add('grupal-con-comunidad');
-      const isGrupal = ramaActual === 'grupal';
-      applyGrupalLayout(isGrupal);
-      if (!isGrupal && !customLogos['logo-rama']) {
-        const src = RAMA_LOGOS[ramaActual] || RAMA_LOGOS.manada;
-        ['logo-rama', 'logo-rama-p2', 'logo-rama-g2'].forEach(id => { const el = document.getElementById(id); if (el) el.src = src; });
-      }
-    }
-
-    /* ─── LOGOS ─── */
-    function setLogo(id, input) {
-      const key = id.replace(/-(p2|p3|g2)$/, '');
-      const file = input.files[0]; if (!file) return;
-      const r = new FileReader();
-      r.onload = e => { customLogos[key] = e.target.result; applyLogo(key, e.target.result); saveStorage(); st('Logo actualizado'); };
-      r.readAsDataURL(file);
-    }
-    function applyLogo(key, src) {
-      if (key === 'logo-grupo') {
-        document.querySelectorAll('img[id^="logo-grupo"]').forEach(el => el.src = src);
-        document.querySelectorAll('.ep-logo-g').forEach(el => el.src = src);
-      } else if (key === 'logo-rama') {
-        document.querySelectorAll('img[id^="logo-rama"]').forEach(el => el.src = src);
-        document.querySelectorAll('.ep-logo-r').forEach(el => el.src = src);
-      } else {
-        document.querySelectorAll(`img[data-logo-key="${key}"]`).forEach(el => el.src = src);
-      }
-    }
-
-    /* ─── ODS ─── */
-    function renderODS() {
-      const wrap = document.getElementById('ods-wrap'); wrap.innerHTML = '';
-      ODS_LIST.forEach(o => {
-        const on = odsActivos.has(o.num);
-        const c = document.createElement('div');
-        c.className = 'ods-chip' + (on ? ' on' : ''); c.dataset.active = on ? 'true' : 'false';
-        c.style.background = o.color; c.innerHTML = `<b>${o.num}</b> ${o.nombre}`;
-        c.title = `ODS ${o.num}: ${o.nombre}`;
-        c.onclick = () => { on ? odsActivos.delete(o.num) : odsActivos.add(o.num); renderODS(); saveStorage(); };
-        wrap.appendChild(c);
-      });
-    }
-
-    /* ─── INDICADORES ─── */
-    function renderInd() {
-      const tb = document.getElementById('ind-tbody'); tb.innerHTML = '';
-      indRows.forEach((r, idx) => {
-        const cls = AREA_CLS[r.area] || '';
-        const tr = document.createElement('tr');
-
-        const tdA = document.createElement('td');
-        tdA.className = `col-area ${cls}`;
-        const spA = document.createElement('span');
-        spA.className = 'ind-editable';
-        spA.contentEditable = 'true';
-        spA.textContent = r.area;
-        spA.addEventListener('blur', () => { if (indRows[idx]) { indRows[idx].area = spA.textContent.trim(); saveStorage(); } });
-        tdA.appendChild(spA);
-
-        const tdE = document.createElement('td');
-        tdE.className = 'col-e';
-        const spE = document.createElement('span');
-        spE.className = 'ind-editable';
-        spE.contentEditable = 'true';
-        spE.textContent = r.etapa;
-        spE.style.textAlign = 'center';
-        spE.addEventListener('blur', () => { if (indRows[idx]) { indRows[idx].etapa = spE.textContent.trim(); saveStorage(); } });
-        tdE.appendChild(spE);
-
-        const tdT = document.createElement('td');
-        tdT.className = 'col-ind';
-        tdT.style.position = 'relative';
-        const spT = document.createElement('span');
-        spT.className = 'ind-editable';
-        spT.contentEditable = 'true';
-        spT.textContent = r.texto;
-        spT.addEventListener('blur', () => { if (indRows[idx]) { indRows[idx].texto = spT.textContent.trim(); saveStorage(); } });
-        const delB = document.createElement('button');
-        delB.className = 'del-btn';
-        delB.textContent = '✕';
-        delB.addEventListener('click', (e) => { e.stopPropagation(); delInd(idx); });
-        tdT.append(spT, delB);
-
-        tr.append(tdA, tdE, tdT);
-        tb.appendChild(tr);
-      });
-    }
-    function delInd(i) { indRows.splice(i, 1); renderInd(); saveStorage(); }
-    function renderIndPanel() {
-      const rama = document.getElementById('ind-rama').value;
-      const panel = document.getElementById('ind-panel'); panel.innerHTML = '';
-      const data = INDICADORES[rama];
-      if (!data) { panel.innerHTML = `<p style="color:#aaa;font-size:10px;padding:10px">Sin indicadores. Importa un JSON y haz 💾 HTML.</p>`; return; }
-      Object.entries(data).forEach(([area, etapas]) => {
-        const grp = document.createElement('div'); grp.className = 'ind-grp';
-        const title = document.createElement('div'); title.className = 'ind-grp-title';
-        title.innerHTML = `${area} <span>▶</span>`;
-        const items = document.createElement('div'); items.className = 'ind-items';
-        title.onclick = () => { items.classList.toggle('open'); title.querySelector('span').textContent = items.classList.contains('open') ? '▼' : '▶'; };
-        Object.entries(etapas).forEach(([etapa, lista]) => lista.forEach(texto => {
-          const item = document.createElement('label'); item.className = 'ind-item';
-          const chk = document.createElement('input'); chk.type = 'checkbox';
-          chk.dataset.area = area; chk.dataset.etapa = etapa; chk.dataset.texto = texto;
-          const badge = document.createElement('span'); badge.className = 'e-badge'; badge.textContent = etapa;
-          item.append(chk, badge, ' ' + texto); items.appendChild(item);
-        }));
-        grp.append(title, items); panel.appendChild(grp);
-      });
-    }
-    function applyInd() {
-      document.querySelectorAll('#ind-panel input:checked').forEach(chk => {
-        indRows.push({ area: chk.dataset.area, etapa: chk.dataset.etapa, texto: chk.dataset.texto });
-      });
-      renderInd(); closeM('mInd'); saveStorage(); st('Indicadores agregados');
-    }
-
-    /* ─── PROGRAMA ─── */
-    function parseMins(s) {
-      if (!s) return 0; s = s.toLowerCase().trim(); let t = 0;
-      const h = s.match(/(\d+)\s*h/); if (h) t += parseInt(h[1]) * 60;
-      const m = s.match(/(\d+)\s*min/); if (m) t += parseInt(m[1]);
-      if (!h && !m) { const n = parseInt(s); if (!isNaN(n)) t = n; }
-      return t;
-    }
-    function addMins(time, mins) {
-      const [hh, mm] = (time || '00:00').split(':').map(Number);
-      const tot = hh * 60 + mm + mins;
-      return String(Math.floor(tot / 60) % 24).padStart(2, '0') + ':' + String(tot % 60).padStart(2, '0');
-    }
-
-    function recalcHoras() {
-      let cur = horaIniDia1;
-      document.querySelectorAll('#prog-tbody tr').forEach(tr => {
-        if (tr.classList.contains('day-sep')) {
-          // El separador tiene su propia hora de inicio
-          const hEl = tr.querySelector('.day-hora');
-          if (hEl && hEl.textContent.trim()) cur = hEl.textContent.trim();
-          return;
+        fechaIni = localStorage.getItem(SF('fecha-ini')) || null;
+        fechaFin = localStorage.getItem(SF('fecha-fin')) || null;
+        horaIniDia1 = localStorage.getItem(SF('hora-ini-d1')) || '10:00';
+        horaCierreUltimo = localStorage.getItem(SF('hora-cierre-ul')) || '13:00';
+        // Load doc-title
+        const dtLoad = localStorage.getItem(SF('doc-title'));
+        if (dtLoad) document.querySelectorAll('.hdr-title-doc').forEach(el => el.textContent = dtLoad);
+        // Apply defaults on first load
+        const grupoEl = document.querySelector('[data-key="hdr-grupo"]');
+        if (grupoEl && !grupoEl.textContent.trim()) {
+          grupoEl.textContent = 'La Salle Guaparo';
+          ['fg-a', 'fg-b'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = 'La Salle Guaparo'; });
         }
-        const hEl = tr.querySelector('.p-hora'); if (hEl) hEl.textContent = cur;
-        const m = parseMins(tr.querySelector('.p-dur')?.textContent || ''); if (m > 0) cur = addMins(cur, m);
-      });
-      updateProgHdr();
-    }
+        // Sync hora DOM elements with loaded variables
+        document.querySelectorAll('[data-key="hora-inicio"]').forEach(el => { if (!el.textContent.trim()) el.textContent = horaIniDia1; });
+        document.querySelectorAll('[data-key="hora-cierre"]').forEach(el => { if (!el.textContent.trim()) el.textContent = horaCierreUltimo; });
+        const extra = localStorage.getItem(SF('ind_extra')); if (extra) Object.assign(INDICADORES, JSON.parse(extra));
+      }
 
-    function renderProg() {
-      const tb = document.getElementById('prog-tbody'); tb.innerHTML = '';
-      let cur = horaIniDia1;
-      progRows.forEach(r => {
-        if (r.type === 'day-sep') {
-          const tr = makeDaySepTr(r.label || 'Día', r.startTime || '');
+      /* ─── RESET ─── */
+      function doReset() {
+        if (document.getElementById('rst-pdf').checked) window.print();
+        if (document.getElementById('rst-html').checked) doSaveHTML(true);
+        const keep = [SF('ind_extra'), SF('rama')];
+        Object.keys(localStorage).filter(k => k.startsWith('sf_') && !keep.includes(k)).forEach(k => localStorage.removeItem(k));
+        customLogos = {}; odsActivos = new Set(); progRows = []; indRows = [];
+        fechaIni = null; fechaFin = null;
+        document.querySelectorAll('[data-key]').forEach(el => el.innerHTML = '');
+        ['hdr-nombre-act', 'hdr-ambientacion', 'p2-nombre'].forEach(id => { const el = document.getElementById(id); if (el) el.innerHTML = ''; });
+        document.querySelectorAll('.hdr-title-doc').forEach(el => el.textContent = 'FICHA TÉCNICA');
+        localStorage.removeItem(SF('doc-title'));
+        document.getElementById('ind-tbody').innerHTML = '';
+        document.getElementById('prog-tbody').innerHTML = '';
+        renderODS(); applyRama(ramaActual);
+        document.querySelectorAll('img[id^="logo-grupo"]').forEach(el => el.src = LOGO_GRUPO_DEF); document.querySelectorAll('.ep-logo-g').forEach(el => el.src = LOGO_GRUPO_DEF);
+        syncSec(); closeM('mReset'); st('Plantilla restablecida 🗑️');
+      }
+
+      /* ─── RAMAS ─── */
+      function applyRama(rama) {
+        ramaActual = rama.toLowerCase();
+        const fw = document.getElementById('fichaWrap');
+        const wasComunidad = fw.classList.contains('grupal-con-comunidad');
+        fw.className = 'rama-' + ramaActual;
+        if (wasComunidad && ramaActual === 'grupal') fw.classList.add('grupal-con-comunidad');
+        const isGrupal = ramaActual === 'grupal';
+        applyGrupalLayout(isGrupal);
+        if (!isGrupal && !customLogos['logo-rama']) {
+          const src = RAMA_LOGOS[ramaActual] || RAMA_LOGOS.manada;
+          ['logo-rama', 'logo-rama-p2', 'logo-rama-g2'].forEach(id => { const el = document.getElementById(id); if (el) el.src = src; });
+        }
+      }
+
+      /* ─── LOGOS ─── */
+      function setLogo(id, input) {
+        const key = id.replace(/-(p2|p3|g2)$/, '');
+        const file = input.files[0]; if (!file) return;
+        const r = new FileReader();
+        r.onload = e => { customLogos[key] = e.target.result; applyLogo(key, e.target.result); saveStorage(); st('Logo actualizado'); };
+        r.readAsDataURL(file);
+      }
+      function applyLogo(key, src) {
+        if (key === 'logo-grupo') {
+          document.querySelectorAll('img[id^="logo-grupo"]').forEach(el => el.src = src);
+          document.querySelectorAll('.ep-logo-g').forEach(el => el.src = src);
+        } else if (key === 'logo-rama') {
+          document.querySelectorAll('img[id^="logo-rama"]').forEach(el => el.src = src);
+          document.querySelectorAll('.ep-logo-r').forEach(el => el.src = src);
+        } else {
+          document.querySelectorAll(`img[data-logo-key="${key}"]`).forEach(el => el.src = src);
+        }
+      }
+
+      /* ─── ODS ─── */
+      function renderODS() {
+        const wrap = document.getElementById('ods-wrap'); wrap.innerHTML = '';
+        ODS_LIST.forEach(o => {
+          const on = odsActivos.has(o.num);
+          const c = document.createElement('div');
+          c.className = 'ods-chip' + (on ? ' on' : ''); c.dataset.active = on ? 'true' : 'false';
+          c.style.background = o.color; c.innerHTML = `<b>${o.num}</b> ${o.nombre}`;
+          c.title = `ODS ${o.num}: ${o.nombre}`;
+          c.onclick = () => { on ? odsActivos.delete(o.num) : odsActivos.add(o.num); renderODS(); saveStorage(); };
+          wrap.appendChild(c);
+        });
+      }
+
+      /* ─── INDICADORES ─── */
+      function renderInd() {
+        const tb = document.getElementById('ind-tbody'); tb.innerHTML = '';
+        indRows.forEach((r, idx) => {
+          const cls = AREA_CLS[r.area] || '';
+          const tr = document.createElement('tr');
+
+          const tdA = document.createElement('td');
+          tdA.className = `col-area ${cls}`;
+          const spA = document.createElement('span');
+          spA.className = 'ind-editable';
+          spA.contentEditable = 'true';
+          spA.textContent = r.area;
+          spA.addEventListener('blur', () => { if (indRows[idx]) { indRows[idx].area = spA.textContent.trim(); saveStorage(); } });
+          tdA.appendChild(spA);
+
+          const tdE = document.createElement('td');
+          tdE.className = 'col-e';
+          const spE = document.createElement('span');
+          spE.className = 'ind-editable';
+          spE.contentEditable = 'true';
+          spE.textContent = r.etapa;
+          spE.style.textAlign = 'center';
+          spE.addEventListener('blur', () => { if (indRows[idx]) { indRows[idx].etapa = spE.textContent.trim(); saveStorage(); } });
+          tdE.appendChild(spE);
+
+          const tdT = document.createElement('td');
+          tdT.className = 'col-ind';
+          tdT.style.position = 'relative';
+          const spT = document.createElement('span');
+          spT.className = 'ind-editable';
+          spT.contentEditable = 'true';
+          spT.textContent = r.texto;
+          spT.addEventListener('blur', () => { if (indRows[idx]) { indRows[idx].texto = spT.textContent.trim(); saveStorage(); } });
+          const delB = document.createElement('button');
+          delB.className = 'del-btn';
+          delB.textContent = '✕';
+          delB.addEventListener('click', (e) => { e.stopPropagation(); delInd(idx); });
+          tdT.append(spT, delB);
+
+          tr.append(tdA, tdE, tdT);
           tb.appendChild(tr);
-          if (r.startTime) cur = r.startTime;
-          return;
-        }
-        tb.appendChild(makeProgTr(cur, r.dur || '', r.act || '', r.desc || '', r.mat || '', r.resp || ''));
-        const m = parseMins(r.dur || ''); if (m > 0) cur = addMins(cur, m);
-      });
-      updateProgHdr();
-    }
+        });
+      }
+      function delInd(i) { indRows.splice(i, 1); renderInd(); saveStorage(); }
+      function renderIndPanel() {
+        const rama = document.getElementById('ind-rama').value;
+        const panel = document.getElementById('ind-panel'); panel.innerHTML = '';
+        const data = INDICADORES[rama];
+        if (!data) { panel.innerHTML = `<p style="color:#aaa;font-size:10px;padding:10px">Sin indicadores. Importa un JSON y haz 💾 HTML.</p>`; return; }
+        Object.entries(data).forEach(([area, etapas]) => {
+          const grp = document.createElement('div'); grp.className = 'ind-grp';
+          const title = document.createElement('div'); title.className = 'ind-grp-title';
+          title.innerHTML = `${area} <span>▶</span>`;
+          const items = document.createElement('div'); items.className = 'ind-items';
+          title.onclick = () => { items.classList.toggle('open'); title.querySelector('span').textContent = items.classList.contains('open') ? '▼' : '▶'; };
+          Object.entries(etapas).forEach(([etapa, lista]) => lista.forEach(texto => {
+            const item = document.createElement('label'); item.className = 'ind-item';
+            const chk = document.createElement('input'); chk.type = 'checkbox';
+            chk.dataset.area = area; chk.dataset.etapa = etapa; chk.dataset.texto = texto;
+            const badge = document.createElement('span'); badge.className = 'e-badge'; badge.textContent = etapa;
+            item.append(chk, badge, ' ' + texto); items.appendChild(item);
+          }));
+          grp.append(title, items); panel.appendChild(grp);
+        });
+      }
+      function applyInd() {
+        document.querySelectorAll('#ind-panel input:checked').forEach(chk => {
+          indRows.push({ area: chk.dataset.area, etapa: chk.dataset.etapa, texto: chk.dataset.texto });
+        });
+        renderInd(); closeM('mInd'); saveStorage(); st('Indicadores agregados');
+      }
 
-    function makeProgTr(hora, dur, act, desc, mat, resp) {
-      const tr = document.createElement('tr'); tr.draggable = true;
-      tr.innerHTML = `
+      /* ─── PROGRAMA ─── */
+      function parseMins(s) {
+        if (!s) return 0; s = s.toLowerCase().trim(); let t = 0;
+        const h = s.match(/(\d+)\s*h/); if (h) t += parseInt(h[1]) * 60;
+        const m = s.match(/(\d+)\s*min/); if (m) t += parseInt(m[1]);
+        if (!h && !m) { const n = parseInt(s); if (!isNaN(n)) t = n; }
+        return t;
+      }
+      function addMins(time, mins) {
+        const [hh, mm] = (time || '00:00').split(':').map(Number);
+        const tot = hh * 60 + mm + mins;
+        return String(Math.floor(tot / 60) % 24).padStart(2, '0') + ':' + String(tot % 60).padStart(2, '0');
+      }
+
+      function recalcHoras() {
+        let cur = horaIniDia1;
+        document.querySelectorAll('#prog-tbody tr').forEach(tr => {
+          if (tr.classList.contains('day-sep')) {
+            // El separador tiene su propia hora de inicio
+            const hEl = tr.querySelector('.day-hora');
+            if (hEl && hEl.textContent.trim()) cur = hEl.textContent.trim();
+            return;
+          }
+          const hEl = tr.querySelector('.p-hora'); if (hEl) hEl.textContent = cur;
+          const m = parseMins(tr.querySelector('.p-dur')?.textContent || ''); if (m > 0) cur = addMins(cur, m);
+        });
+        updateProgHdr();
+      }
+
+      function renderProg() {
+        const tb = document.getElementById('prog-tbody'); tb.innerHTML = '';
+        let cur = horaIniDia1;
+        progRows.forEach(r => {
+          if (r.type === 'day-sep') {
+            const tr = makeDaySepTr(r.label || 'Día', r.startTime || '');
+            tb.appendChild(tr);
+            if (r.startTime) cur = r.startTime;
+            return;
+          }
+          tb.appendChild(makeProgTr(cur, r.dur || '', r.act || '', r.desc || '', r.mat || '', r.resp || ''));
+          const m = parseMins(r.dur || ''); if (m > 0) cur = addMins(cur, m);
+        });
+        updateProgHdr();
+      }
+
+      function makeProgTr(hora, dur, act, desc, mat, resp) {
+        const tr = document.createElement('tr'); tr.draggable = true;
+        tr.innerHTML = `
     <td class="p-drag" title="Arrastrar">☰</td>
     <td class="p-hora">${hora}</td>
     <td class="p-dur ${editMode ? 'editable' : ''}" contenteditable="${editMode}">${dur}</td>
@@ -2498,361 +2846,395 @@
     <td class="p-mat ${editMode ? 'editable' : ''}" contenteditable="${editMode}">${mat}</td>
     <td class="p-resp ${editMode ? 'editable' : ''}" contenteditable="${editMode}">${resp}</td>
     <td class="col-del"><button class="del-btn" onclick="delProgTr(this)">✕</button></td>`;
-      tr.querySelectorAll('[contenteditable="true"]').forEach(td => {
-        td.oninput = () => { syncProgRows(); if (td.classList.contains('p-dur')) recalcHoras(); };
-      });
-      return tr;
-    }
+        tr.querySelectorAll('[contenteditable="true"]').forEach(td => {
+          td.oninput = () => { syncProgRows(); if (td.classList.contains('p-dur')) recalcHoras(); };
+        });
+        return tr;
+      }
 
-    function makeDaySepTr(label, startTime) {
-      const tr = document.createElement('tr');
-      tr.className = 'day-sep'; tr.draggable = true;
-      const horaDisplay = startTime ? ` <span style="font-size:9px;opacity:.75;font-weight:400">${startTime}</span>` : '';
-      tr.innerHTML = `
+      function makeDaySepTr(label, startTime) {
+        const tr = document.createElement('tr');
+        tr.className = 'day-sep'; tr.draggable = true;
+        const horaDisplay = startTime ? ` <span style="font-size:9px;opacity:.75;font-weight:400">${startTime}</span>` : '';
+        tr.innerHTML = `
     <td class="p-drag" style="background:inherit;color:rgba(255,255,255,.5)">☰</td>
     <td colspan="5" class="${editMode ? 'editable' : ''}" contenteditable="${editMode}">${label}</td>
     <td class="day-hora" style="display:none">${startTime || ''}</td>
     <td colspan="1" style="text-align:right;padding-right:6px;font-size:9px;opacity:.7;">${startTime || ''}</td>
     <td class="col-del"><button class="del-btn" style="color:rgba(255,255,255,.6)" onclick="delProgTr(this)">✕</button></td>`;
-      return tr;
-    }
-
-    function addDaySep() {
-      const days = getDays();
-      let label, startTime;
-      if (days.length > 0) {
-        // En multi-día, preguntar qué día
-        const opts = days.map((d, i) => `${i + 1}. ${d.label}`).join('\n');
-        const sel = prompt('¿Para qué día?\n' + opts, '1');
-        if (!sel) return;
-        const idx = parseInt(sel) - 1;
-        if (isNaN(idx) || idx < 0 || idx >= days.length) { st('Día inválido'); return; }
-        label = days[idx].label;
-        startTime = prompt('Hora de inicio de este día (Ej: 08:00):', '08:00');
-        if (!startTime) return;
-      } else {
-        label = prompt('Nombre del día (Ej: Viernes 01 mayo):', 'Día 1');
-        if (!label) return;
-        startTime = prompt('Hora de inicio de este día:', '08:00');
-        if (!startTime) return;
+        return tr;
       }
-      progRows.push({ type: 'day-sep', label, startTime });
-      renderProg(); enableProgEdit(editMode); saveStorage(); st('Separador de día agregado');
-    }
 
-    function syncProgRows() {
-      progRows = [];
-      document.querySelectorAll('#prog-tbody tr').forEach(tr => {
-        if (tr.classList.contains('day-sep')) {
-          const td = tr.querySelectorAll('td');
-          progRows.push({
-            type: 'day-sep',
-            label: td[1]?.textContent || 'Día',
-            startTime: tr.querySelector('.day-hora')?.textContent || ''
-          });
-          return;
+      function addDaySep() {
+        const days = getDays();
+        let label, startTime;
+        if (days.length > 0) {
+          // En multi-día, preguntar qué día
+          const opts = days.map((d, i) => `${i + 1}. ${d.label}`).join('\n');
+          const sel = prompt('¿Para qué día?\n' + opts, '1');
+          if (!sel) return;
+          const idx = parseInt(sel) - 1;
+          if (isNaN(idx) || idx < 0 || idx >= days.length) { st('Día inválido'); return; }
+          label = days[idx].label;
+          startTime = prompt('Hora de inicio de este día (Ej: 08:00):', '08:00');
+          if (!startTime) return;
+        } else {
+          label = prompt('Nombre del día (Ej: Viernes 01 mayo):', 'Día 1');
+          if (!label) return;
+          startTime = prompt('Hora de inicio de este día:', '08:00');
+          if (!startTime) return;
         }
-        progRows.push({
-          dur: tr.querySelector('.p-dur')?.textContent || '',
-          act: tr.querySelector('.p-act')?.textContent || '',
-          desc: tr.querySelector('.p-desc-cell')?.innerHTML || '',
-          mat: tr.querySelector('.p-mat')?.textContent || '',
-          resp: tr.querySelector('.p-resp')?.textContent || ''
+        progRows.push({ type: 'day-sep', label, startTime });
+        renderProg(); enableProgEdit(editMode); saveStorage(); st('Separador de día agregado');
+      }
+
+      function syncProgRows() {
+        progRows = [];
+        document.querySelectorAll('#prog-tbody tr').forEach(tr => {
+          if (tr.classList.contains('day-sep')) {
+            const td = tr.querySelectorAll('td');
+            progRows.push({
+              type: 'day-sep',
+              label: td[1]?.textContent || 'Día',
+              startTime: tr.querySelector('.day-hora')?.textContent || ''
+            });
+            return;
+          }
+          progRows.push({
+            dur: tr.querySelector('.p-dur')?.textContent || '',
+            act: tr.querySelector('.p-act')?.textContent || '',
+            desc: tr.querySelector('.p-desc-cell')?.innerHTML || '',
+            mat: tr.querySelector('.p-mat')?.textContent || '',
+            resp: tr.querySelector('.p-resp')?.textContent || ''
+          });
         });
-      });
-    }
+      }
 
-    function addProgRow() {
-      const dur = document.getElementById('p-dur').value;
-      const tb = document.getElementById('prog-tbody');
-      let cur = horaIniDia1;
-      tb.querySelectorAll('tr').forEach(tr => {
-        if (tr.classList.contains('day-sep')) { const h = tr.querySelector('.day-hora')?.textContent; if (h) cur = h; return; }
-        const m = parseMins(tr.querySelector('.p-dur')?.textContent || ''); if (m > 0) cur = addMins(cur, m);
-      });
-      const tr = makeProgTr(cur, dur, document.getElementById('p-act').value, document.getElementById('p-desc').value, document.getElementById('p-mat').value, document.getElementById('p-resp').value);
-      tb.appendChild(tr);
-      if (editMode) enableProgEdit(true);
-      syncProgRows(); recalcHoras(); closeM('mProg');
-      ['p-dur', 'p-act', 'p-desc', 'p-mat', 'p-resp'].forEach(id => document.getElementById(id).value = '');
-      saveStorage(); st('Fila agregada');
-    }
-    function delProgTr(btn) { btn.closest('tr').remove(); syncProgRows(); recalcHoras(); saveStorage(); }
-    function updateProgHdr() {
-      const hi = document.querySelector('[data-key="hora-inicio"]')?.textContent?.trim() || horaIniDia1 || '';
-      const hc = document.querySelector('[data-key="hora-cierre"]')?.textContent?.trim() || horaCierreUltimo || '';
-      const el = document.getElementById('prog-hdr');
-      if (el) el.textContent = hi ? (hi + (hc ? ' — ' + hc : '')) : '';
-    }
+      function addProgRow() {
+        const dur = document.getElementById('p-dur').value;
+        const horaManual = document.getElementById('p-hora').value.trim();
+        const tb = document.getElementById('prog-tbody');
+        let cur = horaIniDia1;
+        tb.querySelectorAll('tr').forEach(tr => {
+          if (tr.classList.contains('day-sep')) { const h = tr.querySelector('.day-hora')?.textContent; if (h) cur = h; return; }
+          const m = parseMins(tr.querySelector('.p-dur')?.textContent || ''); if (m > 0) cur = addMins(cur, m);
+        });
+        if (horaManual) cur = horaManual;
+        const tr = makeProgTr(cur, dur, document.getElementById('p-act').value, document.getElementById('p-desc').value, document.getElementById('p-mat').value, document.getElementById('p-resp').value);
+        tb.appendChild(tr);
+        if (editMode) enableProgEdit(true);
+        syncProgRows(); recalcHoras(); closeM('mProg');
+        ['p-hora', 'p-dur', 'p-act', 'p-desc', 'p-mat', 'p-resp'].forEach(id => document.getElementById(id).value = '');
+        saveStorage(); st('Fila agregada');
+      }
+      function delProgTr(btn) { btn.closest('tr').remove(); syncProgRows(); recalcHoras(); saveStorage(); }
+      function updateProgHdr() {
+        const hi = document.querySelector('[data-key="hora-inicio"]')?.textContent?.trim() || horaIniDia1 || '';
+        const hc = document.querySelector('[data-key="hora-cierre"]')?.textContent?.trim() || horaCierreUltimo || '';
+        const el = document.getElementById('prog-hdr');
+        if (el) el.textContent = hi ? (hi + (hc ? ' — ' + hc : '')) : '';
+      }
 
-    /* ─── DRAG ─── */
-    function initDrag() {
-      const tb = document.getElementById('prog-tbody'); let src = null;
-      tb.addEventListener('dragstart', e => { src = e.target.closest('tr'); if (src) src.classList.add('dragging'); });
-      tb.addEventListener('dragover', e => {
-        e.preventDefault(); const tgt = e.target.closest('tr');
-        if (tgt && tgt !== src) { const r = tgt.getBoundingClientRect(); tb.insertBefore(src, e.clientY > r.top + r.height / 2 ? tgt.nextSibling : tgt); }
-      });
-      tb.addEventListener('dragend', () => { if (src) src.classList.remove('dragging'); syncProgRows(); recalcHoras(); saveStorage(); });
-    }
+      /* ─── DRAG ─── */
+      function initDrag() {
+        const tb = document.getElementById('prog-tbody'); let src = null;
+        tb.addEventListener('dragstart', e => { src = e.target.closest('tr'); if (src) src.classList.add('dragging'); });
+        tb.addEventListener('dragover', e => {
+          e.preventDefault(); const tgt = e.target.closest('tr');
+          if (tgt && tgt !== src) { const r = tgt.getBoundingClientRect(); tb.insertBefore(src, e.clientY > r.top + r.height / 2 ? tgt.nextSibling : tgt); }
+        });
+        tb.addEventListener('dragend', () => { if (src) src.classList.remove('dragging'); syncProgRows(); recalcHoras(); saveStorage(); });
+      }
 
-    /* ─── CONFIG ─── */
-    function applyConfig() {
-      const grupo = document.getElementById('cfg-grupo').value;
-      const rama = document.getElementById('cfg-rama').value;
+      /* ─── CONFIG ─── */
+      function applyConfig() {
+        const grupo = document.getElementById('cfg-grupo').value;
+        const rama = document.getElementById('cfg-rama').value;
         const withComunidad = document.getElementById('cfg-grupal-comunidad').checked;
         if (rama === 'Grupal') setComunidadGrupal(withComunidad);
-      const fi = document.getElementById('cfg-fecha-ini').value;
-      const ff = document.getElementById('cfg-fecha-fin').value;
-      const hi = document.getElementById('cfg-hi').value;
-      const hc = document.getElementById('cfg-hc').value;
-      const resp = document.getElementById('cfg-resp').value;
-      const cod = document.getElementById('cfg-cod').value;
-      const titulo = document.getElementById('cfg-titulo').value;
+        const fi = document.getElementById('cfg-fecha-ini').value;
+        const ff = document.getElementById('cfg-fecha-fin').value;
+        const hi = document.getElementById('cfg-hi').value;
+        const hc = document.getElementById('cfg-hc').value;
+        const resp = document.getElementById('cfg-resp').value;
+        const cod = document.getElementById('cfg-cod').value;
+        const titulo = document.getElementById('cfg-titulo').value;
 
-      if (grupo) {
-        document.querySelectorAll('[data-key="hdr-grupo"]').forEach(el => el.textContent = grupo);
-        ['fg-a', 'fg-b'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = grupo; }); document.querySelectorAll('[data-key="hdr-grupo"]').forEach(el => el.textContent = grupo);
-        localStorage.setItem(SF('hdr-grupo'), grupo);
-      }
-      if (rama) {
-        applyRama(rama);
-        document.querySelectorAll('[data-key="unidad"]').forEach(el => el.textContent = rama);
-        document.querySelectorAll('[data-key="footer-rama"]').forEach(el => el.textContent = rama);
-        document.getElementById('und-b').textContent = rama;
-        document.getElementById('ind-rama').value = rama.toLowerCase();
-      }
-
-      // Fechas y multi-día
-      if (fi) fechaIni = fi;
-      if (ff) fechaFin = ff;
-      if (hi) horaIniDia1 = hi;
-      if (hc) horaCierreUltimo = hc;
-
-      // Mostrar fechas en la ficha
-      if (fi || ff) {
-        const fechaTxt = fi && ff && fi !== ff
-          ? new Date(fi + 'T00:00:00').toLocaleDateString('es-VE', { day: '2-digit', month: '2-digit', year: 'numeric' }) + ' al ' + new Date(ff + 'T00:00:00').toLocaleDateString('es-VE', { day: '2-digit', month: '2-digit', year: 'numeric' })
-          : fi ? new Date(fi + 'T00:00:00').toLocaleDateString('es-VE', { day: '2-digit', month: '2-digit', year: 'numeric' }) : '';
-        document.querySelectorAll('[data-key="fecha"]').forEach(el => el.textContent = fechaTxt);
-        localStorage.setItem(SF('fecha'), fechaTxt);
-      }
-      // Horario
-      if (hi) { document.querySelectorAll('[data-key="hora-inicio"]').forEach(el => el.textContent = hi); localStorage.setItem(SF('hora-inicio'), hi); }
-      if (hc) { document.querySelectorAll('[data-key="hora-cierre"]').forEach(el => el.textContent = hc); localStorage.setItem(SF('hora-cierre'), hc); }
-
-      // Código auto
-      if (!cod && fi) {
-        const d = new Date(fi + 'T00:00:00');
-        const dd = String(d.getDate()).padStart(2, '0'), mm = String(d.getMonth() + 1).padStart(2, '0'), yy = String(d.getFullYear()).slice(-2);
-        const rc = (rama || 'M')[0].toUpperCase(); setCode(dd + mm + yy + '-' + rc);
-      }
-      if (cod) setCode(cod);
-      if (resp) { document.querySelectorAll('[data-key="responsable"]').forEach(el => el.textContent = resp); }
-      if (titulo) { document.querySelectorAll('[id^="doc-title"]').forEach(el => el.textContent = titulo); }
-
-      // Indicar multi-día
-      const md = isMultiday();
-      document.getElementById('multiday-info').style.display = md ? 'block' : 'none';
-      if (md) {
-        // Actualizar selector de día en modal programa
-        const sel = document.getElementById('p-day');
-        sel.innerHTML = getDays().map((d, i) => `<option value="${i}">${d.label}</option>`).join('');
-        document.getElementById('p-day-group').style.display = 'block';
-      }
-
-      recalcHoras(); syncSec(); closeM('mConfig'); saveStorage(); st('Config aplicada' + (md ? ' · Multi-día activo 📅' : ''));
-    }
-    function setCode(c) { ['cod-a', 'cod-b', 'cod-c', 'cod-g2'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = c; }); localStorage.setItem(SF('codigo'), c); syncExtraHeaders(); }
-
-    /* ─── SYNC ─── */
-    function syncSec() {
-      const na = document.getElementById('hdr-nombre-act');
-      const p2 = document.getElementById('p2-nombre');
-      if (na && p2) p2.innerHTML = na.innerHTML || na.textContent;
-      const ca = document.getElementById('cod-a'); const cb = document.getElementById('cod-b'); if (ca && cb) cb.textContent = ca.textContent;
-      const ua = document.querySelector('[data-key="unidad"]'); const ub = document.getElementById('und-b'); const uc = document.getElementById('und-c'); if (ua && ub) ub.textContent = ua.textContent; if (ua && uc) uc.textContent = ua.textContent;
-      updateProgHdr();
-    }
-
-    /* ─── EXPORT/IMPORT ─── */
-    function doExportJSON() {
-      const d = {};
-      document.querySelectorAll('[data-key]').forEach(el => d[el.dataset.key] = el.innerHTML || el.textContent);
-      const na = document.getElementById('hdr-nombre-act'); if (na) d['nombre-act'] = na.innerHTML || na.textContent;
-      const am = document.getElementById('hdr-ambientacion'); if (am) d['ambientacion'] = am.innerHTML || am.textContent;
-      const out = { _data: d, _indicadores_extra: Object.fromEntries(Object.entries(INDICADORES).filter(([k]) => !['manada', 'tropa'].includes(k))), _ods: [...odsActivos], _prog: progRows, _ind: indRows, _logos: customLogos, _fechaIni: fechaIni, _fechaFin: fechaFin };
-      const blob = new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' });
-      const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-      a.download = (na?.textContent?.trim() || 'ficha') + '.json'; a.click();
-    }
-    function doImportJSON(file) {
-      if (!file) return; const r = new FileReader();
-      r.onload = e => {
-        try {
-          const d = JSON.parse(e.target.result);
-          if (d._data) {
-            Object.entries(d._data).forEach(([k, v]) => { const el = document.querySelector(`[data-key="${k}"]`); if (el) { el.innerHTML = v; localStorage.setItem(SF(k), v); } });
-            if (d._data['nombre-act']) ['hdr-nombre-act', 'p2-nombre'].forEach(id => { const el = document.getElementById(id); if (el) el.innerHTML = d._data['nombre-act']; });
-            if (d._data['ambientacion']) { const el = document.getElementById('hdr-ambientacion'); if (el) el.innerHTML = d._data['ambientacion']; }
-          }
-          if (d._indicadores_extra) Object.assign(INDICADORES, d._indicadores_extra);
-          if (d._ods) { odsActivos = new Set(d._ods); renderODS(); }
-          if (d._prog) { progRows = d._prog; renderProg(); }
-          if (d._ind) { indRows = d._ind; renderInd(); }
-          if (d._logos) { customLogos = d._logos; Object.entries(d._logos).forEach(([id, src]) => applyLogo(id, src)); }
-          if (d._fechaIni) fechaIni = d._fechaIni;
-          if (d._fechaFin) fechaFin = d._fechaFin;
-          saveStorage(); syncSec(); st('JSON importado ✅');
-        } catch (err) { alert('Error JSON: ' + err.message); }
-      };
-      r.readAsText(file);
-    }
-
-    /* ─── GUARDAR HTML ─── */
-    function doSaveHTML(silent = false) {
-      saveStorage(); syncProgRows(); recalcHoras();
-      const clone = document.documentElement.cloneNode(true);
-      document.querySelectorAll('[data-key]').forEach(el => { const c = clone.querySelector(`[data-key="${el.dataset.key}"]`); if (c) c.innerHTML = el.innerHTML; });
-      ['hdr-nombre-act', 'hdr-ambientacion', 'p2-nombre'].forEach(id => { const s = document.getElementById(id); const c = clone.getElementById(id); if (s && c) c.innerHTML = s.innerHTML; });
-      [['logo-grupo', LOGO_GRUPO_DEF], ['logo-rama', RAMA_LOGOS[ramaActual] || RAMA_LOGOS.manada],
-      ['logo-grupo-p2', LOGO_GRUPO_DEF], ['logo-rama-p2', RAMA_LOGOS[ramaActual] || RAMA_LOGOS.manada]].forEach(([id, def]) => {
-        const src = document.getElementById(id)?.src || def; const c = clone.getElementById(id); if (c) c.src = src;
-      });
-      const fw = clone.getElementById('fichaWrap'); if (fw) fw.className = 'rama-' + ramaActual;
-      clone.querySelectorAll('script').forEach(s => {
-        if (s.textContent.includes('let INDICADORES =')) {
-          s.textContent = s.textContent.replace(/let INDICADORES = \{[\s\S]*?\};/, 'let INDICADORES = ' + JSON.stringify(INDICADORES, null, 2) + ';');
+        if (grupo) {
+          document.querySelectorAll('[data-key="hdr-grupo"]').forEach(el => el.textContent = grupo);
+          ['fg-a', 'fg-b'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = grupo; }); document.querySelectorAll('[data-key="hdr-grupo"]').forEach(el => el.textContent = grupo);
+          localStorage.setItem(SF('hdr-grupo'), grupo);
         }
-      });
-      const html = '<!DOCTYPE html>\n' + clone.outerHTML;
-      const blob = new Blob([html], { type: 'text/html' });
-      const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-      const nombre = (document.getElementById('hdr-nombre-act')?.textContent?.trim() || 'ficha-scout').replace(/[^\w\sáéíóúñü\-]/gi, '').trim();
-      a.download = nombre + '.html'; a.click();
-      if (!silent) st('HTML guardado 💾');
-    }
+        if (rama) {
+          applyRama(rama);
+          document.querySelectorAll('[data-key="unidad"]').forEach(el => el.textContent = rama);
+          document.querySelectorAll('[data-key="footer-rama"]').forEach(el => el.textContent = rama);
+          document.getElementById('und-b').textContent = rama;
+          document.getElementById('ind-rama').value = rama.toLowerCase();
+        }
 
-    /* ─── PDF / HELPERS ─── */
-    function doPDF() { if (editMode) toggleEdit(); window.print(); }
-    function openM(id) {
-      document.getElementById(id).classList.add('open');
-      if (id === 'mInd') renderIndPanel();
-      if (id === 'mConfig') {
-        if (horaIniDia1) document.getElementById('cfg-hi').value = horaIniDia1;
-        if (horaCierreUltimo) document.getElementById('cfg-hc').value = horaCierreUltimo;
-        if (fechaIni) document.getElementById('cfg-fecha-ini').value = fechaIni;
-        if (fechaFin) document.getElementById('cfg-fecha-fin').value = fechaFin;
+        // Fechas y multi-día
+        if (fi) fechaIni = fi;
+        if (ff) fechaFin = ff;
+        if (hi) horaIniDia1 = hi;
+        if (hc) horaCierreUltimo = hc;
+
+        // Mostrar fechas en la ficha
+        if (fi || ff) {
+          const fechaTxt = fi && ff && fi !== ff
+            ? new Date(fi + 'T00:00:00').toLocaleDateString('es-VE', { day: '2-digit', month: '2-digit', year: 'numeric' }) + ' al ' + new Date(ff + 'T00:00:00').toLocaleDateString('es-VE', { day: '2-digit', month: '2-digit', year: 'numeric' })
+            : fi ? new Date(fi + 'T00:00:00').toLocaleDateString('es-VE', { day: '2-digit', month: '2-digit', year: 'numeric' }) : '';
+          document.querySelectorAll('[data-key="fecha"]').forEach(el => el.textContent = fechaTxt);
+          localStorage.setItem(SF('fecha'), fechaTxt);
+        }
+        // Horario
+        if (hi) { document.querySelectorAll('[data-key="hora-inicio"]').forEach(el => el.textContent = hi); localStorage.setItem(SF('hora-inicio'), hi); }
+        if (hc) { document.querySelectorAll('[data-key="hora-cierre"]').forEach(el => el.textContent = hc); localStorage.setItem(SF('hora-cierre'), hc); }
+
+        // Código auto
+        if (!cod && fi) {
+          const d = new Date(fi + 'T00:00:00');
+          const dd = String(d.getDate()).padStart(2, '0'), mm = String(d.getMonth() + 1).padStart(2, '0'), yy = String(d.getFullYear()).slice(-2);
+          const rc = (rama || 'M')[0].toUpperCase(); setCode(dd + mm + yy + '-' + rc);
+        }
+        if (cod) setCode(cod);
+        if (resp) { document.querySelectorAll('[data-key="responsable"]').forEach(el => el.textContent = resp); }
+        if (titulo) { document.querySelectorAll('[id^="doc-title"]').forEach(el => el.textContent = titulo); }
+
+        // Indicar multi-día
         const md = isMultiday();
         document.getElementById('multiday-info').style.display = md ? 'block' : 'none';
+        if (md) {
+          // Actualizar selector de día en modal programa
+          const sel = document.getElementById('p-day');
+          sel.innerHTML = getDays().map((d, i) => `<option value="${i}">${d.label}</option>`).join('');
+          document.getElementById('p-day-group').style.display = 'block';
+        }
+
+        recalcHoras(); syncSec(); closeM('mConfig'); saveStorage(); st('Config aplicada' + (md ? ' · Multi-día activo 📅' : ''));
       }
-    }
-    function closeM(id) { document.getElementById(id).classList.remove('open'); }
-    function scrollHelp() { document.getElementById('helpPage').scrollIntoView({ behavior: 'smooth' }); }
-    function st(msg) { const el = document.getElementById('tbSt'); el.textContent = msg; el.style.color = '#a8f0a8'; setTimeout(() => { el.textContent = 'Listo'; el.style.color = ''; }, 2500); }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.overlay.open').forEach(m => m.classList.remove('open')); });
+      function setCode(c) { ['cod-a', 'cod-b', 'cod-c', 'cod-g2'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = c; }); localStorage.setItem(SF('codigo'), c); syncExtraHeaders(); }
 
-
-    /* ── MODO GRUPAL ── */
-    let modoGrupal = false;
-
-    function onRamaChange(val) {
-      document.getElementById('cfg-grupal-opts').style.display = val === 'Grupal' ? 'block' : 'none';
-    }
-
-    function applyGrupalLayout(isGrupal) {
-      modoGrupal = isGrupal;
-      const sg = document.getElementById('main-sec-group');
-      const g2c = document.getElementById('blk-g2-content');
-      const blk1c = document.querySelector('#blk1 .page-content');
-
-      if (isGrupal && sg && g2c) {
-        g2c.appendChild(sg);
-      } else if (!isGrupal && sg && blk1c) {
-        blk1c.appendChild(sg);
+      /* ─── SYNC ─── */
+      function syncSec() {
+        const na = document.getElementById('hdr-nombre-act');
+        const p2 = document.getElementById('p2-nombre');
+        if (na && p2) p2.innerHTML = na.innerHTML || na.textContent;
+        const ca = document.getElementById('cod-a'); const cb = document.getElementById('cod-b'); if (ca && cb) cb.textContent = ca.textContent;
+        const ua = document.querySelector('[data-key="unidad"]'); const ub = document.getElementById('und-b'); const uc = document.getElementById('und-c'); if (ua && ub) ub.textContent = ua.textContent; if (ua && uc) uc.textContent = ua.textContent;
+        updateProgHdr();
+        syncEmpty();
       }
 
-      // Sync g2 header
-      const cod  = document.getElementById('cod-a')?.textContent || '—';
-      const und  = document.querySelector('[data-key="unidad"]')?.textContent || '—';
-      const grp  = document.querySelector('[data-key="hdr-grupo"]')?.textContent || '—';
-      const nom  = document.getElementById('hdr-nombre-act')?.innerHTML || '';
-      const elList = [
-        ['cod-g2', cod], ['und-g2', und], ['grp-g2', grp]
-      ];
-      elList.forEach(([id, val]) => { const el = document.getElementById(id); if (el) el.textContent = val; });
-      const g2n = document.getElementById('g2-nombre'); if (g2n) g2n.innerHTML = nom;
-      // logos synced globally via applyLogo on load; re-apply any custom overrides
-      Object.entries(customLogos).forEach(([k, v]) => applyLogo(k, v));
-    }
+      function syncEmpty() {
+        // Ocultar en print secciones de texto opcionales vacías
+        document.querySelectorAll('[data-optional="true"]').forEach(sec => {
+          const body = sec.querySelector('.sec-body');
+          const empty = !body || body.textContent.trim() === '';
+          sec.classList.toggle('print-hide', empty);
+        });
+        // Ocultar ambientación si vacía
+        const ambBar = document.querySelector('.ambientacion-bar');
+        const ambVal = document.getElementById('hdr-ambientacion');
+        if (ambBar && ambVal) ambBar.classList.toggle('print-hide', ambVal.textContent.trim() === '');
+        // Ocultar info-sec-items vacíos (lugar, fecha, hora, etc.)
+        document.querySelectorAll('.info-sec-item').forEach(item => {
+          const val = item.querySelector('.info-sec-val');
+          const empty = !val || val.textContent.trim() === '';
+          item.classList.toggle('print-hide', empty);
+        });
+      }
 
-    function setComunidadGrupal(withComunidad) {
-      const fw = document.getElementById('fichaWrap');
-      if (withComunidad) fw.classList.add('grupal-con-comunidad');
-      else fw.classList.remove('grupal-con-comunidad');
-      localStorage.setItem(SF('grupal-comunidad'), withComunidad ? '1' : '0');
-    }
+      /* ─── EXPORT/IMPORT ─── */
+      function doExportJSON() {
+        const d = {};
+        document.querySelectorAll('[data-key]').forEach(el => d[el.dataset.key] = el.innerHTML || el.textContent);
+        const na = document.getElementById('hdr-nombre-act'); if (na) d['nombre-act'] = na.innerHTML || na.textContent;
+        const am = document.getElementById('hdr-ambientacion'); if (am) d['ambientacion'] = am.innerHTML || am.textContent;
+        const out = { _data: d, _indicadores_extra: Object.fromEntries(Object.entries(INDICADORES).filter(([k]) => !['manada', 'tropa'].includes(k))), _ods: [...odsActivos], _prog: progRows, _ind: indRows, _logos: customLogos, _fechaIni: fechaIni, _fechaFin: fechaFin };
+        const blob = new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' });
+        const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+        a.download = (na?.textContent?.trim() || 'ficha') + '.json'; a.click();
+      }
+      function doImportJSON(file) {
+        if (!file) return; const r = new FileReader();
+        r.onload = e => {
+          try {
+            const d = JSON.parse(e.target.result);
+            if (d._data) {
+              Object.entries(d._data).forEach(([k, v]) => { const el = document.querySelector(`[data-key="${k}"]`); if (el) { el.innerHTML = v; localStorage.setItem(SF(k), v); } });
+              if (d._data['nombre-act']) ['hdr-nombre-act', 'p2-nombre'].forEach(id => { const el = document.getElementById(id); if (el) el.innerHTML = d._data['nombre-act']; });
+              if (d._data['ambientacion']) { const el = document.getElementById('hdr-ambientacion'); if (el) el.innerHTML = d._data['ambientacion']; }
+            }
+            if (d._indicadores_extra) Object.assign(INDICADORES, d._indicadores_extra);
+            if (d._ods) { odsActivos = new Set(d._ods); renderODS(); }
+            if (d._prog) { progRows = d._prog; renderProg(); }
+            if (d._ind) { indRows = d._ind; renderInd(); }
+            if (d._logos) { customLogos = d._logos; Object.entries(d._logos).forEach(([id, src]) => applyLogo(id, src)); }
+            if (d._fechaIni) fechaIni = d._fechaIni;
+            if (d._fechaFin) fechaFin = d._fechaFin;
+            saveStorage(); syncSec(); st('JSON importado ✅');
+          } catch (err) { alert('Error JSON: ' + err.message); }
+        };
+        r.readAsText(file);
+      }
 
-    /* ── RESPONSIVE: hamburger & page scale ── */
-    function toggleDrawer() {
-      const d = document.getElementById('tbDrawer');
-      const h = document.getElementById('tbHamburger');
-      const open = d.classList.toggle('open');
-      h.textContent = open ? '✕' : '☰';
-    }
-    function closeDrawer() {
-      const d = document.getElementById('tbDrawer');
-      const h = document.getElementById('tbHamburger');
-      d.classList.remove('open');
-      h.textContent = '☰';
-    }
-    // Sync mobile edit button label with desktop
-    const _origToggleEdit = typeof toggleEdit === 'function' ? toggleEdit : null;
-    function syncEditBtnM() {
-      const m = document.getElementById('editBtnM');
-      const d = document.getElementById('editBtn');
-      if (m && d) { m.textContent = d.textContent; m.className = d.className; }
-    }
+      /* ─── GUARDAR HTML ─── */
+      function doSaveHTML(silent = false) {
+        saveStorage(); syncProgRows(); recalcHoras();
+        const clone = document.documentElement.cloneNode(true);
+        document.querySelectorAll('[data-key]').forEach(el => { const c = clone.querySelector(`[data-key="${el.dataset.key}"]`); if (c) c.innerHTML = el.innerHTML; });
+        ['hdr-nombre-act', 'hdr-ambientacion', 'p2-nombre'].forEach(id => { const s = document.getElementById(id); const c = clone.getElementById(id); if (s && c) c.innerHTML = s.innerHTML; });
+        // Embed doc-title
+        const dtVal = document.getElementById('doc-title')?.textContent || 'FICHA TÉCNICA';
+        clone.querySelectorAll('.hdr-title-doc').forEach(el => el.textContent = dtVal);
+        [['logo-grupo', LOGO_GRUPO_DEF], ['logo-rama', RAMA_LOGOS[ramaActual] || RAMA_LOGOS.manada],
+        ['logo-grupo-p2', LOGO_GRUPO_DEF], ['logo-rama-p2', RAMA_LOGOS[ramaActual] || RAMA_LOGOS.manada]].forEach(([id, def]) => {
+          const src = document.getElementById(id)?.src || def; const c = clone.getElementById(id); if (c) c.src = src;
+        });
+        const fw = clone.getElementById('fichaWrap'); if (fw) fw.className = 'rama-' + ramaActual;
+        clone.querySelectorAll('script').forEach(s => {
+          if (s.textContent.includes('let INDICADORES =')) {
+            s.textContent = s.textContent.replace(/let INDICADORES = \{[\s\S]*?\};/, 'let INDICADORES = ' + JSON.stringify(INDICADORES, null, 2) + ';');
+          }
+        });
+        const html = '<!DOCTYPE html>\n' + clone.outerHTML;
+        const blob = new Blob([html], { type: 'text/html' });
+        const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+        const nombre = (document.getElementById('hdr-nombre-act')?.textContent?.trim() || 'ficha-scout').replace(/[^\w\sáéíóúñü\-]/gi, '').trim();
+        const fechaTxt = (document.querySelector('[data-key="fecha"]')?.textContent?.trim() || '').replace(/[\/\\:]/g, '-');
+        a.download = (nombre + (fechaTxt ? ' ' + fechaTxt : '') + '.html').trim();
+        a.click();
+        if (!silent) st('HTML guardado 💾');
+      }
 
-    // Page scaling for small screens
-    function scalePages() {
-      const wrap = document.querySelector('.pages-wrap');
-      if (!wrap) return;
-      const blocks = document.querySelectorAll('.page-block');
-      if (!blocks.length) return;
-      // Reset zoom to measure natural width
-      wrap.style.zoom = '';
-      const naturalW = blocks[0].getBoundingClientRect().width || 816;
-      const vw = window.innerWidth;
-      if (vw < naturalW + 24) {
-        wrap.style.zoom = (vw / naturalW).toFixed(4);
-      } else {
+      /* ─── PDF / HELPERS ─── */
+      function doPDF() { if (editMode) toggleEdit(); window.print(); }
+      function openM(id) {
+        document.getElementById(id).classList.add('open');
+        if (id === 'mInd') renderIndPanel();
+        if (id === 'mConfig') {
+          if (horaIniDia1) document.getElementById('cfg-hi').value = horaIniDia1;
+          if (horaCierreUltimo) document.getElementById('cfg-hc').value = horaCierreUltimo;
+          if (fechaIni) document.getElementById('cfg-fecha-ini').value = fechaIni;
+          if (fechaFin) document.getElementById('cfg-fecha-fin').value = fechaFin;
+          // Pre-fill text fields from current document values
+          const grupoEl = document.querySelector('[data-key="hdr-grupo"]');
+          const respEl = document.querySelector('[data-key="responsable"]');
+          const dtEl = document.getElementById('doc-title');
+          document.getElementById('cfg-grupo').value = grupoEl?.textContent?.trim() || 'Grupo Scout La Salle Guaparo';
+          document.getElementById('cfg-resp').value = respEl?.textContent?.trim() || 'Akela';
+          document.getElementById('cfg-titulo').value = dtEl?.textContent?.trim() || 'FICHA TÉCNICA';
+          const md = isMultiday();
+          document.getElementById('multiday-info').style.display = md ? 'block' : 'none';
+        }
+      }
+      function closeM(id) { document.getElementById(id).classList.remove('open'); }
+      function scrollHelp() { document.getElementById('helpPage').scrollIntoView({ behavior: 'smooth' }); }
+      function st(msg) { const el = document.getElementById('tbSt'); el.textContent = msg; el.style.color = '#a8f0a8'; setTimeout(() => { el.textContent = 'Listo'; el.style.color = ''; }, 2500); }
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.overlay.open').forEach(m => m.classList.remove('open')); });
+
+
+      /* ── MODO GRUPAL ── */
+      let modoGrupal = false;
+
+      function onRamaChange(val) {
+        document.getElementById('cfg-grupal-opts').style.display = val === 'Grupal' ? 'block' : 'none';
+      }
+
+      function applyGrupalLayout(isGrupal) {
+        modoGrupal = isGrupal;
+        const sg = document.getElementById('main-sec-group');
+        const g2c = document.getElementById('blk-g2-content');
+        const blk1c = document.querySelector('#blk1 .page-content');
+
+        if (isGrupal && sg && g2c) {
+          g2c.appendChild(sg);
+        } else if (!isGrupal && sg && blk1c) {
+          blk1c.appendChild(sg);
+        }
+
+        // Sync g2 header
+        const cod = document.getElementById('cod-a')?.textContent || '—';
+        const und = document.querySelector('[data-key="unidad"]')?.textContent || '—';
+        const grp = document.querySelector('[data-key="hdr-grupo"]')?.textContent || '—';
+        const nom = document.getElementById('hdr-nombre-act')?.innerHTML || '';
+        const elList = [
+          ['cod-g2', cod], ['und-g2', und], ['grp-g2', grp]
+        ];
+        elList.forEach(([id, val]) => { const el = document.getElementById(id); if (el) el.textContent = val; });
+        const g2n = document.getElementById('g2-nombre'); if (g2n) g2n.innerHTML = nom;
+        // logos synced globally via applyLogo on load; re-apply any custom overrides
+        Object.entries(customLogos).forEach(([k, v]) => applyLogo(k, v));
+      }
+
+      function setComunidadGrupal(withComunidad) {
+        const fw = document.getElementById('fichaWrap');
+        if (withComunidad) fw.classList.add('grupal-con-comunidad');
+        else fw.classList.remove('grupal-con-comunidad');
+        localStorage.setItem(SF('grupal-comunidad'), withComunidad ? '1' : '0');
+      }
+
+      /* ── RESPONSIVE: hamburger & page scale ── */
+      function toggleDrawer() {
+        const d = document.getElementById('tbDrawer');
+        const h = document.getElementById('tbHamburger');
+        const open = d.classList.toggle('open');
+        h.textContent = open ? '✕' : '☰';
+      }
+      function closeDrawer() {
+        const d = document.getElementById('tbDrawer');
+        const h = document.getElementById('tbHamburger');
+        d.classList.remove('open');
+        h.textContent = '☰';
+      }
+      // Sync mobile edit button label with desktop
+      const _origToggleEdit = typeof toggleEdit === 'function' ? toggleEdit : null;
+      function syncEditBtnM() {
+        const m = document.getElementById('editBtnM');
+        const d = document.getElementById('editBtn');
+        if (m && d) { m.textContent = d.textContent; m.className = d.className; }
+      }
+
+      // Page scaling for small screens
+      function scalePages() {
+        const wrap = document.querySelector('.pages-wrap');
+        if (!wrap) return;
+        const blocks = document.querySelectorAll('.page-block');
+        if (!blocks.length) return;
+        // Reset zoom to measure natural width
         wrap.style.zoom = '';
+        const naturalW = blocks[0].getBoundingClientRect().width || 816;
+        const vw = window.innerWidth;
+        if (vw < naturalW + 24) {
+          wrap.style.zoom = (vw / naturalW).toFixed(4);
+        } else {
+          wrap.style.zoom = '';
+        }
       }
-    }
-    window.addEventListener('resize', scalePages);
-    window.addEventListener('load', scalePages);
+      window.addEventListener('resize', scalePages);
+      window.addEventListener('load', scalePages);
 
 
-    /* ── PÁGINAS EXTRA ── */
-    let extraPages = [];
+      /* ── PÁGINAS EXTRA ── */
+      let extraPages = [];
 
-    function getExtraPageHeader() {
-      const grupo  = document.querySelector('[data-key="hdr-grupo"]')?.textContent || '';
-      const unidad = document.querySelector('[data-key="unidad"]')?.textContent || '';
-      const cod    = document.getElementById('cod-a')?.textContent || '—';
-      const nombre = document.getElementById('hdr-nombre-act')?.innerHTML || '';
-      const logoG  = document.getElementById('logo-grupo')?.src || '';
-      const logoR  = document.getElementById('logo-rama')?.src || '';
-      return { grupo, unidad, cod, nombre, logoG, logoR };
-    }
+      function getExtraPageHeader() {
+        const grupo = document.querySelector('[data-key="hdr-grupo"]')?.textContent || '';
+        const unidad = document.querySelector('[data-key="unidad"]')?.textContent || '';
+        const cod = document.getElementById('cod-a')?.textContent || '—';
+        const nombre = document.getElementById('hdr-nombre-act')?.innerHTML || '';
+        const logoG = document.getElementById('logo-grupo')?.src || '';
+        const logoR = document.getElementById('logo-rama')?.src || '';
+        return { grupo, unidad, cod, nombre, logoG, logoR };
+      }
 
-    function buildExtraPage(id, titulo, body) {
-      const h = getExtraPageHeader();
-      const wrap = document.createElement('div');
-      wrap.className = 'extra-page-wrap';
-      wrap.dataset.epId = id;
-      wrap.innerHTML = `
+      function buildExtraPage(id, titulo, body) {
+        const h = getExtraPageHeader();
+        const wrap = document.createElement('div');
+        wrap.className = 'extra-page-wrap';
+        wrap.dataset.epId = id;
+        wrap.innerHTML = `
         <button class="ep-del" onclick="removeExtraPage('${id}')" title="Eliminar página">✕</button>
         <div class="pg-div"></div>
         <div class="page-block">
@@ -2883,89 +3265,89 @@
           </div>
         </div>`;
 
-      // Save on input
-      wrap.querySelector('.ep-titulo').addEventListener('input', () => saveExtraPages());
-      wrap.querySelector('.ep-body').addEventListener('input', () => saveExtraPages());
-      return wrap;
-    }
+        // Save on input
+        wrap.querySelector('.ep-titulo').addEventListener('input', () => saveExtraPages());
+        wrap.querySelector('.ep-body').addEventListener('input', () => saveExtraPages());
+        return wrap;
+      }
 
-    function addExtraPage(id, titulo, body) {
-      id = id || ('ep-' + Date.now());
-      titulo = titulo || '';
-      body   = body   || '';
-      const wrap = buildExtraPage(id, titulo, body);
-      document.getElementById('extraPagesContainer').appendChild(wrap);
-      extraPages.push(id);
-      syncExtraEditable();
-      saveExtraPages();
-      scalePages();
-      st('Página extra añadida');
-    }
+      function addExtraPage(id, titulo, body) {
+        id = id || ('ep-' + Date.now());
+        titulo = titulo || '';
+        body = body || '';
+        const wrap = buildExtraPage(id, titulo, body);
+        document.getElementById('extraPagesContainer').appendChild(wrap);
+        extraPages.push(id);
+        syncExtraEditable();
+        saveExtraPages();
+        scalePages();
+        st('Página extra añadida');
+      }
 
-    function removeExtraPage(id) {
-      const el = document.querySelector(`.extra-page-wrap[data-ep-id="${id}"]`);
-      if (el) el.remove();
-      extraPages = extraPages.filter(x => x !== id);
-      saveExtraPages();
-      scalePages();
-      st('Página eliminada');
-    }
+      function removeExtraPage(id) {
+        const el = document.querySelector(`.extra-page-wrap[data-ep-id="${id}"]`);
+        if (el) el.remove();
+        extraPages = extraPages.filter(x => x !== id);
+        saveExtraPages();
+        scalePages();
+        st('Página eliminada');
+      }
 
-    function syncExtraEditable() { /* extra pages always editable */ }
+      function syncExtraEditable() { /* extra pages always editable */ }
 
-    function saveExtraPages() {
-      const data = [];
-      document.querySelectorAll('.extra-page-wrap').forEach(wrap => {
-        data.push({
-          id:     wrap.dataset.epId,
-          titulo: wrap.querySelector('.ep-titulo').innerHTML,
-          body:   wrap.querySelector('.ep-body').innerHTML,
+      function saveExtraPages() {
+        const data = [];
+        document.querySelectorAll('.extra-page-wrap').forEach(wrap => {
+          data.push({
+            id: wrap.dataset.epId,
+            titulo: wrap.querySelector('.ep-titulo').innerHTML,
+            body: wrap.querySelector('.ep-body').innerHTML,
+          });
         });
-      });
-      localStorage.setItem(SF('extra-pages'), JSON.stringify(data));
-    }
+        localStorage.setItem(SF('extra-pages'), JSON.stringify(data));
+      }
 
-    function loadExtraPages() {
-      const raw = localStorage.getItem(SF('extra-pages'));
-      if (!raw) return;
-      try {
-        JSON.parse(raw).forEach(p => addExtraPage(p.id, p.titulo, p.body));
-      } catch(e) {}
-    }
+      function loadExtraPages() {
+        const raw = localStorage.getItem(SF('extra-pages'));
+        if (!raw) return;
+        try {
+          JSON.parse(raw).forEach(p => addExtraPage(p.id, p.titulo, p.body));
+        } catch (e) { }
+      }
 
-    function syncExtraHeaders() {
-      const h = getExtraPageHeader();
-      document.querySelectorAll('.extra-page-wrap').forEach(wrap => {
-        const lg = wrap.querySelector('.ep-logo-g'); if (lg) lg.src = h.logoG;
-        const lr = wrap.querySelector('.ep-logo-r'); if (lr) lr.src = h.logoR;
-        const nm = wrap.querySelector('.ep-nombre');  if (nm) nm.innerHTML = h.nombre;
-        wrap.querySelectorAll('.ep-cod').forEach(el => el.textContent = h.cod);
-        wrap.querySelectorAll('.ep-grupo').forEach(el => el.textContent = h.grupo);
-        wrap.querySelectorAll('.ep-und').forEach(el => el.textContent = h.unidad);
-      });
-    }
+      function syncExtraHeaders() {
+        const h = getExtraPageHeader();
+        document.querySelectorAll('.extra-page-wrap').forEach(wrap => {
+          const lg = wrap.querySelector('.ep-logo-g'); if (lg) lg.src = h.logoG;
+          const lr = wrap.querySelector('.ep-logo-r'); if (lr) lr.src = h.logoR;
+          const nm = wrap.querySelector('.ep-nombre'); if (nm) nm.innerHTML = h.nombre;
+          wrap.querySelectorAll('.ep-cod').forEach(el => el.textContent = h.cod);
+          wrap.querySelectorAll('.ep-grupo').forEach(el => el.textContent = h.grupo);
+          wrap.querySelectorAll('.ep-und').forEach(el => el.textContent = h.unidad);
+        });
+      }
 
-    function toggleManualInd() {
-      const f = document.getElementById('ind-manual-form');
-      const a = document.getElementById('manual-arrow');
-      const open = f.style.display !== 'none';
-      f.style.display = open ? 'none' : 'block';
-      a.textContent = open ? '▶' : '▼';
-    }
-    function addIndManual() {
-      const area  = document.getElementById('ind-m-area').value.trim();
-      const etapa = document.getElementById('ind-m-etapa').value.trim();
-      const texto = document.getElementById('ind-m-texto').value.trim();
-      if (!texto) { st('Escribe el texto del indicador'); return; }
-      indRows.push({ area: area || '—', etapa: etapa || '—', texto });
-      renderInd(); saveStorage(); st('Indicador agregado');
-      document.getElementById('ind-m-area').value = '';
-      document.getElementById('ind-m-etapa').value = '';
-      document.getElementById('ind-m-texto').value = '';
-    }
+      function toggleManualInd() {
+        const f = document.getElementById('ind-manual-form');
+        const a = document.getElementById('manual-arrow');
+        const open = f.style.display !== 'none';
+        f.style.display = open ? 'none' : 'block';
+        a.textContent = open ? '▶' : '▼';
+      }
+      function addIndManual() {
+        const area = document.getElementById('ind-m-area').value.trim();
+        const etapa = document.getElementById('ind-m-etapa').value.trim();
+        const texto = document.getElementById('ind-m-texto').value.trim();
+        if (!texto) { st('Escribe el texto del indicador'); return; }
+        indRows.push({ area: area || '—', etapa: etapa || '—', texto });
+        renderInd(); saveStorage(); st('Indicador agregado');
+        document.getElementById('ind-m-area').value = '';
+        document.getElementById('ind-m-etapa').value = '';
+        document.getElementById('ind-m-texto').value = '';
+      }
 
-    setInterval(() => { if (editMode) saveStorage(); }, 45000);
-  </script>
+      setInterval(() => { if (editMode) saveStorage(); }, 45000);
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Ayuda — Ficha Técnica Scout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple: #622599;
+      --purple-dk: #3a1060;
+      --purple-lt: #f3eafa;
+      --yellow: #F3E22B;
+      --ff-h: 'Montserrat', sans-serif;
+      --ff-b: 'Noto Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--ff-b);
+      background: #0d0820;
+      color: #e0d8f0;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: linear-gradient(135deg, #1a0840 0%, #3a1060 55%, #622599 100%);
+      padding: 28px 32px 24px;
+      border-bottom: 2px solid rgba(243, 226, 43, .3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 24px rgba(0,0,0,.5);
+    }
+
+    .header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .header-icon {
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    .header-text h1 {
+      font-family: var(--ff-h);
+      font-weight: 900;
+      font-size: 22px;
+      color: white;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .header-text p {
+      font-size: 12px;
+      color: rgba(255,255,255,.6);
+      margin-top: 3px;
+    }
+
+    .back-btn {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(243, 226, 43, .12);
+      color: var(--yellow);
+      border: 1px solid rgba(243, 226, 43, .3);
+      border-radius: 20px;
+      padding: 7px 16px;
+      font-family: var(--ff-h);
+      font-weight: 700;
+      font-size: 11px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .back-btn:hover { background: rgba(243, 226, 43, .22); }
+
+    /* ── LAYOUT ── */
+    .page-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 32px 24px 60px;
+    }
+
+    /* ── INTRO CARD ── */
+    .intro-card {
+      background: linear-gradient(135deg, rgba(98, 37, 153, .25) 0%, rgba(26, 8, 64, .4) 100%);
+      border: 1px solid rgba(243, 226, 43, .2);
+      border-radius: 14px;
+      padding: 22px 26px;
+      margin-bottom: 36px;
+    }
+
+    .intro-card h2 {
+      font-family: var(--ff-h);
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--yellow);
+      margin-bottom: 10px;
+    }
+
+    .intro-card p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(255,255,255,.8);
+    }
+
+    .intro-card p + p { margin-top: 8px; }
+
+    /* ── SECCIONES ── */
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-family: var(--ff-h);
+      font-weight: 800;
+      font-size: 13px;
+      color: var(--yellow);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(243, 226, 43, .2);
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ── CARDS ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+      padding: 16px 18px;
+      transition: border-color .15s, background .15s;
+    }
+    .card:hover { border-color: rgba(98, 37, 153, .5); background: rgba(255,255,255,.07); }
+
+    .card-icon { font-size: 20px; margin-bottom: 8px; }
+
+    .card h4 {
+      font-family: var(--ff-h);
+      font-weight: 700;
+      font-size: 11px;
+      color: #c9a8f0;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 11.5px;
+      line-height: 1.65;
+      color: rgba(255,255,255,.65);
+    }
+
+    /* ── PASOS ── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
+      border-radius: 50%;
+      background: var(--purple);
+      color: white;
+      font-family: var(--ff-h);
+      font-weight: 800;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .step-body h5 {
+      font-family: var(--ff-h);
+      font-weight: 700;
+      font-size: 11.5px;
+      color: #d0bcf8;
+      margin-bottom: 4px;
+    }
+
+    .step-body p {
+      font-size: 11.5px;
+      line-height: 1.65;
+      color: rgba(255,255,255,.65);
+    }
+
+    /* ── TABLA RESUMEN ── */
+    .ref-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11.5px;
+    }
+
+    .ref-table th {
+      font-family: var(--ff-h);
+      font-weight: 700;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      color: var(--yellow);
+      background: rgba(98, 37, 153, .3);
+      padding: 9px 12px;
+      text-align: left;
+      border-bottom: 1px solid rgba(98, 37, 153, .4);
+    }
+
+    .ref-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      color: rgba(255,255,255,.75);
+      vertical-align: top;
+    }
+
+    .ref-table tr:last-child td { border-bottom: none; }
+    .ref-table tr:hover td { background: rgba(255,255,255,.03); }
+
+    .tag {
+      display: inline-block;
+      background: rgba(243, 226, 43, .12);
+      color: var(--yellow);
+      border: 1px solid rgba(243, 226, 43, .25);
+      border-radius: 8px;
+      padding: 1px 7px;
+      font-family: var(--ff-h);
+      font-weight: 700;
+      font-size: 9.5px;
+    }
+
+    /* ── NOTA DESTACADA ── */
+    .note {
+      background: rgba(243, 226, 43, .06);
+      border-left: 3px solid var(--yellow);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      font-size: 11.5px;
+      color: rgba(255,255,255,.75);
+      line-height: 1.65;
+      margin-top: 14px;
+    }
+    .note strong { color: var(--yellow); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .site-header { padding: 18px 16px; }
+      .page-wrap { padding: 20px 16px 40px; }
+      .header-text h1 { font-size: 17px; }
+      .cards { grid-template-columns: 1fr; }
+      .back-btn span { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-icon">📋</div>
+      <div class="header-text">
+        <h1>Ayuda — Ficha Técnica Scout</h1>
+        <p>Grupo Scout La Salle Guaparo · Guía de uso</p>
+      </div>
+      <a class="back-btn" href="index.html">← <span>Volver a la ficha</span></a>
+    </div>
+  </header>
+
+  <div class="page-wrap">
+
+    <div class="intro-card">
+      <h2>¿Qué es esta herramienta?</h2>
+      <p>La <strong>Ficha Técnica Scout</strong> es una plantilla digital para planificar actividades educativas del Movimiento Scout venezolano (ASV). Permite llenar todos los campos de una ficha técnica directamente en el navegador, sin instalar nada.</p>
+      <p>Los datos se guardan automáticamente en tu navegador (localStorage). Puedes exportar la ficha como <strong>PDF</strong> para imprimir o como <strong>HTML</strong> para guardar y editar más tarde.</p>
+    </div>
+
+    <!-- ── BARRA DE HERRAMIENTAS ── -->
+    <div class="section">
+      <div class="section-title">🔧 Barra de herramientas</div>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">✏️</div>
+          <h4>Editar ficha</h4>
+          <p>Activa el <strong>modo edición</strong>. Sin él, los campos no son editables (protección contra cambios accidentales). Cuando está activo, el botón se pone rojo.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚙️</div>
+          <h4>Configurar</h4>
+          <p>Abre el panel de configuración general: nombre del grupo, rama (Manada / Tropa / Comunidad / Clan / Grupal), fechas de la actividad, hora de inicio y cierre, responsable y código.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h4>Indicadores de logro</h4>
+          <p>Abre el selector de indicadores del Programa de Jóvenes ASV. Filtra por Área de Crecimiento y Estadio. También puedes escribir un indicador manual.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">➕</div>
+          <h4>Agregar momento</h4>
+          <p>Agrega una fila al programa de la actividad. Completa actividad, descripción, materiales y responsable. La hora puede ser automática o manual.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📅</div>
+          <h4>Separar día</h4>
+          <p>Inserta un separador de día en la tabla del programa. Útil para actividades multi-día como acantonamientos o campamentos.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🤖</div>
+          <h4>Preguntarle a Tico</h4>
+          <p>Abre a <strong>Tico</strong>, el asistente scout de IA del grupo, en otra pestaña. Tico puede ayudarte a redactar objetivos, indicadores, ambientaciones y más.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📤 / 📥</div>
+          <h4>Exportar / Importar datos</h4>
+          <p>Guarda todos los datos en un archivo <code>.json</code> para respaldar o continuar en otro dispositivo. Importa un JSON guardado previamente para restaurar el estado de la ficha.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🗑️</div>
+          <h4>Restablecer</h4>
+          <p>Borra todos los campos y limpia el localStorage. <strong>Es irreversible.</strong> Antes de hacerlo, la herramienta te ofrece descargar un HTML de respaldo.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PROGRAMA DE ACTIVIDAD ── -->
+    <div class="section">
+      <div class="section-title">🕐 Programa de la actividad — horas</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h5>Hora de inicio desde Configuración</h5>
+            <p>En ⚙️ Configurar puedes definir la hora de inicio del día 1 y la hora de cierre del último día. Esas horas aparecen en la cabecera del programa y se usan como punto de partida para el cálculo automático.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h5>Cálculo automático de horas</h5>
+            <p>Cuando agregas un momento con duración (ej: <code>30 min</code>, <code>1h</code>, <code>1h 30min</code>), la hora de la siguiente fila se calcula automáticamente sumando la duración. No necesitas escribir las horas a mano.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h5>Hora manual en "Agregar momento"</h5>
+            <p>Si necesitas fijar una hora específica para un momento (ej: una actividad que siempre empieza a las 12:00), escribe esa hora en el campo <strong>Hora</strong> del modal. Si lo dejas vacío, se calcula automáticamente. La hora manual no altera el cálculo de los momentos siguientes.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h5>Reordenar filas</h5>
+            <p>En modo edición activo, arrastra la columna <strong>☰</strong> de cualquier fila para cambiar el orden del programa. Las horas se recalculan automáticamente al soltar.</p>
+          </div>
+        </div>
+      </div>
+      <div class="note">
+        <strong>Tip:</strong> Para actividades multi-día, usa <strong>📅 Separar día</strong> para insertar un encabezado de día. La hora de ese separador pasa a ser el nuevo punto de inicio para el cálculo del día siguiente.
+      </div>
+    </div>
+
+    <!-- ── CAMPOS EDITABLES ── -->
+    <div class="section">
+      <div class="section-title">📝 Campos editables de la ficha</div>
+      <table class="ref-table">
+        <thead>
+          <tr>
+            <th>Campo</th>
+            <th>Cómo editarlo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag">Nombre de la actividad</span></td>
+            <td>Clic directamente sobre el subtítulo del header (debajo del título FICHA TÉCNICA). Requiere modo edición.</td>
+          </tr>
+          <tr>
+            <td><span class="tag">Ambientación</span></td>
+            <td>Clic sobre la banda gris debajo del header. Ej: "El Libro de las Tierras Vírgenes". Requiere modo edición.</td>
+          </tr>
+          <tr>
+            <td><span class="tag">Lugar · Fecha · Inicio · Cierre</span></td>
+            <td>Clic directo sobre cada celda en la ficha. Requiere modo edición. Las horas también se pueden definir en ⚙️ Configurar.</td>
+          </tr>
+          <tr>
+            <td><span class="tag">Logos</span></td>
+            <td>Clic sobre cualquier logo circular en el header. Se abre el selector de archivos del sistema. No requiere modo edición.</td>
+          </tr>
+          <tr>
+            <td><span class="tag">Secciones de texto</span></td>
+            <td>Oportunidad, Objetivos, Metas, etc. — clic directo sobre el área de texto. Requiere modo edición.</td>
+          </tr>
+          <tr>
+            <td><span class="tag">ODS</span></td>
+            <td>Clic sobre cada chip de ODS para activarlo o desactivarlo. Los inactivos no se imprimen.</td>
+          </tr>
+          <tr>
+            <td><span class="tag">Celdas del programa</span></td>
+            <td>Con modo edición activo, cada celda de Duración, Actividad, Descripción, Materiales y Responsable es editable directamente haciendo clic sobre ella.</td>
+          </tr>
+          <tr>
+            <td><span class="tag">Rama / colores</span></td>
+            <td>Solo desde ⚙️ Configurar → campo Rama. Cambia la paleta de colores de toda la ficha automáticamente.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── INDICADORES ── -->
+    <div class="section">
+      <div class="section-title">📊 Indicadores de logro</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h5>Seleccionar desde la base de datos ASV</h5>
+            <p>Haz clic en <strong>📊 Indicadores de logro</strong> en la barra. Selecciona la rama, el Área de Crecimiento (Corporalidad, Creatividad, Carácter, Afectividad, Sociabilidad, Espiritualidad) y el Estadio. Aparecerá la lista para marcar los indicadores que aplican a la actividad.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h5>Escribir un indicador manual</h5>
+            <p>En el mismo modal, al final, hay un campo de texto libre. Escribe el indicador y presiona <strong>Agregar indicador</strong>. Útil para indicadores propios o de ramas no incluidas.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h5>Eliminar indicadores</h5>
+            <p>En modo edición activo, aparece un botón <strong>✕</strong> al lado de cada indicador en la tabla de la ficha para eliminarlo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── EXPORTAR ── -->
+    <div class="section">
+      <div class="section-title">💾 Guardar y exportar</div>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">📄</div>
+          <h4>Exportar PDF</h4>
+          <p>Botón verde flotante abajo a la derecha. Abre el diálogo de impresión del navegador. Selecciona <em>Guardar como PDF</em>. La ficha está optimizada para papel carta (8.5 × 11 in). Todo lo que es solo de pantalla (botones, tooltips) desaparece.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💾</div>
+          <h4>Guardar HTML</h4>
+          <p>Botón azul flotante. Descarga un archivo <code>.html</code> con todos los datos embebidos. Puedes abrirlo en cualquier navegador y seguir editando o imprimir desde ahí. Es el mejor respaldo porque incluye logos e indicadores.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📤</div>
+          <h4>Exportar datos JSON</h4>
+          <p>Guarda solo los datos (sin el diseño) en un archivo <code>.json</code> liviano. Ideal para hacer respaldos rápidos o transferir datos entre dispositivos sin descargar el HTML completo.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📥</div>
+          <h4>Importar datos JSON</h4>
+          <p>Carga un archivo <code>.json</code> exportado previamente. Reemplaza los datos actuales de la ficha con los del archivo. Los logos no se incluyen en el JSON (solo en el HTML).</p>
+        </div>
+      </div>
+      <div class="note">
+        <strong>Guardado automático:</strong> Cada cambio que haces se guarda automáticamente en el localStorage del navegador. Si cierras la pestaña y vuelves, los datos estarán ahí. <strong>No uses "Restablecer"</strong> si no tienes un respaldo, ya que borra el localStorage permanentemente.
+      </div>
+    </div>
+
+    <!-- ── PÁGINAS EXTRA ── -->
+    <div class="section">
+      <div class="section-title">📄 Páginas extra</div>
+      <p style="font-size:12px;line-height:1.7;color:rgba(255,255,255,.7);">Al final de la ficha encontrarás el botón <strong>➕ Añadir página extra</strong>. Esto agrega una hoja en blanco adicional donde puedes pegar contenido libre, útil para gestión de riesgos, presupuesto u otros anexos. Cada página extra tiene un botón para eliminarla (solo visible en pantalla).</p>
+    </div>
+
+  </div><!-- /page-wrap -->
+
+</body>
+</html>
