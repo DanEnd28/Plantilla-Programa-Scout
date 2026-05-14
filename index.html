@@ -3051,7 +3051,8 @@
         document.querySelectorAll('[data-key]').forEach(el => d[el.dataset.key] = el.innerHTML || el.textContent);
         const na = document.getElementById('hdr-nombre-act'); if (na) d['nombre-act'] = na.innerHTML || na.textContent;
         const am = document.getElementById('hdr-ambientacion'); if (am) d['ambientacion'] = am.innerHTML || am.textContent;
-        const out = { _data: d, _indicadores_extra: Object.fromEntries(Object.entries(INDICADORES).filter(([k]) => !['manada', 'tropa'].includes(k))), _ods: [...odsActivos], _prog: progRows, _ind: indRows, _logos: customLogos, _fechaIni: fechaIni, _fechaFin: fechaFin };
+        const epData = []; document.querySelectorAll('.extra-page-wrap').forEach(wrap => { epData.push({ id: wrap.dataset.epId, titulo: wrap.querySelector('.ep-titulo').innerHTML, body: wrap.querySelector('.ep-body').innerHTML }); });
+        const out = { _data: d, _indicadores_extra: Object.fromEntries(Object.entries(INDICADORES).filter(([k]) => !['manada', 'tropa'].includes(k))), _ods: [...odsActivos], _prog: progRows, _ind: indRows, _logos: customLogos, _extra_pages: epData, _fechaIni: fechaIni, _fechaFin: fechaFin };
         const blob = new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' });
         const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
         a.download = (na?.textContent?.trim() || 'ficha') + '.json'; a.click();
@@ -3073,6 +3074,7 @@
             if (d._logos) { customLogos = d._logos; Object.entries(d._logos).forEach(([id, src]) => applyLogo(id, src)); }
             if (d._fechaIni) fechaIni = d._fechaIni;
             if (d._fechaFin) fechaFin = d._fechaFin;
+            if (d._extra_pages && d._extra_pages.length) { document.getElementById('extraPagesContainer').innerHTML = ''; extraPages = []; d._extra_pages.forEach(p => addExtraPage(p.id, p.titulo, p.body)); saveExtraPages(); }
             saveStorage(); syncSec(); st('JSON importado ✅');
           } catch (err) { alert('Error JSON: ' + err.message); }
         };
