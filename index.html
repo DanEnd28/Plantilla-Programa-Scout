@@ -2586,7 +2586,8 @@
         }
         // Celdas del programa
         enableProgEdit(editMode);
-        if (!editMode) { saveStorage(); syncSec(); st('✅ Guardado'); }
+        syncExtraEditable();
+        if (!editMode) { saveExtraPages(); saveStorage(); syncSec(); st('✅ Guardado'); }
       }
 
       function enableProgEdit(on) {
@@ -3296,7 +3297,10 @@
         st('Página eliminada');
       }
 
-      function syncExtraEditable() { /* extra pages always editable */ }
+      function syncExtraEditable() {
+        const editable = editMode ? 'true' : 'false';
+        document.querySelectorAll('.ep-titulo, .ep-body').forEach(el => el.contentEditable = editable);
+      }
 
       function saveExtraPages() {
         const data = [];
