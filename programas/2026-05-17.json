@@ -1,0 +1,138 @@
+{
+  "_data": {
+    "unidad": "Manada",
+    "responsable": "Akela",
+    "lugar": "Colegio La Salle Guaparo",
+    "fecha": "17/05/2026",
+    "hora-inicio": "10:00",
+    "hora-cierre": "13:00",
+    "oportunidad": "Esta actividad ofrece a los lobatos y lobeznas la oportunidad de vivenciar el trabajo en equipo y la amistad como herramientas de crecimiento personal. A través del Libro de las Tierras Vírgenes descubren que sus capacidades individuales se potencian cuando actúan como Manada unida, aprendiendo a reconocer y valorar el aporte de cada integrante.",
+    "obj-general": "Desarrollar en los lobatos y lobeznas la capacidad de trabajar en equipo y valorar las fortalezas de sus pares, mediante juegos cooperativos y la creación del escudo de seisena, para fortalecer el sentido de pertenencia a la Manada.",
+    "obj-especificos": "<ol><li>Demostrar disposición para integrar y acompañar a nuevos miembros dentro de las actividades de la Manada.</li><li>Explicar con sus propias palabras al menos un artículo de la Ley de la Manada aplicado al trabajo en equipo.</li><li>Reconocer verbalmente la fortaleza o habilidad de al menos un compañero de seisena.</li></ol>",
+    "prog-mundial": "Scouts por los ODS / Acción por el Planeta 2026 (CIP)",
+    "metas": "<ol><li>Al menos el 80% de los lobatos completa todos los retos cooperativos sin abandonar la actividad.</li><li>El 100% de las seisenas finaliza y presenta su escudo con los tres elementos requeridos.</li><li>Al menos 6 de los 8 lobatos enuncia verbalmente la fortaleza de un compañero en la presentación.</li></ol>",
+    "enfoque": "Diversidad e inclusión / Cultura de paz",
+    "footer-rama": "Manada",
+    "footer-yr": "2026",
+    "nombre-act": "JUNTOS SOMOS FUERTES",
+    "ambientacion": "La selva de Seeonee despierta con una noticia: un cachorro perdido ha llegado a los límites de la Manada. Akela convoca el Gran Consejo para decidir si lo reciben. Pero antes, los lobatos deben demostrar que son capaces de cuidar a alguien nuevo. ¿Podrá la Manada superar las pruebas de la selva unida?",
+    "hdr-grupo": "Grupo Scout La Salle Guaparo"
+  },
+  "_indicadores_extra": {},
+  "_ods": [
+    4,
+    16
+  ],
+  "_prog": [
+    {
+      "dur": "15 min",
+      "act": "Apertura",
+      "desc": "IGA, izado de bandera y Gran Aullido de apertura.",
+      "mat": "Bandera",
+      "resp": "Staff"
+    },
+    {
+      "dur": "15 min",
+      "act": "Historieta: El Cachorro Perdido",
+      "desc": "Akela narra la llegada de Mowgli asustado y solo a la Manada de Seeonee. Al final lanza la pregunta: '¿Qué necesitaría un cachorro nuevo para sentirse parte de la Manada?'",
+      "mat": "Tela verde, muñeco pequeño como cachorro",
+      "resp": "Akela"
+    },
+    {
+      "dur": "15 min",
+      "act": "El Nudo de la Manada",
+      "desc": "Juego cooperativo: todos tomados de manos cruzadas deben desenredarse sin soltarse. Ver instrucciones detalladas en página extra.",
+      "mat": "Espacio libre de obstáculos",
+      "resp": "Bagheera"
+    },
+    {
+      "dur": "15 min",
+      "act": "El Gran Libro de la Manada",
+      "desc": "Ronda verbal con tarjetas impresas de la Ley de la Manada. Los E1 explican al cachorro qué significa cada artículo; los E2 dan ejemplos de su vida. Ver tarjetas en página extra.",
+      "mat": "Tarjetas impresas de la Ley de la Manada (ver página extra)",
+      "resp": "Akela"
+    },
+    {
+      "dur": "30 min",
+      "act": "Pruebas de la Selva",
+      "desc": "Las 2 seisenas superan 3 estaciones cooperativas. Si uno falla, la seisena completa repite. La Manada gana cuando ambas seisenas completan. Ver instrucciones en página extra.",
+      "mat": "2 pelotas, 4 pañoletas, 6 conos, 1 venda para ojos",
+      "resp": "Akela y Bagheera"
+    },
+    {
+      "dur": "20 min",
+      "act": "Merienda",
+      "desc": "Pausa para merienda. Distribución por seisenas, cada lobato recoge su espacio.",
+      "mat": "Merienda, agua, servilletas",
+      "resp": "Staff"
+    },
+    {
+      "dur": "20 min",
+      "act": "La Trampa de Shere Khan",
+      "desc": "Juego de captura temático: 2 lobatos son Shere Khan y Tabaqui; el resto es la Manada y debe llevar el cachorro a salvo al otro extremo sin ser atrapados. Ver instrucciones en página extra.",
+      "mat": "Pelota pequeña o muñeco como cachorro, 2 pañoletas para identificar a Shere Khan y Tabaqui",
+      "resp": "Bagheera"
+    },
+    {
+      "dur": "35 min",
+      "act": "Escudo de Seisena y Presentación",
+      "desc": "Cada seisena diseña su escudo con: un animal de la selva, un valor de la Manada y su nombre. Los E2 coordinan el diseño. Al terminar, presentan el escudo y cada lobato nombra en voz alta la fortaleza de un compañero. Akela cierra: 'El cachorro llegó solo. Hoy aprendimos que juntos somos la Manada.'",
+      "mat": "Cartulina, marcadores, lápices de cera, tijeras punta roma, pegamento",
+      "resp": "Akela"
+    },
+    {
+      "dur": "15 min",
+      "act": "Ceremonia de Cierre",
+      "desc": "Compromisos de la semana, arriar bandera y Gran Aullido de cierre.",
+      "mat": "Bandera",
+      "resp": "Staff"
+    }
+  ],
+  "_ind": [
+    {
+      "area": "Afectividad",
+      "etapa": "E1",
+      "texto": "Comparte con niños y niñas de su edad, que acaba de conocer, en un ambiente de amistad."
+    },
+    {
+      "area": "Afectividad",
+      "etapa": "E2",
+      "texto": "Se quiere a sí mismo y descubre su propia capacidad para relacionarse con otros."
+    },
+    {
+      "area": "Sociabilidad",
+      "etapa": "E1",
+      "texto": "Se acerca a nuevos miembros de su Unidad y salón para entablar amistad."
+    },
+    {
+      "area": "Carácter",
+      "etapa": "E1",
+      "texto": "Explica a los más nuevos qué quiere decir la Ley de la Manada."
+    },
+    {
+      "area": "Carácter",
+      "etapa": "E2",
+      "texto": "Da reconocimiento a sus pares, cuando otro niño se destaca ejecutando acciones diferentes a las que acostumbra."
+    }
+  ],
+  "_logos": {},
+  "_extra_pages": [
+    {
+      "id": "ep-juegos",
+      "titulo": "INSTRUCCIONES DE JUEGOS",
+      "body": "<div style='font-family:sans-serif;font-size:12px;line-height:1.5'><h3 style='background:#c8a800;color:#fff;padding:6px 10px;border-radius:4px;margin:0 0 10px'>🪢 El Nudo de la Manada</h3><p style='margin:0 0 6px'><strong>Tipo:</strong> Juego cooperativo clásico (Human Knot) | <strong>Duración:</strong> 15 min | <strong>Grupos:</strong> Toda la Manada junta</p><p style='margin:0 0 6px'><strong>Fuente:</strong> Juego clásico de trabajo en equipo, ampliamente documentado. Buscar en YouTube: <em>\"juego nudo humano niños\"</em> o <em>\"human knot team game\"</em></p><p style='margin:0 0 4px'><strong>Instrucciones:</strong></p><ol style='margin:0 0 10px;padding-left:18px'><li>Todos los lobatos se ponen de pie en círculo, hombro con hombro.</li><li>Cada lobato extiende la mano derecha y toma la de alguien al otro lado del círculo (no el de al lado inmediato).</li><li>Luego extienden la mano izquierda y toman la de otra persona diferente (tampoco el de al lado).</li><li>Sin soltarse en ningún momento, el grupo debe desenredarse hasta formar un círculo limpio.</li><li>Si el nudo se rompe, reinician desde el principio.</li></ol><p style='margin:0 0 6px'><strong>Variante para repetir:</strong> Cronometrar el primer intento y desafiarse a mejorar el tiempo en el segundo.</p><p style='margin:0 0 10px'><strong>Ambientación:</strong> \"La Manada quedó atrapada en las lianas de la selva — solo juntos pueden liberarse antes de que llegue Shere Khan.\"</p><hr style='border:none;border-top:1px solid #e0d080;margin:10px 0'><h3 style='background:#c8a800;color:#fff;padding:6px 10px;border-radius:4px;margin:0 0 10px'>🌿 Pruebas de la Selva</h3><p style='margin:0 0 6px'><strong>Tipo:</strong> Estaciones cooperativas por seisenas | <strong>Duración:</strong> 30 min | <strong>Grupos:</strong> 2 seisenas simultáneas</p><p style='margin:0 0 6px'><strong>Regla central:</strong> Si cualquier lobato falla en su turno, <em>toda la seisena</em> reinicia esa estación desde el principio. No hay ganador individual — la Manada gana cuando ambas seisenas completan las 3 estaciones.</p><p style='margin:0 0 4px'><strong>Estación 1 — El Río:</strong></p><ul style='margin:0 0 8px;padding-left:18px'><li>Los lobatos hacen fila india. Deben pasar una pelota de atrás hacia adelante usando solo las piernas (entre rodillas), sin tocarla con las manos.</li><li>Si la pelota cae, el lobato que la soltó la devuelve a quien va detrás y se reinicia desde ese punto.</li></ul><p style='margin:0 0 4px'><strong>Estación 2 — La Niebla:</strong></p><ul style='margin:0 0 8px;padding-left:18px'><li>Un lobato se venda los ojos. Sus compañeros deben guiarlo verbalmente por un circuito de 4-5 obstáculos (conos o sillas) usando solo instrucciones de voz: \"dos pasos adelante\", \"gira a la derecha\", etc.</li><li>No pueden tocar al lobato vendado. Si toca un obstáculo, reinicia el recorrido.</li><li>Rotar para que al menos 2 lobatos por seisena tengan el rol de vendado.</li></ul><p style='margin:0 0 4px'><strong>Estación 3 — La Cadena:</strong></p><ul style='margin:0 0 8px;padding-left:18px'><li>Trasladar una pelota del Punto A al Punto B (aprox. 4 metros) usando solo pañoletas como bandeja — sin tocarla con las manos.</li><li>Cada lobato sostiene un extremo de la pañoleta. Deben coordinarse para que la pelota ruede de una pañoleta a la siguiente hasta llegar al destino.</li></ul><hr style='border:none;border-top:1px solid #e0d080;margin:10px 0'><h3 style='background:#c8a800;color:#fff;padding:6px 10px;border-radius:4px;margin:0 0 10px'>🐯 La Trampa de Shere Khan</h3><p style='margin:0 0 6px'><strong>Tipo:</strong> Juego de captura temático | <strong>Duración:</strong> 20 min | <strong>Grupos:</strong> Toda la Manada</p><p style='margin:0 0 4px'><strong>Instrucciones:</strong></p><ol style='margin:0 0 8px;padding-left:18px'><li>Se elige al azar 1 lobato como Shere Khan y 1 como Tabaqui (identificados con pañoleta en el brazo).</li><li>El resto de los lobatos es la Manada. Uno de ellos carga el \"cachorro\" (pelota pequeña o muñeco).</li><li>La Manada debe llevar el cachorro desde un extremo del área de juego hasta el otro (la \"roca segura\"), sin que Shere Khan o Tabaqui lo atrapen.</li><li>Shere Khan atrapa tocando con la mano al lobato que carga el cachorro. Tabaqui también puede atrapar.</li><li>El lobato que lleva el cachorro puede pasarlo a un compañero antes de ser atrapado.</li><li>Si el cachorro es atrapado, se cambia de ronda: los atrapadores rotan entre los lobatos de la Manada.</li></ol><p style='margin:0 0 6px'><strong>Área de juego:</strong> Delimitar con conos un rectángulo de aprox. 8×5 metros. La \"roca segura\" es una zona de 1 metro en cada extremo.</p><p style='margin:0'><strong>Variante:</strong> Si la Manada logra 3 pasadas exitosas al cachorro, gana un punto. Jugar 3 rondas y contar puntos totales.</p></div>"
+    },
+    {
+      "id": "ep-gran-libro",
+      "titulo": "EL GRAN LIBRO — TARJETAS DE LA LEY",
+      "body": "<div style='font-family:sans-serif;font-size:12px;line-height:1.6'><p style='margin:0 0 10px'><strong>Instrucciones para el Akela:</strong> Imprimir y recortar las tarjetas. Presentarlas una a una durante la actividad. Los lobatos no leen las tarjetas — el Akela las usa como guía para la conversación verbal. Confirmar el texto oficial de la Ley de la Manada según el material vigente de la ASV antes de imprimir.</p><table style='width:100%;border-collapse:collapse'><tr><td style='width:48%;padding:12px;border:2px solid #c8a800;border-radius:6px;vertical-align:top;background:#fffde6'><p style='margin:0 0 6px;font-size:14px;font-weight:bold;color:#7a6200'>📜 Artículo 1</p><p style='margin:0 0 8px;font-size:13px'><em>«El Lobato/Lobezna escucha a Akela»</em></p><p style='margin:0 0 6px'><strong>¿Qué significa?</strong> Confiar en la experiencia de quienes guían la Manada, especialmente cuando algo es nuevo o desconocido.</p><p style='margin:0'><strong>Pregunta para el cachorro:</strong> ¿Cuándo fue la última vez que escuchar a un adulto te ayudó a hacer algo mejor?</p></td><td style='width:4%'></td><td style='width:48%;padding:12px;border:2px solid #c8a800;border-radius:6px;vertical-align:top;background:#fffde6'><p style='margin:0 0 6px;font-size:14px;font-weight:bold;color:#7a6200'>📜 Artículo 2</p><p style='margin:0 0 8px;font-size:13px'><em>«El Lobato/Lobezna no escucha a sí mismo»</em></p><p style='margin:0 0 6px'><strong>¿Qué significa?</strong> No actuar solo por lo que uno quiere en el momento — pensar en el bien de la Manada antes que en el deseo individual.</p><p style='margin:0'><strong>Pregunta para el cachorro:</strong> ¿Cuándo fue difícil dejar de hacer lo tuyo para ayudar a tu equipo?</p></td></tr></table><p style='margin:12px 0 6px'><strong>Tarjeta de cierre — Conexión con el tema del día:</strong></p><div style='padding:12px;border:2px solid #c8a800;border-radius:6px;background:#fffde6'><p style='margin:0 0 6px'><strong>El Akela dice:</strong> «El cachorro que llegó hoy a la selva no conocía estas leyes. ¿Cómo le explicarían en una sola oración por qué son importantes para sobrevivir en la selva?»</p><p style='margin:0'><em>Dar la palabra a 2-3 lobatos. Conectar cada respuesta con lo que demostraron en El Nudo y las Pruebas.</em></p></div><p style='margin:10px 0 0;font-size:10px;color:#888'>Fuente: Ley de la Manada — Tradición Scout mundial basada en el Libro de las Tierras Vírgenes, R. Kipling. Verificar texto oficial ASV vigente.</p></div>"
+    },
+    {
+      "id": "ep-riesgos",
+      "titulo": "GESTIÓN DE RIESGOS",
+      "body": "<p style='font-family:sans-serif;font-size:12px;margin-bottom:8px'><strong>Actividad:</strong> Juntos Somos Fuertes &nbsp;|&nbsp; <strong>Fecha:</strong> 17/05/2026 &nbsp;|&nbsp; <strong>Participantes:</strong> ~8 lobatos &nbsp;|&nbsp; <strong>Fórmula:</strong> R = P × C (actividad ordinaria ≤50 personas)</p><table style='width:100%;border-collapse:collapse;font-family:sans-serif;font-size:11px'><thead><tr style='background:#c8a800;color:#fff;text-align:left'><th style='padding:6px 8px;border:1px solid #aaa'>Actividad</th><th style='padding:6px 8px;border:1px solid #aaa'>Contexto</th><th style='padding:6px 8px;border:1px solid #aaa'>Riesgo</th><th style='padding:6px 8px;border:1px solid #aaa;text-align:center'>P</th><th style='padding:6px 8px;border:1px solid #aaa;text-align:center'>C</th><th style='padding:6px 8px;border:1px solid #aaa;text-align:center'>Nivel</th><th style='padding:6px 8px;border:1px solid #aaa;text-align:center'>R</th><th style='padding:6px 8px;border:1px solid #aaa'>Medidas de control</th></tr></thead><tbody><tr><td style='padding:5px 8px;border:1px solid #ccc'>El Nudo de la Manada</td><td style='padding:5px 8px;border:1px solid #ccc'>Lobatos tomados de manos con movimiento</td><td style='padding:5px 8px;border:1px solid #ccc'>Golpe o torcedura de muñeca</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center;background:#d4edda;color:#155724'><strong>Leve</strong></td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'><strong>6</strong></td><td style='padding:5px 8px;border:1px solid #ccc'>Espacio libre; detener si hay forcejeo</td></tr><tr style='background:#fafafa'><td style='padding:5px 8px;border:1px solid #ccc'>Pruebas de la Selva</td><td style='padding:5px 8px;border:1px solid #ccc'>Estaciones con relevo y guía vendado</td><td style='padding:5px 8px;border:1px solid #ccc'>Caída durante desplazamiento</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center;background:#d4edda;color:#155724'><strong>Leve</strong></td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'><strong>6</strong></td><td style='padding:5px 8px;border:1px solid #ccc'>Delimitar zonas; guía verbal constante para vendado</td></tr><tr><td style='padding:5px 8px;border:1px solid #ccc'>La Trampa de Shere Khan</td><td style='padding:5px 8px;border:1px solid #ccc'>Juego de captura con contacto</td><td style='padding:5px 8px;border:1px solid #ccc'>Caída o empuje accidental</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center;background:#d4edda;color:#155724'><strong>Leve</strong></td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'><strong>6</strong></td><td style='padding:5px 8px;border:1px solid #ccc'>Delimitar área de juego con conos; prohibir empujar; supervisión Bagheera</td></tr><tr style='background:#fafafa'><td style='padding:5px 8px;border:1px solid #ccc'>Juegos activos generales</td><td style='padding:5px 8px;border:1px solid #ccc'>Presión grupal en juego cooperativo</td><td style='padding:5px 8px;border:1px solid #ccc'>Conflicto por frustración</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'>4</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'>1</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center;background:#d4edda;color:#155724'><strong>Mínimo</strong></td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'><strong>4</strong></td><td style='padding:5px 8px;border:1px solid #ccc'>Reglas de respeto antes de cada juego; mediación inmediata</td></tr><tr><td style='padding:5px 8px;border:1px solid #ccc'>Actividad general</td><td style='padding:5px 8px;border:1px solid #ccc'>Espacio cerrado, mayo</td><td style='padding:5px 8px;border:1px solid #ccc'>Calor / deshidratación</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center;background:#d4edda;color:#155724'><strong>Mínimo</strong></td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'><strong>4</strong></td><td style='padding:5px 8px;border:1px solid #ccc'>Agua disponible todo el tiempo; ventilación garantizada</td></tr><tr style='background:#fafafa'><td style='padding:5px 8px;border:1px solid #ccc'>Manualidad</td><td style='padding:5px 8px;border:1px solid #ccc'>Tijeras punta roma y marcadores</td><td style='padding:5px 8px;border:1px solid #ccc'>Irritación ocular o ingestión</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'>1</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center;background:#d4edda;color:#155724'><strong>Mínimo</strong></td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'><strong>2</strong></td><td style='padding:5px 8px;border:1px solid #ccc'>Materiales no tóxicos; supervisión activa</td></tr><tr><td style='padding:5px 8px;border:1px solid #ccc'>General</td><td style='padding:5px 8px;border:1px solid #ccc'>Grupo 7-10 años</td><td style='padding:5px 8px;border:1px solid #ccc'>Condición médica preexistente no reportada</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'>1</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'>4</td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center;background:#d4edda;color:#155724'><strong>Mínimo</strong></td><td style='padding:5px 8px;border:1px solid #ccc;text-align:center'><strong>4</strong></td><td style='padding:5px 8px;border:1px solid #ccc'>Fichas de salud actualizadas; botiquín básico; contacto de emergencia disponible</td></tr></tbody></table><p style='margin-top:10px;font-family:sans-serif;font-size:10px;color:#666'><strong>Semáforo:</strong> Mínimo 1–5 ✅ | Leve 6–10 ✅ | Moderado 11–15 ⚠️ | Alto 16–20 🚫 | Crítico 21–25 ⛔ &nbsp; <strong>Conclusión:</strong> Todos los riesgos en nivel Mínimo o Leve. Actividad puede ejecutarse.</p>"
+    }
+  ],
+  "_fechaIni": "2026-05-17",
+  "_fechaFin": "2026-05-17"
+}

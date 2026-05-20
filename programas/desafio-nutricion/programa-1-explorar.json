@@ -1,0 +1,148 @@
+{
+  "_data": {
+    "unidad": "Manada",
+    "responsable": "Akela",
+    "lugar": "Colegio La Salle Guaparo",
+    "fecha": "23/05/2026",
+    "hora-inicio": "10:00",
+    "hora-cierre": "13:00",
+    "oportunidad": "Esta actividad abre el Desafío de Nutrición ofreciendo a los lobatos la primera oportunidad de mirarse a sí mismos con honestidad: ¿qué como realmente? ¿cómo trato a mi cuerpo? A través del juego activo y la manualidad, descubren el valor de los colores en los alimentos y construyen de forma visual su propio plato saludable ideal. Al final asumen un compromiso personal de una semana que sienta las bases del cambio de hábitos.",
+    "obj-general": "Iniciar el Desafío de Nutrición ejecutando las herramientas diagnósticas de la Etapa I y las primeras actividades de la Etapa II, para que los lobatos tomen conciencia honesta de sus hábitos actuales y construyan los fundamentos del conocimiento nutricional mediante el juego y la manualidad.",
+    "obj-especificos": "<ol><li>Completar el Cuestionario de Autoevaluación Individual de la Etapa I con honestidad y reflexión personal sobre sus hábitos reales de alimentación, hidratación, sueño e higiene.</li><li>Clasificar frutas y verduras por grupos de colores del arcoíris nutricional y asociar cada color con su función biológica específica.</li><li>Diseñar un Collage del Plato Saludable que refleje las proporciones correctas de los grupos alimentarios según la guía oficial.</li><li>Asumir por escrito el compromiso de completar el Bingo de Hábitos y el Planificador de Alimentos Semanal en casa durante los próximos 7 días.</li></ol>",
+    "prog-mundial": "Aliados de la Salud — OMMS / Desafío de Nutrición ASV",
+    "metas": "<ol><li>El 100% de los lobatos completan el Cuestionario de Autoevaluación de la Etapa I en la sesión.</li><li>Al menos el 80% de los lobatos clasifica correctamente 4 de los 5 grupos de colores nutricionales en la Búsqueda de Comida Colorida.</li><li>El 100% de los lobatos llevan a casa la Cartilla del Bingo y el Planificador de Alimentos Semanal firmados.</li></ol>",
+    "enfoque": "Adquisición de habilidades y competencias",
+    "footer-rama": "Manada",
+    "footer-yr": "2026",
+    "nombre-act": "LOS SECRETOS DE LA SELVA SANA",
+    "ambientacion": "Baloo convoca a la Manada con tres aullidos porque los animales de la selva han comenzado a enfermarse. Al investigar, descubre que olvidaron alimentarse bien. Los lobatos son designados Guardianes de la Selva Sana y deben descubrir los secretos de la buena alimentación. El primer paso: conocerse a sí mismos.",
+    "hdr-grupo": "Grupo Scout La Salle Guaparo"
+  },
+  "_indicadores_extra": {},
+  "_ods": [
+    2,
+    3,
+    4
+  ],
+  "_prog": [
+    {
+      "dur": "15 min",
+      "act": "Apertura",
+      "desc": "Izar la bandera, IGA y Gran Aullido de apertura.",
+      "mat": "Bandera, mástil",
+      "resp": "Staff"
+    },
+    {
+      "dur": "20 min",
+      "act": "El Mensajero de Mowgli",
+      "desc": "Rompe hielo activo en círculo con pelota. Bagheera lanza la pelota y nombra un alimento; el lobato que la recibe tiene 3 segundos para decir si es saludable o no. Segunda ronda: debe decir el color nutricional del arcoíris. Ver instrucciones en ep-juegos.",
+      "mat": "1 pelota de goma",
+      "resp": "Bagheera"
+    },
+    {
+      "dur": "10 min",
+      "act": "Historieta: Baloo y el Gran Desafío",
+      "desc": "Akela narra cómo Baloo descubrió que los animales enfermaron por mala alimentación y designa a los lobatos como los primeros Guardianes de la Selva Sana. Presenta los 4 símbolos del desafío: el Huevo, el Pescado, el Trigo y la Fruta.",
+      "mat": "Ninguno (narración oral)",
+      "resp": "Akela"
+    },
+    {
+      "dur": "20 min",
+      "act": "Búsqueda de Comida Colorida (Etapa II — Act. 1)",
+      "desc": "Juego activo en seisenas. Los lobatos buscan y recolectan imágenes de alimentos escondidas en el área y las clasifican por colores del arcoíris nutricional. Al final el staff cierra con la función de cada color. Ver instrucciones en ep-juegos.",
+      "mat": "30+ imágenes de frutas y verduras en 5 colores, 1 cesta por seisena",
+      "resp": "Bagheera + Baloo"
+    },
+    {
+      "dur": "15 min",
+      "act": "Autoevaluación Individual (Etapa I)",
+      "desc": "Cada lobato llena su Cuestionario de Autoevaluación de hábitos reales: alimentación, hidratación, sueño e higiene. El staff circula facilitando sin juzgar. El cuestionario es personal y no se comparte salvo voluntariamente.",
+      "mat": "Cuestionarios impresos (1 por lobato), lápices",
+      "resp": "Akela"
+    },
+    {
+      "dur": "10 min",
+      "act": "Carrera de Colores",
+      "desc": "Juego activo pre-merienda. Bagheera menciona un alimento y los lobatos corren a la zona del color nutricional correcto (5 zonas marcadas). El último en llegar o quien va al color incorrecto hace 3 saltos de canguro. Ver instrucciones en ep-juegos.",
+      "mat": "5 hojas de papel de color o conos (rojo, verde, naranja, morado, blanco)",
+      "resp": "Bagheera"
+    },
+    {
+      "dur": "20 min",
+      "act": "Merienda",
+      "desc": "Merienda libre en seisenas. El staff aprovecha para registrar alergias alimentarias de cara al Taller de Aperitivos del Programa 2.",
+      "mat": "Merienda de los lobatos, agua",
+      "resp": "Staff"
+    },
+    {
+      "dur": "25 min",
+      "act": "Collage del Plato Saludable (Etapa II — Act. 2)",
+      "desc": "Manualidad individual. Cada lobato construye su plato saludable ideal pegando recortes de revistas en las secciones correctas de la plantilla. Al terminar presenta su collage a su seisena en 1 minuto. Ver instrucciones en ep-juegos.",
+      "mat": "Plantillas de plato impresas, revistas, tijeras punta roma, pegamento, marcadores",
+      "resp": "Akela"
+    },
+    {
+      "dur": "10 min",
+      "act": "Relay de Clasificación Nutricional",
+      "desc": "Juego activo de reactivación post-manualidad. Cada seisena forma fila; el primero toma una tarjeta de alimento, corre al cartel del grupo nutricional correcto y regresa. Gana la seisena que clasifica más tarjetas en el tiempo. Ver instrucciones en ep-juegos.",
+      "mat": "20 tarjetas de alimentos, 4 carteles con grupos nutricionales (Constructores, Energéticos, Fortalecedores, Protectores)",
+      "resp": "Bagheera"
+    },
+    {
+      "dur": "15 min",
+      "act": "Distribución: Bingo + Planificador Semanal",
+      "desc": "Akela entrega la Cartilla de Bingo de Hábitos y el Planificador de Alimentos Semanal. Cada lobato firma su Carta del Guardián comprometiéndose a completar ambas durante 7 días. Se devuelven ambas en el Programa 2.",
+      "mat": "Cartillas de Bingo impresas, Planificadores Semanales impresos, lápices, Cartas del Guardián",
+      "resp": "Akela"
+    },
+    {
+      "dur": "15 min",
+      "act": "Ceremonia de Cierre",
+      "desc": "Gran Aullido de cierre. Akela recuerda el compromiso de la semana y recalca que en el Programa 2 cada lobato presentará su Bingo y Planificador. Arriar la bandera.",
+      "mat": "Bandera",
+      "resp": "Staff"
+    }
+  ],
+  "_ind": [
+    {
+      "area": "Corporalidad",
+      "etapa": "E1",
+      "texto": "Describe las diferencias que observa entre su organismo y el de otros."
+    },
+    {
+      "area": "Afectividad",
+      "etapa": "E1",
+      "texto": "Se observa a sí mismo y comprende que es único."
+    },
+    {
+      "area": "Afectividad",
+      "etapa": "E1",
+      "texto": "Ejerce su capacidad de cambio a la vez que se siente tranquilo."
+    },
+    {
+      "area": "Espiritualidad",
+      "etapa": "E1",
+      "texto": "Acepta el derecho de los demás a tener diferentes intereses."
+    },
+    {
+      "area": "Sociabilidad",
+      "etapa": "E1",
+      "texto": "Discute con sus iguales en qué contribuyen al bienestar de las personas los trabajos de familiares."
+    }
+  ],
+  "_logos": {},
+  "_extra_pages": [
+    {
+      "id": "ep-juegos",
+      "titulo": "INSTRUCCIONES DE JUEGOS",
+      "body": "<div style='font-family:sans-serif;font-size:10px;line-height:1.5'><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🎮 El Mensajero de Mowgli — ACTIVO | 20 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Lobatos en círculo. Bagheera en el centro con la pelota de goma.<br><b>Desarrollo:</b> Bagheera lanza la pelota a un lobato y dice en voz alta el nombre de un alimento. El lobato tiene 3 segundos para responder si es 'saludable' o 'no saludable'. Ronda 2: debe decir además el color nutricional del arcoíris (rojo, verde, naranja, morado o blanco). Si no responde a tiempo o falla, da una vuelta corriendo al círculo y regresa. Se juegan 2 rondas de 8 min cada una.<br><b>Regla clave:</b> Baloo celebra cada intento — el error es parte del aprendizaje. Nunca se elimina a nadie del juego.<br><b>Mat:</b> 1 pelota de goma.<br><b>Ref:</b> Adaptación del juego clásico de pelota al tema nutricional.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🌈 Búsqueda de Comida Colorida — ACTIVO | 20 min (Etapa II - Act. 1)</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Antes de la sesión el staff esconde imágenes de frutas y verduras por toda el área (mín. 30). Se entregan a cada seisena 5 cestas o bolsas marcadas por color del arcoíris.<br><b>Desarrollo:</b> A la señal los lobatos buscan alimentos 15 min y los clasifican por color. La seisena con más alimentos correctamente clasificados gana. El staff cierra con una explicación de 5 min sobre la función de cada color (guía Sección 5).<br><b>Regla clave:</b> Solo suman los alimentos clasificados en el color correcto — un error de clasificación resta el punto.<br><b>Mat:</b> 30+ imágenes impresas o réplicas, 5 cestas por seisena marcadas por color.<br><b>Ref:</b> Guía oficial Desafío de Nutrición ASV — Sección 4.1.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🏃 Carrera de Colores — ACTIVO pre-merienda | 10 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Marcar 5 zonas en el suelo con papel de color: rojo, verde, naranja, morado, blanco. Lobatos en el centro.<br><b>Desarrollo:</b> Bagheera menciona el nombre de un alimento. Los lobatos tienen 4 segundos para correr a la zona del color correcto. El último en llegar o quien va al color incorrecto hace 3 saltos de canguro. Se juegan 8 rondas rápidas.<br><b>Regla clave:</b> Si más de la mitad del grupo va al color incorrecto, el staff pausa y refuerza sin penalizar — es momento de enseñar, no de castigar.<br><b>Mat:</b> 5 hojas de papel de color o conos de colores.<br><b>Ref:</b> Adaptación del juego 'El semáforo' — versión nutricional.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🎨 Collage del Plato Saludable — MODERADO | 25 min (Etapa II - Act. 2)</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Distribuir a cada lobato: plantilla de plato dividida en secciones, 1 revista o folleto de supermercado, tijeras punta roma, pegamento en barra y marcadores.<br><b>Desarrollo:</b> Los lobatos buscan imágenes de alimentos en la revista, las recortan y pegan en las secciones correctas del plato: mitad = frutas y verduras, cuarto = cereales y tubérculos, cuarto = proteínas y lácteos. Al terminar, cada lobato presenta su collage a su seisena en 1 min.<br><b>Regla clave:</b> El staff sugiere mejoras de forma positiva SOLO después de la presentación, nunca durante la creación.<br><b>Mat:</b> Plantillas impresas (1/lobato), revistas, tijeras punta roma, pegamento, marcadores.<br><b>Ref:</b> Guía oficial Desafío de Nutrición ASV — Sección 4.2.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🏅 Relay de Clasificación Nutricional — ACTIVO | 10 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Cada seisena forma fila. Al frente se colocan 4 carteles: 'Constructores' (proteínas), 'Energéticos' (cereales), 'Fortalecedores' (lácteos), 'Protectores' (frutas y verduras). En la salida de cada fila: un mazo de tarjetas con nombres o imágenes de alimentos.<br><b>Desarrollo:</b> El primero de cada fila toma una tarjeta, corre al cartel del grupo nutricional correcto y la pega o coloca allí, regresa y toca la mano del siguiente. Gana la seisena que clasifica más tarjetas correctamente en 7 min.<br><b>Regla clave:</b> Si el lobato no sabe, puede pedir ayuda a su seisena antes de salir — el trabajo en equipo vale más que la velocidad.<br><b>Mat:</b> 20 tarjetas de alimentos, 4 carteles de grupos nutricionales, cinta adhesiva o soporte.<br><b>Ref:</b> Juego de relay adaptado — variante scout del juego de clasificación.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>📋 Distribución: Bingo + Planificador Semanal — CIERRE | 15 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Imprimir las cartillas de Bingo y los Planificadores con el nombre de cada lobato.<br><b>Desarrollo:</b> Akela explica el Bingo de Hábitos: cada casilla describe un hábito diario (beber agua, dormir 8h, comer fruta, lavarse las manos). El lobato la sella si la cumple ese día. El Planificador Semanal se llena cada día con lo que come. Ambos se entregan junto a una 'Carta del Guardián' donde el lobato firma su compromiso. Se devuelven en el Programa 2.<br><b>Regla clave:</b> Informar a los representantes ese mismo día del compromiso de la semana (mensaje WhatsApp sugerido).<br><b>Mat:</b> Cartillas de Bingo (1/lobato), Planificadores Semanales (1/lobato), lápices, Cartas del Guardián.<br><b>Ref:</b> Guía oficial Desafío de Nutrición ASV — Secciones 3.1 y 4.3.</p></div>"
+    },
+    {
+      "id": "ep-riesgos",
+      "titulo": "GESTIÓN DE RIESGOS",
+      "body": "<div style='font-family:sans-serif'><p style='font-size:9px;margin:0 0 6px'><b>Tipo:</b> Actividad ordinaria (≤50 personas) — Fórmula: R = P × C</p><table style='width:100%;border-collapse:collapse;font-size:9px'><thead><tr style='background:#1a3a5c;color:white;text-align:center'><th style='padding:4px 3px;border:1px solid #999'>Actividad / Momento</th><th style='padding:4px 3px;border:1px solid #999'>Contexto / Causa</th><th style='padding:4px 3px;border:1px solid #999'>Riesgo identificado</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>P</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>C</th><th style='padding:4px 3px;border:1px solid #999'>Nivel</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>R</th><th style='padding:4px 3px;border:1px solid #999'>Medidas de control</th></tr></thead><tbody><tr><td style='padding:3px;border:1px solid #ccc'>Búsqueda Comida Colorida / Carrera de Colores</td><td style='padding:3px;border:1px solid #ccc'>Carrera activa en área abierta</td><td style='padding:3px;border:1px solid #ccc'>Tropiezos y caídas con golpes leves</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Delimitar zona sin obstáculos, calzado cerrado obligatorio, un adulto en el campo durante el juego</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Collage del Plato Saludable</td><td style='padding:3px;border:1px solid #ccc'>Uso de tijeras por niños de 6-10 años</td><td style='padding:3px;border:1px solid #ccc'>Cortes menores en dedos</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>4</b></td><td style='padding:3px;border:1px solid #ccc'>Usar exclusivamente tijeras de punta roma, supervisión directa en la mesa de manualidades</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Autoevaluación Individual</td><td style='padding:3px;border:1px solid #ccc'>Reflexión sobre hábitos personales</td><td style='padding:3px;border:1px solid #ccc'>Incomodidad emocional o vergüenza</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>1</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>2</b></td><td style='padding:3px;border:1px solid #ccc'>Ambiente sin juicios, cuestionario individual y privado, participación no forzada en la reflexión grupal</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Merienda</td><td style='padding:3px;border:1px solid #ccc'>Alimentos traídos de casa sin control previo</td><td style='padding:3px;border:1px solid #ccc'>Reacción alérgica a alimento de otro lobato</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>4</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#ffe066;color:#5a4000'><b>Moderado</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>8</b></td><td style='padding:3px;border:1px solid #ccc'>Registrar alergias al inicio; no compartir meriendas entre lobatos con alergias conocidas; tener antihistamínico</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Toda la sesión</td><td style='padding:3px;border:1px solid #ccc'>Actividad física en espacio interior o bajo sol</td><td style='padding:3px;border:1px solid #ccc'>Deshidratación o sobrecalentamiento</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>4</b></td><td style='padding:3px;border:1px solid #ccc'>Agua disponible en todo momento, pausas de hidratación entre juegos activos, ventilación adecuada del área</td></tr></tbody></table><p style='font-size:8px;margin:6px 0 0'><b>Semáforo:</b> 🟢 1-10 Leve · 🟡 11-15 Moderado · 🟠 16-20 Alto · 🔴 21-25 Crítico | P = Probabilidad (1-5) · C = Consecuencia (1-5)</p></div>"
+    }
+  ],
+  "_fechaIni": "2026-05-23",
+  "_fechaFin": "2026-05-23"
+}

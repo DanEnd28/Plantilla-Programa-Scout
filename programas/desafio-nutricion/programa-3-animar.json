@@ -1,0 +1,125 @@
+{
+  "_data": {
+    "unidad": "Manada",
+    "responsable": "[Nombre del Akela]",
+    "lugar": "[Completar: sede del proyecto comunitario — escuela, barrio o sede scout]",
+    "fecha": "06/06/2026",
+    "hora-inicio": "10:00",
+    "hora-cierre": "13:00",
+    "oportunidad": "Este programa es el cierre transformador del Desafío de Nutrición: los lobatos dejan de ser aprendices y se convierten en promotores activos de salud en su comunidad. Al ejecutar el proyecto que ellos mismos diseñaron, experimentan el impacto real del servicio scout. La Reflexión Final les permite comparar sus hábitos actuales con los del diagnóstico inicial, cerrando el ciclo de aprendizaje con evidencia de cambio personal.",
+    "obj-general": "Ejecutar el proyecto comunitario de la Etapa III y completar la Reflexión Final del Desafío de Nutrición, para que los lobatos experimenten el impacto del servicio comunitario y evidencien el cambio en sus propios hábitos de vida saludable.",
+    "obj-especificos": "<ol><li>Ejecutar el proyecto comunitario elegido en el Programa 2 cumpliendo los roles asignados a cada seisena.</li><li>Documentar con fotografías o video las fases del proyecto como evidencia para el reporte SERSIN.</li><li>Reaplicar el Cuestionario de Autoevaluación comparando los resultados con el diagnóstico inicial del Programa 1.</li><li>Asumir el compromiso de continuar los hábitos saludables aprendidos al finalizar el desafío.</li></ol>",
+    "prog-mundial": "Aliados de la Salud — OMMS / Desafío de Nutrición ASV",
+    "metas": "<ol><li>El 100% de los lobatos participa activamente en la ejecución del proyecto comunitario.</li><li>Al menos el 80% de los lobatos muestra mejora en 2 o más hábitos evaluados en la Reflexión Final versus la Autoevaluación inicial.</li><li>La Manada genera un registro fotográfico completo de los 3 programas para el Campo 34 del reporte SERSIN.</li></ol>",
+    "enfoque": "Empoderamiento juvenil",
+    "footer-rama": "Manada",
+    "footer-yr": "2026",
+    "nombre-act": "DESAFÍO DE NUTRICIÓN — PROGRAMA 3: MANOS A LA OBRA — SOMOS PROMOTORES DE SALUD",
+    "ambientacion": "Los Guardianes de la Selva Sana salen hoy por primera vez de la selva hacia el mundo de los hombres — como Mowgli en su gran misión. Llevan el conocimiento aprendido para proteger a otros. Al final del día, Akela los convoca al Gran Consejo de la Reflexión: el círculo se cierra y cada Guardián recibe su reconocimiento.",
+    "hdr-grupo": "Grupo Scout La Salle Guaparo"
+  },
+  "_indicadores_extra": {},
+  "_ods": [2, 3, 4],
+  "_prog": [
+    {
+      "dur": "15 min",
+      "act": "Apertura Especial del Desafío",
+      "desc": "Izar la bandera, IGA y Gran Aullido de apertura. Akela recuerda brevemente el camino recorrido: Explorar, Expandir y hoy: Animar. Presenta la agenda del día y confirma el lugar del proyecto.",
+      "mat": "Bandera, mástil",
+      "resp": "Staff"
+    },
+    {
+      "dur": "20 min",
+      "act": "Briefing del Proyecto — Asignación de Roles",
+      "desc": "Baloo revisa con cada seisena su rol asignado en el Programa 2. Se distribuyen materiales, se confirma la logística y se explica el protocolo de fotografía/video para las evidencias. Ver instrucciones en ep-actividades.",
+      "mat": "Materiales del proyecto (según opción elegida), teléfono o cámara para evidencias",
+      "resp": "Akela + Baloo"
+    },
+    {
+      "dur": "25 min",
+      "act": "Ejecución del Proyecto — Fase 1",
+      "desc": "Primera fase de ejecución comunitaria. Los lobatos trabajan en sus roles asignados. El staff documenta fotográficamente. Ver instrucciones detalladas por opción de proyecto en ep-actividades.",
+      "mat": "[Según proyecto elegido — ver ep-actividades]",
+      "resp": "Bagheera + Baloo"
+    },
+    {
+      "dur": "30 min",
+      "act": "Ejecución del Proyecto — Fase 2",
+      "desc": "Continuación de la ejecución. Los lobatos desarrollan la parte central del proyecto: feria, siembra o distribución del recetario. Akela supervisa el bienestar del grupo y gestiona imprevistos. Ver ep-actividades.",
+      "mat": "[Según proyecto elegido — ver ep-actividades]",
+      "resp": "Akela + Bagheera"
+    },
+    {
+      "dur": "20 min",
+      "act": "Merienda en Campo",
+      "desc": "Merienda en el lugar del proyecto. Si el proyecto es una Feria o Huerta, los lobatos pueden compartir merienda con los beneficiarios como gesto de hospitalidad scout.",
+      "mat": "Merienda de los lobatos, agua, vasos extra si hay beneficiarios presentes",
+      "resp": "Staff"
+    },
+    {
+      "dur": "20 min",
+      "act": "Cierre del Proyecto — Evaluación Colectiva",
+      "desc": "El staff reúne al grupo en círculo en el lugar del proyecto. Baloo hace 3 preguntas de cierre: ¿Qué fue lo más difícil? ¿Qué fue lo que más les gustó? ¿Qué cambiarían si lo repitieran? Se recogen materiales y se hace el conteo de evidencias fotográficas.",
+      "mat": "Ninguno adicional",
+      "resp": "Baloo"
+    },
+    {
+      "dur": "20 min",
+      "act": "Reflexión Final — Reaplicación Autoevaluación",
+      "desc": "Cada lobato llena el mismo Cuestionario de Autoevaluación del Programa 1. El staff NO lo compara ni comenta en público — es para el análisis del reporte. Al terminar, Akela pregunta al grupo: ¿Qué hábito cambió más en ti desde que empezó el desafío? Ver instrucciones en ep-actividades.",
+      "mat": "Cuestionarios de Autoevaluación impresos (los mismos del Programa 1), lápices",
+      "resp": "Akela"
+    },
+    {
+      "dur": "15 min",
+      "act": "Distribución Planificador Final + Compromiso del Guardián",
+      "desc": "Akela entrega el segundo Planificador de Alimentos Semanal. Cada lobato firma el Compromiso Final del Guardián: 3 hábitos que promete mantener después del desafío. Se informa a los representantes por WhatsApp ese mismo día.",
+      "mat": "Planificadores Finales impresos, lápices, Compromisos Finales impresos",
+      "resp": "Akela"
+    },
+    {
+      "dur": "15 min",
+      "act": "Gran Cierre del Desafío de Nutrición",
+      "desc": "Gran Aullido final de los Guardianes de la Selva Sana. Akela reconoce el esfuerzo de cada lobato. Baloo recuerda que la insignia se gana por el proceso, no solo por el proyecto. Arriar la bandera. Fotografía grupal oficial para las evidencias.",
+      "mat": "Bandera, cámara para fotografía grupal",
+      "resp": "Staff"
+    }
+  ],
+  "_ind": [
+    {
+      "area": "Sociabilidad",
+      "etapa": "E2",
+      "texto": "Se acerca a personas de la sociedad que contribuyen al bienestar colectivo para conocer su labor."
+    },
+    {
+      "area": "Corporalidad",
+      "etapa": "E2",
+      "texto": "Participa en actividades que le enseñen a mejorar la calidad de vida."
+    },
+    {
+      "area": "Afectividad",
+      "etapa": "E1",
+      "texto": "Ejerce su capacidad de cambio a la vez que se siente tranquilo."
+    },
+    {
+      "area": "Espiritualidad",
+      "etapa": "E2",
+      "texto": "Ejemplifica la importancia de mantener el equilibrio ecológico entre los seres vivos."
+    }
+  ],
+  "_logos": {},
+  "_extra_pages": [
+    {
+      "id": "ep-actividades",
+      "titulo": "GUÍA DEL PROYECTO COMUNITARIO Y REFLEXIÓN FINAL",
+      "body": "<div style='font-family:sans-serif;font-size:10px;line-height:1.5'><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>📋 Briefing del Proyecto — 20 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Preparar antes de llegar:</b> Materiales listos y contados, teléfono cargado para fotos, lista de roles por seisena visible (papelógrafo o cartulina). <b>Desarrollo:</b> Repasar el plan con el grupo (5 min), asignar posiciones en el espacio (5 min), ensayo rápido o demostración de cada tarea (5 min), instrucción de protocolo fotográfico: quién toma fotos, qué momentos capturar obligatoriamente (apertura, ejecución, productos, cierre, reflexión final) (5 min). <b>Regla clave:</b> Cada seisena conoce su tarea antes de que empiece la Fase 1 — no improvisar en campo.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🌟 OPCIÓN A — Feria de la Selva Sana | Fases 1 y 2</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Ubicación:</b> Patio de la escuela o sede comunitaria (coordinar con la dirección con anticipación).<br><b>Fase 1 (25 min):</b> Seisena 1 monta el stand de carteles del arcoíris nutricional. Seisena 2 prepara las brochetas de frutas de demostración. Seisena 3 monta el área de la Trivia para visitantes.<br><b>Fase 2 (30 min):</b> Apertura del stand. Los lobatos reciben a los visitantes, explican los colores del arcoíris, ofrecen una brocheta de degustación y desafían a los visitantes con 3 preguntas de la trivia. Rotar roles cada 10 min.<br><b>Materiales:</b> Carteles del arcoíris (preparados con anticipación), frutas lavadas y cortadas, palitos, platos, tarjetas de trivia.<br><b>Conexión ODS:</b> ODS 3 (salud comunitaria directa), ODS 2 (educación sobre hambre cero), ODS 4 (educación de calidad).</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🌱 OPCIÓN B — Nuestra Huerta Viva | Fases 1 y 2</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Ubicación:</b> Patio de la escuela o jardín de la sede scout (coordinar acceso previo).<br><b>Fase 1 (25 min):</b> Seisena 1 prepara los envases plásticos reciclados (perforaciones de drenaje, mezcla tierra-abono). Seisena 2 organiza las semillas o plántulas por tipo. Seisena 3 diseña el cartel de presentación del huerto con nombre, fecha y qué se plantó.<br><b>Fase 2 (30 min):</b> Todos siembran en turnos por seisena. El adulto hace las 4 preguntas obligatorias de la guía al grupo: (1) ¿Cómo cultivar tus alimentos te ayuda a estar sano? (2) ¿Qué alimentos nutritivos plantaste? (3) ¿Cómo te sientes al estar activo en el huerto? (4) ¿Qué aprendiste sobre trabajo en equipo? Se registran las respuestas colectivas para el reporte.<br><b>Materiales:</b> Semillas de cilantro/lechuga/rábano, tierra, abono, botellas recicladas, herramientas ligeras.<br><b>Conexión ODS:</b> ODS 2 (producción local de alimentos), ODS 3, ODS 15 (equilibrio ecológico).</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>📖 OPCIÓN C — El Recetario del Guardián | Fases 1 y 2</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Ubicación:</b> Sede scout (diseño) + barrio/edificio/escuela (distribución).<br><b>Fase 1 (25 min):</b> Cada seisena dibuja y redacta 1-2 recetas saludables con ingredientes accesibles. El adulto compila y ordena las páginas. Se imprimen o fotocopian las copias del recetario (preparar impresión con anticipación).<br><b>Fase 2 (30 min):</b> Los lobatos salen en pequeños grupos con adulto acompañante a repartir el recetario puerta a puerta, en la escuela o en el ambulatorio. Cada grupo entrega y explica brevemente qué es el desafío de nutrición.<br><b>Materiales:</b> Hojas impresas del recetario (mín. 20 copias), lápices de color para portada, grapas.<br><b>Conexión ODS:</b> ODS 2 (acceso a información sobre alimentación), ODS 3, ODS 4 (educación).</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🪞 Reflexión Final — Reaplicación Autoevaluación | 20 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Instrucción de aplicación:</b> Usar el mismo cuestionario del Programa 1. No mostrar ni mencionar las respuestas anteriores durante el llenado — el lobato responde desde su estado actual sin influencia. Tiempo de llenado: 10 min.<br><b>Reflexión grupal (10 min):</b> Akela pregunta al grupo (sin obligar a responder): ¿Qué hábito cambió más en ti? ¿Cuál fue el hábito más difícil de mantener? ¿Qué le contarías a un amigo que no hizo el desafío?<br><b>Para el reporte (Campo 33):</b> El Akela compara las respuestas del Programa 1 con las de hoy de forma privada. Redacta un párrafo descriptivo sobre los cambios observados en el grupo. No publicar ni comparar resultados individuales.<br><b>Regla clave:</b> La reflexión es de avance, no de juicio. Cada pequeño cambio es un logro del Guardián.</p></div>"
+    },
+    {
+      "id": "ep-riesgos",
+      "titulo": "GESTIÓN DE RIESGOS",
+      "body": "<div style='font-family:sans-serif'><p style='font-size:9px;margin:0 0 6px'><b>Tipo:</b> Actividad ordinaria (≤50 personas) — Fórmula: R = P × C | Nota: si el proyecto incluye desplazamiento a sitio externo, confirmar autorización de representantes con anticipación.</p><table style='width:100%;border-collapse:collapse;font-size:9px'><thead><tr style='background:#1a3a5c;color:white;text-align:center'><th style='padding:4px 3px;border:1px solid #999'>Actividad / Momento</th><th style='padding:4px 3px;border:1px solid #999'>Contexto / Causa</th><th style='padding:4px 3px;border:1px solid #999'>Riesgo identificado</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>P</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>C</th><th style='padding:4px 3px;border:1px solid #999'>Nivel</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>R</th><th style='padding:4px 3px;border:1px solid #999'>Medidas de control</th></tr></thead><tbody><tr><td style='padding:3px;border:1px solid #ccc'>Desplazamiento al sitio del proyecto</td><td style='padding:3px;border:1px solid #ccc'>Transporte de lobatos a ubicación externa</td><td style='padding:3px;border:1px solid #ccc'>Accidente de tránsito o extravío</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>5</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#ffe066;color:#5a4000'><b>Moderado</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>10</b></td><td style='padding:3px;border:1px solid #ccc'>Autorización escrita de representantes, transporte seguro y conocido, conteo de lobatos en cada parada, ratio adulto/niño mínimo 1:6</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Ejecución del proyecto (exterior)</td><td style='padding:3px;border:1px solid #ccc'>Actividad al aire libre en Valencia (calor)</td><td style='padding:3px;border:1px solid #ccc'>Golpe de calor o quemadura solar</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#ffe066;color:#5a4000'><b>Moderado</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>9</b></td><td style='padding:3px;border:1px solid #ccc'>Protector solar obligatorio, gorras o sombreros, pausas de hidratación cada 30 min, preferir horario matutino</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Proyecto en espacio comunitario</td><td style='padding:3px;border:1px solid #ccc'>Interacción con personas no conocidas</td><td style='padding:3px;border:1px solid #ccc'>Situación incómoda con adulto externo</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>1</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>3</b></td><td style='padding:3px;border:1px solid #ccc'>Lobatos siempre en grupos con adulto scout visible, ningún lobato interactúa solo con adultos externos</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Trabajo manual (siembra, carga, distribución)</td><td style='padding:3px;border:1px solid #ccc'>Esfuerzo físico no adaptado a la edad</td><td style='padding:3px;border:1px solid #ccc'>Lesión muscular o agotamiento</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>4</b></td><td style='padding:3px;border:1px solid #ccc'>Tareas adaptadas a la edad (6-10 años), no cargar más de 3 kg, adulto carga materiales pesados</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Reflexión Final — Autoevaluación</td><td style='padding:3px;border:1px solid #ccc'>Comparación implícita de avances personales</td><td style='padding:3px;border:1px solid #ccc'>Frustración si el lobato no percibe mejora propia</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>4</b></td><td style='padding:3px;border:1px solid #ccc'>Nunca comparar resultados individuales en público; enfatizar el logro del grupo; validar que cada pequeño cambio cuenta</td></tr></tbody></table><p style='font-size:8px;margin:6px 0 0'><b>Semáforo:</b> 🟢 1-10 Leve · 🟡 11-15 Moderado · 🟠 16-20 Alto · 🔴 21-25 Crítico | P = Probabilidad (1-5) · C = Consecuencia (1-5)</p></div>"
+    }
+  ],
+  "_fechaIni": "2026-06-06",
+  "_fechaFin": "2026-06-06"
+}
