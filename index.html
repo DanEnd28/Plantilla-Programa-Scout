@@ -529,7 +529,7 @@
       font-weight: 400;
       letter-spacing: .5px;
       min-height: 14px;
-      text-transform:uppercase;
+      text-transform: uppercase;
     }
 
     .hdr-nombre:empty::before {
@@ -691,6 +691,10 @@
       line-height: 1.65;
       color: #333;
       min-height: 24px;
+    }
+
+    .sec-body ol {
+      padding-left: 15px;
     }
 
     .sec-body:focus {
@@ -2004,6 +2008,14 @@
       size: letter;
       margin: 0px 0px 0px;
     }
+
+    /* Páginas extra: altura fija para evitar que el contenido se desborde hacia la página siguiente */
+    @media screen {
+      .extra-page-wrap .page-block {
+        height: 11in;
+        overflow: hidden;
+      }
+    }
   </style>
 </head>
 
@@ -3001,7 +3013,7 @@
         }
         if (cod) setCode(cod);
         if (resp) { document.querySelectorAll('[data-key="responsable"]').forEach(el => el.textContent = resp); }
-        if (titulo) { document.querySelectorAll('[id^="doc-title"]').forEach(el => el.textContent = titulo); }
+        if (titulo) { document.querySelectorAll('.hdr-title-doc').forEach(el => el.textContent = titulo); }
 
         // Indicar multi-día
         const md = isMultiday();
@@ -3235,6 +3247,7 @@
 
       function buildExtraPage(id, titulo, body) {
         const h = getExtraPageHeader();
+        const currentTitle = document.getElementById('doc-title')?.textContent?.trim() || 'FICHA TÉCNICA';
         const wrap = document.createElement('div');
         wrap.className = 'extra-page-wrap';
         wrap.dataset.epId = id;
@@ -3250,7 +3263,7 @@
             <div class="logo-slot logo-grupal logo-comunidad" data-tip="Click para cambiar logo Comunidad"><img src="images/rama-comunidad.jpg" alt="Comunidad" data-logo-key="rama-comunidad"><input type="file" accept="image/*" onchange="setLogo('rama-comunidad',this)"></div>
             <div class="logo-slot logo-grupal logo-clan" data-tip="Click para cambiar logo Clan"><img src="images/rama-clan.jpg" alt="Clan" data-logo-key="rama-clan"><input type="file" accept="image/*" onchange="setLogo('rama-clan',this)"></div>
             <div class="hdr-center">
-              <div class="hdr-title">FICHA TÉCNICA</div>
+              <div class="hdr-title hdr-title-doc">${currentTitle}</div>
               <div class="hdr-line"></div>
               <div class="hdr-nombre ep-nombre">${h.nombre}</div>
             </div>
