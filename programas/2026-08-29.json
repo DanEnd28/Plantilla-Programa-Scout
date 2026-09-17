@@ -1,0 +1,121 @@
+{
+  "_data": {
+    "unidad": "Manada",
+    "responsable": "Akela",
+    "lugar": "Museo de la Cultura",
+    "fecha": "29/08/2026",
+    "hora-inicio": "15:00",
+    "hora-cierre": "17:00",
+    "oportunidad": "Con la excusa de rescatar las Máximas de la Selva escondidas entre las salas del Museo de la Cultura, la Manada se convierte en un grupo de exploradores culturales. La actividad ofrece a los lobatos y lobeznas la oportunidad de vivenciar el respeto por las normas de un espacio público y cultural, mientras fortalecen su identidad y aprecio por el patrimonio venezolano.",
+    "obj-general": "Explorar el patrimonio cultural del Museo de la Cultura mediante una búsqueda guiada de las Máximas de la Selva, para que los lobatos y lobeznas fortalezcan el respeto por las normas sociales y el aprecio por la identidad cultural venezolana.",
+    "obj-especificos": "<ol><li>Identificar al menos una Máxima de la Selva en cada sala visitada del museo.</li><li>Practicar el comportamiento adecuado (silencio, orden, respeto) dentro de un espacio cultural público.</li><li>Representar gráficamente su experiencia en el museo mediante un dibujo propio.</li><li>Compartir en equipo (seisena) los hallazgos culturales recopilados durante el recorrido.</li></ol>",
+    "prog-mundial": "Scouts por los ODS",
+    "metas": "<ol><li>Que el 90% de los lobatos identifique y registre al menos 3 Máximas de la Selva durante el recorrido.</li><li>Que el 100% de los lobatos mantenga un comportamiento respetuoso dentro de las salas del museo, sin llamados de atención repetidos.</li><li>Que el 80% de los lobatos entregue su dibujo del museo con al menos una máxima escrita al final de la jornada.</li></ol>",
+    "enfoque": "Cultura de paz; Diversidad e inclusión",
+    "footer-rama": "Manada",
+    "footer-yr": "2026",
+    "nombre-act": "CAZADORES DE MÁXIMAS EN EL MUSEO DE LA CULTURA",
+    "ambientacion": "La Manada recibe un llamado urgente: en las salas del Museo de la Cultura se esconden las antiguas Máximas de la Selva, sabidurías que Akela y Bagheera necesitan recuperar antes de que se pierdan para siempre. Cada seisena se convierte en un equipo de exploradores culturales que debe recorrer el museo, observar con respeto sus salas y descubrir, puerta por puerta, una máxima escondida para llevarla de vuelta al Consejo de la Roca.",
+    "hdr-grupo": "Grupo Scout La Salle Guaparo"
+  },
+  "_indicadores_extra": {},
+  "_ods": [4, 11],
+  "_prog": [
+    {
+      "dur": "15 min",
+      "act": "GAIOC — Gran Aullido en el Consejo",
+      "desc": "Formación e inspección en el punto de encuentro frente al museo. Gran Aullido de apertura: Akela convoca a la Manada a la misión del día.",
+      "mat": "Lista de asistencia, silbato",
+      "resp": "Staff"
+    },
+    {
+      "dur": "10 min",
+      "act": "La Llamada de la Manada",
+      "desc": "Rompe hielo activo: canción y juego de movimiento para energizar a la Manada antes de entrar al museo. Ver instrucciones en la hoja de juegos.",
+      "mat": "Bocina o celular con música, espacio abierto",
+      "resp": "Bagheera"
+    },
+    {
+      "dur": "10 min",
+      "act": "Historieta: Las Máximas Perdidas",
+      "desc": "Akela y Bagheera anuncian la misión: entre las salas del Museo de la Cultura se esconden las antiguas Máximas de la Selva. Cada seisena se convierte en un equipo de exploradores culturales encargado de recuperarlas con respeto y atención.",
+      "mat": "Ninguno / narración oral",
+      "resp": "Akela"
+    },
+    {
+      "dur": "40 min",
+      "act": "Cacería de las Máximas — Recorrido",
+      "desc": "Recorrido guiado por las salas del museo. En cada sala o puerta, la seisena descubre y anota una Máxima de la Selva relacionada con lo observado. Ver dinámica en la hoja de juegos.",
+      "mat": "Cuadernos de notas, lápices, cartucheras (traídas por cada lobato)",
+      "resp": "Akela y Bagheera"
+    },
+    {
+      "dur": "20 min",
+      "act": "Hora del Gamo — Merienda",
+      "desc": "Pausa de descanso, hidratación y merienda en las zonas verdes del museo, tras la salida del recorrido.",
+      "mat": "Merienda y termo de agua de cada lobato",
+      "resp": "Staff"
+    },
+    {
+      "dur": "10 min",
+      "act": "El Mural desde Afuera",
+      "desc": "Juego pasivo: desde afuera del museo, cada lobato dibuja lo que más le impactó y escribe, junto a cada puerta dibujada, la Máxima de la Selva rescatada allí. Ver instrucciones en la hoja de juegos.",
+      "mat": "Cuaderno de notas, colores, superficie de apoyo",
+      "resp": "Akela"
+    },
+    {
+      "dur": "15 min",
+      "act": "Consigna del Cazador y Cierre",
+      "desc": "La Manada canta la canción motivacional final compartiendo las Máximas rescatadas, seguida del Gran Aullido de cierre.",
+      "mat": "Ninguno / voces de la Manada",
+      "resp": "Staff"
+    }
+  ],
+  "_ind": [
+    {
+      "area": "Sociabilidad",
+      "etapa": "E1",
+      "texto": "Muestra respeto por el país y las personas que en él habitan."
+    },
+    {
+      "area": "Sociabilidad",
+      "etapa": "E2",
+      "texto": "Se acerca a niños de su edad, para realizar juegos y otras actividades que le atraen."
+    },
+    {
+      "area": "Sociabilidad",
+      "etapa": "E1",
+      "texto": "Obedece las instrucciones que le son dadas."
+    },
+    {
+      "area": "Sociabilidad",
+      "etapa": "E2",
+      "texto": "Aplica las normas de conducta."
+    },
+    {
+      "area": "Creatividad",
+      "etapa": "E1",
+      "texto": "Elabora un dibujo donde refleja su comunidad local."
+    },
+    {
+      "area": "Creatividad",
+      "etapa": "E2",
+      "texto": "Describe manifestaciones culturales del país y sus protagonistas."
+    }
+  ],
+  "_logos": {},
+  "_extra_pages": [
+    {
+      "id": "ep-juegos",
+      "titulo": "INSTRUCCIONES DE JUEGOS",
+      "body": "<h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🎶 La Llamada de la Manada — ACTIVO | 10 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> La Manada se reúne en el punto de encuentro afuera del museo, en semicírculo.<br><b>Desarrollo:</b> Al ritmo de una canción movida, cada lobato imita el animal de la selva que le asigna Bagheera; al detenerse la música, todos hacen la pose de 'alerta de la selva' (silencio y atención).<br><b>Regla clave:</b> Quien se mueve después de que para la música se convierte en 'ojo vigilante' y ayuda a detectar al siguiente.<br><b>Mat:</b> bocina o celular con música, espacio abierto.<br><b>Ref:</b> juego clásico de estatuas musicales, adaptado con temática de animales de la selva.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🗺️ Cacería de las Máximas — RECORRIDO | 40 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> La Manada se divide en seisenas, cada una acompañada por un dirigente o padrino asignado.<br><b>Desarrollo:</b> Recorren las salas del museo en el orden indicado por el guía; en cada sala o puerta, el dirigente revela una Máxima de la Selva relacionada con lo observado, que la seisena anota en su cuaderno.<br><b>Regla clave:</b> Se avanza en silencio y sin tocar las piezas — 'se explora con los ojos, no con las manos'.<br><b>Mat:</b> cuadernos de notas, lápices, cartucheras.<br><b>Ref:</b> dinámica de rally cultural propia de la actividad, sin fuente externa.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🎨 El Mural desde Afuera — PASIVO | 10 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> La Manada se ubica en el exterior del museo, con vista a la fachada, sentados por seisena.<br><b>Desarrollo:</b> Cada lobato dibuja su vista del museo y, junto a cada puerta que dibuje, escribe la Máxima de la Selva que su seisena rescató en esa sala.<br><b>Regla clave:</b> Cada dibujo debe tener al menos una Máxima escrita para considerarse completo.<br><b>Mat:</b> cuaderno de notas, colores, superficie de apoyo.<br><b>Ref:</b> actividad de cierre reflexivo tipo diario de campo, sin fuente externa.</p>"
+    },
+    {
+      "id": "ep-riesgos",
+      "titulo": "GESTIÓN DE RIESGOS",
+      "body": "<div style='font-family:sans-serif'><p style='font-size:9px;margin:0 0 6px'><b>Tipo:</b> Actividad ordinaria (≤50 personas) — Fórmula: R = P × C</p><table style='width:100%;border-collapse:collapse;font-size:9px'><thead><tr style='background:#1a3a5c;color:white;text-align:center'><th style='padding:4px 3px;border:1px solid #999'>Actividad / Momento</th><th style='padding:4px 3px;border:1px solid #999'>Contexto / Causa</th><th style='padding:4px 3px;border:1px solid #999'>Riesgo identificado</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>P</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>C</th><th style='padding:4px 3px;border:1px solid #999'>Nivel</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>R</th><th style='padding:4px 3px;border:1px solid #999'>Medidas de control</th></tr></thead><tbody><tr><td style='padding:3px;border:1px solid #ccc'>Cacería de las Máximas (recorrido)</td><td style='padding:3px;border:1px solid #ccc'>Manipulación de piezas o vitrinas de exhibición por curiosidad</td><td style='padding:3px;border:1px solid #ccc'>Daño a piezas del patrimonio cultural o corte con vidrio</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Recordar la norma 'ver sin tocar'; dirigentes acompañando cada seisena en todo momento.</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Cacería de las Máximas (recorrido)</td><td style='padding:3px;border:1px solid #ccc'>Espacio público amplio con múltiples salas y visitantes externos</td><td style='padding:3px;border:1px solid #ccc'>Extravío o separación accidental de un lobato del grupo</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>9</b></td><td style='padding:3px;border:1px solid #ccc'>Sistema de padrinos por parejas, conteo por seisenas cada 15 min, punto de encuentro fijo anunciado al inicio, pañoleta visible.</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Desplazamiento entre salas</td><td style='padding:3px;border:1px solid #ccc'>Pisos pulidos, escalones y pasillos compartidos con otros visitantes</td><td style='padding:3px;border:1px solid #ccc'>Caídas, golpes o tropiezos</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Caminar sin correr dentro del museo, calzado cómodo obligatorio, dirigentes al frente y al final de la fila.</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Hora del Gamo / Merienda</td><td style='padding:3px;border:1px solid #ccc'>Exposición al sol y actividad física en clima cálido</td><td style='padding:3px;border:1px solid #ccc'>Deshidratación o golpe de calor leve</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>4</b></td><td style='padding:3px;border:1px solid #ccc'>Termo de agua identificado obligatorio, merienda programada, buscar sombra, hidratación recordada por Staff.</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>El Mural desde Afuera (juego pasivo)</td><td style='padding:3px;border:1px solid #ccc'>Actividad en área exterior cercana a vías o zonas comunes</td><td style='padding:3px;border:1px solid #ccc'>Exposición a tránsito vehicular o personas ajenas al grupo</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Delimitar el área de trabajo, dirigentes en los extremos del perímetro, ningún lobato se aleja del área señalada.</td></tr></tbody></table><p style='font-size:8px;margin:6px 0 0'><b>Semáforo:</b> 🟢 1-10 Leve · 🟡 11-15 Moderado · 🟠 16-20 Alto · 🔴 21-25 Crítico | P = Probabilidad (1-5) · C = Consecuencia (1-5)</p></div>"
+    }
+  ],
+  "_fechaIni": "2026-08-29",
+  "_fechaFin": "2026-08-29"
+}

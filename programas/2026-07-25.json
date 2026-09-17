@@ -1,0 +1,137 @@
+{
+  "_data": {
+    "unidad": "Manada",
+    "responsable": "Akela",
+    "lugar": "Colegio La Salle Guaparo",
+    "fecha": "25/07/2026",
+    "hora-inicio": "10:00",
+    "hora-cierre": "13:00",
+    "oportunidad": "Tras el reciente terremoto que afectó al país, esta actividad ofrece a los lobatos y lobeznas la oportunidad de transformar el miedo en preparación y confianza. A través del universo de Hathi, el elefante sabio que conoce las señales de la tierra, la Manada aprenderá de forma vivencial qué hacer antes, durante y después de un sismo, desarrollando una habilidad de autoprotección que también podrán compartir con su familia.",
+    "obj-general": "Desarrollar en los lobatos y lobeznas las habilidades básicas de autoprotección ante sismos, mediante juegos y un simulacro ambientados en la selva de Hathi, para que aprendan a actuar con calma y a proteger a su familia cuando la tierra tiembla.",
+    "obj-especificos": "<ol><li>Practicar la técnica de protección personal Agáchate, Cúbrete y Agárrate hasta ejecutarla de forma correcta y automática.</li><li>Identificar las zonas seguras y peligrosas de una vivienda y reconocer el punto de encuentro familiar ante una emergencia.</li><li>Reconocer los elementos de un kit de emergencia y comprometerse a armarlo en casa junto a su familia.</li><li>Ejecutar un simulacro de evacuación ordenado siguiendo instrucciones y manteniendo la calma para ayudar a los más pequeños.</li></ol>",
+    "prog-mundial": "Scouts por los ODS",
+    "metas": "<ol><li>Que el 90% de los lobatos ejecute correctamente la técnica Agáchate, Cúbrete y Agárrate durante el gran simulacro final.</li><li>Que el 80% de los lobatos identifique al menos 3 zonas seguras y 3 peligrosas de una vivienda ante un sismo.</li><li>Que el 100% de los lobatos se lleve a casa su lámina de la mochila de emergencia para completarla en familia.</li></ol>",
+    "enfoque": "Adquisición de habilidades y competencias; Empoderamiento juvenil",
+    "footer-rama": "Manada",
+    "footer-yr": "2026",
+    "nombre-act": "HATHI Y EL TEMBLOR DE LA SELVA",
+    "ambientacion": "Hathi, el elefante sabio y guardián del orden y la memoria de la selva, es quien conoce las señales de la tierra. Cuando el suelo comienza a temblar, los Banderlogs corren en pánico y se lastiman, pero Hathi enseña a la Manada tres reglas que salvan la vida: agacharse y cubrirse, buscar el claro seguro y mantener la calma para cuidar a los más pequeños. Raksha, la loba madre, acompaña a los lobatos recordándoles que un buen lobo protege siempre a su familia.",
+    "hdr-grupo": "Grupo Scout La Salle Guaparo"
+  },
+  "_indicadores_extra": {},
+  "_ods": [3, 11],
+  "_prog": [
+    {
+      "dur": "15 min",
+      "act": "Apertura",
+      "desc": "Izamos la bandera, IGA y Gran Aullido de apertura. Hathi convoca a la Manada al claro del Consejo para una jornada especial: aprender a cuidarnos cuando la tierra tiembla.",
+      "mat": "Bandera, mástil",
+      "resp": "Staff"
+    },
+    {
+      "dur": "15 min",
+      "act": "La selva se sacude",
+      "desc": "Rompe hielo activo: los lobatos se mueven imitando animales de la selva y, al barritar de Hathi (¡TEMBLOR!), se congelan en la posición segura. Ver instrucciones en la hoja de juegos.",
+      "mat": "Espacio amplio, silbato",
+      "resp": "Raksha"
+    },
+    {
+      "dur": "15 min",
+      "act": "Historieta: Hathi y el temblor",
+      "desc": "Narración del día: Hathi nota que los pájaros vuelan raro y la tierra se sacude. Mientras los Banderlogs corren en pánico, Hathi enseña las 3 reglas ante un sismo.",
+      "mat": "Lámina o títere de Hathi (opcional)",
+      "resp": "Akela"
+    },
+    {
+      "dur": "20 min",
+      "act": "Agáchate, Cúbrete, Agárrate",
+      "desc": "Relevo por seisenas: ante cada señal de Hathi, la seisena ejecuta la técnica de protección correctamente antes de avanzar. Ver instrucciones en la hoja de juegos.",
+      "mat": "Conos o marcas, silbato",
+      "resp": "Akela"
+    },
+    {
+      "dur": "15 min",
+      "act": "Zona segura, zona peligrosa",
+      "desc": "Ronda verbal pasiva: Akela nombra lugares de una casa (junto a la ventana, bajo una mesa firme, al lado del estante) y los lobatos responden SEGURO o PELIGRO y explican por qué.",
+      "mat": "Tarjetas con lugares de la casa (opcional)",
+      "resp": "Akela"
+    },
+    {
+      "dur": "10 min",
+      "act": "Carrera al claro de Hathi",
+      "desc": "Juego activo de evacuación: a la señal, los lobatos se dirigen al punto de encuentro (el claro) en fila, sin correr ni empujar. Ver instrucciones en la hoja de juegos.",
+      "mat": "Conos para marcar el claro, silbato",
+      "resp": "Raksha"
+    },
+    {
+      "dur": "20 min",
+      "act": "Merienda",
+      "desc": "Momento de descanso y compartir. Hathi recuerda que un lobo bien alimentado y tranquilo piensa mejor en una emergencia.",
+      "mat": "Merienda, agua",
+      "resp": "Staff"
+    },
+    {
+      "dur": "25 min",
+      "act": "Mi mochila de emergencia",
+      "desc": "Manualidad en seisenas: cada lobato arma en cartulina su kit familiar de emergencia (agua, linterna, radio, botiquín, silbato, documentos) para completarlo en casa con su familia.",
+      "mat": "Cartulinas, marcadores, tijeras, pega, revistas para recortar",
+      "resp": "Akela"
+    },
+    {
+      "dur": "30 min",
+      "act": "Gran simulacro de la Manada",
+      "desc": "Simulacro completo integrando lo aprendido: señal de sismo, Agáchate-Cúbrete-Agárrate, evacuación ordenada al claro y conteo por seisenas. Ver instrucciones en la hoja de juegos.",
+      "mat": "Silbato, conos",
+      "resp": "Raksha"
+    },
+    {
+      "dur": "15 min",
+      "act": "Ceremonia de cierre",
+      "desc": "Gran Aullido de cierre y arriado de bandera. Cada lobato hace su compromiso de armar el kit de emergencia en casa. Hathi felicita a la Manada por su valentía y preparación.",
+      "mat": "Bandera, mástil",
+      "resp": "Staff"
+    }
+  ],
+  "_ind": [
+    {
+      "area": "Corporalidad",
+      "etapa": "E2",
+      "texto": "Participa en actividades que le enseñen a mejorar la calidad de vida."
+    },
+    {
+      "area": "Corporalidad",
+      "etapa": "E1",
+      "texto": "Pide a familiares y adultos Scouts la ayuda que requiere para adquirir habilidades y las practica."
+    },
+    {
+      "area": "Carácter",
+      "etapa": "E1",
+      "texto": "Acepta las normas impuestas por los adultos para mejorar la calidad de vida."
+    },
+    {
+      "area": "Sociabilidad",
+      "etapa": "E1",
+      "texto": "Obedece las instrucciones que le son dadas."
+    },
+    {
+      "area": "Carácter",
+      "etapa": "E1",
+      "texto": "Ofrece a sus padres su ayuda para las tareas derivadas de la vida familiar."
+    }
+  ],
+  "_logos": {},
+  "_extra_pages": [
+    {
+      "id": "ep-juegos",
+      "titulo": "INSTRUCCIONES DE JUEGOS",
+      "body": "<div style='font-family:sans-serif'><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🌿 La selva se sacude — ACTIVO | 15 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Todos los lobatos dispersos en el patio; Raksha en el centro con el silbato de Hathi.<br><b>Desarrollo:</b> Los lobatos se desplazan imitando animales de la selva (monos, pájaros, serpientes). Cuando Hathi barrita (silbato largo + grito ¡TEMBLOR!), todos deben congelarse de inmediato en la posición segura: agachados y cubriendo la cabeza con los brazos. El último en agacharse pasa a ayudar a Hathi a vigilar.<br><b>Regla clave:</b> Nadie se mueve hasta que Hathi dice CALMA; así entrenamos la reacción automática ante un temblor.<br><b>Mat:</b> Espacio amplio, silbato.<br><b>Ref:</b> <a href='https://youtube.com/results?search_query=juego+simulacro+sismo+niños+agachate'>🔗 Ver cómo se juega</a></p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🛡️ Agáchate, Cúbrete, Agárrate — ACTIVO | 20 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Seisenas en fila tras la línea de salida; a 8 metros, una zona con una mesa o marca por seisena.<br><b>Desarrollo:</b> A la señal, el primer lobato corre a la zona; cuando Hathi barrita, ejecuta la técnica: se AGACHA, se CUBRE bajo la mesa o con los brazos y se AGARRA firme contando hasta cinco. Solo si lo hace bien regresa y da el relevo. Gana la seisena que complete a todos con la técnica correcta.<br><b>Regla clave:</b> No cuenta la velocidad si la técnica está mal; Hathi valora hacerlo bien, no rápido.<br><b>Mat:</b> Conos o marcas, mesas (opcional), silbato.<br><b>Ref:</b> <a href='https://youtube.com/results?search_query=agachate+cubrete+agarrate+simulacro+escolar'>🔗 Ver la técnica oficial</a></p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🏠 Zona segura, zona peligrosa — PASIVO | 15 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Lobatos sentados en círculo alrededor de Akela; un lado del círculo es SEGURO y el otro PELIGRO.<br><b>Desarrollo:</b> Akela nombra lugares de una casa durante un sismo (junto a una ventana, bajo una mesa firme, al lado de un estante alto, en el marco de una puerta interna, en el ascensor). Los lobatos se mueven al lado que corresponde y un voluntario explica por qué. Se corrige y refuerza entre todos.<br><b>Regla clave:</b> Cada respuesta se explica; no basta con adivinar, hay que saber el porqué como Hathi.<br><b>Mat:</b> Tarjetas con lugares de la casa (opcional).<br><b>Ref:</b> Dinámica scout clásica adaptada (sin fuente única).</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🐘 Carrera al claro de Hathi — ACTIVO | 10 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Se marca con conos el claro seguro (punto de encuentro) a un extremo del patio; lobatos repartidos por el espacio.<br><b>Desarrollo:</b> A la señal de Hathi, todos deben llegar al claro caminando rápido pero SIN correr ni empujar, formando su seisena al llegar. Se cronometra a la Manada como equipo y se intenta mejorar el tiempo en un segundo intento.<br><b>Regla clave:</b> Si alguien corre o empuja, la Manada repite; en una evacuación real la calma protege a todos.<br><b>Mat:</b> Conos para marcar el claro, silbato.<br><b>Ref:</b> <a href='https://youtube.com/results?search_query=simulacro+evacuacion+niños+punto+de+encuentro'>🔗 Ver cómo se juega</a></p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🎒 Mi mochila de emergencia — MODERADO | 25 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Seisenas en mesas con materiales repartidos; Akela muestra un modelo de mochila dibujada.<br><b>Desarrollo:</b> Cada lobato dibuja o recorta y pega en su cartulina la silueta de una mochila y dentro los elementos de un kit de emergencia (agua, linterna, radio, botiquín, silbato, copia de documentos, comida no perecedera). Al terminar, cada uno presenta a su seisena qué le falta conseguir en casa.<br><b>Regla clave:</b> La lámina se la llevan a casa para armar el kit real con su familia; ahí completan el aprendizaje.<br><b>Mat:</b> Cartulinas, marcadores, tijeras, pega, revistas para recortar.<br><b>Ref:</b> <a href='https://youtube.com/results?search_query=kit+de+emergencia+mochila+sismo+niños'>🔗 Qué lleva un kit de emergencia</a></p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🚨 Gran simulacro de la Manada — ACTIVO | 30 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Todos en actividad normal (juego libre suave); Akela y Raksha en posición, jefes de seisena avisados de que reportarán a su gente.<br><b>Desarrollo:</b> Sin aviso, Hathi da la señal de sismo. Todos ejecutan Agáchate-Cúbrete-Agárrate; al cesar el temblor, evacuan ordenados al claro de Hathi. Allí cada Jefe de Seisena cuenta a los suyos y reporta a Akela. Se repite una segunda vez buscando mejorar calma y tiempo.<br><b>Regla clave:</b> Integra todo lo aprendido; el jefe de seisena es responsable de que no falte ningún lobato en el claro.<br><b>Mat:</b> Silbato, conos.<br><b>Ref:</b> <a href='https://youtube.com/results?search_query=simulacro+sismo+completo+escolar'>🔗 Ver un simulacro completo</a></p></div>"
+    },
+    {
+      "id": "ep-riesgos",
+      "titulo": "GESTIÓN DE RIESGOS",
+      "body": "<div style='font-family:sans-serif'><p style='font-size:9px;margin:0 0 6px'><b>Tipo:</b> Actividad ordinaria (≤50 personas) — Fórmula: R = P × C</p><table style='width:100%;border-collapse:collapse;font-size:9px'><thead><tr style='background:#1a3a5c;color:white;text-align:center'><th style='padding:4px 3px;border:1px solid #999'>Actividad / Momento</th><th style='padding:4px 3px;border:1px solid #999'>Contexto / Causa</th><th style='padding:4px 3px;border:1px solid #999'>Riesgo identificado</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>P</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>C</th><th style='padding:4px 3px;border:1px solid #999'>Nivel</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>R</th><th style='padding:4px 3px;border:1px solid #999'>Medidas de control</th></tr></thead><tbody><tr><td style='padding:3px;border:1px solid #ccc'>Juegos activos (rompe hielo, relevo, carrera)</td><td style='padding:3px;border:1px solid #ccc'>Correr y detenerse o agacharse bruscamente en el patio</td><td style='padding:3px;border:1px solid #ccc'>Caídas, golpes o torceduras</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Delimitar el área, retirar obstáculos, insistir en no correr ni empujar, botiquín a mano</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Gran simulacro de evacuación</td><td style='padding:3px;border:1px solid #ccc'>Desplazamiento del grupo hacia el punto de encuentro</td><td style='padding:3px;border:1px solid #ccc'>Empujones o caídas en fila al evacuar rápido</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Evacuar caminando en fila, un adulto adelante y otro atrás, ruta despejada previamente</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Manualidad Mi mochila de emergencia</td><td style='padding:3px;border:1px solid #ccc'>Uso de tijeras para recortar</td><td style='padding:3px;border:1px solid #ccc'>Cortes leves en dedos o manos</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>4</b></td><td style='padding:3px;border:1px solid #ccc'>Usar tijeras de punta roma, supervisión de Akela, entregar y recoger las tijeras por conteo</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Historieta y tema del sismo</td><td style='padding:3px;border:1px solid #ccc'>Terremoto reciente; lobatos que lo vivieron de cerca</td><td style='padding:3px;border:1px solid #ccc'>Angustia, llanto o reacción emocional</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Enfoque positivo (estar preparados da seguridad), Raksha atenta, opción de retirarse si alguien se angustia</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Juegos al aire libre</td><td style='padding:3px;border:1px solid #ccc'>Esfuerzo físico y calor durante la jornada</td><td style='padding:3px;border:1px solid #ccc'>Deshidratación o golpe de calor</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Pausas de hidratación, sombra disponible, gorra, ajustar intensidad si el sol es fuerte</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Transiciones y simulacro</td><td style='padding:3px;border:1px solid #ccc'>Movimiento del grupo entre espacios</td><td style='padding:3px;border:1px solid #ccc'>Extravío temporal de un lobato</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Conteo por seisenas en cada transición, jefe de seisena reporta, límites de área claros</td></tr></tbody></table><p style='font-size:8px;margin:6px 0 0'><b>Semáforo:</b> 🟢 1-10 Leve · 🟡 11-15 Moderado · 🟠 16-20 Alto · 🔴 21-25 Crítico | P = Probabilidad (1-5) · C = Consecuencia (1-5)</p></div>"
+    }
+  ],
+  "_fechaIni": "2026-07-25",
+  "_fechaFin": "2026-07-25"
+}

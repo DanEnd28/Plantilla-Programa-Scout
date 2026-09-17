@@ -1,0 +1,137 @@
+{
+  "_data": {
+    "unidad": "Manada",
+    "responsable": "Akela",
+    "lugar": "Colegio La Salle Guaparo",
+    "fecha": "05/09/2026",
+    "hora-inicio": "10:00",
+    "hora-cierre": "13:00",
+    "oportunidad": "Bagheera amaneció sin voz y la Manada deberá aprender a comunicarse con ella usando señas, gestos y expresiones. Esta jornada acerca a los lobatos y lobeznas al mundo de las personas sordas y mudas, descubriendo que existen muchas formas de decir 'te escucho' sin usar las palabras. A través del juego y la exploración sensorial, la Manada practica el lenguaje de señas básico y fortalece la empatía hacia quienes se comunican de forma diferente.",
+    "obj-general": "Desarrollar en los lobatos y lobeznas la comunicación no verbal y el respeto por la diversidad sensorial, mediante el aprendizaje de señas básicas del lenguaje de señas, para comprender la experiencia de las personas sordas y mudas y fortalecer la inclusión dentro de la Manada.",
+    "obj-especificos": "<ol><li>Reconocer al menos 5 señas básicas del lenguaje de señas para comunicarse sin usar la voz.</li><li>Practicar la comunicación no verbal a través de juegos de expresión facial y corporal.</li><li>Valorar la diversidad sensorial identificando cómo se comunican las personas sordas y mudas.</li><li>Elaborar un tarjetero personal de señas que le permita repasar lo aprendido en casa.</li></ol>",
+    "prog-mundial": "En-Señas — Iniciativa Nacional de Programa ASV, reconocida por la Organización Mundial del Movimiento Scout como Héroes Mensajeros de la Paz (2023)",
+    "metas": "<ol><li>El 80% de los lobatos reconoce y ejecuta correctamente al menos 5 señas básicas al finalizar la jornada.</li><li>El 100% de las seisenas logra descifrar al menos un mensaje completo usando el dactilológico durante el juego activo principal.</li><li>El 90% de los lobatos participa activamente en el juego de expresión sin voz (Semáforo Facial).</li></ol>",
+    "enfoque": "Diversidad e inclusión, con componente de Cultura de paz",
+    "footer-rama": "Manada",
+    "footer-yr": "2026",
+    "nombre-act": "LA VOZ DE BAGHEERA",
+    "ambientacion": "Bagheera amaneció sin voz y la Manada debe aprender a escucharla con los ojos: descubriendo el lenguaje de señas para comunicarse con quienes no pueden hablar u oír.",
+    "hdr-grupo": "Grupo Scout La Salle Guaparo"
+  },
+  "_indicadores_extra": {},
+  "_ods": [4, 10, 16],
+  "_prog": [
+    {
+      "dur": "15 min",
+      "act": "Apertura",
+      "desc": "Izada de bandera, IGA y Gran Aullido de apertura. Akela anuncia que Bagheera amaneció sin voz y hoy la Manada deberá aprender a escucharla de otra forma.",
+      "mat": "Bandera, asta",
+      "resp": "Staff"
+    },
+    {
+      "dur": "15 min",
+      "act": "Semáforo Facial",
+      "desc": "Bagheera, sin poder hablar, expresa emociones solo con el rostro y el cuerpo; los lobatos adivinan y luego representan por seisena. Instrucciones detalladas en anexo de juegos.",
+      "mat": "Ninguno",
+      "resp": "Bagheera y Akela"
+    },
+    {
+      "dur": "10 min",
+      "act": "Historieta: La Voz de Bagheera",
+      "desc": "Akela narra cómo Bagheera se quedó sin voz en la selva y tuvo que aprender a comunicarse con las manos y los ojos, tal como lo hacen muchas personas sordas y mudas.",
+      "mat": "Ninguno",
+      "resp": "Akela"
+    },
+    {
+      "dur": "20 min",
+      "act": "El Mensaje Oculto",
+      "desc": "Bagheera deletrea con señas palabras de la Ley de la Manada y cada seisena las descifra con ayuda del abecedario dactilológico. Instrucciones detalladas en anexo de juegos.",
+      "mat": "Tarjetas de abecedario dactilológico, palabras clave",
+      "resp": "Akela y Bagheera"
+    },
+    {
+      "dur": "15 min",
+      "act": "Escritura de Emergencia",
+      "desc": "Bagheera plantea situaciones (tengo hambre, estoy feliz, necesito ayuda) y cada seisena las dibuja como ícono o pictograma, sin usar letras. Instrucciones detalladas en anexo de juegos.",
+      "mat": "Hojas, marcadores o creyones",
+      "resp": "Akela"
+    },
+    {
+      "dur": "15 min",
+      "act": "Alerta Visual",
+      "desc": "Bagheera dirige un relevo de seisenas usando solo señales con banderines de colores para indicar cuándo avanzar, detenerse o agacharse. Instrucciones detalladas en anexo de juegos.",
+      "mat": "3 banderines o paletas de colores, cinta para el circuito",
+      "resp": "Bagheera"
+    },
+    {
+      "dur": "20 min",
+      "act": "Merienda",
+      "desc": "Merienda compartida en seisenas. Momento de descanso e hidratación.",
+      "mat": "Meriendas individuales, agua",
+      "resp": "Staff"
+    },
+    {
+      "dur": "30 min",
+      "act": "Mi Alfabeto de Señas",
+      "desc": "Cada lobato arma su propio tarjetero con las señas aprendidas (hola, gracias, amigo, sí, no), dibujando la seña y decorándola por seisena.",
+      "mat": "Cartulina o foami, marcadores, tijeras de punta roma",
+      "resp": "Akela"
+    },
+    {
+      "dur": "25 min",
+      "act": "Relevo de Señas",
+      "desc": "Circuito con estaciones: en cada una hay una palabra de las señas aprendidas y el lobato debe ejecutarla correctamente antes de volver y tocar al siguiente. Instrucciones detalladas en anexo de juegos.",
+      "mat": "Tarjetas con palabras/señas, conos o cinta para el circuito",
+      "resp": "Bagheera"
+    },
+    {
+      "dur": "15 min",
+      "act": "Ceremonia de cierre",
+      "desc": "Círculo final: cada lobato hace con las manos la seña de 'amigo' a Bagheera. Gran Aullido de cierre y arriada de bandera.",
+      "mat": "Bandera, asta",
+      "resp": "Staff"
+    }
+  ],
+  "_ind": [
+    {
+      "area": "Corporalidad",
+      "etapa": "E2",
+      "texto": "Utiliza sus cinco sentidos en su relación con su familia y escuela, pudiendo describirlos con propiedad."
+    },
+    {
+      "area": "Creatividad",
+      "etapa": "E1",
+      "texto": "Utiliza la creación a través de la mano para dar a conocer sus sentimientos."
+    },
+    {
+      "area": "Afectividad",
+      "etapa": "E1",
+      "texto": "Le interesa conocer a otros."
+    },
+    {
+      "area": "Espiritualidad",
+      "etapa": "E1",
+      "texto": "En juegos y representaciones comparte con todos sin distingo."
+    },
+    {
+      "area": "Sociabilidad",
+      "etapa": "E1",
+      "texto": "Se acerca a nuevos miembros de su Unidad y salón para entablar amistad."
+    }
+  ],
+  "_logos": {},
+  "_extra_pages": [
+    {
+      "id": "ep-juegos",
+      "titulo": "INSTRUCCIONES DE JUEGOS",
+      "body": "<h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🐾 Semáforo Facial — ACTIVO | 15 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Lobatos en semicírculo, Bagheera al centro sin poder hablar.<br><b>Desarrollo:</b> Bagheera muestra una emoción solo con el rostro y el cuerpo (alegría, sorpresa, tristeza, enojo) y la Manada la adivina; luego cada seisena pasa al centro a representar una emoción por turnos.<br><b>Regla clave:</b> Nadie puede usar palabras mientras representa — solo el rostro y el cuerpo hablan, como le toca hacerlo hoy a Bagheera.<br><b>Mat:</b> Ninguno (opcional: tarjetas con emociones dibujadas).<br><b>Ref:</b> juego clásico de mímica emocional, adaptado, sin fuente única.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🤟 El Mensaje Oculto — ACTIVO | 20 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Seisenas separadas, cada una con una tarjeta del abecedario dactilológico (alfabeto en señas).<br><b>Desarrollo:</b> Bagheera deletrea con señas una palabra corta de la Ley de la Manada (ej. AMOR, AYUDA, UNIÓN); cada seisena la descifra con su tarjeta y grita la palabra completa antes que las demás.<br><b>Regla clave:</b> Solo se puede mirar las manos de Bagheera, no se le puede pedir que hable.<br><b>Mat:</b> Tarjetas con abecedario dactilológico impreso, lista de palabras clave.<br><b>Ref:</b> <a href='https://youtube.com/results?search_query=abecedario+lengua+de+se%C3%B1as+venezolana+ni%C3%B1os'>🔗 Ver abecedario en señas</a></p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>✏️ Escritura de Emergencia — PASIVO | 15 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Seisenas sentadas en círculo, cada una con hojas y marcadores.<br><b>Desarrollo:</b> Bagheera plantea una situación (tengo hambre, estoy feliz, necesito ayuda) y cada seisena la dibuja como ícono o pictograma sin usar letras ni palabras; luego se muestran los dibujos y las demás seisenas adivinan el mensaje.<br><b>Regla clave:</b> No se permite escribir palabras, solo dibujos — igual que los carteles que ayudan a las personas sordas a entender mensajes rápidos.<br><b>Mat:</b> Hojas, marcadores o creyones.<br><b>Ref:</b> juego clásico de pictogramas, adaptado, sin fuente única.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🚩 Alerta Visual — ACTIVO | 15 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> 2 a 3 banderines o paletas de colores; código: verde=avanzar, rojo=detenerse, amarillo=agacharse.<br><b>Desarrollo:</b> Bagheera dirige un relevo corto de seisenas usando solo señales con las banderas para indicar cuándo correr, detenerse o agacharse en el circuito hacia la merienda.<br><b>Regla clave:</b> Solo se obedece la bandera, nunca los gritos — así se entrena la atención visual que usan las personas sordas.<br><b>Mat:</b> 3 banderines o paletas de colores, cinta para marcar el circuito.<br><b>Ref:</b> juego clásico tipo semáforo, adaptado con banderas, sin fuente única.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🏁 Relevo de Señas — ACTIVO | 25 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Circuito con 4 a 5 estaciones marcadas con conos; en cada una una tarjeta con una palabra de las señas aprendidas (hola, gracias, amigo, sí, no).<br><b>Desarrollo:</b> Por relevos, cada lobato corre a una estación, lee la palabra y debe ejecutar correctamente la seña antes de volver y tocar al siguiente compañero de su seisena; gana la seisena que complete el circuito con las señas correctas.<br><b>Regla clave:</b> Si la seña está mal hecha, Bagheera o el Jefe de Seisena la corrige antes de dejarlo avanzar — no se puede usar la voz en ningún momento.<br><b>Mat:</b> Tarjetas con palabras/señas, conos o cinta para marcar estaciones.<br><b>Ref:</b> juego clásico de relevos, adaptado, sin fuente única.</p>"
+    },
+    {
+      "id": "ep-riesgos",
+      "titulo": "GESTIÓN DE RIESGOS",
+      "body": "<div style='font-family:sans-serif'><p style='font-size:9px;margin:0 0 6px'><b>Tipo:</b> Actividad ordinaria (≤50 personas) — Fórmula: R = P × C</p><table style='width:100%;border-collapse:collapse;font-size:9px'><thead><tr style='background:#1a3a5c;color:white;text-align:center'><th style='padding:4px 3px;border:1px solid #999'>Actividad / Momento</th><th style='padding:4px 3px;border:1px solid #999'>Contexto / Causa</th><th style='padding:4px 3px;border:1px solid #999'>Riesgo identificado</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>P</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>C</th><th style='padding:4px 3px;border:1px solid #999'>Nivel</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>R</th><th style='padding:4px 3px;border:1px solid #999'>Medidas de control</th></tr></thead><tbody><tr><td style='padding:3px;border:1px solid #ccc'>Semáforo Facial</td><td style='padding:3px;border:1px solid #ccc'>Lobatos moviéndose y gesticulando en espacio compartido</td><td style='padding:3px;border:1px solid #ccc'>Choques o caídas entre lobatos</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Delimitar espacio de juego, recordar caminar rápido y no correr, supervisión constante de Akela.</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Alerta Visual</td><td style='padding:3px;border:1px solid #ccc'>Uso de banderines o paletas rígidas en el relevo</td><td style='padding:3px;border:1px solid #ccc'>Golpes leves al agitar las banderas cerca de un compañero</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>1</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>2</b></td><td style='padding:3px;border:1px solid #ccc'>Mantener distancia entre lobatos, agitar la bandera solo hacia arriba, nunca hacia compañeros, Bagheera supervisa.</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Mi Alfabeto de Señas</td><td style='padding:3px;border:1px solid #ccc'>Uso de tijeras y marcadores en la manualidad</td><td style='padding:3px;border:1px solid #ccc'>Cortes leves o manchas en ropa/piel</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>1</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>2</b></td><td style='padding:3px;border:1px solid #ccc'>Usar solo tijeras de punta roma, materiales no tóxicos, supervisión de Akela.</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Relevo de Señas</td><td style='padding:3px;border:1px solid #ccc'>Actividad física de relevos en espacio compartido</td><td style='padding:3px;border:1px solid #ccc'>Caídas, golpes o torceduras al correr</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Circuito despejado de obstáculos, calzado adecuado, Bagheera y Akela supervisan.</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Jornada completa</td><td style='padding:3px;border:1px solid #ccc'>Actividad física con exposición al sol durante 3 horas</td><td style='padding:3px;border:1px solid #ccc'>Deshidratación o insolación leve</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>4</b></td><td style='padding:3px;border:1px solid #ccc'>Recordar termo con agua a cada familia, pausas de hidratación, buscar sombra cuando sea posible.</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Jornada completa</td><td style='padding:3px;border:1px solid #ccc'>Simulación de pérdida de comunicación (Bagheera sin voz) durante toda la sesión</td><td style='padding:3px;border:1px solid #ccc'>Frustración o ansiedad leve en algún lobato al no poder comunicarse</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>4</b></td><td style='padding:3px;border:1px solid #ccc'>Akela y Bagheera atentos a señales de frustración, permitir pausas, enmarcar siempre la actividad como juego de empatía, nunca burla.</td></tr></tbody></table><p style='font-size:8px;margin:6px 0 0'><b>Semáforo:</b> 🟢 1-10 Leve · 🟡 11-15 Moderado · 🟠 16-20 Alto · 🔴 21-25 Crítico | P = Probabilidad (1-5) · C = Consecuencia (1-5)</p></div>"
+    }
+  ],
+  "_fechaIni": "2026-09-05",
+  "_fechaFin": "2026-09-05"
+}

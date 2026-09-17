@@ -1,0 +1,142 @@
+{
+  "_data": {
+    "unidad": "Manada",
+    "responsable": "Akela",
+    "lugar": "Colegio La Salle Guaparo",
+    "fecha": "20/06/2026",
+    "hora-inicio": "10:00",
+    "hora-cierre": "13:00",
+    "oportunidad": "El reconocimiento y cuidado de las propias pertenencias es una competencia clave en el desarrollo de la autonomía y la responsabilidad personal. A través de juegos de clasificación, identificación y reordenamiento, los lobatos ejercitan su capacidad de organización, su memoria observacional y su sentido del orden como valor comunitario. Esta actividad también fortalece la identidad individual dentro del trabajo en equipo de la seisena.",
+    "obj-general": "Desarrollar en los lobatos la habilidad de organizar, reconocer y cuidar sus pertenencias mediante actividades de clasificación y reconocimiento en equipo, para fortalecer la autonomía y la responsabilidad personal como valores de la Ley de la Manada.",
+    "obj-especificos": "<ol><li>Organizar objetos en orden alfabético por nombre del dueño trabajando en equipo dentro de la seisena.</li><li>Identificar sus propias pertenencias entre un conjunto de objetos mixtos, demostrando observación y precisión.</li><li>Crear una etiqueta personal para su bolso que facilite la identificación de sus pertenencias.</li><li>Asumir la tarea de mantener el orden y la limpieza del espacio compartido después de cada actividad.</li></ol>",
+    "prog-mundial": "Acción por el Planeta 2026 (CIP)",
+    "metas": "<ol><li>Al menos el 80% de los lobatos organiza correctamente 5 o más objetos en orden alfabético durante el juego activo 1.</li><li>El 100% de los lobatos recoge todas sus pertenencias sin tomar objetos ajenos en 'Rescata tu Mochila'.</li><li>El 100% de los lobatos completa y lleva a casa su etiqueta de identificación de bolso.</li><li>Cada seisena reduce su tiempo de reordenamiento en al menos 1 ronda durante 'La Tormenta de la Selva'.</li></ol>",
+    "enfoque": "Adquisición de habilidades y competencias",
+    "footer-rama": "Manada",
+    "footer-yr": "2026",
+    "nombre-act": "CADA COSA EN SU LUGAR",
+    "ambientacion": "Los Banderlogs, monos caóticos del Libro de las Tierras Vírgenes, revolvieron el campamento de la Manada durante la noche. Baloo convoca a todos: quien no cuida lo suyo, no puede cuidar la selva. Los lobatos deben demostrar que no son como los Banderlogs.",
+    "hdr-grupo": "Grupo Scout La Salle Guaparo"
+  },
+  "_indicadores_extra": {},
+  "_ods": [4, 12],
+  "_prog": [
+    {
+      "dur": "15 min",
+      "act": "Apertura",
+      "desc": "Izar bandera, IGA y Gran Aullido de apertura. Akela presenta el desafío del día: los Banderlogs revolvieron todo el campamento la noche anterior y la Manada debe restaurar el orden.",
+      "mat": "Bandera, mástil",
+      "resp": "Staff"
+    },
+    {
+      "dur": "10 min",
+      "act": "La Línea de la Manada",
+      "desc": "Las seisenas compiten para ordenarse de pie en fila por orden alfabético de primer nombre, sin materiales ni tarjetas — puro movimiento y comunicación. Variante final: ordenarse por apellido en menos de 30 segundos.",
+      "mat": "Ninguno",
+      "resp": "Baloo"
+    },
+    {
+      "dur": "12 min",
+      "act": "La Lección de Baloo",
+      "desc": "Akela narra cómo los Banderlogs perdieron el mapa de la Roca del Consejo porque nadie sabía de quién era — nadie lo cuidaba. Baloo enseña: quien no cuida lo suyo, no puede cuidar la selva. Enlaza con la Ley de la Manada.",
+      "mat": "Ninguno",
+      "resp": "Akela"
+    },
+    {
+      "dur": "20 min",
+      "act": "El Gran Inventario de Hathi",
+      "desc": "Cada lobato vacía su bolso sobre la mesa de su seisena. Las seisenas organizan en orden alfabético las pertenencias de sus miembros, con nota adhesiva indicando el dueño de cada objeto. Cronometrado. Ver ep-juegos.",
+      "mat": "Notas adhesivas, marcadores (uno por seisena)",
+      "resp": "Akela + Baloo"
+    },
+    {
+      "dur": "13 min",
+      "act": "El Ojo de Kim",
+      "desc": "15-20 objetos sobre una tela; los lobatos los observan 60 segundos en silencio. Se cubre la tela. Cada quien nombra 3 objetos y de quién cree que son. Reflexión: ¿cómo reconociste que ese objeto era de alguien en particular? Ver ep-juegos.",
+      "mat": "Tela o sábana",
+      "resp": "Akela"
+    },
+    {
+      "dur": "20 min",
+      "act": "Rescata tu Mochila",
+      "desc": "Todos los objetos mezclados en un área delimitada. Cada lobato entra UNA sola vez al área y saca solo lo suyo. Penalización por objeto ajeno: 30 seg para la seisena. Verificación final: ¿quedó algo sin dueño? Ver ep-juegos.",
+      "mat": "Ninguno adicional",
+      "resp": "Baloo"
+    },
+    {
+      "dur": "20 min",
+      "act": "Merienda",
+      "desc": "Descanso y refrigerio. Momento para hidratarse y reponer energías antes del bloque de tarde.",
+      "mat": "Merienda de cada lobato",
+      "resp": "Staff"
+    },
+    {
+      "dur": "25 min",
+      "act": "Mi Etiqueta de la Selva",
+      "desc": "Cada lobato fabrica una etiqueta de cartón para su bolso: nombre grande + animal de la selva al frente; señal secreta personal al reverso. Se plastifica con cinta transparente y se cuelga con cordón. Cierre integrado: ¿habría funcionado el caos Banderlog si todos hubieran tenido esta etiqueta desde el inicio?",
+      "mat": "Cartón o cartulina, marcadores, cinta transparente, perforadora, cordón o pabilo",
+      "resp": "Akela"
+    },
+    {
+      "dur": "30 min",
+      "act": "La Tormenta de la Selva",
+      "desc": "3 rondas cronometradas: todos sacan todo al centro y repaquetan solo lo suyo. Ronda 2 en orden alfabético nombrando cada objeto en voz alta; Ronda 3 contra el tiempo de R1. Conteo final de verificación. Ver ep-juegos.",
+      "mat": "Cronómetro (celular del staff)",
+      "resp": "Baloo"
+    },
+    {
+      "dur": "15 min",
+      "act": "Ceremonia de Cierre",
+      "desc": "Gran Aullido de cierre. Akela pregunta: ¿Qué llevan a casa de lo que aprendieron hoy? Arriar bandera.",
+      "mat": "Bandera, mástil",
+      "resp": "Staff"
+    }
+  ],
+  "_ind": [
+    {
+      "area": "Corporalidad",
+      "etapa": "E1",
+      "texto": "Cumple con una rutina de limpieza, después de jugar."
+    },
+    {
+      "area": "Corporalidad",
+      "etapa": "E1",
+      "texto": "Asume la limpieza y el orden de áreas comunes en su casa."
+    },
+    {
+      "area": "Corporalidad",
+      "etapa": "E2",
+      "texto": "Se asegura de mantener en buenas condiciones el lugar donde ha realizado actividades."
+    },
+    {
+      "area": "Creatividad",
+      "etapa": "E1",
+      "texto": "Contribuye con otros en el orden y limpieza del local de la unidad/Grupo."
+    },
+    {
+      "area": "Sociabilidad",
+      "etapa": "E1",
+      "texto": "Cuida el uso del material, de acuerdo con lo que se le pide."
+    },
+    {
+      "area": "Carácter",
+      "etapa": "E2",
+      "texto": "Asume una tarea de orden dentro de su casa, y la cumple a cabalidad."
+    }
+  ],
+  "_logos": {},
+  "_extra_pages": [
+    {
+      "id": "ep-juegos",
+      "titulo": "INSTRUCCIONES DE JUEGOS",
+      "body": "<div style='font-family:sans-serif'><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>📦 El Gran Inventario de Hathi — ACTIVO | 20 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Cada lobato vacía su bolso sobre la mesa de su seisena. Si hay 4 seisenas, asignar rangos de letras: A-E / F-L / M-R / S-Z.<br><b>Desarrollo:</b> Las seisenas organizan las pertenencias de sus miembros en línea sobre la mesa, en orden alfabético por nombre del dueño. Cada objeto lleva una nota adhesiva con el nombre escrito. Al terminar, la seisena presenta su inventario en voz alta y Akela valida el orden. Gana la seisena más rápida y precisa.<br><b>Regla clave:</b> Solo se organizan pertenencias de los lobatos — no objetos de los viejos lobos ni del local.<br><b>Mat:</b> Notas adhesivas, marcadores (uno por seisena).<br><b>Ref:</b> Basado en catálogo REME/OSI, actividad 'Cada Cosa en su Lugar' — Corporalidad Manada.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>👁️ El Ojo de Kim — PASIVO | 13 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> 15-20 objetos de los ya organizados se colocan sobre una tela en el suelo. Los lobatos se sientan en semicírculo a 1 metro de distancia.<br><b>Desarrollo:</b> Observan en silencio 60 segundos. Akela cubre la tela. Cada lobato nombra 3 objetos que recuerda y de quién cree que son. Puntaje: 1 punto por objeto correcto + 1 extra si identifica al dueño. Reflexión final: ¿cómo sabías que ese objeto era de esa persona?<br><b>Regla clave:</b> Prohibido tocar la tela o los objetos durante la observación — solo vista.<br><b>Mat:</b> Tela o sábana para cubrir.<br><b>Ref:</b> Juego clásico scout de Baden-Powell, inspirado en la novela 'Kim' de Rudyard Kipling — mismo autor que el Libro de las Tierras Vírgenes.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🎒 Rescata tu Mochila — ACTIVO | 20 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Todos los objetos mezclados en un área delimitada en el suelo (el río de la selva). Mochilas vacías al borde del área. Baloo en posición de árbitro.<br><b>Desarrollo:</b> Cada lobato entra AL ÁREA UNA SOLA VEZ y puede cargar todo lo que quiera pero solo puede llevarse lo suyo. Al salir, comienza a empacar. Al terminar todos: ¿quedó algo en el área sin dueño? ¿A alguien le falta algo? Gana la seisena más rápida Y más precisa.<br><b>Regla clave:</b> Agarrar un objeto ajeno descuenta 30 seg al tiempo total de la seisena — aunque lo devuelva.<br><b>Mat:</b> Ninguno adicional.<br><b>Ref:</b> Actividad diseñada para esta sesión.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🌪️ La Tormenta de la Selva — ACTIVO | 30 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Cada lobato tiene su bolso empacado con sus pertenencias y su etiqueta nueva puesta. Staff prepara cronómetro. Se cronometra cada ronda por separado.<br><b>Desarrollo:</b> 3 rondas progresivas — R1: todos sacan todo al centro y repaquetan solo lo suyo (cronometrado, sirve de referencia); R2: igual pero deben empacar en orden alfabético nombrando en voz alta cada objeto al meterlo; R3: igual que R2 pero compitiendo contra el tiempo de R1. Conteo final de verificación: Akela dice un nombre, el lobato levanta la mano y muestra que tiene todo.<br><b>Regla clave:</b> No se empaca un objeto sin saber de quién es. La etiqueta del bolso es la única guía permitida en R2 y R3.<br><b>Mat:</b> Cronómetro (celular del staff).<br><b>Ref:</b> Actividad de cierre y verificación — diseñada para esta sesión.</p></div>"
+    },
+    {
+      "id": "ep-riesgos",
+      "titulo": "GESTIÓN DE RIESGOS",
+      "body": "<div style='font-family:sans-serif'><p style='font-size:9px;margin:0 0 6px'><b>Tipo:</b> Actividad ordinaria (≤50 personas) — Fórmula: R = P × C</p><table style='width:100%;border-collapse:collapse;font-size:9px'><thead><tr style='background:#1a3a5c;color:white;text-align:center'><th style='padding:4px 3px;border:1px solid #999'>Actividad / Momento</th><th style='padding:4px 3px;border:1px solid #999'>Contexto / Causa</th><th style='padding:4px 3px;border:1px solid #999'>Riesgo identificado</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>P</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>C</th><th style='padding:4px 3px;border:1px solid #999'>Nivel</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>R</th><th style='padding:4px 3px;border:1px solid #999'>Medidas de control</th></tr></thead><tbody><tr><td style='padding:3px;border:1px solid #ccc'>Juegos activos (La Línea / Rescata tu Mochila)</td><td style='padding:3px;border:1px solid #ccc'>Carrera en espacio con objetos en el suelo</td><td style='padding:3px;border:1px solid #ccc'>Caídas y golpes durante las carreras</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Despejar el área de juego antes de cada actividad; delimitar con líneas; staff supervisa activamente</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Rescata tu Mochila</td><td style='padding:3px;border:1px solid #ccc'>Objetos dispersos en el piso del área delimitada</td><td style='padding:3px;border:1px solid #ccc'>Tropiezos y caídas sobre objetos</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Evitar objetos rígidos o con bordes en la pila central; prohibir correr dentro del área</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Sesión completa (junio)</td><td style='padding:3px;border:1px solid #ccc'>Temperatura elevada, actividad física de 3 horas</td><td style='padding:3px;border:1px solid #ccc'>Deshidratación o malestar por calor</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Recordar traer agua; actividad en espacio ventilado o con sombra; merienda puntual a las 11:30</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>La Tormenta de la Selva</td><td style='padding:3px;border:1px solid #ccc'>Vaciado rápido del contenido de bolsos hacia el centro</td><td style='padding:3px;border:1px solid #ccc'>Objetos proyectados al vaciar el bolso con rapidez</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>4</b></td><td style='padding:3px;border:1px solid #ccc'>Indicar que se saque con cuidado, no se lance; verificar que no haya objetos de vidrio en los bolsos</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Manualidad — Etiqueta de la Selva</td><td style='padding:3px;border:1px solid #ccc'>Uso de perforadora para hacer el hueco del cordón</td><td style='padding:3px;border:1px solid #ccc'>Lesión leve en dedo al perforar</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>1</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>2</b></td><td style='padding:3px;border:1px solid #ccc'>Solo el staff maneja la perforadora; el lobato presenta la cartulina, el adulto perfora</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Gran Inventario / Manipulación de bolsos</td><td style='padding:3px;border:1px solid #ccc'>Niños llevan tijeras u objetos cortantes en sus mochilas</td><td style='padding:3px;border:1px solid #ccc'>Corte accidental al manipular el contenido del bolso</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>4</b></td><td style='padding:3px;border:1px solid #ccc'>Staff solicita retirar objetos cortantes antes de iniciar; lobatos avisan antes de vaciar sus bolsos</td></tr></tbody></table><p style='font-size:8px;margin:6px 0 0'><b>Semáforo:</b> 🟢 1-10 Leve · 🟡 11-15 Moderado · 🟠 16-20 Alto · 🔴 21-25 Crítico | P = Probabilidad (1-5) · C = Consecuencia (1-5)</p></div>"
+    }
+  ],
+  "_fechaIni": "2026-06-20",
+  "_fechaFin": "2026-06-20"
+}

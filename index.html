@@ -1979,15 +1979,33 @@
         min-height: 11in;
         display: flex;
         flex-direction: column;
-        overflow: hidden;
+        overflow: visible;
       }
 
       .page-block:last-of-type {
         page-break-after: avoid;
       }
 
+      /* Cada bloque de página fuerza salto a hoja nueva — evita que el
+         contenido de la página anterior (si se desborda de 11in) empuje
+         el header de la siguiente fuera de su hoja o la deje a medias. */
+      #blk-g2,
+      #blk2,
+      .extra-page-wrap .page-block {
+        break-before: page;
+        page-break-before: always;
+      }
+
       .sec {
         page-break-inside: avoid;
+      }
+
+      /* El grupo puede partirse ENTRE secciones (cada .sec individual ya
+         se protege arriba) — si se prohíbe partir el grupo completo, una
+         sola sección larga empuja TODO el bloque a la hoja siguiente y
+         deja un vacío enorme en la página actual. */
+      .sec-group {
+        page-break-inside: auto;
       }
 
       .prog-table tr {
@@ -2009,11 +2027,12 @@
       margin: 0px 0px 0px;
     }
 
-    /* Páginas extra: altura fija para evitar que el contenido se desborde hacia la página siguiente */
+    /* Páginas extra: mismo alto mínimo que el resto de las páginas — si el
+       contenido no cabe, la página crece (auto-split en JS la reparte en
+       más de una hoja) en vez de recortarse en silencio. */
     @media screen {
       .extra-page-wrap .page-block {
-        height: 11in;
-        overflow: hidden;
+        min-height: 11in;
       }
     }
   </style>
@@ -2599,7 +2618,7 @@
         // Celdas del programa
         enableProgEdit(editMode);
         syncExtraEditable();
-        if (!editMode) { saveExtraPages(); saveStorage(); syncSec(); st('✅ Guardado'); }
+        if (!editMode) { autoSplitExtraPages(); saveStorage(); syncSec(); st('✅ Guardado'); }
       }
 
       function enableProgEdit(on) {
@@ -3038,6 +3057,34 @@
         const ua = document.querySelector('[data-key="unidad"]'); const ub = document.getElementById('und-b'); const uc = document.getElementById('und-c'); if (ua && ub) ub.textContent = ua.textContent; if (ua && uc) uc.textContent = ua.textContent;
         updateProgHdr();
         syncEmpty();
+        fitAllHdrNombres();
+        fitAllAmbientacion();
+      }
+
+      /* ── AJUSTE AUTOMÁTICO DE TEXTO EN HEADER/AMBIENTACIÓN ──
+         Si el texto es muy largo, reduce el tamaño de fuente hasta que
+         quepa en `maxLines` líneas (en vez de desbordar y empujar el
+         header, o cortarse feo al imprimir). */
+      function fitToLines(el, baseSize, maxLines, minSize) {
+        if (!el) return;
+        el.style.fontSize = '';
+        if (!el.textContent || !el.textContent.trim()) return;
+        let size = baseSize;
+        el.style.fontSize = size + 'px';
+        let lh = parseFloat(getComputedStyle(el).lineHeight) || size * 1.3;
+        let guard = 0;
+        while (el.scrollHeight > lh * maxLines + 1 && size > minSize && guard < 24) {
+          size -= 0.5;
+          el.style.fontSize = size + 'px';
+          lh = parseFloat(getComputedStyle(el).lineHeight) || size * 1.3;
+          guard++;
+        }
+      }
+      function fitAllHdrNombres() {
+        document.querySelectorAll('.hdr-nombre').forEach(el => fitToLines(el, 11, 2, 7.5));
+      }
+      function fitAllAmbientacion() {
+        document.querySelectorAll('.amb-val').forEach(el => fitToLines(el, 10, 1, 7));
       }
 
       function syncEmpty() {
@@ -3088,7 +3135,7 @@
             if (d._logos) { customLogos = d._logos; Object.entries(d._logos).forEach(([id, src]) => applyLogo(id, src)); }
             if (d._fechaIni) fechaIni = d._fechaIni;
             if (d._fechaFin) fechaFin = d._fechaFin;
-            if (d._extra_pages && d._extra_pages.length) { document.getElementById('extraPagesContainer').innerHTML = ''; extraPages = []; d._extra_pages.forEach(p => addExtraPage(p.id, p.titulo, p.body)); saveExtraPages(); }
+            if (d._extra_pages && d._extra_pages.length) { document.getElementById('extraPagesContainer').innerHTML = ''; extraPages = []; d._extra_pages.forEach(p => addExtraPage(p.id, p.titulo, p.body)); autoSplitExtraPages(); }
             saveStorage(); syncSec(); st('JSON importado ✅');
           } catch (err) { alert('Error JSON: ' + err.message); }
         };
@@ -3125,7 +3172,7 @@
       }
 
       /* ─── PDF / HELPERS ─── */
-      function doPDF() { if (editMode) toggleEdit(); window.print(); }
+      function doPDF() { if (editMode) toggleEdit(); autoSplitExtraPages(); fitAllHdrNombres(); fitAllAmbientacion(); window.print(); }
       function openM(id) {
         document.getElementById(id).classList.add('open');
         if (id === 'mInd') renderIndPanel();
@@ -3296,6 +3343,7 @@
         document.getElementById('extraPagesContainer').appendChild(wrap);
         extraPages.push(id);
         syncExtraEditable();
+        fitAllHdrNombres();
         saveExtraPages();
         scalePages();
         st('Página extra añadida');
@@ -3308,6 +3356,78 @@
         saveExtraPages();
         scalePages();
         st('Página eliminada');
+      }
+
+      /* ── AUTO-SPLIT DE PÁGINAS EXTRA ──
+         Si el contenido de una página extra (ej: instrucciones de
+         actividades) no cabe en una hoja, se corta la parte que sobra y
+         se crea una página nueva CON el mismo header repetido — en vez de
+         desbordarse o recortarse feo al imprimir. Corta siempre entre
+         actividades (cada bloque empieza en un <h4>), nunca a mitad de una. */
+      function splitExtraPageIfNeeded(id, depth) {
+        depth = depth || 0;
+        if (depth > 6) return; // límite de seguridad contra loops
+        const wrap = document.querySelector(`.extra-page-wrap[data-ep-id="${id}"]`);
+        if (!wrap) return;
+        const pageBlock = wrap.querySelector('.page-block');
+        const body = wrap.querySelector('.ep-body');
+        if (!pageBlock || !body) return;
+
+        const maxH = 11 * 96; // 11in en px CSS (96px/in)
+        if (pageBlock.scrollHeight <= maxH + 2) return; // cabe, nada que hacer
+
+        // Si el body envuelve todo en un único <div>, trabajar sobre sus hijos
+        const root = (body.children.length === 1 && body.children[0].tagName === 'DIV')
+          ? body.children[0] : body;
+        const items = Array.from(root.children);
+        if (items.length < 2) return; // nada que partir sin cortar contenido
+
+        // Agrupar por actividad: cada grupo arranca en un <h4>
+        const groups = [];
+        items.forEach(el => {
+          if (el.tagName === 'H4' || !groups.length) groups.push([]);
+          groups[groups.length - 1].push(el);
+        });
+        if (groups.length < 2) return;
+
+        const nonBodyH = pageBlock.scrollHeight - body.scrollHeight;
+        const bodyMaxH = maxH - nonBodyH;
+
+        let acc = 0, splitAt = -1;
+        for (let i = 0; i < groups.length; i++) {
+          const gH = groups[i].reduce((s, el) => s + el.offsetHeight, 0);
+          if (i > 0 && acc + gH > bodyMaxH) { splitAt = i; break; }
+          acc += gH;
+        }
+        if (splitAt < 1) return; // no hay forma de partir sin dejar la primera hoja vacía
+
+        const moved = groups.slice(splitAt).flat();
+        if (!moved.length) return;
+
+        const wrapperStyle = (root !== body) ? root.getAttribute('style') : null;
+        const tmp = document.createElement('div');
+        moved.forEach(el => tmp.appendChild(el)); // los saca del DOM original
+        const movedHTML = tmp.innerHTML;
+        const nextBodyHTML = wrapperStyle ? `<div style="${wrapperStyle}">${movedHTML}</div>` : movedHTML;
+
+        const tituloEl = wrap.querySelector('.ep-titulo');
+        const tituloBase = tituloEl ? tituloEl.innerHTML.replace(/\s*\(continuaci[oó]n\)\s*$/i, '') : '';
+        const nextTitulo = tituloBase ? (tituloBase + ' (continuación)') : '';
+        const nextId = id + '-c' + (depth + 1);
+
+        const nextWrap = buildExtraPage(nextId, nextTitulo, nextBodyHTML);
+        wrap.after(nextWrap);
+        const idx = extraPages.indexOf(id);
+        extraPages.splice(idx >= 0 ? idx + 1 : extraPages.length, 0, nextId);
+
+        splitExtraPageIfNeeded(nextId, depth + 1); // por si la continuación TAMBIÉN se desborda
+      }
+
+      function autoSplitExtraPages() {
+        const ids = Array.from(document.querySelectorAll('.extra-page-wrap')).map(w => w.dataset.epId);
+        ids.forEach(id => splitExtraPageIfNeeded(id));
+        saveExtraPages();
+        scalePages();
       }
 
       function syncExtraEditable() {
@@ -3332,6 +3452,7 @@
         if (!raw) return;
         try {
           JSON.parse(raw).forEach(p => addExtraPage(p.id, p.titulo, p.body));
+          autoSplitExtraPages();
         } catch (e) { }
       }
 

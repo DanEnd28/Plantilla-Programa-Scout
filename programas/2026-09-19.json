@@ -1,0 +1,139 @@
+{
+  "_data": {
+    "unidad": "Manada",
+    "responsable": "Bagheera",
+    "lugar": "Colegio La Salle Guaparo",
+    "fecha": "19/09/2026",
+    "hora-inicio": "10:00",
+    "hora-cierre": "13:00",
+    "oportunidad": "Este programa retoma el Desafío de Nutrición cerrando primero dos misiones pendientes de la semana pasada: el Relay de Clasificación Nutricional y la entrega del Bingo de Hábitos con el Planificador Semanal. Luego los Guardianes de la Selva Sana compiten en un torneo de conocimiento nutricional, preparan en comunidad una Ensalada de Frutas de la Selva con lo que cada uno trajo de casa, y dan el primer paso como agentes de cambio al elegir su proyecto comunitario en un solemne Consejo de la Roca.",
+    "obj-general": "Cerrar las actividades pendientes de la Etapa II del Programa 1, consolidar el conocimiento nutricional a través del juego competitivo y la preparación colectiva de alimentos, e iniciar formalmente en Consejo de la Roca la planificación del proyecto comunitario de la Etapa III.",
+    "obj-especificos": "<ol><li>Completar las dos actividades pendientes del Programa 1: el Relay de Clasificación Nutricional y la entrega del Bingo de Hábitos + Planificador de Alimentos Semanal, firmando la Carta del Guardián.</li><li>Demostrar conocimiento sobre grupos alimentarios, macronutrientes y conductas saludables a través de la Trivia Nutricional en formato de torneo por seisenas.</li><li>Preparar de forma colectiva una Ensalada de Frutas de la Selva combinando las frutas que cada lobato trajo de casa, aplicando normas higiénicas de manipulación.</li><li>Proponer y acordar en Consejo de la Roca la opción de proyecto comunitario y la distribución de roles para el Programa 3.</li></ol>",
+    "prog-mundial": "Aliados de la Salud — OMMS / Desafío de Nutrición ASV",
+    "metas": "<ol><li>El 100% de los lobatos completa el Relay de Clasificación Nutricional y recibe su Bingo de Hábitos y Planificador Semanal con la Carta del Guardián firmada.</li><li>Al menos el 75% de los lobatos responde correctamente 4 o más preguntas de la Trivia Nutricional.</li><li>El 100% de los lobatos participa aportando su fruta y ayudando a preparar la Ensalada de Frutas de la Selva.</li><li>La Manada define por consenso en el Consejo de la Roca el proyecto comunitario y los roles de cada seisena antes del cierre.</li></ol>",
+    "enfoque": "Adquisición de habilidades y competencias",
+    "footer-rama": "Manada",
+    "footer-yr": "2026",
+    "nombre-act": "DESAFÍO DE NUTRICIÓN — PROGRAMA 2: COCINEROS Y CAMPEONES DE LA SELVA",
+    "ambientacion": "Baloo reconoce que los Guardianes de la Selva Sana dejaron dos misiones a medias la semana pasada y los convoca primero a terminarlas con honor. Cumplida esa deuda, los desafía en el Gran Torneo de Sabiduría Nutricional y luego en el Gran Banquete de la Selva, donde combinan lo que cada uno trajo para preparar juntos una Ensalada de Frutas. Al final, Bagheera reúne a la Manada en el Consejo de la Roca para decidir la misión más importante: llevar lo aprendido a la comunidad.",
+    "hdr-grupo": "Grupo Scout La Salle Guaparo"
+  },
+  "_indicadores_extra": {},
+  "_ods": [2, 3, 4],
+  "_prog": [
+    {
+      "dur": "15 min",
+      "act": "Apertura",
+      "desc": "Izar la bandera, IGA y Gran Aullido de apertura. Baloo da la bienvenida a los Guardianes y recuerda que hoy cerrarán dos misiones pendientes.",
+      "mat": "Bandera, mástil",
+      "resp": "Staff"
+    },
+    {
+      "dur": "10 min",
+      "act": "Relay de Clasificación Nutricional (pendiente Programa 1)",
+      "desc": "Juego activo de reactivación. Cada seisena forma fila; el primero toma una tarjeta de alimento, corre al cartel del grupo nutricional correcto y regresa. Gana la seisena que clasifica más tarjetas en el tiempo. Ver instrucciones en ep-juegos.",
+      "mat": "20 tarjetas de alimentos, 4 carteles con grupos nutricionales (Constructores, Energéticos, Fortalecedores, Protectores)",
+      "resp": "Bagheera"
+    },
+    {
+      "dur": "15 min",
+      "act": "Distribución: Bingo + Planificador Semanal (pendiente Programa 1)",
+      "desc": "Akela entrega la Cartilla de Bingo de Hábitos y el Planificador de Alimentos Semanal. Cada lobato firma su Carta del Guardián comprometiéndose a completar ambas durante 7 días. Se devuelven en el Programa 3. Ver instrucciones en ep-juegos.",
+      "mat": "Cartillas de Bingo impresas, Planificadores Semanales impresos, lápices, Cartas del Guardián",
+      "resp": "Akela"
+    },
+    {
+      "dur": "10 min",
+      "act": "El Mercado de la Selva",
+      "desc": "Rompe hielo activo. Los lobatos se mueven por el área saludando a otros como si estuvieran en un mercado. Cuando Bagheera silba, forman grupos del tamaño del número que grite y deben nombrar juntos un alimento del color indicado. Ver instrucciones en ep-juegos.",
+      "mat": "Silbato",
+      "resp": "Bagheera"
+    },
+    {
+      "dur": "10 min",
+      "act": "Historieta: El Torneo de Campeones",
+      "desc": "Akela narra que Baloo ha convocado el Gran Torneo de Sabiduría Nutricional de la Selva. Solo los Guardianes que demuestren su conocimiento podrán avanzar a la misión comunitaria. Las seisenas son los equipos del torneo.",
+      "mat": "Ninguno",
+      "resp": "Akela"
+    },
+    {
+      "dur": "10 min",
+      "act": "La Ley del Plato Justo",
+      "desc": "Reflexión pasiva en rueda. Akela hace preguntas abiertas al grupo sobre lo que falta en su plato de casa y lo difícil de comer bien todos los días. Ver instrucciones en ep-juegos.",
+      "mat": "Ninguno",
+      "resp": "Akela"
+    },
+    {
+      "dur": "20 min",
+      "act": "Trivia Nutricional (Etapa II — Act. 3)",
+      "desc": "Torneo por seisenas con preguntas oficiales de la guía. Bagheera modera. El primer equipo en silbar responde; si falla, pasa al siguiente (rebote). El equipo con más puntos al final gana reconocimiento simbólico. Ver instrucciones en ep-juegos.",
+      "mat": "Tarjetas con preguntas y respuestas, pizarra o papel para puntajes, silbato por seisena",
+      "resp": "Bagheera"
+    },
+    {
+      "dur": "20 min",
+      "act": "Merienda",
+      "desc": "Merienda libre en seisenas. El staff aprovecha para verificar alergias y organizar las frutas que cada lobato trajo de cara a la Ensalada de Frutas.",
+      "mat": "Merienda de los lobatos, agua",
+      "resp": "Staff"
+    },
+    {
+      "dur": "35 min",
+      "act": "Ensalada de Frutas de la Selva (Etapa II — Act. 4)",
+      "desc": "En seisenas, los lobatos combinan las frutas que trajeron (cambur, patilla, fresas, mandarinas, melón, lechosa) más la piña, para preparar una Ensalada de Frutas comunitaria. Se aplican normas de higiene: lavado de manos antes de empezar. Ver instrucciones en ep-juegos.",
+      "mat": "Cambur, patilla, fresas, mandarinas, melón, lechosa, piña, cuchillos de plástico sin filo, bols por seisena, cucharas, platos, jabón",
+      "resp": "Akela + Bagheera"
+    },
+    {
+      "dur": "20 min",
+      "act": "Consejo de la Roca: Decidimos Nuestro Proyecto (Etapa III — Inicio)",
+      "desc": "Bagheera reúne a la Manada en Consejo de la Roca. Presenta las 3 opciones de proyecto comunitario, cada seisena delibera y expone su posición, se vota y se asignan roles para el Programa 3. Ver instrucciones en ep-juegos.",
+      "mat": "'Roca' simbólica u objeto central, papelógrafo con las 3 opciones, marcadores",
+      "resp": "Bagheera"
+    },
+    {
+      "dur": "15 min",
+      "act": "Ceremonia de Cierre",
+      "desc": "Gran Aullido de cierre. Akela recuerda la fecha del Programa 3 y los materiales que cada seisena debe conseguir antes de ese día. Arriar la bandera.",
+      "mat": "Bandera",
+      "resp": "Staff"
+    }
+  ],
+  "_ind": [
+    {
+      "area": "Corporalidad",
+      "etapa": "E2",
+      "texto": "Participa en actividades que le enseñen a mejorar la calidad de vida."
+    },
+    {
+      "area": "Creatividad",
+      "etapa": "E2",
+      "texto": "Prepara ciertos alimentos para su familia."
+    },
+    {
+      "area": "Espiritualidad",
+      "etapa": "E2",
+      "texto": "Ejemplifica la importancia de mantener el equilibrio ecológico entre los seres vivos."
+    },
+    {
+      "area": "Afectividad",
+      "etapa": "E1",
+      "texto": "Ejerce su capacidad de cambio a la vez que se siente tranquilo."
+    }
+  ],
+  "_logos": {},
+  "_extra_pages": [
+    {
+      "id": "ep-juegos",
+      "titulo": "INSTRUCCIONES DE ACTIVIDADES",
+      "body": "<div style='font-family:sans-serif;font-size:10px;line-height:1.5'><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🏅 Relay de Clasificación Nutricional — ACTIVO | 10 min (pendiente Programa 1)</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Cada seisena forma fila. Al frente se colocan 4 carteles: 'Constructores' (proteínas), 'Energéticos' (cereales), 'Fortalecedores' (lácteos), 'Protectores' (frutas y verduras). En la salida de cada fila: un mazo de tarjetas con nombres o imágenes de alimentos.<br><b>Desarrollo:</b> El primero de cada fila toma una tarjeta, corre al cartel del grupo nutricional correcto y la pega o coloca allí, regresa y toca la mano del siguiente. Gana la seisena que clasifica más tarjetas correctamente en el tiempo disponible.<br><b>Regla clave:</b> Si el lobato no sabe, puede pedir ayuda a su seisena antes de salir — el trabajo en equipo vale más que la velocidad.<br><b>Mat:</b> 20 tarjetas de alimentos, 4 carteles de grupos nutricionales, cinta adhesiva o soporte.<br><b>Ref:</b> Juego de relay adaptado — variante scout del juego de clasificación.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>📋 Distribución: Bingo + Planificador Semanal — CALMO | 15 min (pendiente Programa 1)</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Imprimir las cartillas de Bingo y los Planificadores con el nombre de cada lobato.<br><b>Desarrollo:</b> Akela explica el Bingo de Hábitos: cada casilla describe un hábito diario (beber agua, dormir 8h, comer fruta, lavarse las manos). El lobato la sella si la cumple ese día. El Planificador Semanal se llena cada día con lo que come. Ambos se entregan junto a una 'Carta del Guardián' donde el lobato firma su compromiso. Se devuelven en el Programa 3.<br><b>Regla clave:</b> Informar a los representantes ese mismo día del compromiso de la semana (mensaje WhatsApp sugerido).<br><b>Mat:</b> Cartillas de Bingo (1/lobato), Planificadores Semanales (1/lobato), lápices, Cartas del Guardián.<br><b>Ref:</b> Guía oficial Desafío de Nutrición ASV — Secciones 3.1 y 4.3.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🛒 El Mercado de la Selva — ACTIVO | 10 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Lobatos libres en el área. Bagheera con silbato.<br><b>Desarrollo:</b> Todos se mueven saludando como en un mercado. Al silbato, Bagheera grita un número (ej. '3') y un color nutricional (ej. '¡naranja!'). Los lobatos forman grupos del tamaño indicado y juntos deben nombrar en 5 seg un alimento de ese color. El grupo que no logra formarse o no nombra el alimento hace 3 sentadillas. Se juegan 4 rondas rápidas con número y color distintos, ajustadas al tiempo disponible.<br><b>Regla clave:</b> No se puede repetir un alimento ya dicho en rondas anteriores — obliga a pensar en variedad.<br><b>Mat:</b> Silbato.<br><b>Ref:</b> Adaptación del juego 'El mercado' — variante nutricional.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>💬 La Ley del Plato Justo — PASIVO | 10 min</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Lobatos en círculo en el suelo. Akela en el centro.<br><b>Desarrollo:</b> Akela lanza 2 o 3 preguntas abiertas al grupo, una por una, según el tiempo disponible. Cada lobato que quiera responde levantando la mano. No hay respuestas incorrectas. (1) ¿Qué color nutricional falta más en tu plato de casa? (2) ¿Por qué crees que es difícil comer bien todos los días? El adulto escucha, valida y suma sin corregir.<br><b>Regla clave:</b> Nadie puede reírse de la respuesta de otro Guardián — Ley de la Manada.<br><b>Mat:</b> Ninguno.<br><b>Ref:</b> Dinámica oral de reflexión — método scout aprender-haciendo.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🏆 Trivia Nutricional — ACTIVO | 20 min (Etapa II - Act. 3)</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Seisenas como equipos. Cada una tiene un silbato. Pizarra o papel para puntajes. Bagheera como moderadora.<br><b>Desarrollo:</b> Bagheera lee 1 pregunta. El primer equipo en silbar responde en 10 seg. Acierto: +2 puntos. Falla o tiempo agotado: rebote al siguiente equipo por -1 punto. Se juegan 6 de las 8 preguntas oficiales, elegidas antes de iniciar para ajustarse al tiempo: (1)¿Comer verduras fortalece el cuerpo? Verd. (2)¿Cuál es rico en proteínas? Pollo. (3)¿Dulces todos los días? Falso. (4)¿Almuerzo sano? Ensalada con pollo. (5)¿Lácteos = huesos fuertes? Verd. (6)¿Cuáles son cereales? Arroz y pan. (7)¿Variedad diaria = salud? Verd. (8)¿Qué ayuda a una dieta sana? Agua y frutas.<br><b>Regla clave:</b> Todos los equipos reciben reconocimiento simbólico no alimentario al final — nadie sale sin premio.<br><b>Mat:</b> Tarjetas de preguntas, pizarra, silbatos.<br><b>Ref:</b> Guía oficial Desafío de Nutrición ASV — Sección 4.7.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🍉 Ensalada de Frutas de la Selva — MODERADO | 35 min (Etapa II - Act. 4)</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Antes de la sesión, el staff lava y pre-corta las frutas duras (piña, patilla) en trozos pequeños por seguridad. Cada lobato trae su fruta de casa (cambur, fresas, mandarinas, melón o lechosa).<br><b>Desarrollo:</b> En seisenas, cada lobato lava sus manos y aporta su fruta. Las frutas blandas las cortan los propios lobatos con cuchillos de plástico sin filo o las despedazan con la mano, bajo supervisión; la piña y la patilla ya vienen precortadas. Todo se combina en un bol grande por seisena para armar la Ensalada de Frutas de la Selva. Al terminar, todas las seisenas se sientan juntas a degustarla.<br><b>Regla clave:</b> Ningún lobato manipula cuchillo con las frutas duras (piña, patilla) — esas ya vienen listas del staff.<br><b>Mat:</b> Cambur, patilla, fresas, mandarinas, melón, lechosa, piña, cuchillos de plástico sin filo, bols por seisena, cucharas, platos, jabón.<br><b>Ref:</b> Versión comunitaria y sencilla del Taller de Aperitivos Saludables — Guía oficial Desafío de Nutrición ASV, Sección 4.6.</p><h4 style='font-size:11px;font-family:sans-serif;margin:10px 0 3px;color:#1a3a5c'>🪨 Consejo de la Roca: Decidimos Nuestro Proyecto — CEREMONIAL | 20 min (Etapa III - Diseño)</h4><p style='font-size:10px;font-family:sans-serif;margin:0 0 10px;line-height:1.5'><b>Prep:</b> Lobatos sentados en círculo alrededor de una 'roca' simbólica u objeto central. Papelógrafo con las 3 opciones de proyecto descritas. Bagheera dirige el Consejo.<br><b>Desarrollo:</b> Bagheera presenta las opciones: A=Feria de la Selva Sana, B=Nuestra Huerta Viva, C=El Recetario del Guardián. Cada seisena delibera brevemente y un representante expone ante el Consejo la posición de su seisena. Se vota y se elige por mayoría. Bagheera asigna roles: seisena 1=materiales, seisena 2=comunicación con aliado, seisena 3=documentación fotográfica. Se acuerda qué llevar al Programa 3.<br><b>Regla clave:</b> En el Consejo se habla con la mano alzada y se espera el turno — es un espacio solemne, no una discusión libre. La decisión la toman los lobatos, el staff solo facilita.<br><b>Mat:</b> 'Roca' simbólica u objeto central, papelógrafo, marcadores, descripción impresa de las 3 opciones.<br><b>Ref:</b> Formato tradicional del Consejo de la Roca de Manada — Guía oficial Desafío de Nutrición ASV, Sección 3.1 (Etapa III). Ver INSTRUCCIONES.md para detalle de cada opción.</p></div>"
+    },
+    {
+      "id": "ep-riesgos",
+      "titulo": "GESTIÓN DE RIESGOS",
+      "body": "<div style='font-family:sans-serif'><p style='font-size:9px;margin:0 0 6px'><b>Tipo:</b> Actividad ordinaria (≤50 personas) — Fórmula: R = P × C</p><table style='width:100%;border-collapse:collapse;font-size:9px'><thead><tr style='background:#1a3a5c;color:white;text-align:center'><th style='padding:4px 3px;border:1px solid #999'>Actividad / Momento</th><th style='padding:4px 3px;border:1px solid #999'>Contexto / Causa</th><th style='padding:4px 3px;border:1px solid #999'>Riesgo identificado</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>P</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>C</th><th style='padding:4px 3px;border:1px solid #999'>Nivel</th><th style='padding:4px 3px;border:1px solid #999;width:22px'>R</th><th style='padding:4px 3px;border:1px solid #999'>Medidas de control</th></tr></thead><tbody><tr><td style='padding:3px;border:1px solid #ccc'>Relay de Clasificación Nutricional</td><td style='padding:3px;border:1px solid #ccc'>Carrera activa en área abierta</td><td style='padding:3px;border:1px solid #ccc'>Tropiezos y caídas con golpes leves</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Delimitar zona sin obstáculos, calzado cerrado obligatorio, un adulto en el campo durante el juego</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>El Mercado de la Selva</td><td style='padding:3px;border:1px solid #ccc'>Movimiento activo en espacio reducido</td><td style='padding:3px;border:1px solid #ccc'>Choques y caídas entre lobatos</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Delimitar área con espacio suficiente, no correr en la fase de desplazamiento — solo caminar rápido</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Ensalada de Frutas de la Selva</td><td style='padding:3px;border:1px solid #ccc'>Corte de frutas duras (piña, patilla) por niños 7-11 años</td><td style='padding:3px;border:1px solid #ccc'>Cortes con cuchillo al manipular fruta dura</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>6</b></td><td style='padding:3px;border:1px solid #ccc'>Piña y patilla precortadas por el staff antes de la sesión; lobatos solo usan cuchillos de plástico sin filo con frutas blandas, con supervisión directa</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Ensalada de Frutas de la Selva</td><td style='padding:3px;border:1px solid #ccc'>Frutas traídas de casa sin control previo, alergias alimentarias</td><td style='padding:3px;border:1px solid #ccc'>Reacción alérgica a alguna fruta</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>4</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#ffe066;color:#5a4000'><b>Moderado</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>8</b></td><td style='padding:3px;border:1px solid #ccc'>Confirmar alergias con representantes antes del programa; separar porción sin la fruta correspondiente para el lobato alérgico; tener antihistamínico</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Trivia Nutricional</td><td style='padding:3px;border:1px solid #ccc'>Competencia entre seisenas</td><td style='padding:3px;border:1px solid #ccc'>Frustración, conflicto o exclusión por puntuación</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>3</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>1</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>3</b></td><td style='padding:3px;border:1px solid #ccc'>Énfasis en participación y aprendizaje, no en ganar; reconocimiento simbólico para todos al final</td></tr><tr><td style='padding:3px;border:1px solid #ccc'>Consejo de la Roca</td><td style='padding:3px;border:1px solid #ccc'>Votación y desacuerdo entre seisenas</td><td style='padding:3px;border:1px solid #ccc'>Conflicto o frustración por opción no elegida</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>2</td><td style='padding:3px;border:1px solid #ccc;text-align:center'>1</td><td style='padding:3px;border:1px solid #ccc;text-align:center;background:#a8d08d;color:#1a3a00'><b>Leve</b></td><td style='padding:3px;border:1px solid #ccc;text-align:center'><b>2</b></td><td style='padding:3px;border:1px solid #ccc'>Explicar que todas las opciones son igualmente válidas; dar roles importantes a la seisena cuya opción no ganó</td></tr></tbody></table><p style='font-size:8px;margin:6px 0 0'><b>Semáforo:</b> 🟢 1-10 Leve · 🟡 11-15 Moderado · 🟠 16-20 Alto · 🔴 21-25 Crítico | P = Probabilidad (1-5) · C = Consecuencia (1-5)</p></div>"
+    }
+  ],
+  "_fechaIni": "2026-09-19",
+  "_fechaFin": "2026-09-19"
+}
