@@ -1,0 +1,79 @@
+/* base.css — Base: paletas de color por rama (ASV), variables, reset y body.
+   Extraído de index.html en el paso P1 (docs/00-PLAN.md). El orden de los <link> importa (cascada). */
+
+/* ╔══════════════════════════════════════════════════╗
+   ║  PALETAS POR RAMA — COLORES OFICIALES ASV        ║
+   ╚══════════════════════════════════════════════════╝ */
+.rama-manada {
+  --cm: #c8a800;
+  --cm-dk: #7a6200;
+  --cm-md: #e8c820;
+  --cm-lt: #fffde6;
+  --cm-bd: #e8d870;
+  --ca: #F3E22B;
+  --ca-dk: #c8a800;
+  --hdr-a: #3a2c00;
+  --hdr-b: #c8a800;
+  --hdr-m: #7a6200;
+}
+
+.rama-tropa {
+  --cm: #329642;
+  --cm-dk: #1a5228;
+  --cm-md: #4ab860;
+  --cm-lt: #e8f8ed;
+  --cm-bd: #88c898;
+  --ca: #F3E22B;
+  --ca-dk: #c8a800;
+  --hdr-a: #0d2e15;
+  --hdr-b: #329642;
+  --hdr-m: #1a5228;
+}
+
+.rama-clan {
+  --cm: #B40D15;
+  --cm-dk: #6b0009;
+  --cm-md: #d83030;
+  --cm-lt: #fff0f0;
+  --cm-bd: #e89090;
+  --ca: #F3E22B;
+  --ca-dk: #c8a800;
+  --hdr-a: #3a0005;
+  --hdr-b: #B40D15;
+  --hdr-m: #780010;
+}
+
+.rama-comunidad {
+  --cm: #622599;
+  --cm-dk: #3a1060;
+  --cm-md: #7c35b5;
+  --cm-lt: #f3eafa;
+  --cm-bd: #c9a8e8;
+  --ca: #F3E22B;
+  --ca-dk: #c8a800;
+  --hdr-a: #1a0840;
+  --hdr-b: #622599;
+  --hdr-m: #3a1060;
+}
+
+:root {
+  --ff-h: 'Montserrat', sans-serif;
+  --ff-b: 'Noto Sans', sans-serif;
+  --page-w: 8.5in;
+  --page-pad-x: 0.28in;
+  --page-pad-b: 0.35in;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-b);
+  background: #d8d4e8;
+  color: #1a1a2e;
+}

@@ -1,0 +1,532 @@
+{
+  "name": "Scout — Aviso de programa nuevo v1.0",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "# ⚜️ Scout — Aviso de programa nuevo v1.0\n\n📩 Recibe un POST cuando un dirigente pulsa **Guardar definitivo** en la Ficha Técnica y envía un correo bonito al equipo.\n\n**Fases:**\n1. 📩 Recepción + ⚙️ configuración\n2. ✅ Validación + ⏱️ límite de frecuencia\n3. 💌 Correo HTML + envío\n4. 🚨 Errores (respuestas 4xx/5xx + Error Trigger)\n\n**Payload esperado (JSON):**\n`titulo`, `rama`, `fecha` (AAAA-MM-DD), `autor`, `tipo` (unidad | grupal), `origen` (github-pages | servidor | prueba), `verificado` (true/false). Opcionales: `fecha_fin`, `url`.\n\n⚠️ Solo notifica. No guarda nada ni recibe datos de jóvenes.\n📖 Instalación: docs/n8n/COMO-INSTALAR.md",
+        "height": 520,
+        "width": 420,
+        "color": 6
+      },
+      "id": "61619e80-8e34-4519-937a-4802eccb61f6",
+      "name": "Nota General",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -340,
+        -420
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 📩 Fase 1 — Recepción\n\n**Recibir Aviso Programa** (Webhook POST)\n- 🔐 Auth: **Header Auth** (credencial `REEMPLAZAR_Header_Scout`). Header: `x-scout-secreto`.\n  n8n responde 403 sin crear ejecución si falta o no coincide.\n- 🌐 CORS: `Allowed Origins` = dominio de GitHub Pages. Ajustar si cambia el hosting.\n\n**Configurar Aviso** ⚙️\n- `destinatario` — correo(s) que reciben el aviso (separados por coma)\n- `nombre_grupo`, `url_sitio`\n- `max_avisos_por_hora` — límite global\n- `origenes_permitidos`",
+        "height": 360,
+        "width": 520,
+        "color": 4
+      },
+      "id": "73d83a69-beab-4ca5-9971-60eb9cabffc3",
+      "name": "Nota Recepción",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        120,
+        -420
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## ✅ Fase 2 — Validación\n\n**Validar Payload** revisa tipos y valores, recorta textos y normaliza la rama. Si `tipo = grupal` la rama queda **Grupal**.\n\n⏱️ Límite de frecuencia con `$getWorkflowStaticData` (solo persiste con el workflow **activo**).\n\n❌ Inválido → 400 · Exceso → 429. Nunca devuelve detalles técnicos.",
+        "height": 300,
+        "width": 460,
+        "color": 5
+      },
+      "id": "5f841e5c-b9cb-4cc8-8581-bd22c2891fbe",
+      "name": "Nota Validación",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        700,
+        -420
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 💌 Fase 3 — Correo\n\n**Armar Correo HTML** escapa todo texto del navegador (evita inyectar HTML).\n\n**Enviar Correo Aviso** (Gmail OAuth2, credencial `REEMPLAZAR_Gmail_Scout`). Para SMTP: reemplazar por el nodo *Send Email* con la misma entrada.\n- 🔁 2 intentos · salida de error → 500 genérico.\n\n📎 **Futuro:** adjuntar PDF de la ficha generado con Gotenberg (solo cuando exista servidor).",
+        "height": 320,
+        "width": 480,
+        "color": 3
+      },
+      "id": "96e558c6-e816-42bb-9579-8ddbe6cf6929",
+      "name": "Nota Correo",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        -420
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 🚨 Fase 4 — Errores\n\n- Salidas de error de **Validar Payload** y **Enviar Correo Aviso** → **Responder Error 500** (mensaje genérico).\n- **Capturar Error Global** (Error Trigger): se dispara si este workflow queda como su propio *Error Workflow* (Settings) o si se copia al Error Handler general.\n  → **Extraer Info Error** → **Enviar Alerta Error** (destinatario fijo en ese nodo: `REEMPLAZAR_correo_alertas@ejemplo.com`; el Error Trigger corre en otra ejecución y no ve *Configurar Aviso*).\n\n⚠️ Tras importar: Settings → Error workflow → este mismo workflow.",
+        "height": 300,
+        "width": 560,
+        "color": 2
+      },
+      "id": "e5d49fbb-f7c9-4274-96c9-8c0e05d9cbf3",
+      "name": "Nota Errores",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        120,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 🔮 Actualizaciones futuras\n\n- Adjuntar PDF (Gotenberg) cuando haya servidor.\n- Llamado desde el backend (NestJS) en vez del navegador → el secreto deja de estar expuesto.\n- Límite por IP con Redis si el tráfico crece.\n- Registrar avisos en Google Sheets / base de datos.\n- Plantilla del correo por rama (logo de rama).",
+        "height": 260,
+        "width": 420,
+        "color": 7
+      },
+      "id": "9daf81a2-f333-4666-915c-7fa3358ea7c2",
+      "name": "Nota Futuro",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        760,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "scout-programa-nuevo",
+        "authentication": "headerAuth",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "https://danend28.github.io",
+          "ignoreBots": true
+        }
+      },
+      "id": "8e2d40d1-2263-4394-a6ee-c02abf19132c",
+      "name": "Recibir Aviso Programa",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        160,
+        0
+      ],
+      "webhookId": "c6da7f0f-d9ba-44bd-9dd5-e125374963c3",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REEMPLAZAR_ID",
+          "name": "REEMPLAZAR_Header_Scout"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3e8a5dd6-4042-4d1e-89cc-13206134aa79",
+              "name": "destinatario",
+              "value": "REEMPLAZAR_correo@ejemplo.com",
+              "type": "string"
+            },
+            {
+              "id": "82324327-5ed7-4c93-93bc-86d081c9d8c9",
+              "name": "nombre_grupo",
+              "value": "Grupo Scout La Salle Guaparo",
+              "type": "string"
+            },
+            {
+              "id": "e0585fc3-7956-47d6-8514-a973e52246a1",
+              "name": "url_sitio",
+              "value": "https://danend28.github.io/Plantilla-Programa-Scout/",
+              "type": "string"
+            },
+            {
+              "id": "57cd19d6-f54b-4850-b1fa-739adac3d9c2",
+              "name": "max_avisos_por_hora",
+              "value": 20,
+              "type": "number"
+            },
+            {
+              "id": "038f1655-8574-4f96-9278-77907aaa9ad5",
+              "name": "origenes_permitidos",
+              "value": "github-pages,servidor,prueba",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "51f4ce3e-821b-4816-934f-8b84a71d590e",
+      "name": "Configurar Aviso",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        380,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ✅ Valida el payload del aviso y aplica un límite de frecuencia simple.\n// No usa require(). Devuelve siempre un solo item con { valido, codigo, mensaje, datos }.\nconst cfg = $('Configurar Aviso').first().json;\nconst req = $('Recibir Aviso Programa').first().json;\n\nlet body = req.body;\nif (typeof body === 'string') {\n  try { body = JSON.parse(body); } catch (e) { body = null; }\n}\nif (!body || typeof body !== 'object' || Array.isArray(body)) {\n  return [{ json: { valido: false, codigo: 400, mensaje: 'El cuerpo debe ser un objeto JSON.', errores: ['body'] } }];\n}\n\nconst texto = (v, max) => String(v ?? '').replace(/\\s+/g, ' ').trim().slice(0, max);\nconst RAMAS = ['manada', 'tropa', 'comunidad', 'clan', 'grupal'];\nconst TIPOS = ['unidad', 'grupal'];\nconst ORIGENES = (cfg.origenes_permitidos || 'github-pages,servidor,prueba').split(',').map(s => s.trim());\nconst errores = [];\n\nconst titulo = texto(body.titulo, 160);\nconst autor = texto(body.autor, 80);\nconst tipo = texto(body.tipo, 10).toLowerCase();\nlet rama = texto(body.rama, 20).toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '');\nconst fecha = texto(body.fecha, 10);\nconst fechaFin = texto(body.fecha_fin, 10);\nconst origen = texto(body.origen, 20).toLowerCase();\nconst verificado = body.verificado === true;\n\nif (!titulo) errores.push('titulo');\nif (!autor) errores.push('autor');\nif (!TIPOS.includes(tipo)) errores.push('tipo (unidad | grupal)');\nif (tipo === 'grupal') rama = 'grupal'; // decisión: la actividad grupal se marca \"Grupal\"\nif (!RAMAS.includes(rama)) errores.push('rama (manada | tropa | comunidad | clan)');\nif (!/^\\d{4}-\\d{2}-\\d{2}$/.test(fecha) || isNaN(Date.parse(fecha + 'T00:00:00Z'))) errores.push('fecha (AAAA-MM-DD)');\nif (fechaFin && !/^\\d{4}-\\d{2}-\\d{2}$/.test(fechaFin)) errores.push('fecha_fin (AAAA-MM-DD)');\nif (!ORIGENES.includes(origen)) errores.push('origen (' + ORIGENES.join(' | ') + ')');\nif (typeof body.verificado !== 'boolean') errores.push('verificado (true | false)');\n\nif (errores.length) {\n  return [{ json: { valido: false, codigo: 400, mensaje: 'Payload inválido.', errores } }];\n}\n\n// ⏱️ Límite de frecuencia (solo cuenta en ejecuciones de producción: workflow activo).\nconst limite = Number(cfg.max_avisos_por_hora) || 20;\nconst estado = $getWorkflowStaticData('global');\nconst ahora = Date.now();\nestado.avisos = (estado.avisos || []).filter(t => ahora - t < 3600 * 1000);\nif (estado.avisos.length >= limite) {\n  return [{ json: { valido: false, codigo: 429, mensaje: 'Demasiados avisos en la última hora. Intenta más tarde.', errores: ['limite'] } }];\n}\nestado.avisos.push(ahora);\n\nconst RAMA_NOMBRE = { manada: 'Manada', tropa: 'Tropa', comunidad: 'Comunidad', clan: 'Clan', grupal: 'Grupal' };\nreturn [{\n  json: {\n    valido: true,\n    codigo: 200,\n    datos: {\n      titulo, autor, tipo, rama, rama_nombre: RAMA_NOMBRE[rama],\n      fecha, fecha_fin: fechaFin || null, origen, verificado,\n      url: /^https:\\/\\//.test(String(body.url || '')) ? texto(body.url, 300) : '',\n      recibido: new Date(ahora).toISOString(),\n    },\n  },\n}];\n"
+      },
+      "id": "d7b10b44-2344-4804-b459-c34dd987db85",
+      "name": "Validar Payload",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        600,
+        0
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "be0beb5c-3fae-499d-b668-1dae9c31ad65",
+              "leftValue": "={{ $json.valido }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "c7026ab7-2e0f-493a-9ad8-ae41c0adabe1",
+      "name": "¿Payload Válido?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        820,
+        -20
+      ]
+    },
+    {
+      "parameters": {
+        "dataToSave": {
+          "values": [
+            {
+              "key": "rama",
+              "value": "={{ $json.datos.rama }}"
+            },
+            {
+              "key": "titulo",
+              "value": "={{ $json.datos.titulo }}"
+            },
+            {
+              "key": "origen",
+              "value": "={{ $json.datos.origen }}"
+            }
+          ]
+        }
+      },
+      "id": "5a713271-ce0f-4541-a7b1-bb4bac0ee209",
+      "name": "Guardar Datos Ejecución",
+      "type": "n8n-nodes-base.executionData",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// 💌 Arma el asunto y el cuerpo HTML del correo. Escapa todo lo que viene del navegador.\nconst cfg = $('Configurar Aviso').first().json;\nconst d = $json.datos || {};\nconst esc = t => String(t ?? '').replace(/[&<>\"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;', \"'\": '&#39;' }[c]));\n\nconst COLORES = { manada: '#F2B705', tropa: '#1E8C3A', comunidad: '#1F5FAD', clan: '#B40D15', grupal: '#5B2C83' };\nconst color = COLORES[d.rama] || '#5B2C83';\nconst fechaTxt = (f) => {\n  if (!f) return '';\n  try {\n    return new Date(f + 'T12:00:00Z').toLocaleDateString('es-VE', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });\n  } catch (e) { return f; }\n};\nconst fechas = d.fecha_fin && d.fecha_fin !== d.fecha ? `${fechaTxt(d.fecha)} → ${fechaTxt(d.fecha_fin)}` : fechaTxt(d.fecha);\nconst sello = d.verificado\n  ? '<span style=\"background:#e6f6ea;color:#1f7a3a;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700\">✔ Verificado</span>'\n  : '<span style=\"background:#fff4d6;color:#8a5a00;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700\">Sin verificar</span>';\nconst fila = (k, v) => `<tr><td style=\"padding:6px 0;color:#777;width:120px;vertical-align:top\">${k}</td><td style=\"padding:6px 0;color:#222;font-weight:600\">${v}</td></tr>`;\nconst boton = d.url\n  ? `<p style=\"margin:22px 0 4px\"><a href=\"${esc(d.url)}\" style=\"background:${color};color:#fff;text-decoration:none;padding:10px 18px;border-radius:8px;font-weight:700\">📂 Abrir el programa</a></p>`\n  : `<p style=\"margin:22px 0 4px\"><a href=\"${esc(cfg.url_sitio)}\" style=\"background:${color};color:#fff;text-decoration:none;padding:10px 18px;border-radius:8px;font-weight:700\">⚜️ Ir a la Ficha Técnica</a></p>`;\n\nconst html = `<!DOCTYPE html><html lang=\"es\"><body style=\"margin:0;background:#f3f0f7;font-family:Montserrat,Arial,sans-serif\">\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding:24px 12px\"><tr><td align=\"center\">\n<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:560px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08)\">\n<tr><td style=\"background:${color};padding:18px 24px;color:#fff\">\n  <div style=\"font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.9\">⚜️ ${esc(cfg.nombre_grupo)}</div>\n  <div style=\"font-size:20px;font-weight:800;margin-top:4px\">📚 Nuevo programa · ${esc(d.rama_nombre)}</div>\n</td></tr>\n<tr><td style=\"padding:22px 24px\">\n  <h2 style=\"margin:0 0 10px;font-size:18px;color:#222\">${esc(d.titulo)}</h2>\n  <p style=\"margin:0 0 14px\">${sello}</p>\n  <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" style=\"font-size:14px;width:100%\">\n    ${fila('📅 Fecha', esc(fechas))}\n    ${fila('🏕️ Tipo', d.tipo === 'grupal' ? 'Grupal' : 'Unidad')}\n    ${fila('✍️ Autor', esc(d.autor))}\n    ${fila('🌐 Origen', esc(d.origen))}\n  </table>\n  ${boton}\n</td></tr>\n<tr><td style=\"padding:14px 24px;background:#faf8fc;color:#999;font-size:11px\">\n  Aviso automático de la Ficha Técnica Scout. Recibido ${esc(d.recibido)}.<br>\n  No contiene datos personales de jóvenes. Si no esperabas este correo, avísale al administrador.\n</td></tr>\n</table></td></tr></table></body></html>`;\n\nconst asunto = `📚 Nuevo programa ${d.rama_nombre}: ${d.titulo}`.slice(0, 180);\nreturn [{ json: { ...d, asunto, html, destinatario: cfg.destinatario } }];\n"
+      },
+      "id": "4065a296-7ffd-4e67-89a4-07bbdd7c1300",
+      "name": "Armar Correo HTML",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1260,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.destinatario }}",
+        "subject": "={{ $json.asunto }}",
+        "emailType": "html",
+        "message": "={{ $json.html }}",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "Ficha Técnica Scout"
+        }
+      },
+      "id": "5094a09c-d30f-45ff-b213-ee89731baef2",
+      "name": "Enviar Correo Aviso",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1480,
+        -120
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "REEMPLAZAR_ID",
+          "name": "REEMPLAZAR_Gmail_Scout"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 3000,
+      "onError": "continueErrorOutput",
+      "webhookId": "571d5979-0ab0-4861-bd2c-2119d5451552"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ ok: true, mensaje: 'Aviso enviado.' }) }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "1e2abcf6-dbc9-43c3-a3b8-77bbf679b149",
+      "name": "Responder 200 OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1700,
+        -220
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ ok: false, mensaje: $json.mensaje, errores: $json.errores }) }}",
+        "options": {
+          "responseCode": "={{ $json.codigo }}"
+        }
+      },
+      "id": "7ab5796c-e0d5-4255-8336-ab44f7d12c07",
+      "name": "Responder Rechazo",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1040,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ ok: false, mensaje: 'No se pudo enviar el aviso. Intenta más tarde.' }) }}",
+        "options": {
+          "responseCode": 500
+        }
+      },
+      "id": "d9b28ec2-9f46-4b33-a3ba-b7d782c10b4e",
+      "name": "Responder Error 500",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1700,
+        40
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "3cdf0df6-b13f-4761-a2aa-2072eb1198fd",
+      "name": "Capturar Error Global",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        160,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// 🚨 Resume el error global (Error Trigger) para la alerta.\nconst e = $json || {};\nconst exec = e.execution || {};\nconst wf = e.workflow || {};\nreturn [{\n  json: {\n    workflow: wf.name || 'Scout — Aviso de programa nuevo',\n    nodo: exec.lastNodeExecuted || exec.error?.node?.name || 'desconocido',\n    mensaje: String(exec.error?.message || 'Error sin mensaje').slice(0, 500),\n    ejecucion_id: exec.id || '',\n    url: exec.url || '',\n    fecha: new Date().toISOString(),\n  },\n}];\n"
+      },
+      "id": "6637dab9-6935-4686-a66f-066cf63cfbdc",
+      "name": "Extraer Info Error",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        380,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "REEMPLAZAR_correo_alertas@ejemplo.com",
+        "subject": "=🚨 Error en {{ $json.workflow }} ({{ $json.nodo }})",
+        "emailType": "text",
+        "message": "=Workflow: {{ $json.workflow }}\nNodo: {{ $json.nodo }}\nMensaje: {{ $json.mensaje }}\nEjecución: {{ $json.ejecucion_id }}\n{{ $json.url }}\nFecha: {{ $json.fecha }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "8c2a19e9-8323-4498-9cfe-e2b2368a6549",
+      "name": "Enviar Alerta Error",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        600,
+        800
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "REEMPLAZAR_ID",
+          "name": "REEMPLAZAR_Gmail_Scout"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 2,
+      "webhookId": "25c5cc94-fa43-4353-8dd4-df09ab595580"
+    }
+  ],
+  "connections": {
+    "Recibir Aviso Programa": {
+      "main": [
+        [
+          {
+            "node": "Configurar Aviso",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configurar Aviso": {
+      "main": [
+        [
+          {
+            "node": "Validar Payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validar Payload": {
+      "main": [
+        [
+          {
+            "node": "¿Payload Válido?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Responder Error 500",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Payload Válido?": {
+      "main": [
+        [
+          {
+            "node": "Guardar Datos Ejecución",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Responder Rechazo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Datos Ejecución": {
+      "main": [
+        [
+          {
+            "node": "Armar Correo HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Armar Correo HTML": {
+      "main": [
+        [
+          {
+            "node": "Enviar Correo Aviso",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar Correo Aviso": {
+      "main": [
+        [
+          {
+            "node": "Responder 200 OK",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Responder Error 500",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Capturar Error Global": {
+      "main": [
+        [
+          {
+            "node": "Extraer Info Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extraer Info Error": {
+      "main": [
+        [
+          {
+            "node": "Enviar Alerta Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Caracas",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "pinData": {},
+  "active": false,
+  "tags": []
+}

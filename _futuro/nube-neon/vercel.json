@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/api/programas/:id/versiones/:n", "destination": "/api/programas?id=:id&vista=versiones&n=:n" },
+    { "source": "/api/programas/:id/versiones", "destination": "/api/programas?id=:id&vista=versiones" },
+    { "source": "/api/programas/:id", "destination": "/api/programas?id=:id" }
+  ],
+  "functions": {
+    "api/*.js": { "maxDuration": 15 }
+  }
+}

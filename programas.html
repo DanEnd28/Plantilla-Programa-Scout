@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Programas — Grupo Scout La Salle Guaparo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/programas.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <img class="header-logo" src="images/logo-flor-transparent.png" alt="Flor de lis">
+      <div class="header-text">
+        <h1>📚 Programas</h1>
+        <p>Grupo Scout La Salle Guaparo · Programas guardados</p>
+      </div>
+      <div class="header-actions">
+        <a class="pill-btn" href="index.html">✏️ Ir a la plantilla</a>
+        <a class="pill-btn" href="ayuda.html">❓ Ayuda</a>
+        <button class="pill-btn" id="adminBtn" type="button" onclick="clickAdmin()">🔐 Admin</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <nav class="tabs" role="tablist" aria-label="Ramas" id="tabs">
+      <button class="tab" role="tab" data-rama=""><span class="tab-ico">⚜️</span><span>Todas<small data-count="">—</small></span></button>
+      <button class="tab" role="tab" data-rama="manada"><img src="images/rama-manada.jpg" alt=""><span>Manada<small data-count="manada">—</small></span></button>
+      <button class="tab" role="tab" data-rama="tropa"><img src="images/rama-tropa.jpg" alt=""><span>Tropa<small data-count="tropa">—</small></span></button>
+      <button class="tab" role="tab" data-rama="comunidad"><img src="images/rama-comunidad.jpg" alt=""><span>Comunidad<small data-count="comunidad">—</small></span></button>
+      <button class="tab" role="tab" data-rama="clan"><img src="images/rama-clan.jpg" alt=""><span>Clan<small data-count="clan">—</small></span></button>
+      <button class="tab" role="tab" data-rama="grupal" hidden><span class="tab-ico">⚪</span><span>Grupal<small data-count="grupal">—</small></span></button>
+    </nav>
+
+    <div class="recursos-rama" id="recursosManada" hidden>
+      <a class="pill-btn" href="promesa-ley-manada.html">🐺 Promesa y Ley de la Manada</a>
+    </div>
+
+    <div class="admin-bar" id="adminBar">
+      <b>🔓 Modo administrador</b>
+      <label><input type="checkbox" id="verArch"> Ver archivados <span id="nArch"></span></label>
+      <span class="sp"></span>
+      <button class="btn btn-sm" type="button" onclick="salirAdmin()">Salir del modo admin</button>
+    </div>
+
+    <div class="toolbar-list">
+      <input class="search" id="q" type="search" placeholder="🔎 Buscar por nombre de la actividad…" autocomplete="off">
+      <span class="count" id="count"></span>
+    </div>
+
+    <section class="list" id="list" aria-live="polite">
+      <div class="empty">Cargando programas…</div>
+    </section>
+
+    <p class="foot">Cada vez que alguien guarda un programa se crea una nueva versión (las anteriores quedan en el historial).<br>
+      Al guardar se registran el nombre del autor (si lo escribe), datos técnicos del dispositivo, la IP y la ubicación aproximada.</p>
+  </main>
+
+  <div class="overlay" id="mHist" role="dialog" aria-modal="true" aria-labelledby="histTitle">
+    <div class="modal">
+      <div class="modal-h">
+        <div class="modal-title" id="histTitle">🕑 Historial de versiones</div>
+        <button class="modal-x" onclick="cerrarHist()" aria-label="Cerrar">✕</button>
+      </div>
+      <div id="histBody"></div>
+    </div>
+  </div>
+
+  <div class="overlay" id="mAdmin" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+    <div class="modal" style="max-width:420px">
+      <div class="modal-h">
+        <div class="modal-title" id="adminTitle">🔐 Entrar como administrador</div>
+        <button class="modal-x" onclick="cerrarAdmin()" aria-label="Cerrar">✕</button>
+      </div>
+      <p class="nota">Con la clave de administrador puedes archivar, desarchivar y borrar programas o versiones. La clave se recuerda solo mientras esta pestaña esté abierta.</p>
+      <input class="fi-dark" id="adminClave" type="password" placeholder="Clave de administrador" autocomplete="off">
+      <div class="msg-err" id="adminMsg"></div>
+      <div class="fila">
+        <button class="btn" type="button" onclick="cerrarAdmin()">Cancelar</button>
+        <button class="btn btn-primary" type="button" id="adminEntrar" onclick="entrarAdmin()">Entrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/dialogo.js"></script>
+  <script src="js/programas.js"></script>
+</body>
+</html>

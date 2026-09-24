@@ -1,0 +1,6 @@
+# No se sube a Vercel (no lo usan las funciones ni las páginas).
+# OJO: no agregar api/ ni api/_lib/: las funciones los importan.
+scripts/
+db/
+DB-SETUP.md
+.env.example

@@ -1,0 +1,21 @@
+{
+  "name": "plantilla-programa-scout",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "db:schema": "node scripts/aplicar-schema.mjs",
+    "db:migrar": "node scripts/migrar-programas.mjs",
+    "dev:local": "node scripts/servidor-local.mjs",
+    "test:hash": "node scripts/probar-hash.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.9.9",
+    "pg": "^8.23.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
+  }
+}
