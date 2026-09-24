@@ -101,7 +101,7 @@
     {
       "area": "Corporalidad",
       "etapa": "E1",
-      "texto": "Pide a familiares y adultos Scouts la ayuda que requiere para adquirir habilidades y las practica."
+      "texto": "Pide a familiares y dirigentes la ayuda que requiere para adquirir habilidades y las practica."
     },
     {
       "area": "Carácter",
@@ -116,7 +116,7 @@
     {
       "area": "Carácter",
       "etapa": "E1",
-      "texto": "Ofrece a sus padres su ayuda para las tareas derivadas de la vida familiar."
+      "texto": "Ofrece a sus padres su ayuda para las tareas derivadas de la vida familiar"
     }
   ],
   "_logos": {},
