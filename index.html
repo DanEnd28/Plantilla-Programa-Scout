@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/modales.css">
   <link rel="stylesheet" href="css/panel.css">
   <link rel="stylesheet" href="css/indice.css">
+  <link rel="stylesheet" href="css/asistente.css">
   <link rel="stylesheet" href="css/impresion.css">
 </head>
 
@@ -73,6 +74,7 @@
       <div class="side-group">
         <span class="side-lbl">Ayuda</span>
         <button class="side-item" onclick="window.open('https://gemini.google.com/gem/18qK5lPkpBpcvJ7w3_1L-9LLxglc9BWsq?usp=sharing','_blank')" title="Preguntarle a Tico"><span class="nav-ico">🤖</span><span class="nav-txt">Preguntarle a Tico</span></button>
+        <button class="side-item" onclick="asAbrir()" title="Asistente de inicio"><span class="nav-ico">🧭</span><span class="nav-txt">Asistente de inicio</span></button>
         <button class="side-item" onclick="window.open('ayuda.html','_blank')" title="Ayuda"><span class="nav-ico">❓</span><span class="nav-txt">Ayuda</span></button>
       </div>
     </div>
@@ -113,6 +115,7 @@
     <span class="bs-lbl">Ayuda</span>
     <div class="bs-row">
       <button class="bs-item" onclick="window.open('https://gemini.google.com/gem/18qK5lPkpBpcvJ7w3_1L-9LLxglc9BWsq?usp=sharing','_blank');closeBottomSheet()">🤖 Preguntarle a Tico</button>
+      <button class="bs-item" onclick="closeBottomSheet();asAbrir()">🧭 Asistente de inicio</button>
       <button class="bs-item" onclick="window.open('ayuda.html','_blank');closeBottomSheet()">❓ Ayuda</button>
     </div>
     <div class="bs-row bs-row-danger">
@@ -436,6 +439,76 @@
 
   <!-- MODALES (fuera de .pages-wrap: si no, heredan el zoom de la ficha en pantallas chicas) -->
 
+  <!-- ASISTENTE DE INICIO (P3). Va primero: los demás modales quedan encima si se abren a la vez -->
+  <div class="overlay" id="mAsistente">
+    <div class="modal as-modal">
+      <div class="modal-h">
+        <div class="modal-title">🧭 Empecemos tu ficha</div>
+        <button class="modal-x" onclick="asSaltar()" aria-label="Saltar el asistente">✕</button>
+      </div>
+      <ol class="as-pasos" aria-label="Pasos">
+        <li class="on">Rama</li><li>Fecha y lugar</li><li>Unidad o grupal</li><li>Empezar</li>
+      </ol>
+
+      <section class="as-paso" data-paso="1">
+        <h3>¿Para qué rama es la actividad?</h3>
+        <div class="as-ramas">
+            <button type="button" class="as-rama" data-rama="Manada" aria-pressed="false"><img src="images/rama-manada.jpg" alt=""><span>Manada</span><small>Lobatos y lobeznas</small></button>
+            <button type="button" class="as-rama" data-rama="Tropa" aria-pressed="false"><img src="images/rama-tropa.jpg" alt=""><span>Tropa</span><small>Scouts</small></button>
+            <button type="button" class="as-rama" data-rama="Comunidad" aria-pressed="false"><img src="images/rama-comunidad.jpg" alt=""><span>Comunidad</span><small>Caminantes</small></button>
+            <button type="button" class="as-rama" data-rama="Clan" aria-pressed="false"><img src="images/rama-clan.jpg" alt=""><span>Clan</span><small>Rovers</small></button>
+        </div>
+      </section>
+
+      <section class="as-paso" data-paso="2" hidden>
+        <h3>¿Cuándo y dónde?</h3>
+        <div class="frow">
+          <div class="fg"><label class="fl" for="as-fi">Fecha de inicio</label><input type="date" class="fi" id="as-fi"></div>
+          <div class="fg"><label class="fl" for="as-ff">Fecha de fin <span class="as-opc">(si es de varios días)</span></label><input type="date" class="fi" id="as-ff"></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label class="fl" for="as-hi">Hora de inicio</label><input type="time" class="fi" id="as-hi" value="10:00"></div>
+          <div class="fg"><label class="fl" for="as-hc">Hora de cierre</label><input type="time" class="fi" id="as-hc" value="13:00"></div>
+        </div>
+        <div class="fg"><label class="fl" for="as-lugar">Lugar</label><input type="text" class="fi" id="as-lugar" value="Colegio La Salle Guaparo"></div>
+      </section>
+
+      <section class="as-paso" data-paso="3" hidden>
+        <h3>¿Es una actividad de la unidad o grupal?</h3>
+        <div class="as-opciones">
+          <label class="as-opcion"><input type="radio" name="as-tipo" value="unidad" checked><span><b>Solo de la <span id="as-nom-rama">unidad</span></b><small>La planifica y la hace una sola rama.</small></span></label>
+          <label class="as-opcion"><input type="radio" name="as-tipo" value="grupal"><span><b>Grupal</b><small>Participan varias ramas del grupo. En la ficha se marca «Grupal».</small></span></label>
+        </div>
+        <label class="cfg-check as-comunidad" hidden><input type="checkbox" id="as-comunidad"> Incluir a la Comunidad (por defecto: Manada, Tropa y Clan)</label>
+        <div class="fg" style="margin-top:14px"><label class="fl" for="as-resp">Responsable</label><input type="text" class="fi" id="as-resp" placeholder="Ej: Akela"></div>
+      </section>
+
+      <section class="as-paso" data-paso="4" hidden>
+        <h3>¿Cómo quieres armar la ficha?</h3>
+        <div class="as-caminos">
+          <button type="button" class="as-camino" onclick="asTerminar()"><span class="as-camino-ico">✏️</span><b>Crear manual</b><small>Completo la ficha yo mismo aquí.</small></button>
+          <label class="as-camino"><span class="as-camino-ico">🤖</span><b>Importar JSON de Tico</b><small>Ya tengo el archivo que me dio Tico.</small><input type="file" accept=".json,application/json" id="as-json"></label>
+        </div>
+        <details class="as-tico">
+          <summary>¿Cómo uso a Tico?</summary>
+          <ol>
+            <li>Abre <a href="https://gemini.google.com/gem/18qK5lPkpBpcvJ7w3_1L-9LLxglc9BWsq?usp=sharing" target="_blank" rel="noopener">el Gem de Tico en Gemini</a> y cuéntale la actividad: rama, fecha, tema y quiénes estarán a cargo.</li>
+            <li>Tico te propone indicadores, programa, juegos y la gestión de riesgos, y te pide confirmar cada parte.</li>
+            <li>Al final te entrega un <b>JSON</b>: descárgalo (o cópialo en un archivo que termine en <code>.json</code>).</li>
+            <li>Vuelve aquí y elige <b>Importar JSON de Tico</b> (o, más tarde, <b>📥 Importar datos</b> en el menú).</li>
+          </ol>
+        </details>
+      </section>
+
+      <div class="mf as-pie">
+        <button type="button" class="btn btn-g as-saltar" onclick="asSaltar()">Saltar</button>
+        <span class="as-esp"></span>
+        <button type="button" class="btn btn-g" id="asAtras" onclick="asIr(-1)" hidden>← Atrás</button>
+        <button type="button" class="btn btn-y" id="asSig" onclick="asIr(1)">Siguiente →</button>
+      </div>
+    </div>
+  </div>
+
   <!-- MODAL NUBE -->
   <div class="overlay" id="mNube">
     <div class="modal">
@@ -545,6 +618,7 @@
     <script src="js/biblioteca-datos.js"></script>
     <script src="js/biblioteca-ficha.js"></script>
     <script src="js/accesibilidad.js"></script>
+    <script src="js/asistente.js"></script>
     <script src="js/principal.js"></script>
 </body>
 

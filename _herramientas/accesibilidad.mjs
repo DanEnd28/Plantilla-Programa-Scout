@@ -6,7 +6,8 @@ const AXE = fs.readFileSync('node_modules/axe-core/axe.min.js', 'utf8');
 const B = 'http://localhost:3472/';
 const b = await chromium.launch();
 const casos = [
-  ['ficha vacía', async p => {}],
+  ['asistente de inicio', async p => { await p.waitForTimeout(300); }],
+  ['ficha vacía', async p => { await p.evaluate(() => asSaltar()); }],
   ['ficha con programa', async p => { await p.setInputFiles('input[type=file][accept=".json"] >> nth=0', 'programas/2026-05-17.json'); await p.waitForTimeout(800); }],
   ['modal I.L.', async p => { await p.evaluate(() => openM('mInd')); await p.waitForTimeout(300); }],
   ['panel Configuración', async p => { await p.evaluate(() => openConfigPanel()); await p.waitForTimeout(300); }],

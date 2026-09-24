@@ -1,0 +1,123 @@
+/* asistente.css — Paso P3 (docs/00-PLAN.md): asistente de inicio (modal #mAsistente). Reusa .overlay/.modal/.fi/.btn de modales.css. */
+
+.as-modal { max-width: 620px; }
+
+.as-pasos {
+  display: flex;
+  gap: 6px;
+  list-style: none;
+  margin: 2px 0 16px;
+  counter-reset: paso;
+}
+
+.as-pasos li {
+  flex: 1;
+  counter-increment: paso;
+  padding: 7px 4px 6px;
+  border-top: 3px solid #e4dcef;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #6f6488;
+  text-align: center;
+}
+
+.as-pasos li::before { content: counter(paso) '. '; }
+.as-pasos li.hecho { border-top-color: #b9a2dc; color: #4e1d7a; }
+.as-pasos li.on { border-top-color: #622599; color: #2a1450; }
+
+.as-paso h3 {
+  font-family: var(--ff-h);
+  font-weight: 800;
+  font-size: 16px;
+  color: #2a1450;
+  margin-bottom: 14px;
+}
+
+.as-paso h3:focus { outline: none; }
+
+.as-opc { font-weight: 400; text-transform: none; letter-spacing: 0; color: #6f6488; }
+
+/* Paso 1: ramas */
+.as-ramas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+
+.as-rama {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px 12px;
+  border: 2px solid #e4dcef;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  font-family: var(--ff-b);
+  transition: border-color .15s, background .15s, transform .15s;
+}
+
+.as-rama img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
+.as-rama span { font-family: var(--ff-h); font-weight: 800; font-size: 14px; color: #2a1450; }
+.as-rama small { font-size: 11.5px; color: #6f6488; }
+.as-rama:hover { border-color: #b9a2dc; transform: translateY(-2px); }
+.as-rama[aria-pressed="true"] { border-color: #622599; background: #f3eef9; box-shadow: 0 0 0 3px rgba(98, 37, 153, .15); }
+
+/* Paso 3: unidad o grupal */
+.as-opciones { display: grid; gap: 8px; }
+
+.as-opcion {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+  border: 2px solid #e4dcef;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.as-opcion:has(input:checked) { border-color: #622599; background: #f3eef9; }
+.as-opcion input { margin-top: 3px; accent-color: #622599; }
+.as-opcion span { display: flex; flex-direction: column; gap: 2px; }
+.as-opcion b { font-size: 13.5px; color: #2a1450; }
+.as-opcion small { font-size: 12px; color: #6f6488; }
+.as-comunidad { margin: 10px 2px 0; }
+
+/* Paso 4: caminos */
+.as-caminos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.as-camino {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 20px 12px;
+  border: 2px solid #e4dcef;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  text-align: center;
+  font-family: var(--ff-b);
+  transition: border-color .15s, background .15s;
+}
+
+.as-camino:hover, .as-camino:focus-within { border-color: #622599; background: #f3eef9; }
+.as-camino-ico { font-size: 30px; }
+.as-camino b { font-size: 14px; color: #2a1450; }
+.as-camino small { font-size: 12px; color: #6f6488; }
+.as-camino input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+
+.as-tico { margin-top: 14px; font-size: 12.5px; color: #3b3350; }
+.as-tico summary { cursor: pointer; font-weight: 700; color: #622599; }
+.as-tico ol { margin: 8px 0 0 20px; line-height: 1.6; }
+.as-tico a { color: #622599; font-weight: 600; }
+
+.as-error { margin-top: 12px; font-size: 12.5px; color: #b3261e; font-weight: 600; }
+.as-error[hidden] { display: none; }
+.as-pie { align-items: center; }
+.as-esp { flex: 1; }
+.as-pie [hidden] { display: none; }
+
+@media (max-width: 560px) {
+  .as-ramas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .as-caminos { grid-template-columns: 1fr; }
+  .as-pasos li { font-size: 10px; }
+}

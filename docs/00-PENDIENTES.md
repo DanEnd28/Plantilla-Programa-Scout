@@ -9,7 +9,7 @@
 |---|---|---|---|
 | Orden de carpetas (P0) | ✅ | raíz, `_futuro/`, `_archivo/`, `docs/` | Hacer commit y push (lo hace Danny) |
 | I.L. Manada, Tropa y Clan cargados | ✅ | `index.html` (`INDICADORES`, `IND_BASE`) · [indicadores-de-logro.md](indicadores-de-logro.md) | — (181 + 197 + 143 = 521, verificado en navegador) |
-| Erratas del Excel en I.L. (17) | 🟡 | Documentadas con versión corregida en [indicadores-de-logro.md](indicadores-de-logro.md#erratas-del-excel-y-versión-corregida) | Aplicarlas en el código y en `programas/**/*.json` → **P9** |
+| Erratas del Excel en I.L. (17) | ✅ | [indicadores-de-logro.md](indicadores-de-logro.md#erratas-del-excel-y-versión-corregida) | Aplicadas en la app y en `programas/**/*.json` en **P9** |
 | I.L. de Comunidad | ⏳ | — | La ASV/Excel aún no los tiene. No inventar; esperar la fuente oficial |
 | Nube (Neon) desactivada | ✅ | `js/config.js` (`nube: false`), `js/nube.js`, `_futuro/nube-neon/` | Reactivar en V2 |
 | `ayuda.html` actualizada | ✅ 2026-09-24 | `ayuda.html` | Reescrita a pedido de Danny: pantalla (barra lateral, header, panel derecho, móvil), menú, Configuración, Programa, Secciones, campos, I.L., ODS, biblioteca, PDF, Tico, páginas extra y teclado. Se quitaron la nube, «Guardar HTML», «Separar día» y la hora manual |
@@ -23,7 +23,7 @@
 | Claves de la nube (local) | ✅ | `_futuro/nube-neon/.env.local` (ignorado por git) | En producción van en las variables de entorno de Vercel |
 | Barra lateral / superior / móvil | ✅ | `css/barra.css`, `js/ui.js` (`toggleSidebar`, `toggleMoreMenu`, `toggleBottomSheet`), `index.html` | — (verificado: escritorio con barra lateral retráctil, móvil con barra inferior + hoja "Más", 0 errores de consola, 360 px sin scroll horizontal, PDF sin barras) |
 | «Restablecer» no borraba las páginas extra | ✅ corregido 2026-09-23 | `js/estado.js` → `doReset()` | — (ahora vacía `#extraPagesContainer` y `extraPages`) |
-| Asistente de inicio + Tico | ⏭️ saltado | — | Danny decidió no hacerlo (2026-09-23) |
+| Asistente de inicio + Tico (P3) | ✅ 2026-09-24 | `js/asistente.js`, `css/asistente.css`, `#mAsistente` | Primero se saltó; Danny lo pidió después. Se reabre desde 🧭 en el menú |
 | Configuración en vivo (P4) | ✅ | `js/config-panel.js`, `css/panel.css`, `index.html` (`#cfgPanel`) | — (panel derecho, una sola vista, en vivo, con Deshacer; modo edición se mantiene) |
 | Programa en el panel derecho + días automáticos | ✅ | `js/programa-panel.js`, `js/ficha.js` (programa) | — (tarjetas en tiempo real; sin «Separar día») |
 | Código (se perdía al recargar, no se exportaba ni se generaba al importar) | ✅ corregido 2026-09-23 | `js/edicion.js` (`codigoAuto`), `js/exportar.js` (`_codigo`), `js/estado.js` (`loadStorage`, `doReset`) | — |
