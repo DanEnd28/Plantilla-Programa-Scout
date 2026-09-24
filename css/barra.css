@@ -172,12 +172,12 @@ body.sidebar-colapsada .topbar { left: var(--sidebar-w-collapsed); }
   transition: background .15s, transform .15s;
 }
 
-.btn-edit { background: #e67e22; }
-.btn-edit:hover { background: #cf6d15; }
+.btn-edit { background: #b25e14; }
+.btn-edit:hover { background: #9a5010; }
 .btn-edit.on { background: #c0392b; box-shadow: 0 0 0 2px white; }
 
-.btn-pdf { background: #1e8e3e; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); }
-.btn-pdf:hover { background: #17722f; transform: translateY(-1px); }
+.btn-pdf { background: #1c863a; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); }
+.btn-pdf:hover { background: #166d2f; transform: translateY(-1px); }
 
 /* ── BARRA LATERAL (escritorio) ── */
 .sidebar {
@@ -291,7 +291,8 @@ body.sidebar-colapsada .side-lbl { display: none; }
 .side-item .nav-ico { font-size: 17px; flex-shrink: 0; width: 22px; text-align: center; }
 .side-item .nav-txt { overflow: hidden; text-overflow: ellipsis; }
 
-body.sidebar-colapsada .side-item .nav-txt { display: none; }
+/* Contraída: el texto se oculta a la vista pero lo sigue leyendo el lector de pantalla */
+body.sidebar-colapsada .side-item .nav-txt, body.sidebar-colapsada .side-collapse .nav-txt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 body.sidebar-colapsada .side-item { justify-content: center; padding: 0; }
 
 /* Edición: icono/texto según body.edit-mode, sin JS extra (ver js/edicion.js -> toggleEdit) */
@@ -323,7 +324,7 @@ body.edit-mode .bb-item[data-edit-mirror] { color: #ffb0b0; }
 .side-collapse:hover { background: rgba(0, 0, 0, .4); color: white; }
 .side-collapse-ico { font-size: 16px; width: 22px; text-align: center; }
 body.sidebar-colapsada .side-collapse { justify-content: center; padding: 0; }
-body.sidebar-colapsada .side-collapse .nav-txt { display: none; }
+
 body.sidebar-colapsada .side-collapse-ico { transform: rotate(180deg); }
 
 /* ── DESPLAZAMIENTO DEL CONTENIDO ── */
@@ -532,3 +533,8 @@ body.sidebar-colapsada .pages-wrap { margin-left: var(--sidebar-w-collapsed); }
 @media print {
   .tb-nube { display: none !important; }
 }
+
+/* P7: exportar deshabilitado mientras la ficha está vacía (js/exportar.js → exportarActualizar) */
+[data-requiere-contenido]:disabled { opacity: .45; cursor: not-allowed; filter: grayscale(.4); transform: none; box-shadow: none; }
+.side-item[data-requiere-contenido]:disabled:hover, .bs-item[data-requiere-contenido]:disabled:hover { background: none; }
+.side-item[data-requiere-contenido]:disabled:hover::before { display: none; }

@@ -13,6 +13,7 @@
   .bottom-sheet,
   .bottom-sheet-backdrop,
   .cfg-panel,
+  .sec-cta,
   .overlay,
   .add-btn,
   .del-btn,
@@ -90,6 +91,22 @@
 
   .sec {
     page-break-inside: avoid;
+  }
+
+  /* El programa puede ocupar más de una hoja: se parte entre filas (las filas no se cortan y el encabezado de la
+     tabla se repite). Si no, Chrome lo empuja entero a la hoja siguiente y deja la página 2 vacía. */
+  .sec.sec-prog {
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+
+  .prog-table thead {
+    display: table-header-group;
+  }
+
+  .sec-prog .sec-head {
+    break-after: avoid;
+    page-break-after: avoid;
   }
 
   /* El grupo puede partirse ENTRE secciones (cada .sec individual ya

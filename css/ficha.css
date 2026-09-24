@@ -421,7 +421,7 @@
   font-family: var(--ff-h);
   font-weight: 800;
   font-size: 11px;
-  color: var(--cm, #622599);
+  color: var(--cm-dk, #4a1a75);
   width: 28px;
 }
 
@@ -450,12 +450,12 @@
 
 .a-corp {
   background: #E8F5E9;
-  color: #2e7d32;
+  color: #2a7530;
 }
 
 .a-crea {
   background: #FFF3E0;
-  color: #e65100;
+  color: #c24400;
 }
 
 .a-cara {
@@ -465,7 +465,7 @@
 
 .a-afec {
   background: #FFFDE7;
-  color: #f57f17;
+  color: #b55908;
 }
 
 .a-soci {
@@ -532,33 +532,39 @@
   border-radius: 0 0 4px 4px;
 }
 
+/* ODS: elegidos con su color oficial y texto de contraste AA (--ods-txt, js/ficha.js → odsTexto);
+   no elegidos en blanco con borde de color y texto oscuro. Solo los elegidos se imprimen. */
 .ods-chip {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
-  padding: 2px 7px;
+  gap: 3px;
+  padding: 2px 7px 2px 5px;
   border-radius: 20px;
+  border: 1.5px solid var(--ods);
+  background: white;
   font-family: var(--ff-h);
   font-weight: 700;
   font-size: 8px;
-  color: white;
+  color: #3b3350;
   cursor: pointer;
-  transition: all .14s;
+  transition: background .14s, transform .14s;
   user-select: none;
-  opacity: .25;
 }
 
+.ods-ico { font-size: 9px; line-height: 1; }
+
 .ods-chip.on {
-  opacity: 1;
+  background: var(--ods);
+  color: var(--ods-txt);
 }
 
 .ods-chip:hover {
-  transform: scale(1.05);
-  opacity: .75;
+  transform: scale(1.04);
+  background: color-mix(in srgb, var(--ods) 14%, white);
 }
 
 .ods-chip.on:hover {
-  opacity: 1;
+  background: var(--ods);
 }
 
 /* ── PROGRAMA ── */

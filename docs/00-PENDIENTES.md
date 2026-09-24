@@ -12,27 +12,32 @@
 | Erratas del Excel en I.L. (17) | 🟡 | Documentadas con versión corregida en [indicadores-de-logro.md](indicadores-de-logro.md#erratas-del-excel-y-versión-corregida) | Aplicarlas en el código y en `programas/**/*.json` → **P9** |
 | I.L. de Comunidad | ⏳ | — | La ASV/Excel aún no los tiene. No inventar; esperar la fuente oficial |
 | Nube (Neon) desactivada | ✅ | `js/config.js` (`nube: false`), `js/nube.js`, `_futuro/nube-neon/` | Reactivar en V2 |
-| `ayuda.html` habla de «Guardar en la nube» y de Programas en la nube | ⏳ | `ayuda.html` (sección «Guardar en la nube») | Actualizar el texto cuando se haga P2/P8 (no se tocó para no mezclar cambios) |
+| `ayuda.html` actualizada | ✅ 2026-09-24 | `ayuda.html` | Reescrita a pedido de Danny: pantalla (barra lateral, header, panel derecho, móvil), menú, Configuración, Programa, Secciones, campos, I.L., ODS, biblioteca, PDF, Tico, páginas extra y teclado. Se quitaron la nube, «Guardar HTML», «Separar día» y la hora manual |
 | `v1.html` archivada | ✅ | `_archivo/v1.html` | Tras el push, la URL pública `…/v1.html` dará 404 (nadie la enlazaba) |
 | Dividir `index.html` (P1) | ✅ | `css/*.css`, `js/*.js` (ver [../CLAUDE.md](../CLAUDE.md)) | — (verificado antes/después con navegador headless: idéntico) |
 | «Guardar HTML» (botón 💾) | ✅ eliminado 2026-09-23 | — | Decisión de Danny: Exportar JSON ya lo cubre. En «Restablecer», la opción de guardar antes de limpiar ahora exporta JSON (`rst-json`) |
 | Claves READ/EDIT/ADMIN | ⏸️ no necesarias por ahora | `_futuro/nube-neon/.env.local` | Generadas pero sin uso hasta reactivar la nube |
 | Script de verificación headless | ✅ | `_herramientas/verificar.mjs` | Ver cabecera del archivo para usarlo |
 | Acceso a Promesa y Ley de la Manada | ✅ | `programas.html` (bajo las pestañas, en «Todas» y «Manada») | — |
-| Pestaña elegida no se resalta en Programas | ⏳ | `js/programas.js` → `cargar()` | Con la nube apagada, `cargar()` sale antes de `pintarTabs()`. Se resuelve en **P8** (biblioteca)
+| Pestaña elegida no se resalta en Programas | ✅ | `js/biblioteca.js` | Resuelto con la biblioteca nueva (P8); el bloque de la nube solo se carga con `SCOUT_CONFIG.nube`
 | Claves de la nube (local) | ✅ | `_futuro/nube-neon/.env.local` (ignorado por git) | En producción van en las variables de entorno de Vercel |
 | Barra lateral / superior / móvil | ✅ | `css/barra.css`, `js/ui.js` (`toggleSidebar`, `toggleMoreMenu`, `toggleBottomSheet`), `index.html` | — (verificado: escritorio con barra lateral retráctil, móvil con barra inferior + hoja "Más", 0 errores de consola, 360 px sin scroll horizontal, PDF sin barras) |
 | «Restablecer» no borraba las páginas extra | ✅ corregido 2026-09-23 | `js/estado.js` → `doReset()` | — (ahora vacía `#extraPagesContainer` y `extraPages`) |
 | Asistente de inicio + Tico | ⏭️ saltado | — | Danny decidió no hacerlo (2026-09-23) |
 | Configuración en vivo (P4) | ✅ | `js/config-panel.js`, `css/panel.css`, `index.html` (`#cfgPanel`) | — (panel derecho, una sola vista, en vivo, con Deshacer; modo edición se mantiene) |
 | Programa en el panel derecho + días automáticos | ✅ | `js/programa-panel.js`, `js/ficha.js` (programa) | — (tarjetas en tiempo real; sin «Separar día») |
-| `ayuda.html` menciona «Separar día» y el modal de agregar momento | ⏳ | `ayuda.html` | Actualizar el texto cuando Danny lo pida (regla: no tocar `ayuda.html` sin pedido) |
 | Código (se perdía al recargar, no se exportaba ni se generaba al importar) | ✅ corregido 2026-09-23 | `js/edicion.js` (`codigoAuto`), `js/exportar.js` (`_codigo`), `js/estado.js` (`loadStorage`, `doReset`) | — |
-| Índice con progreso | ⏳ | — | **P5** |
-| Selector I.L. y ODS | ⏳ | modal `mInd`, `ODS_LIST` | **P6** |
-| Exportar solo con contenido | ⏳ | barra | **P7** |
-| Biblioteca de programas | ⏳ | `programas.html` (hoy muestra aviso), `programas/` | **P8** (manifiesto `programas/index.json` + biblioteca local) |
-| Accesibilidad y PDF A4 | ⏳ | — | **P10** |
+| Índice con progreso (P5) | ✅ | `js/indice.js`, `css/indice.css` | — |
+| Selector I.L. y ODS (P6) | ✅ | `js/selector-il.js`, `css/modales.css`, `renderODS` en `js/ficha.js` | — |
+| Exportar solo con contenido (P7) | ✅ | `js/exportar.js` (`exportarActualizar`), `[data-requiere-contenido]` | — |
+| Modales diminutos en el celular (`.pages-wrap` sin cerrar) | ✅ corregido 2026-09-24 | `index.html` | — |
+| Biblioteca de programas (P8) | ✅ | `programas.html`, `js/biblioteca*.js`, `programas/index.json` | Regenerar el manifiesto con `_herramientas/manifiesto.py` al agregar programas |
+| Erratas de I.L. en la app (P9) | ✅ | `js/datos-il.js` (`IL_ERRATAS`), `_herramientas/erratas_il.py` | — |
+| Accesibilidad y PDF (P10) | ✅ | `js/accesibilidad.js`, `_herramientas/accesibilidad.mjs`, `css/impresion.css` | — (axe 0 problemas; Carta y A4 sin hojas vacías) |
+| ¿Carta o A4? | ❓ | `css/impresion.css` (`@page letter`), `--page-w: 8.5in` | La ficha está diseñada en **Carta** (lo usual en Venezuela); en A4 se imprime ajustada al ancho, sin cortes. Pasarla a A4 nativo es un cambio de diseño: decidir |
+| Skill de Claude `tico-scout` | ✅ 2026-09-24 | `~/.claude/skills/tico-scout/` (respaldo en `~/.claude/skills-respaldos/tico-scout-2026-09-24`) | I.L. de Manada y Tropa alineados al listado oficial (29 textos; lista en [indicadores-de-logro.md](indicadores-de-logro.md)); JSON con `_rama`, `_hora_ini`/`_hora_cierre`, varios días con `dia`/`_horas_dia`, sin `_codigo`; colores AA y juegos en bloques partibles. El prompt del Gem (`tico-prompt-gemini.md`) recibió lo mismo: **pegarlo en el Gem de Gemini** para que Tico en Gemini también lo aplique |
+| Clan en Tico | 🟡 | skill `tico-scout` → `references/indicadores-clan.md` (regla 21) | ✅ Tiene los 143 I.L. oficiales del Clan (E5/E6). ⏳ No hay reglas de planificación para el Clan: por decisión de Danny, Tico **pregunta** al adulto (tratamiento, horario, lugar, estructura) en vez de usar las de Manada/Tropa. Completar cuando haya reglas. También se corrigió la etapa de Tropa en la skill: `E3`/`E4` (antes decía 1.ª/2.ª y el JSON solo permitía `E1`/`E2`) |
+| 29 diferencias de redacción de I.L. (posibles erratas extra) | ❓ | [indicadores-de-logro.md](indicadores-de-logro.md#diferencias-con-la-versión-anterior-de-tico-por-decidir) | Decidir si algunas (sobre todo tildes) se suman a la tabla de erratas |
 | Aviso n8n por correo | 🟡 | [n8n/](n8n/COMO-INSTALAR.md) | Importar en una instancia, credenciales, y el botón «Guardar definitivo» en la Ficha |
 | Hosting futuro | ❓ | [guias/01-evaluacion-hosting.md](guias/01-evaluacion-hosting.md) | Elegir: online gratis vs. servidor propio (Contabo) |
 | Migración Next.js + NestJS | 💤 | [migracion/plan-migracion-por-pasos.md](migracion/plan-migracion-por-pasos.md) | Empezar después de la V1 |

@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "programas": [
+    {
+      "titulo": "DESAFÍO DE NUTRICIÓN — PROGRAMA 2: COCINEROS Y CAMPEONES DE LA SELVA",
+      "rama": "manada",
+      "fecha": "2026-09-19",
+      "fechaFin": "2026-09-19",
+      "momentos": 11,
+      "ruta": "programas/2026-09-19.json"
+    },
+    {
+      "titulo": "LA VOZ DE BAGHEERA",
+      "rama": "manada",
+      "fecha": "2026-09-05",
+      "fechaFin": "2026-09-05",
+      "momentos": 10,
+      "ruta": "programas/2026-09-05.json"
+    },
+    {
+      "titulo": "CAZADORES DE MÁXIMAS EN EL MUSEO DE LA CULTURA",
+      "rama": "manada",
+      "fecha": "2026-08-29",
+      "fechaFin": "2026-08-29",
+      "momentos": 7,
+      "ruta": "programas/2026-08-29.json"
+    },
+    {
+      "titulo": "HATHI Y EL TEMBLOR DE LA SELVA",
+      "rama": "manada",
+      "fecha": "2026-07-25",
+      "fechaFin": "2026-07-25",
+      "momentos": 10,
+      "ruta": "programas/2026-07-25.json"
+    },
+    {
+      "titulo": "CADA COSA EN SU LUGAR",
+      "rama": "manada",
+      "fecha": "2026-06-20",
+      "fechaFin": "2026-06-20",
+      "momentos": 10,
+      "ruta": "programas/2026-06-20.json"
+    },
+    {
+      "titulo": "DESAFÍO DE NUTRICIÓN — PROGRAMA 3: MANOS A LA OBRA — SOMOS PROMOTORES DE SALUD",
+      "rama": "manada",
+      "fecha": "2026-06-06",
+      "fechaFin": "2026-06-06",
+      "momentos": 9,
+      "ruta": "programas/desafio-nutricion/programa-3-animar.json"
+    },
+    {
+      "titulo": "DESAFÍO DE NUTRICIÓN — PROGRAMA 2: COCINEROS Y CAMPEONES DE LA SELVA",
+      "rama": "manada",
+      "fecha": "2026-05-30",
+      "fechaFin": "2026-05-30",
+      "momentos": 10,
+      "ruta": "programas/desafio-nutricion/programa-2-expandir.json"
+    },
+    {
+      "titulo": "LOS SECRETOS DE LA SELVA SANA",
+      "rama": "manada",
+      "fecha": "2026-05-23",
+      "fechaFin": "2026-05-23",
+      "momentos": 11,
+      "ruta": "programas/desafio-nutricion/programa-1-explorar.json"
+    },
+    {
+      "titulo": "JUNTOS SOMOS FUERTES",
+      "rama": "manada",
+      "fecha": "2026-05-17",
+      "fechaFin": "2026-05-17",
+      "momentos": 9,
+      "ruta": "programas/2026-05-17.json"
+    }
+  ]
+}

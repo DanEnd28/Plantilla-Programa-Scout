@@ -37,14 +37,22 @@ function applyLogo(key, src) {
 }
 
 /* ─── ODS ─── */
+// Texto blanco o casi negro según cuál cumpla contraste AA (≥ 4.5) sobre el color oficial del ODS
+function odsTexto(hex) {
+  const l = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16) / 255).map(c => c <= .03928 ? c / 12.92 : ((c + .055) / 1.055) ** 2.4);
+  const L = .2126 * l[0] + .7152 * l[1] + .0722 * l[2];
+  return 1.05 / (L + .05) >= 4.5 ? '#ffffff' : '#1a1a1a';
+}
 function renderODS() {
   const wrap = document.getElementById('ods-wrap'); wrap.innerHTML = '';
-  ODS_LIST.forEach(o => {
+  ODS_LIST.forEach((o, i) => {
     const on = odsActivos.has(o.num);
     const c = document.createElement('div');
     c.className = 'ods-chip' + (on ? ' on' : ''); c.dataset.active = on ? 'true' : 'false';
-    c.style.background = o.color; c.innerHTML = `<b>${o.num}</b> ${o.nombre}`;
-    c.title = `ODS ${o.num}: ${o.nombre}`;
+    c.style.setProperty('--ods', o.color); c.style.setProperty('--ods-txt', odsTexto(o.color));
+    c.innerHTML = `<span class="ods-ico" aria-hidden="true">${ODS_ICONOS[i] || ''}</span><b>${o.num}</b> ${o.nombre}`;
+    c.title = `ODS ${o.num}: ${o.nombre}` + (on ? ' (clic para quitar)' : ' (clic para agregar)');
+    c.setAttribute('role', 'button'); c.setAttribute('aria-pressed', on); c.tabIndex = 0;
     c.onclick = () => { on ? odsActivos.delete(o.num) : odsActivos.add(o.num); renderODS(); saveStorage(); };
     wrap.appendChild(c);
   });
@@ -99,13 +107,18 @@ function renderIndPanel() {
   const rama = document.getElementById('ind-rama').value;
   const panel = document.getElementById('ind-panel'); panel.innerHTML = '';
   const data = INDICADORES[rama];
-  if (!data) { panel.innerHTML = `<p style="color:#aaa;font-size:10px;padding:10px">Sin indicadores. Importa un JSON y haz 💾 HTML.</p>`; return; }
+  if (!data) {
+    panel.innerHTML = `<p class="il-vacio">Esta rama aún no tiene Indicadores de Logro oficiales. Puedes agregar uno manualmente abajo.</p>`;
+    if (typeof ilPreparar === 'function') ilPreparar();
+    return;
+  }
   Object.entries(data).forEach(([area, etapas]) => {
     const grp = document.createElement('div'); grp.className = 'ind-grp';
     const title = document.createElement('div'); title.className = 'ind-grp-title';
     title.innerHTML = `${area} <span>▶</span>`;
     const items = document.createElement('div'); items.className = 'ind-items';
-    title.onclick = () => { items.classList.toggle('open'); title.querySelector('span').textContent = items.classList.contains('open') ? '▼' : '▶'; };
+    title.setAttribute('role', 'button'); title.tabIndex = 0; title.setAttribute('aria-expanded', 'false');
+    title.onclick = () => { const abierto = items.classList.toggle('open'); title.querySelector('span').textContent = abierto ? '▼' : '▶'; title.setAttribute('aria-expanded', abierto); };
     Object.entries(etapas).forEach(([etapa, lista]) => lista.forEach(texto => {
       const item = document.createElement('label'); item.className = 'ind-item';
       const chk = document.createElement('input'); chk.type = 'checkbox';
@@ -115,6 +128,7 @@ function renderIndPanel() {
     }));
     grp.append(title, items); panel.appendChild(grp);
   });
+  if (typeof ilPreparar === 'function') ilPreparar();
 }
 function applyInd() {
   document.querySelectorAll('#ind-panel input:checked').forEach(chk => {
@@ -464,22 +478,25 @@ function splitExtraPageIfNeeded(id, depth) {
   const items = Array.from(root.children);
   if (items.length < 2) return; // nada que partir sin cortar contenido
 
-  // Agrupar por actividad: cada grupo arranca en un <h4>
-  const groups = [];
+  // Agrupar por actividad: cada grupo arranca en un título (<h2>–<h4>; Tico usa <h3> o <h4> según el programa).
+  // Sin títulos, se parte entre bloques (párrafos, listas, tablas) para que ninguna hoja se desborde.
+  let groups = [];
   items.forEach(el => {
-    if (el.tagName === 'H4' || !groups.length) groups.push([]);
+    if (/^H[2-4]$/.test(el.tagName) || !groups.length) groups.push([]);
     groups[groups.length - 1].push(el);
   });
+  if (groups.length < 2) groups = items.map(el => [el]);
   if (groups.length < 2) return;
 
   const nonBodyH = pageBlock.scrollHeight - body.scrollHeight;
   const bodyMaxH = maxH - nonBodyH;
 
-  let acc = 0, splitAt = -1;
-  for (let i = 0; i < groups.length; i++) {
-    const gH = groups[i].reduce((s, el) => s + el.offsetHeight, 0);
-    if (i > 0 && acc + gH > bodyMaxH) { splitAt = i; break; }
-    acc += gH;
+  // Posición real del final de cada grupo (offsetHeight no cuenta los márgenes entre párrafos y listas)
+  const limite = body.getBoundingClientRect().top + bodyMaxH;
+  const fondo = el => el.getBoundingClientRect().bottom + (parseFloat(getComputedStyle(el).marginBottom) || 0);
+  let splitAt = -1;
+  for (let i = 1; i < groups.length; i++) {
+    if (fondo(groups[i][groups[i].length - 1]) > limite) { splitAt = i; break; }
   }
   if (splitAt < 1) return; // no hay forma de partir sin dejar la primera hoja vacía
 

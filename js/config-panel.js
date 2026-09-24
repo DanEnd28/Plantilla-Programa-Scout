@@ -114,16 +114,20 @@ function cfgRellenar() {
 }
 
 /* El panel derecho tiene dos vistas: 'config' (este archivo) y 'programa' (js/programa-panel.js) */
-const PANEL_TITULOS = { config: '⚙️ Configuración', programa: '🗓️ Programa' };
+const PANEL_TITULOS = { config: '⚙️ Configuración', programa: '🗓️ Programa', indice: '📋 Secciones' };
 function panelVista() { return document.body.classList.contains('cfg-abierto') ? document.body.dataset.panel : null; }
 function panelMostrar(vista) {
   document.body.dataset.panel = vista;
   document.querySelectorAll('#cfgPanel [data-vista]').forEach(el => el.hidden = el.dataset.vista !== vista);
   $cfg('cfgTitle').textContent = PANEL_TITULOS[vista];
   $cfg('cfgUndo').hidden = vista !== 'config';
+  if (!document.body.classList.contains('cfg-abierto')) panelFocoPrevio = document.activeElement;
   document.body.classList.add('cfg-abierto');
   scalePages();
+  // El foco entra al panel (teclado / lector de pantalla); al cerrarlo vuelve al botón que lo abrió
+  setTimeout(() => $cfg('cfgTitle').focus({ preventScroll: true }), 30);
 }
+let panelFocoPrevio = null;
 
 function openConfigPanel() {
   if (panelVista() === 'programa') progLimpiarVacios();
@@ -136,6 +140,8 @@ function closeConfigPanel() {
   if (panelVista() === 'programa') progLimpiarVacios();
   document.body.classList.remove('cfg-abierto');
   scalePages();
+  if (panelFocoPrevio && document.contains(panelFocoPrevio) && panelFocoPrevio.offsetParent !== null) panelFocoPrevio.focus();
+  panelFocoPrevio = null;
 }
 function toggleConfigPanel() {
   if (panelVista() === 'config') closeConfigPanel(); else openConfigPanel();

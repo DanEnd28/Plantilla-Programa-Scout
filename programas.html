@@ -6,6 +6,7 @@
   <title>Programas — Grupo Scout La Salle Guaparo</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/programas.css">
+  <link rel="stylesheet" href="css/biblioteca.css">
 </head>
 
 <body>
@@ -14,17 +15,69 @@
       <img class="header-logo" src="images/logo-flor-transparent.png" alt="Flor de lis">
       <div class="header-text">
         <h1>📚 Programas</h1>
-        <p>Grupo Scout La Salle Guaparo · Programas guardados</p>
+        <p>Grupo Scout La Salle Guaparo · Programas del grupo y tu biblioteca</p>
       </div>
       <div class="header-actions">
-        <a class="pill-btn" href="index.html">✏️ Ir a la plantilla</a>
+        <a class="pill-btn" href="index.html">✏️ Ir a la ficha</a>
         <a class="pill-btn" href="ayuda.html">❓ Ayuda</a>
-        <button class="pill-btn" id="adminBtn" type="button" onclick="clickAdmin()">🔐 Admin</button>
+        <button class="pill-btn" id="adminBtn" type="button" onclick="clickAdmin()" hidden>🔐 Admin</button>
       </div>
     </div>
   </header>
 
   <main class="page-wrap">
+    <nav class="tabs" role="tablist" aria-label="Filtrar por rama" id="bTabs">
+      <button class="tab" role="tab" data-rama="" aria-selected="true"><span class="tab-ico">⚜️</span><span>Todas<small data-bcount="">—</small></span></button>
+      <button class="tab" role="tab" data-rama="manada"><img src="images/rama-manada.jpg" alt=""><span>Manada<small data-bcount="manada">—</small></span></button>
+      <button class="tab" role="tab" data-rama="tropa"><img src="images/rama-tropa.jpg" alt=""><span>Tropa<small data-bcount="tropa">—</small></span></button>
+      <button class="tab" role="tab" data-rama="comunidad"><img src="images/rama-comunidad.jpg" alt=""><span>Comunidad<small data-bcount="comunidad">—</small></span></button>
+      <button class="tab" role="tab" data-rama="clan"><img src="images/rama-clan.jpg" alt=""><span>Clan<small data-bcount="clan">—</small></span></button>
+      <button class="tab" role="tab" data-rama="grupal"><span class="tab-ico">⚪</span><span>Grupal<small data-bcount="grupal">—</small></span></button>
+    </nav>
+
+    <div class="recursos-rama" id="bRecursos">
+      <a class="pill-btn" href="promesa-ley-manada.html">🐺 Promesa y Ley de la Manada</a>
+    </div>
+
+    <div class="b-barra">
+      <input class="search" id="bQ" type="search" placeholder="🔎 Buscar por nombre de la actividad…" autocomplete="off" aria-label="Buscar programa">
+      <select class="b-sel" id="bFuente" aria-label="Origen">
+        <option value="">Todos los programas</option>
+        <option value="repo">📚 Del grupo</option>
+        <option value="local">💾 Mi biblioteca</option>
+      </select>
+      <div class="b-vista" role="group" aria-label="Vista">
+        <button type="button" class="on" data-vista="tarjetas" aria-pressed="true">▦ Tarjetas</button>
+        <button type="button" data-vista="calendario" aria-pressed="false">📅 Calendario</button>
+      </div>
+      <span class="count" id="bCount"></span>
+    </div>
+
+    <section class="list" id="bLista" aria-live="polite"><div class="empty">Cargando programas…</div></section>
+
+    <section class="b-cal" id="bCal" hidden aria-live="polite">
+      <div class="b-cal-h">
+        <button type="button" class="btn" id="bCalAnt" aria-label="Mes anterior">‹</button>
+        <h2 id="bCalMes"></h2>
+        <button type="button" class="btn" id="bCalSig" aria-label="Mes siguiente">›</button>
+        <button type="button" class="btn" id="bCalHoy">Hoy</button>
+      </div>
+      <div class="b-cal-grid" id="bCalGrid"></div>
+    </section>
+
+    <section class="b-mi" aria-labelledby="bMiTitulo">
+      <h2 class="b-h2" id="bMiTitulo">💾 Mi biblioteca (en este navegador)</h2>
+      <p class="b-nota">Los programas que guardas desde la Ficha con <b>💾 Guardar en mi biblioteca</b> quedan solo en este navegador. Para pasarlos a otro equipo o tener un respaldo, exporta tu biblioteca e impórtala allá.</p>
+      <div class="b-uso"><div class="b-uso-barra"><span id="bUsoBarra"></span></div><span id="bUsoTxt"></span></div>
+      <div class="b-uso-aviso" id="bUsoAviso" hidden></div>
+      <div class="card-actions">
+        <button type="button" class="btn btn-primary" id="bExportar">⬇️ Exportar mi biblioteca</button>
+        <label class="btn b-file">⬆️ Importar biblioteca o ficha<input type="file" accept=".json,application/json" id="bImportar"></label>
+      </div>
+    </section>
+
+  <section class="nube-seccion" id="nubeSeccion" hidden>
+    <h2 class="b-h2">☁️ Programas en la nube del grupo</h2>
     <nav class="tabs" role="tablist" aria-label="Ramas" id="tabs">
       <button class="tab" role="tab" data-rama=""><span class="tab-ico">⚜️</span><span>Todas<small data-count="">—</small></span></button>
       <button class="tab" role="tab" data-rama="manada"><img src="images/rama-manada.jpg" alt=""><span>Manada<small data-count="manada">—</small></span></button>
@@ -56,6 +109,8 @@
 
     <p class="foot">Cada vez que alguien guarda un programa se crea una nueva versión (las anteriores quedan en el historial).<br>
       Al guardar se registran el nombre del autor (si lo escribe), datos técnicos del dispositivo, la IP y la ubicación aproximada.</p>
+  </section>
+
   </main>
 
   <div class="overlay" id="mHist" role="dialog" aria-modal="true" aria-labelledby="histTitle">
@@ -86,6 +141,15 @@
 
   <script src="js/config.js"></script>
   <script src="js/dialogo.js"></script>
-  <script src="js/programas.js"></script>
+  <script src="js/biblioteca-datos.js"></script>
+  <script src="js/biblioteca.js"></script>
+  <script>
+    // La nube (V2, archivada) solo se carga si SCOUT_CONFIG.nube está activo
+    if (window.SCOUT_CONFIG && SCOUT_CONFIG.nube) {
+      document.getElementById('nubeSeccion').hidden = false;
+      document.getElementById('adminBtn').hidden = false;
+      const s = document.createElement('script'); s.src = 'js/programas.js'; document.body.appendChild(s);
+    }
+  </script>
 </body>
 </html>

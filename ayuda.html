@@ -263,6 +263,8 @@
       margin-top: 14px;
     }
     .note strong { color: var(--yellow); }
+    kbd { font-family: var(--ff-b); font-size: 11px; padding: 1px 6px; border-radius: 4px; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.08); color: white; }
+    :focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
@@ -284,6 +286,7 @@
         <p>Grupo Scout La Salle Guaparo · Guía de uso</p>
       </div>
       <a class="back-btn" href="index.html">← <span>Volver a la ficha</span></a>
+      <a class="back-btn" href="programas.html">📚 <span>Programas</span></a>
     </div>
   </header>
 
@@ -291,138 +294,125 @@
 
     <div class="intro-card">
       <h2>¿Qué es esta herramienta?</h2>
-      <p>La <strong>Ficha Técnica Scout</strong> es una plantilla digital para planificar actividades educativas del Movimiento Scout venezolano (ASV). Permite llenar todos los campos de una ficha técnica directamente en el navegador, sin instalar nada.</p>
-      <p>Los datos se guardan automáticamente en tu navegador (localStorage). Puedes exportar la ficha como <strong>PDF</strong> para imprimir o como <strong>HTML</strong> para guardar y editar más tarde.</p>
+      <p>La <strong>Ficha Técnica Scout</strong> es una plantilla para planificar las actividades de la Manada, la Tropa, la Comunidad y el Clan según el Programa de Jóvenes de la ASV: datos, objetivos, indicadores de logro (I.L.), ODS y el programa por momentos. Funciona en el navegador, sin instalar nada y sin cuentas.</p>
+      <p>Todo lo que escribes <strong>se guarda solo en este navegador</strong>. Para tener varios programas usa <strong>💾 Guardar en biblioteca</strong>; para pasarlos a otro equipo o compartirlos, <strong>exporta el JSON</strong>. Cuando termines, <strong>📄 Exportar PDF</strong> te da la ficha lista para imprimir.</p>
     </div>
 
-    <!-- ── BARRA DE HERRAMIENTAS ── -->
+    <!-- ── PANTALLA ── -->
     <div class="section">
-      <div class="section-title">🔧 Barra de herramientas</div>
+      <div class="section-title">🧭 Cómo está organizada la pantalla</div>
       <div class="cards">
         <div class="card">
-          <div class="card-icon">✏️</div>
-          <h4>Editar ficha</h4>
-          <p>Activa el <strong>modo edición</strong>. Sin él, los campos no son editables (protección contra cambios accidentales). Cuando está activo, el botón se pone rojo.</p>
+          <div class="card-icon">📚</div>
+          <h4>Barra lateral (izquierda)</h4>
+          <p>Todo el menú, agrupado en <strong>Ficha</strong>, <strong>Contenido</strong>, <strong>Datos</strong> y <strong>Ayuda</strong>. Con <strong>« Contraer menú</strong> (abajo) queda solo con íconos; la app recuerda cómo la dejaste.</p>
         </div>
         <div class="card">
-          <div class="card-icon">⚙️</div>
-          <h4>Configurar</h4>
-          <p>Abre el panel de configuración general: nombre del grupo, rama (Manada / Tropa / Comunidad / Clan / Grupal), fechas de la actividad, hora de inicio y cierre, responsable y código.</p>
+          <div class="card-icon">🟣</div>
+          <h4>Barra superior</h4>
+          <p>El título, el estado (<em>Listo</em>, <em>Guardado</em>…), el progreso <strong>📋 n/5</strong>, y a la derecha <strong>✏️ Editar ficha</strong>, <strong>📄 Exportar PDF</strong> y <strong>⋯</strong> (ahí está <strong>Restablecer</strong>).</p>
         </div>
         <div class="card">
-          <div class="card-icon">📊</div>
-          <h4>Indicadores de logro</h4>
-          <p>Abre el selector de indicadores del Programa de Jóvenes ASV. Filtra por Área de Crecimiento y Estadio. También puedes escribir un indicador manual.</p>
+          <div class="card-icon">🗂️</div>
+          <h4>Panel derecho</h4>
+          <p>Se abre al lado de la ficha y muestra una cosa a la vez: <strong>⚙️ Configuración</strong>, <strong>🗓️ Programa</strong> o <strong>📋 Secciones</strong>. Los cambios se ven al instante en la ficha. Se cierra con <strong>✕</strong> o con la tecla <kbd>Esc</kbd>.</p>
         </div>
         <div class="card">
-          <div class="card-icon">➕</div>
-          <h4>Agregar momento</h4>
-          <p>Agrega una fila al programa de la actividad. Completa actividad, descripción, materiales y responsable. La hora puede ser automática o manual.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📅</div>
-          <h4>Separar día</h4>
-          <p>Inserta un separador de día en la tabla del programa. Útil para actividades multi-día como acantonamientos o campamentos.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🤖</div>
-          <h4>Preguntarle a Tico</h4>
-          <p>Abre a <strong>Tico</strong>, el asistente scout de IA del grupo, en otra pestaña. Tico puede ayudarte a redactar objetivos, indicadores, ambientaciones y más.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📤 / 📥</div>
-          <h4>Exportar / Importar datos</h4>
-          <p>Guarda todos los datos en un archivo <code>.json</code> para respaldar o continuar en otro dispositivo. Importa un JSON guardado previamente para restaurar el estado de la ficha.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🗑️</div>
-          <h4>Restablecer</h4>
-          <p>Borra todos los campos y limpia el localStorage. <strong>Es irreversible.</strong> Antes de hacerlo, la herramienta te ofrece descargar un HTML de respaldo.</p>
+          <div class="card-icon">📱</div>
+          <h4>En el celular</h4>
+          <p>Abajo aparece una barra con <strong>Editar</strong>, <strong>Indicadores</strong>, <strong>Programa</strong>, <strong>PDF</strong> y <strong>⋯ Más</strong>. En <em>Más</em> está el resto: Configurar, Secciones, biblioteca, exportar e importar, Programas, Tico, Ayuda y Restablecer.</p>
         </div>
       </div>
     </div>
 
-    <!-- ── PROGRAMA DE ACTIVIDAD ── -->
+    <!-- ── MENÚ ── -->
     <div class="section">
-      <div class="section-title">🕐 Programa de la actividad — horas</div>
+      <div class="section-title">🔧 Qué hace cada opción del menú</div>
+      <table class="ref-table">
+        <thead><tr><th>Opción</th><th>Para qué sirve</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag">✏️ Editar ficha</span></td><td>Activa el <strong>modo edición</strong> para escribir directo en la ficha (evita cambios por accidente). Mientras está activo el botón dice <em>Guardar</em>; al tocarlo de nuevo se guarda y se sale del modo edición.</td></tr>
+          <tr><td><span class="tag">⚙️ Configurar</span></td><td>Abre la configuración general en el panel derecho (ver más abajo).</td></tr>
+          <tr><td><span class="tag">📋 Secciones</span></td><td>Muestra qué secciones están completas y cuáles faltan, con un botón para completar cada una.</td></tr>
+          <tr><td><span class="tag">📊 Indicadores de logro</span></td><td>Abre el selector de I.L. de la ASV.</td></tr>
+          <tr><td><span class="tag">🗓️ Programa</span></td><td>Abre el programa por momentos en tarjetas, en el panel derecho.</td></tr>
+          <tr><td><span class="tag">💾 Guardar en biblioteca</span></td><td>Guarda esta ficha en <strong>tu biblioteca</strong> (en este navegador). Si la vuelves a guardar, se actualiza la misma; no se duplica.</td></tr>
+          <tr><td><span class="tag">📤 Exportar datos</span></td><td>Descarga la ficha como archivo <code>.json</code>: sirve de respaldo, para pasarla a otro equipo o para compartirla.</td></tr>
+          <tr><td><span class="tag">📥 Importar datos</span></td><td>Carga un <code>.json</code> (uno exportado aquí o el que entrega Tico).</td></tr>
+          <tr><td><span class="tag">📚 Programas</span></td><td>Abre la biblioteca: los programas del grupo y los de tu biblioteca, en tarjetas o en calendario.</td></tr>
+          <tr><td><span class="tag">🤖 Preguntarle a Tico</span></td><td>Abre a Tico, el asistente Scout del grupo (Gem de Gemini), en otra pestaña.</td></tr>
+          <tr><td><span class="tag">⋯ → 🗑️ Restablecer</span></td><td>Deja la ficha en blanco. Pide confirmación y te ofrece exportar el JSON antes. <strong>No se puede deshacer.</strong> Se conservan la rama, los I.L. que agregaste a mano y tu biblioteca.</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><strong>Exportar solo con contenido:</strong> los botones de exportar (PDF y JSON) se activan cuando la ficha tiene al menos el nombre de la actividad, un momento o un objetivo. Las secciones opcionales vacías nunca lo impiden.</div>
+    </div>
+
+    <!-- ── CONFIGURACIÓN ── -->
+    <div class="section">
+      <div class="section-title">⚙️ Configuración general</div>
       <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h5>Hora de inicio desde Configuración</h5>
-            <p>En ⚙️ Configurar puedes definir la hora de inicio del día 1 y la hora de cierre del último día. Esas horas aparecen en la cabecera del programa y se usan como punto de partida para el cálculo automático.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h5>Cálculo automático de horas</h5>
-            <p>Cuando agregas un momento con duración (ej: <code>30 min</code>, <code>1h</code>, <code>1h 30min</code>), la hora de la siguiente fila se calcula automáticamente sumando la duración. No necesitas escribir las horas a mano.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h5>Hora manual en "Agregar momento"</h5>
-            <p>Si necesitas fijar una hora específica para un momento (ej: una actividad que siempre empieza a las 12:00), escribe esa hora en el campo <strong>Hora</strong> del modal. Si lo dejas vacío, se calcula automáticamente. La hora manual no altera el cálculo de los momentos siguientes.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-body">
-            <h5>Reordenar filas</h5>
-            <p>En modo edición activo, arrastra la columna <strong>☰</strong> de cualquier fila para cambiar el orden del programa. Las horas se recalculan automáticamente al soltar.</p>
-          </div>
-        </div>
+        <div class="step"><div class="step-num">1</div><div class="step-body">
+          <h5>Todo en un solo lugar y en vivo</h5>
+          <p>Grupo, rama (Manada, Tropa, Comunidad, Clan o Grupal), fechas de inicio y fin, hora de inicio y de cierre, responsable, título del documento y código. Cada cambio se aplica al momento y se guarda solo; no hay botón «Aplicar».</p>
+        </div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body">
+          <h5>↶ Deshacer</h5>
+          <p>Revierte el último cambio del panel, paso a paso.</p>
+        </div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-body">
+          <h5>Código automático</h5>
+          <p>Si dejas el código vacío se genera solo con la fecha de inicio y la rama (formato <code>DDMMAA-R</code>, por ejemplo <code>170526-M</code>) y se actualiza si cambias la fecha o la rama. Si escribes uno propio, se respeta. Al importar un JSON que ya trae código, también se respeta.</p>
+        </div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-body">
+          <h5>Rama y colores</h5>
+          <p>La rama cambia la paleta de colores y el logo de toda la ficha. En <em>Grupal</em> puedes incluir o no a la Comunidad.</p>
+        </div></div>
       </div>
-      <div class="note">
-        <strong>Tip:</strong> Para actividades multi-día, usa <strong>📅 Separar día</strong> para insertar un encabezado de día. La hora de ese separador pasa a ser el nuevo punto de inicio para el cálculo del día siguiente.
+    </div>
+
+    <!-- ── PROGRAMA ── -->
+    <div class="section">
+      <div class="section-title">🗓️ Programa de la actividad</div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-body">
+          <h5>Agregar momentos</h5>
+          <p>Abre <strong>🗓️ Programa</strong> y toca <strong>+ Agregar momento</strong> (o el botón <em>➕ Agregar momento</em> de la ficha). Cada momento es una tarjeta con duración, actividad, descripción, materiales y responsable. Lo que escribes aparece al instante en la tabla de la ficha.</p>
+        </div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body">
+          <h5>Horas automáticas</h5>
+          <p>No escribes horas: cada momento empieza donde termina el anterior. Escribe la duración como <code>15 min</code>, <code>1h</code> o <code>1h 30min</code>. El primer momento empieza a la hora de inicio de la Configuración (o la del encabezado del día).</p>
+        </div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-body">
+          <h5>Actividades de varios días</h5>
+          <p>Si la fecha de fin es posterior a la de inicio, el programa se separa por día <strong>automáticamente</strong>. Cada día tiene su encabezado con <strong>«Empieza [hora]»</strong> para fijar su hora de inicio, y en cada tarjeta eliges a qué día pertenece. Si luego acortas las fechas, los momentos de los días que ya no existen se muestran en el último día (no se borran).</p>
+        </div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-body">
+          <h5>Reordenar y borrar</h5>
+          <p>Arrastra una tarjeta desde <strong>⠿</strong> (también a otro día) o usa <strong>↑ ↓</strong> (en el celular solo ↑ ↓). <strong>🗑</strong> borra el momento y pide confirmación si tiene texto. Si cierras el panel con una tarjeta vacía, se quita sola. En modo edición también puedes editar las celdas y arrastrar las filas de la tabla desde <strong>☰</strong>.</p>
+        </div></div>
       </div>
+    </div>
+
+    <!-- ── SECCIONES ── -->
+    <div class="section">
+      <div class="section-title">📋 Secciones y progreso</div>
+      <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.8);margin-bottom:12px;">El contador <strong>📋 n/5</strong> del header cuenta las secciones <strong>obligatorias</strong>: nombre de la actividad, lugar y fecha, indicadores de logro, ODS y programa. Al abrirlo verás cada sección con <strong>✓</strong> completa, <strong>⚠</strong> incompleta (por ejemplo, «Falta fecha» o «2 sin actividad o duración») o vacía, con un botón para completarla. Un clic en el nombre te lleva a la sección en la ficha.</p>
+      <div class="note"><strong>Opcionales:</strong> ambientación, oportunidad de aprendizaje, objetivo general, objetivos específicos, programa mundial, metas y enfoque de impacto. Si quedan vacías <strong>no se imprimen</strong> y no impiden exportar. En la ficha, cada sección de texto vacía muestra un botón (ej. <em>+ Agregar objetivo general</em>) que activa la edición y pone el cursor ahí.</div>
     </div>
 
     <!-- ── CAMPOS EDITABLES ── -->
     <div class="section">
-      <div class="section-title">📝 Campos editables de la ficha</div>
+      <div class="section-title">📝 Campos de la ficha</div>
       <table class="ref-table">
-        <thead>
-          <tr>
-            <th>Campo</th>
-            <th>Cómo editarlo</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Campo</th><th>Cómo editarlo</th></tr></thead>
         <tbody>
-          <tr>
-            <td><span class="tag">Nombre de la actividad</span></td>
-            <td>Clic directamente sobre el subtítulo del header (debajo del título FICHA TÉCNICA). Requiere modo edición.</td>
-          </tr>
-          <tr>
-            <td><span class="tag">Ambientación</span></td>
-            <td>Clic sobre la banda gris debajo del header. Ej: "El Libro de las Tierras Vírgenes". Requiere modo edición.</td>
-          </tr>
-          <tr>
-            <td><span class="tag">Lugar · Fecha · Inicio · Cierre</span></td>
-            <td>Clic directo sobre cada celda en la ficha. Requiere modo edición. Las horas también se pueden definir en ⚙️ Configurar.</td>
-          </tr>
-          <tr>
-            <td><span class="tag">Logos</span></td>
-            <td>Clic sobre cualquier logo circular en el header. Se abre el selector de archivos del sistema. No requiere modo edición.</td>
-          </tr>
-          <tr>
-            <td><span class="tag">Secciones de texto</span></td>
-            <td>Oportunidad, Objetivos, Metas, etc. — clic directo sobre el área de texto. Requiere modo edición.</td>
-          </tr>
-          <tr>
-            <td><span class="tag">ODS</span></td>
-            <td>Clic sobre cada chip de ODS para activarlo o desactivarlo. Los inactivos no se imprimen.</td>
-          </tr>
-          <tr>
-            <td><span class="tag">Celdas del programa</span></td>
-            <td>Con modo edición activo, cada celda de Duración, Actividad, Descripción, Materiales y Responsable es editable directamente haciendo clic sobre ella.</td>
-          </tr>
-          <tr>
-            <td><span class="tag">Rama / colores</span></td>
-            <td>Solo desde ⚙️ Configurar → campo Rama. Cambia la paleta de colores de toda la ficha automáticamente.</td>
-          </tr>
+          <tr><td><span class="tag">Nombre de la actividad</span></td><td>Clic sobre el subtítulo del header (debajo de «FICHA TÉCNICA»), en modo edición. Si es muy largo, la letra se achica sola; mejor que no pase de ~70 caracteres.</td></tr>
+          <tr><td><span class="tag">Ambientación</span></td><td>Clic sobre la banda gris debajo del header, en modo edición. Una frase corta.</td></tr>
+          <tr><td><span class="tag">Lugar · Fecha · Inicio · Cierre</span></td><td>Clic sobre cada celda en modo edición. Las fechas y horas conviene definirlas en <strong>⚙️ Configurar</strong>, que además arma los días del programa y el código.</td></tr>
+          <tr><td><span class="tag">Grupo · Unidad · Responsable</span></td><td>En el recuadro del header (modo edición) o en ⚙️ Configurar.</td></tr>
+          <tr><td><span class="tag">Logos</span></td><td>Clic sobre cualquier logo circular del header para elegir una imagen. No requiere modo edición.</td></tr>
+          <tr><td><span class="tag">Secciones de texto</span></td><td>Oportunidad, objetivos, programa mundial, metas y enfoque: clic sobre el área de texto en modo edición, o el botón <em>+ …</em> si está vacía.</td></tr>
+          <tr><td><span class="tag">Programa</span></td><td>En <strong>🗓️ Programa</strong> (tarjetas) o, en modo edición, directo en las celdas de la tabla.</td></tr>
         </tbody>
       </table>
     </div>
@@ -431,79 +421,98 @@
     <div class="section">
       <div class="section-title">📊 Indicadores de logro</div>
       <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h5>Seleccionar desde la base de datos ASV</h5>
-            <p>Haz clic en <strong>📊 Indicadores de logro</strong> en la barra. Selecciona la rama, el Área de Crecimiento (Corporalidad, Creatividad, Carácter, Afectividad, Sociabilidad, Espiritualidad) y el Estadio. Aparecerá la lista para marcar los indicadores que aplican a la actividad.</p>
-          </div>
+        <div class="step"><div class="step-num">1</div><div class="step-body">
+          <h5>Buscar y filtrar</h5>
+          <p>Elige la rama y escribe en <strong>Buscar</strong>: no importan tildes ni mayúsculas, y puedes poner varias palabras («clasificacion» encuentra «clasificación»). Combina con los filtros de <strong>Área</strong> y <strong>Etapa</strong>. El contador dice cuántos van seleccionados y cuántos se ven.</p>
+        </div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body">
+          <h5>Elegir</h5>
+          <p>Marca los que aplican: aparecen como fichitas arriba de la lista (un clic en la fichita la quita). Los que ya están en la ficha se marcan <em>en la ficha</em>. Termina con <strong>Agregar seleccionados</strong>.</p>
+        </div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-body">
+          <h5>Indicador manual</h5>
+          <p>Al final del selector, <strong>✏️ Agregar manualmente</strong> permite escribir un indicador propio con su área y etapa.</p>
+        </div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-body">
+          <h5>Quitar</h5>
+          <p>En la tabla de la ficha, el botón <strong>✕</strong> de cada indicador lo elimina.</p>
+        </div></div>
+      </div>
+      <div class="note"><strong>Textos oficiales:</strong> Manada 181, Tropa 197 y Clan 143 indicadores, del Excel de la ASV con sus erratas corregidas en la app. La <strong>Comunidad aún no tiene I.L. oficiales</strong>: por ahora se agregan a mano. Si abres un programa viejo con el texto del Excel sin corregir, se actualiza solo.</div>
+    </div>
+
+    <!-- ── ODS ── -->
+    <div class="section">
+      <div class="section-title">🌍 ODS relacionados</div>
+      <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.8);">Haz clic en un ODS para activarlo o quitarlo: los activos se ven con su color oficial y los demás en blanco con borde de color. <strong>Solo los activos se imprimen.</strong> Con teclado: <kbd>Tab</kbd> hasta el ODS y <kbd>Enter</kbd> o <kbd>Espacio</kbd>.</p>
+    </div>
+
+    <!-- ── GUARDAR / BIBLIOTECA ── -->
+    <div class="section">
+      <div class="section-title">💾 Guardar, exportar y la biblioteca</div>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h4>Guardado automático</h4>
+          <p>La ficha en la que trabajas se guarda sola en este navegador. Si cierras la pestaña y vuelves, sigue ahí. Pero es <strong>una sola ficha</strong>: para tener varias, usa tu biblioteca.</p>
         </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h5>Escribir un indicador manual</h5>
-            <p>En el mismo modal, al final, hay un campo de texto libre. Escribe el indicador y presiona <strong>Agregar indicador</strong>. Útil para indicadores propios o de ramas no incluidas.</p>
-          </div>
+        <div class="card">
+          <div class="card-icon">💾</div>
+          <h4>Mi biblioteca</h4>
+          <p><strong>💾 Guardar en biblioteca</strong> guarda la ficha como un programa más. Queda solo en <strong>este navegador</strong> (unos 5 MB en total; la página Programas te muestra cuánto usas y te avisa antes de llenarse). Si no hay espacio, no se pierde nada: la app te lo dice.</p>
         </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h5>Eliminar indicadores</h5>
-            <p>En modo edición activo, aparece un botón <strong>✕</strong> al lado de cada indicador en la tabla de la ficha para eliminarlo.</p>
-          </div>
+        <div class="card">
+          <div class="card-icon">📚</div>
+          <h4>Página Programas</h4>
+          <p>Junta los <strong>programas del grupo</strong> y los de <strong>tu biblioteca</strong>, por rama, con buscador y vista <strong>calendario</strong>. <em>Abrir en la ficha</em> carga el programa (tu ficha actual se guarda antes en tu biblioteca). En los tuyos puedes renombrar, duplicar, descargar y borrar; los del grupo se copian a tu biblioteca para modificarlos.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔁</div>
+          <h4>Respaldo y otro equipo</h4>
+          <p>En Programas, <strong>⬇️ Exportar mi biblioteca</strong> descarga todos tus programas en un archivo; en el otro navegador, <strong>⬆️ Importar biblioteca o ficha</strong> los suma (si ya estaba, gana la versión más reciente; no se duplican).</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📄</div>
+          <h4>Exportar PDF</h4>
+          <p>Abre la impresión del navegador: elige <em>Guardar como PDF</em>. La ficha está hecha para papel <strong>Carta</strong>; en <strong>A4</strong> se ajusta sola al ancho, sin cortes. Botones, pistas y secciones opcionales vacías no se imprimen. Si el programa o una página extra no caben en una hoja, siguen en la siguiente sin cortar filas.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📤</div>
+          <h4>Exportar / importar JSON</h4>
+          <p>El <code>.json</code> tiene toda la ficha (programa, I.L., ODS, logos, páginas extra y código). Al importarlo, la ficha toma sus datos. Es el formato que entrega Tico.</p>
         </div>
       </div>
     </div>
 
-    <!-- ── EXPORTAR ── -->
+    <!-- ── TICO ── -->
     <div class="section">
-      <div class="section-title">💾 Guardar y exportar</div>
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">📄</div>
-          <h4>Exportar PDF</h4>
-          <p>Botón verde flotante abajo a la derecha. Abre el diálogo de impresión del navegador. Selecciona <em>Guardar como PDF</em>. La ficha está optimizada para papel carta (8.5 × 11 in). Todo lo que es solo de pantalla (botones, tooltips) desaparece.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">💾</div>
-          <h4>Guardar HTML</h4>
-          <p>Botón azul flotante. Descarga un archivo <code>.html</code> con todos los datos embebidos. Puedes abrirlo en cualquier navegador y seguir editando o imprimir desde ahí. Es el mejor respaldo porque incluye logos e indicadores.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📤</div>
-          <h4>Exportar datos JSON</h4>
-          <p>Guarda solo los datos (sin el diseño) en un archivo <code>.json</code> liviano. Ideal para hacer respaldos rápidos o transferir datos entre dispositivos sin descargar el HTML completo.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">☁️</div>
-          <h4>Guardar en la nube</h4>
-          <p>Sube el programa a la base de datos del grupo para abrirlo desde cualquier dispositivo. La primera vez se crea el programa; después, cada guardado crea una <strong>nueva versión</strong> (no se duplica). Si subes exactamente lo mismo, no se crea nada nuevo. Con la clave de edición la versión queda <strong>verificada</strong>; sin ella se guarda igual, marcada <em>sin verificar</em>. La etiqueta del botón indica la versión y si hay cambios sin subir.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📚</div>
-          <h4>Programas por rama</h4>
-          <p>La página <a href="programas.html" style="color:#c9a8f0">Programas</a> muestra lo guardado en la nube por Manada, Tropa, Comunidad y Clan, con buscador e historial de versiones. Desde ahí puedes abrir cualquier versión.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔎</div>
-          <h4>Qué se registra al guardar</h4>
-          <p>Tu nombre (si lo escribes), la fecha y datos técnicos del dispositivo (navegador, idioma, zona horaria, pantalla), además de la IP y la ubicación aproximada (país/ciudad). Solo sirven para saber quién hizo cada versión.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📥</div>
-          <h4>Importar datos JSON</h4>
-          <p>Carga un archivo <code>.json</code> exportado previamente. Reemplaza los datos actuales de la ficha con los del archivo. Los logos no se incluyen en el JSON (solo en el HTML).</p>
-        </div>
-      </div>
-      <div class="note">
-        <strong>Guardado automático:</strong> Cada cambio que haces se guarda automáticamente en el localStorage del navegador. Si cierras la pestaña y vuelves, los datos estarán ahí. <strong>No uses "Restablecer"</strong> si no tienes un respaldo, ya que borra el localStorage permanentemente. Si el programa ya está en la nube, "Restablecer" solo limpia este navegador: la copia en la nube se conserva.
+      <div class="section-title">🤖 Planificar con Tico</div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-body">
+          <h5>Conversa con Tico</h5>
+          <p>Abre <strong>🤖 Preguntarle a Tico</strong> y cuéntale la actividad: rama, fecha, tema y adultos a cargo. Tico propone indicadores, programa, juegos y la gestión de riesgos, y te pide confirmar cada parte.</p>
+        </div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body">
+          <h5>Descarga el JSON</h5>
+          <p>Al final Tico te entrega un JSON. Guárdalo como archivo <code>.json</code> (por ejemplo <code>2026-10-03.json</code>).</p>
+        </div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-body">
+          <h5>Impórtalo aquí</h5>
+          <p><strong>📥 Importar datos</strong> y elige el archivo. Revisa con <strong>📋 Secciones</strong> si falta algo, ajusta lo que quieras y guarda con <strong>💾 Guardar en biblioteca</strong>.</p>
+        </div></div>
       </div>
     </div>
 
     <!-- ── PÁGINAS EXTRA ── -->
     <div class="section">
       <div class="section-title">📄 Páginas extra</div>
-      <p style="font-size:12px;line-height:1.7;color:rgba(255,255,255,.7);">Al final de la ficha encontrarás el botón <strong>➕ Añadir página extra</strong>. Esto agrega una hoja en blanco adicional donde puedes pegar contenido libre, útil para gestión de riesgos, presupuesto u otros anexos. Cada página extra tiene un botón para eliminarla (solo visible en pantalla).</p>
+      <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.8);">Al final de la ficha, <strong>➕ Añadir página extra</strong> agrega una hoja con título y texto libre (instrucciones de juegos, gestión de riesgos, presupuesto…). Tico suele traer las suyas. Si el contenido no cabe en una hoja, al exportar el PDF se reparte solo en otra con el mismo encabezado. Cada página extra tiene su botón <strong>✕</strong> para eliminarla (solo en pantalla).</p>
+    </div>
+
+    <!-- ── TECLADO ── -->
+    <div class="section">
+      <div class="section-title">⌨️ Teclado y accesibilidad</div>
+      <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.8);">Todo se puede usar sin mouse: <kbd>Tab</kbd> recorre los botones y campos (el primero es <em>Saltar a la ficha</em>), <kbd>Enter</kbd> o <kbd>Espacio</kbd> los activan y <kbd>Esc</kbd> cierra modales, menús y el panel derecho, devolviéndote al botón que los abrió. Los colores cumplen el contraste AA.</p>
     </div>
 
   </div><!-- /page-wrap -->

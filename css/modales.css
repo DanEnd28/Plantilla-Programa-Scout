@@ -17,9 +17,6 @@
   display: flex;
 }
 
-/* Los modales viven dentro de .pages-wrap: que no hereden el margin-bottom de la última página (ficha.css) */
-.pages-wrap > div.overlay { margin: 0; }
-
 .modal {
   background: white;
   border-radius: 12px;
@@ -440,7 +437,7 @@
   font-family: var(--ff-h);
   font-size: 8px;
   font-weight: 600;
-  color: #a0b4d0;
+  color: #5174a4;
   background: rgba(168, 216, 255, .08);
   border: 1px solid rgba(168, 216, 255, .18);
   border-radius: 10px;
@@ -484,3 +481,30 @@
   pointer-events: none;
   line-height: 1.5;
 }
+
+/* ── Selector de I.L. (P6, js/selector-il.js) ── */
+#mInd .modal { max-width: 680px; display: flex; flex-direction: column; }
+#mInd .ind-panel { flex: 1; min-height: 120px; max-height: none; }
+#mInd .modal > :not(.ind-panel) { flex-shrink: 0; }
+.il-filtros { display: grid; grid-template-columns: 1fr 2fr; gap: 8px 10px; }
+.il-filtros .fg { margin-bottom: 0; }
+.il-filtros .fi, .il-filtros .fs { font-size: 12.5px; padding: 7px 9px; border-radius: 7px; }
+.il-estado { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 10px 0 6px; font-size: 12px; color: #4e1d7a; font-weight: 600; }
+.il-limpiar { border: none; background: none; color: #622599; font-size: 12px; text-decoration: underline; cursor: pointer; }
+.il-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; max-height: 88px; overflow-y: auto; }
+.il-chip {
+  display: inline-flex; align-items: center; gap: 5px; max-width: 100%;
+  padding: 4px 8px; border: 1px solid #c9b3e6; border-radius: 14px;
+  background: #f3eef9; color: #3a1060; font-family: var(--ff-b); font-size: 11.5px; cursor: pointer; text-align: left;
+}
+.il-chip b { color: #622599; }
+.il-chip span { color: #6f6488; font-size: 11px; }
+.il-chip:hover { background: #fdeeee; border-color: #e0a3a6; }
+.il-chip:hover span { color: #c0262e; }
+.il-grp-n { margin-left: auto; margin-right: 8px; font-weight: 600; opacity: .7; font-size: 9.5px; }
+.ind-item { font-size: 11px; line-height: 1.4; }
+.ind-item[hidden], .ind-grp[hidden] { display: none; }
+.ind-item.en-ficha { color: #6f6585; }
+.il-tag { margin-left: auto; flex-shrink: 0; padding: 1px 6px; border-radius: 8px; background: #e3f5ea; color: #1e7a45; font-size: 9.5px; font-weight: 700; white-space: nowrap; }
+.il-vacio { color: #6f6585; font-size: 12px; padding: 12px 6px; }
+@media (max-width: 560px) { .il-filtros { grid-template-columns: 1fr 1fr; } .il-f-buscar { grid-column: 1 / -1; order: -1; } }

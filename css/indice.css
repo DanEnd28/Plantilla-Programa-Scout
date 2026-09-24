@@ -1,0 +1,137 @@
+/* indice.css — Paso P5 (docs/00-PLAN.md): vista «Secciones» del panel derecho, contador de progreso del header y botón
+   claro en las secciones vacías de la ficha (no se imprime). */
+
+/* ── Contador en el header ── */
+.tb-progreso {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .12);
+  color: white;
+  font-family: var(--ff-b);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tb-progreso:hover { background: rgba(255, 255, 255, .22); }
+.tb-progreso.completo { background: rgba(46, 204, 113, .25); border-color: rgba(46, 204, 113, .6); }
+
+.side-badge {
+  margin-left: 6px;
+  padding: 1px 7px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .12);
+  font-size: 11px;
+  color: rgba(255, 255, 255, .75);
+}
+
+/* ── Vista Secciones ── */
+.idx-lista { background: #f7f4fb; }
+
+.idx-resumen { font-size: 12.5px; color: #4e1d7a; margin-bottom: 12px; }
+.idx-barra { height: 8px; border-radius: 4px; background: #e4dcef; overflow: hidden; margin-bottom: 6px; }
+.idx-barra span { display: block; height: 100%; background: #2e9e5b; border-radius: 4px; transition: width .3s; }
+
+.idx-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px 6px 6px;
+  margin-bottom: 6px;
+  background: white;
+  border: 1px solid #e4dcef;
+  border-radius: 10px;
+}
+
+.idx-ir {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.idx-ir:hover .idx-nom { text-decoration: underline; }
+
+.idx-est {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.idx-item.ok .idx-est { background: #e3f5ea; color: #1e7a45; }
+.idx-item.aviso .idx-est { background: #fff4d6; color: #8a5a00; }
+.idx-item.vacio .idx-est { border: 2px dashed #c9bddb; }
+.idx-item.opcional { background: #fbfafd; }
+.idx-item.opcional .idx-est { color: #a99cbf; font-size: 15px; }
+.idx-item.opcional .idx-nom { font-weight: 500; color: #4b4260; }
+.idx-item.opcional .idx-accion { border-color: #c9bddb; color: #6f6585; }
+.idx-item.opcional .idx-accion:hover { background: #6f6585; color: white; }
+.idx-sub { margin: 14px 2px 8px; font-size: 12px; font-weight: 700; color: #4e1d7a; }
+.idx-sub span { font-weight: 400; color: #6f6488; }
+
+.idx-txt { display: flex; flex-direction: column; min-width: 0; }
+.idx-nom { font-size: 13px; font-weight: 600; color: #2a2340; }
+.idx-det { font-size: 11.5px; color: #6f6585; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.idx-item.aviso .idx-det { color: #8a5a00; }
+
+.idx-accion {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  border: 1px solid #622599;
+  border-radius: 8px;
+  background: white;
+  color: #622599;
+  font-family: var(--ff-b);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.idx-accion:hover { background: #622599; color: white; }
+
+/* ── Botón en secciones vacías de la ficha ── */
+.sec-cta {
+  display: block;
+  width: calc(100% - 16px);
+  margin: 6px 8px 8px;
+  padding: 7px;
+  border: 1.5px dashed var(--cm-bd, #c9a8e8);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--cm-dk, #4a1a75);
+  font-family: var(--ff-b);
+  font-size: 10.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sec-cta:hover { background: var(--cm-lt, #f0e8fa); }
+.sec-cta[hidden] { display: none; }
+
+/* Destello al llegar a una sección desde el índice */
+.idx-flash { animation: idxFlash 1.4s ease-out; }
+@keyframes idxFlash { 0%, 30% { box-shadow: 0 0 0 3px #F3E22B; } 100% { box-shadow: 0 0 0 3px transparent; } }
+
+@media (max-width: 899px) {
+  .tb-progreso { height: 26px; padding: 0 8px; font-size: 11px; }
+}

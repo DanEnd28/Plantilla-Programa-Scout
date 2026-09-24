@@ -33,6 +33,9 @@ function getDays() {
   return days;
 }
 
+// I.L. guardados o importados con el texto literal del Excel → versión corregida (P9; mapa IL_ERRATAS en datos-il.js)
+function corregirIL(rows) { return rows.map(r => IL_ERRATAS[r.texto] ? { ...r, texto: IL_ERRATAS[r.texto] } : r); }
+
 /* ─── STORAGE ─── */
 const SF = k => 'sf_' + k;
 function saveStorage() {
@@ -61,7 +64,7 @@ function loadStorage() {
   const ods = localStorage.getItem(SF('ods')); if (ods) odsActivos = new Set(JSON.parse(ods));
   const prog = localStorage.getItem(SF('prog')); if (prog) progRows = JSON.parse(prog);
   const hd = localStorage.getItem(SF('horas-dia')); if (hd) horasDia = JSON.parse(hd);
-  const ind = localStorage.getItem(SF('ind')); if (ind) indRows = JSON.parse(ind);
+  const ind = localStorage.getItem(SF('ind')); if (ind) indRows = corregirIL(JSON.parse(ind));
   const rama = localStorage.getItem(SF('rama')); if (rama) { ramaActual = rama; applyRama(rama); }
   const gc = localStorage.getItem(SF('grupal-comunidad')); if (gc === '1' && ramaActual === 'grupal') { setComunidadGrupal(true); document.getElementById('cfg-grupal-comunidad').checked = true; }
   if (ramaActual === 'grupal') document.getElementById('cfg-grupal-opts').style.display = 'block';
@@ -89,6 +92,12 @@ function loadStorage() {
 function doReset() {
   if (document.getElementById('rst-pdf').checked) window.print();
   if (document.getElementById('rst-json').checked) doExportJSON();
+  limpiarFicha();
+  closeM('mReset'); st('Plantilla restablecida 🗑️');
+  if (window.nubeTrasRestablecer) window.nubeTrasRestablecer();
+}
+// Deja la ficha en blanco (también la usa «Abrir» desde la biblioteca). Conserva I.L. manuales y la rama.
+function limpiarFicha() {
   const keep = [SF('ind_extra'), SF('rama')];
   Object.keys(localStorage).filter(k => k.startsWith('sf_') && !keep.includes(k)).forEach(k => localStorage.removeItem(k));
   customLogos = {}; odsActivos = new Set(); progRows = []; indRows = []; horasDia = {};
@@ -103,6 +112,5 @@ function doReset() {
   ['cod-a', 'cod-b', 'cod-c', 'cod-g2'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = '—'; });
   renderODS(); applyRama(ramaActual);
   document.querySelectorAll('img[id^="logo-grupo"]').forEach(el => el.src = LOGO_GRUPO_DEF); document.querySelectorAll('.ep-logo-g').forEach(el => el.src = LOGO_GRUPO_DEF);
-  syncSec(); closeM('mReset'); st('Plantilla restablecida 🗑️');
-  if (window.nubeTrasRestablecer) window.nubeTrasRestablecer();
+  syncSec();
 }

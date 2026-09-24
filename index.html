@@ -13,33 +13,36 @@
   <link rel="stylesheet" href="css/ficha.css">
   <link rel="stylesheet" href="css/modales.css">
   <link rel="stylesheet" href="css/panel.css">
+  <link rel="stylesheet" href="css/indice.css">
   <link rel="stylesheet" href="css/impresion.css">
 </head>
 
 <body>
+  <a class="saltar" href="#fichaWrap">Saltar a la ficha</a>
 
   <!-- HEADER (sobre el contenido, a la derecha de la barra lateral) -->
-  <div class="topbar">
+  <header class="topbar">
     <div class="tb-brand"><img src="images/logo-flor-transparent.png" alt="Ficha Scout"></div>
     <div class="tb-title">
       <span class="tb-title-txt">Ficha Técnica</span>
-      <span class="tb-status" id="tbSt">● Listo</span>
+      <span class="tb-status" id="tbSt" role="status" aria-live="polite">● Listo</span>
+      <button class="tb-progreso" id="tbProgreso" onclick="toggleIndicePanel()" title="Ver qué secciones faltan">📋 <span id="tbProgresoTxt">0/0</span></button>
     </div>
     <div class="tb-actions">
       <button class="btn btn-edit" id="editBtn" onclick="toggleEdit()">✏️ Editar ficha</button>
-      <button class="btn-pdf" onclick="doPDF()" title="Exportar la ficha en PDF">📄 Exportar PDF</button>
+      <button class="btn-pdf" data-requiere-contenido onclick="doPDF()" title="Exportar la ficha en PDF">📄 Exportar PDF</button>
       <button class="tb-icon btn-nube" onclick="nubeAbrir()" title="Guardar este programa en la nube del grupo (crea una nueva versión)" aria-label="Guardar en la nube">☁️<span class="tb-nube" data-nube-estado id="tbNube">Sin subir</span></button>
       <div class="tb-more">
-        <button class="tb-icon" id="tbMoreBtn" onclick="toggleMoreMenu()" aria-haspopup="true" aria-label="Más opciones" title="Más opciones">⋯</button>
+        <button class="tb-icon" id="tbMoreBtn" onclick="toggleMoreMenu()" aria-haspopup="true" aria-expanded="false" aria-controls="tbMoreMenu" aria-label="Más opciones" title="Más opciones">⋯</button>
         <div class="tb-more-menu" id="tbMoreMenu">
           <button onclick="openM('mReset');closeMoreMenu()">🗑️ Restablecer</button>
         </div>
       </div>
     </div>
-  </div>
+  </header>
 
   <!-- BARRA LATERAL (retráctil, escritorio) -->
-  <nav class="sidebar" id="sidebar">
+  <nav class="sidebar" id="sidebar" aria-label="Menú principal">
     <div class="side-brand">
       <img src="images/logo-flor-transparent.png" alt="">
       <span class="nav-txt"><b>Ficha Scout</b><small>La Salle Guaparo</small></span>
@@ -52,6 +55,7 @@
           <span class="nav-txt"><span class="lbl-off">Editar ficha</span><span class="lbl-on">Guardar cambios</span></span>
         </button>
         <button class="side-item" onclick="toggleConfigPanel()" title="Configurar"><span class="nav-ico">⚙️</span><span class="nav-txt">Configurar</span></button>
+        <button class="side-item" onclick="toggleIndicePanel()" title="Secciones: qué está completo y qué falta"><span class="nav-ico">📋</span><span class="nav-txt">Secciones <span class="side-badge" id="sideProgreso"></span></span></button>
       </div>
       <div class="side-group">
         <span class="side-lbl">Contenido</span>
@@ -60,7 +64,8 @@
       </div>
       <div class="side-group">
         <span class="side-lbl">Datos</span>
-        <button class="side-item" onclick="doExportJSON()" title="Exportar datos"><span class="nav-ico">📤</span><span class="nav-txt">Exportar datos</span></button>
+        <button class="side-item" data-requiere-contenido onclick="guardarEnBiblioteca()" title="Guardar esta ficha en tu biblioteca (en este navegador)"><span class="nav-ico">💾</span><span class="nav-txt">Guardar en biblioteca</span></button>
+        <button class="side-item" data-requiere-contenido onclick="doExportJSON()" title="Exportar datos"><span class="nav-ico">📤</span><span class="nav-txt">Exportar datos</span></button>
         <label class="side-item file-lbl" title="Importar datos"><span class="nav-ico">📥</span><span class="nav-txt">Importar datos</span><input type="file" accept=".json" onchange="doImportJSON(this.files[0])"></label>
         <button class="side-item btn-nube" onclick="nubeAbrir()" title="Guardar en la nube"><span class="nav-ico">☁️</span><span class="nav-txt">Guardar en la nube <span class="tb-nube" data-nube-estado>Sin subir</span></span></button>
         <a class="side-item" href="programas.html" title="Programas"><span class="nav-ico">📚</span><span class="nav-txt">Programas</span></a>
@@ -77,28 +82,30 @@
   </nav>
 
   <!-- BARRA INFERIOR (móvil) -->
-  <div class="bottombar" id="bottombar">
+  <nav class="bottombar" id="bottombar" aria-label="Menú principal">
     <button class="bb-item" id="editBtnBar" data-edit-mirror onclick="toggleEdit()">
       <span class="nav-ico"><span class="ico-off">✏️</span><span class="ico-on">✅</span></span>
       <span class="bb-lbl"><span class="lbl-off">Editar</span><span class="lbl-on">Guardar</span></span>
     </button>
     <button class="bb-item" onclick="openM('mInd')"><span class="nav-ico">📊</span><span class="bb-lbl">Indicadores</span></button>
     <button class="bb-item" onclick="toggleProgramaPanel()"><span class="nav-ico">🗓️</span><span class="bb-lbl">Programa</span></button>
-    <button class="bb-item" onclick="doPDF()"><span class="nav-ico">📄</span><span class="bb-lbl">PDF</span></button>
-    <button class="bb-item" id="bbMoreBtn" onclick="toggleBottomSheet()" aria-haspopup="true"><span class="nav-ico">⋯</span><span class="bb-lbl">Más</span></button>
-  </div>
+    <button class="bb-item" data-requiere-contenido onclick="doPDF()"><span class="nav-ico">📄</span><span class="bb-lbl">PDF</span></button>
+    <button class="bb-item" id="bbMoreBtn" onclick="toggleBottomSheet()" aria-haspopup="true" aria-expanded="false" aria-controls="bottomSheet"><span class="nav-ico">⋯</span><span class="bb-lbl">Más</span></button>
+  </nav>
 
   <!-- HOJA "MÁS" (móvil) -->
   <div class="bottom-sheet-backdrop" id="bottomSheetBackdrop" onclick="closeBottomSheet()"></div>
-  <div class="bottom-sheet" id="bottomSheet">
+  <div class="bottom-sheet" id="bottomSheet" role="dialog" aria-label="Más opciones">
     <div class="bs-handle"></div>
     <span class="bs-lbl">Ficha</span>
     <div class="bs-row">
       <button class="bs-item" onclick="closeBottomSheet();openConfigPanel()">⚙️ Configurar</button>
+      <button class="bs-item" onclick="closeBottomSheet();openIndicePanel()">📋 Secciones</button>
     </div>
     <span class="bs-lbl">Datos</span>
     <div class="bs-row">
-      <button class="bs-item" onclick="doExportJSON();closeBottomSheet()">📤 Exportar datos</button>
+      <button class="bs-item" data-requiere-contenido onclick="guardarEnBiblioteca();closeBottomSheet()">💾 Guardar en mi biblioteca</button>
+      <button class="bs-item" data-requiere-contenido onclick="doExportJSON();closeBottomSheet()">📤 Exportar datos</button>
       <label class="bs-item file-lbl">📥 Importar datos<input type="file" accept=".json" onchange="doImportJSON(this.files[0]);closeBottomSheet()"></label>
       <button class="bs-item btn-nube" onclick="nubeAbrir();closeBottomSheet()">☁️ Guardar en la nube <span class="tb-nube" data-nube-estado>Sin subir</span></button>
       <a class="bs-item" href="programas.html">📚 Programas</a>
@@ -114,9 +121,9 @@
   </div>
 
   <!-- PANEL DE CONFIGURACIÓN (derecha, en vivo) -->
-  <aside class="cfg-panel" id="cfgPanel" aria-label="Configuración general">
+  <aside class="cfg-panel" id="cfgPanel" aria-labelledby="cfgTitle">
     <div class="cfg-h">
-      <span class="cfg-title" id="cfgTitle">⚙️ Configuración</span>
+      <span class="cfg-title" id="cfgTitle" tabindex="-1">⚙️ Configuración</span>
       <button class="cfg-undo" id="cfgUndo" onclick="cfgDeshacer()" disabled title="Deshacer el último cambio">↶ Deshacer</button>
       <button class="cfg-x" onclick="closeConfigPanel()" aria-label="Cerrar configuración">✕</button>
     </div>
@@ -151,6 +158,7 @@
         <span class="cfg-hint">Vacío = se genera solo con la fecha de inicio y la rama.</span></div>
     </div>
     <div class="cfg-body prog-lista" data-vista="programa" id="progLista" hidden></div>
+    <div class="cfg-body idx-lista" data-vista="indice" id="idxLista" hidden></div>
     <div class="cfg-foot">Los cambios se aplican al instante y se guardan solos.</div>
   </aside>
 
@@ -386,7 +394,7 @@
 
         <div class="page-content">
           <div style="height:10px;"></div>
-          <div class="sec">
+          <div class="sec sec-prog">
             <div class="sec-head">📋 Programa de la Actividad
               <span id="prog-hdr" style="font-size:8px;font-weight:400;opacity:.75"></span>
               <span class="tip-noprint"
@@ -424,8 +432,9 @@
       <div id="extraPagesContainer"></div>
       <button class="add-page-btn" id="addPageBtn" onclick="addExtraPage()">➕ Añadir página extra</button>
     </div><!-- /fichaWrap -->
+  </div><!-- /pages-wrap -->
 
-    <!-- MODALES -->
+  <!-- MODALES (fuera de .pages-wrap: si no, heredan el zoom de la ficha en pantallas chicas) -->
 
   <!-- MODAL NUBE -->
   <div class="overlay" id="mNube">
@@ -460,14 +469,22 @@
           <div class="modal-title">📊 Indicadores de Logro</div><button class="modal-x"
             onclick="closeM('mInd')">✕</button>
         </div>
-        <div class="fg"><label class="fl">Rama</label>
-          <select class="fs" id="ind-rama" onchange="renderIndPanel()">
-            <option value="manada">🟡 Manada</option>
-            <option value="tropa">🟢 Tropa</option>
-            <option value="comunidad">🟣 Comunidad</option>
-            <option value="clan">🔴 Clan</option>
-          </select>
+        <div class="il-filtros">
+          <div class="fg il-f-rama"><label class="fl" for="ind-rama">Rama</label>
+            <select class="fs" id="ind-rama" onchange="renderIndPanel()">
+              <option value="manada">🟡 Manada</option>
+              <option value="tropa">🟢 Tropa</option>
+              <option value="comunidad">🟣 Comunidad</option>
+              <option value="clan">🔴 Clan</option>
+            </select>
+          </div>
+          <div class="fg il-f-buscar"><label class="fl" for="il-buscar">Buscar</label>
+            <input type="search" class="fi" id="il-buscar" data-foco-inicial placeholder="Ej: familia, patrulla, higiene…" autocomplete="off"></div>
+          <div class="fg"><label class="fl" for="il-area">Área</label><select class="fs" id="il-area"><option value="">Todas</option></select></div>
+          <div class="fg"><label class="fl" for="il-etapa">Etapa</label><select class="fs" id="il-etapa"><option value="">Todas</option></select></div>
         </div>
+        <div class="il-estado"><span id="il-contador">0 seleccionados</span><button type="button" class="il-limpiar" id="il-limpiar" hidden>Limpiar filtros</button></div>
+        <div class="il-chips" id="il-chips"></div>
         <div class="ind-panel" id="ind-panel"></div>
         <div class="ind-manual-wrap">
           <div class="ind-manual-title" onclick="toggleManualInd()">✏️ Agregar manualmente <span
@@ -496,9 +513,8 @@
           <div class="modal-title" style="color:#B40D15">🗑️ Restablecer plantilla</div><button class="modal-x"
             onclick="closeM('mReset')">✕</button>
         </div>
-        <p style="font-size:10.5px;color:#555;margin-bottom:10px">Borrará todos los campos. <strong>Indicadores cargados
-            y
-            logos se conservan.</strong></p>
+        <p style="font-size:12px;color:#444;margin-bottom:10px;line-height:1.5">Borrará todos los campos, el programa, los I.L. elegidos, los ODS, los logos y las páginas extra de esta ficha.
+          <strong>Se conservan la rama, los indicadores que agregaste a mano y tu biblioteca de programas.</strong></p>
         <div class="reset-opts">
           <label class="reset-opt"><input type="checkbox" id="rst-json" checked>
             <div class="reset-opt-text"><strong>📤 Exportar JSON</strong><span>Guarda una copia antes de limpiar.</span></div>
@@ -507,7 +523,7 @@
             <div class="reset-opt-text"><strong>📄 Abrir PDF</strong><span>Abre ventana de impresión.</span></div>
           </label>
         </div>
-        <div class="reset-warn">⚠️ Irreversible. Solo borra el localStorage de la ficha.</div>
+        <div class="reset-warn">⚠️ No se puede deshacer. Si guardaste esta ficha en tu biblioteca, esa copia no se borra.</div>
         <div class="mf"><button class="btn btn-g" onclick="closeM('mReset')">Cancelar</button><button class="btn btn-r"
             onclick="doReset()">Sí, restablecer</button></div>
       </div>
@@ -524,6 +540,11 @@
     <script src="js/ui.js"></script>
     <script src="js/config-panel.js"></script>
     <script src="js/programa-panel.js"></script>
+    <script src="js/indice.js"></script>
+    <script src="js/selector-il.js"></script>
+    <script src="js/biblioteca-datos.js"></script>
+    <script src="js/biblioteca-ficha.js"></script>
+    <script src="js/accesibilidad.js"></script>
     <script src="js/principal.js"></script>
 </body>
 

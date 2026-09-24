@@ -77,3 +77,16 @@ body {
   background: #d8d4e8;
   color: #1a1a2e;
 }
+
+/* ── ACCESIBILIDAD (P10): foco visible con teclado y enlace para saltar al contenido ── */
+:focus-visible { outline: 3px solid #622599; outline-offset: 2px; }
+.sidebar :focus-visible, .topbar :focus-visible, .bottombar :focus-visible, .bottom-sheet :focus-visible { outline-color: #F3E22B; }
+[role="button"]:not(button) { cursor: pointer; }
+.saltar {
+  position: fixed; top: 8px; left: 8px; z-index: 3000;
+  padding: 10px 14px; border-radius: 8px;
+  background: #F3E22B; color: #1a0840; font-family: var(--ff-h); font-weight: 800; font-size: 13px; text-decoration: none;
+  transform: translateY(-160%); transition: transform .15s;
+}
+.saltar:focus { transform: none; }
+@media print { .saltar { display: none !important; } }

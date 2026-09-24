@@ -4,16 +4,28 @@
 
 /* ─── PDF / HELPERS ─── */
 
+// Al abrir un modal el foco entra en él; al cerrarlo vuelve a lo que lo abrió (teclado y lector de pantalla)
+const focoPrevio = {};
 function openM(id) {
-  document.getElementById(id).classList.add('open');
+  const m = document.getElementById(id);
+  focoPrevio[id] = document.activeElement;
+  m.classList.add('open');
   if (id === 'mInd') renderIndPanel();
+  const primero = m.querySelector('[data-foco-inicial]') || m.querySelector('input:not([type=file]):not([type=checkbox]), select, textarea, .modal-x');
+  setTimeout(() => primero?.focus(), 30);
 }
-function closeM(id) { document.getElementById(id).classList.remove('open'); }
+function closeM(id) {
+  const m = document.getElementById(id);
+  if (!m.classList.contains('open')) return;
+  m.classList.remove('open');
+  const volver = focoPrevio[id]; delete focoPrevio[id];
+  if (volver && document.contains(volver) && volver.offsetParent !== null) volver.focus();
+}
 function scrollHelp() { document.getElementById('helpPage').scrollIntoView({ behavior: 'smooth' }); }
 function st(msg) { const el = document.getElementById('tbSt'); el.textContent = msg; el.style.color = '#a8f0a8'; setTimeout(() => { el.textContent = 'Listo'; el.style.color = ''; }, 2500); }
 document.addEventListener('keydown', e => {
   if (e.key !== 'Escape') return;
-  document.querySelectorAll('.overlay.open').forEach(m => m.classList.remove('open'));
+  document.querySelectorAll('.overlay.open').forEach(m => closeM(m.id));
   closeMoreMenu(); closeBottomSheet(); closeConfigPanel();
 });
 
@@ -24,7 +36,7 @@ const UI_SIDEBAR_KEY = 'ui_barra_colapsada';
 function applySidebarState(colapsada) {
   document.body.classList.toggle('sidebar-colapsada', colapsada);
   const btn = document.getElementById('sideCollapseBtn');
-  if (btn) btn.title = colapsada ? 'Expandir barra' : 'Contraer barra';
+  if (btn) { btn.title = colapsada ? 'Expandir barra' : 'Contraer barra'; btn.setAttribute('aria-expanded', !colapsada); btn.setAttribute('aria-label', colapsada ? 'Expandir menú' : 'Contraer menú'); }
 }
 function toggleSidebar() {
   const colapsada = !document.body.classList.contains('sidebar-colapsada');
@@ -35,20 +47,27 @@ function toggleSidebar() {
 applySidebarState(localStorage.getItem(UI_SIDEBAR_KEY) === '1');
 
 /* ── MENÚ ⋯ (barra superior) ── */
-function toggleMoreMenu() { document.getElementById('tbMoreMenu').classList.toggle('open'); }
-function closeMoreMenu() { document.getElementById('tbMoreMenu')?.classList.remove('open'); }
+function toggleMoreMenu() {
+  const abierto = document.getElementById('tbMoreMenu').classList.toggle('open');
+  document.getElementById('tbMoreBtn').setAttribute('aria-expanded', abierto);
+  if (abierto) document.querySelector('#tbMoreMenu button')?.focus();
+}
+function closeMoreMenu() { document.getElementById('tbMoreMenu')?.classList.remove('open'); document.getElementById('tbMoreBtn')?.setAttribute('aria-expanded', 'false'); }
 document.addEventListener('click', e => {
   if (!e.target.closest('.tb-more')) closeMoreMenu();
 });
 
 /* ── HOJA "MÁS" (móvil) ── */
 function toggleBottomSheet() {
-  document.getElementById('bottomSheet').classList.toggle('open');
-  document.getElementById('bottomSheetBackdrop').classList.toggle('open');
+  const abierto = document.getElementById('bottomSheet').classList.toggle('open');
+  document.getElementById('bottomSheetBackdrop').classList.toggle('open', abierto);
+  document.getElementById('bbMoreBtn').setAttribute('aria-expanded', abierto);
+  if (abierto) setTimeout(() => document.querySelector('#bottomSheet .bs-item')?.focus(), 30);
 }
 function closeBottomSheet() {
   document.getElementById('bottomSheet')?.classList.remove('open');
   document.getElementById('bottomSheetBackdrop')?.classList.remove('open');
+  document.getElementById('bbMoreBtn')?.setAttribute('aria-expanded', 'false');
 }
 
 // Page scaling for small screens

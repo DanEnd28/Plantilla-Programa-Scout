@@ -1,0 +1,125 @@
+/* biblioteca.css — Paso P8 (docs/00-PLAN.md): barra de filtros, vista calendario y «Mi biblioteca» de programas.html.
+   Reusa el tema oscuro, las pestañas y las tarjetas de programas.css. */
+
+/* .list, .pill-btn… fijan display: sin esto el atributo hidden no oculta */
+[hidden] { display: none !important; }
+
+/* Foco visible con teclado (P10) */
+:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+
+.card.r-grupal { --c: var(--c-grupal); }
+.card.r-sin { --c: rgba(255, 255, 255, .35); }
+
+.b-barra { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
+.b-barra .search { flex: 1; min-width: 200px; }
+
+.b-sel {
+  height: 38px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .06);
+  color: white;
+  font-family: var(--ff-b);
+  font-size: 13px;
+}
+.b-sel option { color: #1a1030; }
+
+.b-vista { display: inline-flex; border: 1px solid rgba(255, 255, 255, .18); border-radius: 10px; overflow: hidden; }
+.b-vista button {
+  height: 36px;
+  padding: 0 12px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, .75);
+  font-family: var(--ff-b);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.b-vista button.on { background: var(--purple); color: white; }
+.b-vista button:hover:not(.on) { background: rgba(255, 255, 255, .08); }
+
+.b-fuente { margin-left: auto; font-size: 10.5px; }
+.b-fuente.local { color: #a8f0c0; }
+.b-err { color: #ffc0c0; }
+.card-actions { flex-wrap: wrap; }
+a.btn { text-decoration: none; display: inline-flex; align-items: center; }
+
+.b-renombrar {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--yellow);
+  background: rgba(0, 0, 0, .25);
+  color: white;
+  font-family: var(--ff-h);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* ── Calendario ── */
+.b-cal-h { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.b-cal-h h2 { flex: 1; text-align: center; font-family: var(--ff-h); font-size: 16px; color: var(--yellow); }
+.b-cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.b-cal-dow { text-align: center; font-size: 11px; font-weight: 700; color: rgba(255, 255, 255, .55); text-transform: uppercase; padding: 4px 0; }
+.b-cal-dia {
+  min-height: 92px;
+  padding: 5px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .07);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.b-cal-dia.fuera { background: transparent; border-color: rgba(255, 255, 255, .04); }
+.b-cal-dia.fuera .b-cal-n { color: rgba(255, 255, 255, .55); }
+.b-cal-dia.hoy { border-color: var(--yellow); }
+.b-cal-n { font-size: 11px; color: rgba(255, 255, 255, .6); }
+.b-cal-ev {
+  display: block;
+  padding: 3px 6px;
+  border-radius: 5px;
+  border-left: 3px solid var(--c);
+  background: color-mix(in srgb, var(--c) 26%, transparent);
+  color: white;
+  font-size: 10.5px;
+  line-height: 1.3;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.b-cal-ev:hover { background: color-mix(in srgb, var(--c) 45%, transparent); }
+.b-cal-ev.r-manada { --c: var(--c-manada); }
+.b-cal-ev.r-tropa { --c: var(--c-tropa); }
+.b-cal-ev.r-comunidad { --c: var(--c-comunidad); }
+.b-cal-ev.r-clan { --c: var(--c-clan); }
+.b-cal-ev.r-grupal { --c: var(--c-grupal); }
+.b-cal-ev.r-sin { --c: rgba(255, 255, 255, .4); }
+
+/* ── Mi biblioteca ── */
+.b-mi, .nube-seccion {
+  margin-top: 28px;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .08);
+}
+.b-h2 { font-family: var(--ff-h); font-weight: 800; font-size: 15px; color: var(--yellow); margin-bottom: 8px; }
+.b-nota { font-size: 12.5px; color: rgba(255, 255, 255, .7); line-height: 1.55; margin-bottom: 12px; }
+.b-uso { display: flex; align-items: center; gap: 10px; font-size: 12px; color: rgba(255, 255, 255, .7); margin-bottom: 10px; flex-wrap: wrap; }
+.b-uso-barra { flex: 1; min-width: 160px; height: 8px; border-radius: 4px; background: rgba(255, 255, 255, .1); overflow: hidden; }
+.b-uso-barra span { display: block; height: 100%; background: #2e9e5b; border-radius: 4px; }
+.b-uso-barra span.cerca { background: #e0a100; }
+.b-uso-aviso { font-size: 12.5px; color: #ffe08a; background: rgba(224, 161, 0, .12); border: 1px solid rgba(224, 161, 0, .4); border-radius: 8px; padding: 8px 10px; margin-bottom: 10px; }
+.b-file { position: relative; overflow: hidden; cursor: pointer; }
+.b-file input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+
+@media (max-width: 640px) {
+  .b-cal-dia { min-height: 64px; padding: 3px; }
+  .b-cal-ev { font-size: 0; padding: 0; height: 6px; border-left-width: 6px; border-radius: 3px; }
+  .b-cal-dow { font-size: 9.5px; }
+}

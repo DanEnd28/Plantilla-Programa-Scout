@@ -887,7 +887,7 @@ Los otros 38 indicadores seleccionados ya coincidían con el Excel. El primer y 
 
 > **Decisión de Danny (sep-2026):** las erratas **no se corrigen en el Excel** (el Excel no se toca). Se corrigen **en la app y en esta documentación**. La columna **Versión corregida** es el texto oficial que usará la plantilla. En las tablas por rama de arriba, estos indicadores llevan la marca ✏️.
 >
-> **Estado:** documentado. **Pendiente en el código:** paso **P9** de [00-PLAN.md](00-PLAN.md) (hoy `index.html` todavía tiene el texto literal del Excel). Al hacer P9 también hay que revisar los `_ind` de `programas/**/*.json` que usen alguno de estos textos.
+> **Estado:** ✅ **aplicado en la app** (paso P9, 2026-09-24) con `python3 _herramientas/erratas_il.py`: `INDICADORES` en `js/datos-il.js` ya usa la versión corregida, los `_ind` de `programas/**/*.json` se actualizaron (2 programas) y al importar un JSON o cargar una ficha guardada, el texto viejo se traduce solo (mapa `IL_ERRATAS`). `python3 _herramientas/erratas_il.py --verificar` debe dar 0 diferencias.
 
 | Código | Rama | Celda | Texto en el Excel (literal) | Versión corregida (app) | Qué cambia |
 |---|---|---|---|---|---|
@@ -910,6 +910,42 @@ Los otros 38 indicadores seleccionados ya coincidían con el Excel. El primer y 
 | C-SOC-E5-21 | Clan | A97 | Identifican las autoridades que conducen la sociedad en lo social, escolar, religioso, etc. | **Identifica las autoridades que conducen la sociedad en lo social, escolar, religioso, etc.** | «Identifican» → «Identifica» (singular) |
 
 Caso aparte, sin cambio de texto: **Clan · Afectividad · E5 · A72** («•Ayuda a los más jóvenes…») solo le falta el espacio después de la viñeta en el Excel; el texto copiado ya es correcto.
+
+## Diferencias con la versión anterior de Tico (por decidir)
+
+> **2026-09-24:** la skill de Claude `tico-scout` tenía 29 I.L. con una redacción distinta a la oficial de la plantilla (Excel + erratas de arriba). Se **alinearon al texto oficial** para que lo que entrega Tico coincida con la app. Varias diferencias parecen **erratas reales del Excel** que no están en la tabla de arriba (sobre todo tildes: «como» → «cómo», «que» → «qué»). **Por decidir (Danny):** si alguna se suma a la tabla de erratas, basta con agregarla arriba y correr `python3 _herramientas/erratas_il.py`.
+
+| Rama | Área | Etapa | Texto oficial (Excel, el que usa la app) | Versión que tenía Tico |
+|---|---|---|---|---|
+| Manada | Corporalidad | E1 | Pide a familiares y dirigentes la ayuda que requiere para adquirir habilidades y las practica. | Pide a familiares y adultos Scouts la ayuda que requiere para adquirir habilidades y las practica. |
+| Manada | Creatividad | E1 | Expresa gráficamente como debe vivir el hombre en su medio ambiente. | Expresa gráficamente cómo debe vivir el hombre en su medio ambiente. |
+| Manada | Creatividad | E2 | Obtiene insignias libremente escogida y apoyado por sinodales de la comunidad. | Obtiene insignias libremente escogidas y apoyado por sinodales de la comunidad. |
+| Manada | Creatividad | E2 | Entiende por que se deben botar los desperdicios en lugares destinados a ello. | Entiende por qué se deben botar los desperdicios en lugares destinados a ello. |
+| Manada | Carácter | E1 | Identifica cuando una conducta está de acuerdo a los valores Scouts. | Identifica cuando una conducta está de acuerdo con los valores Scouts. |
+| Manada | Carácter | E1 | Informa a sus mayores como va a realizar una tarea que se le asigna. | Informa a sus mayores cómo va a realizar una tarea que se le asigna. |
+| Manada | Carácter | E1 | Informa a los adultos scouts que le acompañan las pruebas y especialidades que quiere aprender. | Informa a los adultos scouts que lo acompañan, las pruebas y especialidades que quiere aprender. |
+| Manada | Carácter | E1 | Describe que le gusta más de lo que hace y explica su utilidad. | Describe qué le gusta más de lo que hace y explica su utilidad. |
+| Manada | Carácter | E1 | Escucha a sus mayores cuando le dicen que debe por hacer mejor alguna cosa. | Escucha a sus mayores cuando le dicen que debe hacer mejor alguna cosa. |
+| Manada | Carácter | E1 | Obedece las normas del juego y la vida al aire libre. | Obedece las normas en juegos y vida al aire libre. |
+| Manada | Carácter | E2 | Determina el conocimiento y las habilidades con los cuales quiere pasar a la siguiente unidad. | Determina el conocimiento y las habilidades con las cuales quiere pasar a la siguiente Unidad. |
+| Manada | Carácter | E2 | Da a conocer cuando ha terminado una tarea que se le ha asignado, para que otros aprendan como hacerlo. | Da a conocer cuando ha terminado una tarea que se le ha asignado, para que otros aprendan cómo hacerlo. |
+| Manada | Carácter | E2 | Repite las tareas hasta que esté satisfecho con su logro. | Repite las tareas hasta que está satisfecho con su logro. |
+| Manada | Afectividad | E1 | Comparte con niños de su edad, que acaba de conocer, en un ambiente de amistad. | Comparte con niños y niñas de su edad, que acaba de conocer, en un ambiente de amistad. |
+| Manada | Afectividad | E1 | Describe como le gustaría fuera su escuela, para aprender mejor. | Describe cómo le gustaría fuera su escuela, para aprender mejor. |
+| Manada | Afectividad | E1 | Explica como se puede mantener la belleza de la naturaleza. | Explica cómo se puede mantener la belleza de la naturaleza. |
+| Manada | Afectividad | E2 | Muestra afecto a los demás sin dejar de apreciarse a si mismo. | Muestra afecto a los demás sin dejar de apreciarse a sí mismo. |
+| Manada | Afectividad | E2 | Disfruta actividades con niñas y niños de su edad, en un ambiente social. | Disfruta actividades con niños y niñas de su edad, en un ambiente social. |
+| Manada | Afectividad | E2 | Conversa con sus familiares para saber que piensan de su labor en la casa y como los beneficia. | Conversa con sus familiares para saber qué piensan de su labor en la casa y cómo los beneficia. |
+| Manada | Afectividad | E2 | Cuida a animales o plantas a su alcance. | Cuida animales y plantas a su alcance. |
+| Manada | Sociabilidad | E1 | Cuida el uso del material, de acuerdo a lo que se le pide. | Cuida el uso del material, de acuerdo con lo que se le pide. |
+| Manada | Sociabilidad | E1 | Rehace de buen agrado el trabajo cuando se le orienta a mejorar. | Rehace de buen grado el trabajo cuando se le orienta a mejorar. |
+| Manada | Sociabilidad | E1 | Demuestra amistad a los miembros de otros grupos scout. | Demuestra amistad a los miembros de otros grupos Scouts. |
+| Manada | Sociabilidad | E1 | Discute con sus iguales en que contribuyen al bienestar de las personas los trabajos de familiares. | Discute con sus iguales en qué contribuyen al bienestar de las personas los trabajos de familiares. |
+| Manada | Sociabilidad | E1 | Acepta las normas de su casa, escuela y su unidad. | Acepta las normas de su casa, escuela y su Unidad. |
+| Manada | Sociabilidad | E2 | Pregunta a sus padres, maestros, como se efectúan las tareas que le han sido asignadas. | Pregunta a sus padres, maestros, cómo se efectúan las tareas que le han sido asignadas. |
+| Manada | Sociabilidad | E2 | Propone a su familia adoptar normas que le han resultado en otros medios. | Propone a su familia adoptar normas que le han dado resultado en otros medios. |
+| Manada | Espiritualidad | E2 | Cumple los deberes que se derivan de su Fe según las costumbres de su Iglesia. | Cumple los deberes que se derivan de su Fe según las costumbres de su Iglesia y respeta la de los demás. |
+| Tropa | — | — | Solicita la ayuda de personas ajenas al Grupo para aprender habilidades, que requieran a un experto. | Solicita la ayuda de personas ajenas al Grupo para aprender habilidades que requieran a un experto. |
 
 ## Datos faltantes o ambiguos
 

@@ -54,11 +54,17 @@ let [dl] = await Promise.all([p.waitForEvent('download'), p.evaluate(() => doExp
 await dl.saveAs(`${OUT}/export.json`); res.exportNombre = dl.suggestedFilename(); res.exportHash = hash(`${OUT}/export.json`);
 // guardar HTML (en la línea base ya falla: se registra el error)
 // impresión
+// PDF con estilos de impresión (antes se generaba con media 'screen', que no es lo que sale al imprimir).
+// Carta = tamaño de la ficha (@page letter); A4 = como lo imprimiría quien tenga ese papel (Chrome ajusta el ancho).
+await p.evaluate(() => { autoSplitExtraPages(); fitAllHdrNombres(); fitAllAmbientacion(); });
 await p.emulateMedia({ media: 'print' });
 await p.screenshot({ path: `${OUT}/03-print.png`, fullPage: true });
+res.bloquesDesbordados = await p.evaluate(() => [...document.querySelectorAll('.page-block')].filter(e => getComputedStyle(e).display !== 'none' && !e.querySelector('.sec-prog') && e.getBoundingClientRect().height > 11 * 96 + 2).map(e => e.id || e.closest('.extra-page-wrap')?.dataset.epId));
+await p.pdf({ path: `${OUT}/ficha.pdf`, preferCSSPageSize: true, printBackground: true });
+await p.pdf({ path: `${OUT}/ficha-a4.pdf`, format: 'A4', printBackground: true });
 await p.emulateMedia({ media: 'screen' });
-await p.pdf({ path: `${OUT}/ficha.pdf`, format: 'A4', printBackground: true });
-res.pdfPaginas = (fs.readFileSync(`${OUT}/ficha.pdf`, 'latin1').match(/\/Type\s*\/Page[^s]/g) || []).length;
+const paginas = f => (fs.readFileSync(f, 'latin1').match(/\/Type\s*\/Page[^s]/g) || []).length;
+res.pdfPaginas = paginas(`${OUT}/ficha.pdf`); res.pdfPaginasA4 = paginas(`${OUT}/ficha-a4.pdf`);
 // importar en contexto limpio
 const ctx2 = await b.newContext({ viewport: { width: 1440, height: 900 } });
 const p2 = await ctx2.newPage(); vigilar(p2, 'index-import');

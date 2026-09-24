@@ -6,7 +6,7 @@ function toggleEdit() {
   editMode = !editMode;
   document.body.classList.toggle('edit-mode', editMode);
   const btn = document.getElementById('editBtn');
-  btn.textContent = editMode ? '✅ Guardar' : '✏️ Editar';
+  btn.textContent = editMode ? '✅ Guardar' : '✏️ Editar ficha';
   btn.classList.toggle('on', editMode);
   if (typeof syncEditBtnM === 'function') syncEditBtnM();
   // Campos generales
