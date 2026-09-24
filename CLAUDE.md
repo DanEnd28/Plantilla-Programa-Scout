@@ -7,8 +7,8 @@ Historial, cómo exportar el proyecto y prompt de arranque: [docs/HANDOFF.md](do
 ## Estado (2026-09-23)
 - **Versión 1 = solo GitHub Pages**, HTML/CSS/JS vanilla, sin backend, sin base de datos y sin Informe Previo (IP). Cada ficha vive en el `localStorage` y se comparte exportando el JSON. Tico (Gem de Gemini) entrega un JSON que se importa.
 - **Versión 2 = futuro** Next.js + NestJS (solo documentado, no se construye). La nube Neon + Vercel ya hecha está **archivada** en `_futuro/nube-neon/` y apagada con `js/config.js` → `SCOUT_CONFIG.nube = false`.
-- Hechos: P0 (orden y documentación) y **P1** (dividir `index.html`). **Siguiente: P2** (barra lateral retráctil + barra superior mínima + barra inferior en móvil); el prompt está en `docs/00-PLAN.md`, sección P2.
-- Hay cambios **sin commit** desde P0 (Danny revisa y hace commit/push).
+- Hechos: P0, P1, **P2** (layout estilo GHL: barra lateral retráctil de alto completo + header morado + barra inferior en móvil) y **P4** (panel de Configuración a la derecha, en vivo, con Deshacer). **P3 saltado** por decisión de Danny. **Siguiente: P5** (índice de secciones con progreso); el prompt está en `docs/00-PLAN.md`.
+- Danny revisa y hace commit/push al terminar cada paso.
 
 ## Decisiones de Danny (no reabrir sin preguntar)
 - Sin plazos de borrado de datos: solo actualización.
@@ -26,16 +26,18 @@ Scripts **clásicos** (no `type="module"`): comparten el ámbito global y los `o
 | Archivo | Qué hace |
 |---|---|
 | `index.html` | Solo HTML de la Ficha (barra, páginas, modales). Carga los CSS y JS en este orden |
-| `css/base.css` → `barra.css` → `ficha.css` → `modales.css` → `impresion.css` | Paletas por rama y reset · barra/drawer/`.fab` y su responsive · páginas de la ficha · modales, ayuda, tooltips · `@media print` y `@page`. El orden es la cascada original |
+| `css/base.css` → `barra.css` → `ficha.css` → `modales.css` → `panel.css` → `impresion.css` | Paletas por rama y reset · barra lateral, header, barra inferior/hoja «Más», menú ⋯ y botones `.btn` · páginas de la ficha · modales (y sus botones), ayuda, tooltips · panel de Configuración · `@media print` y `@page`. El orden es la cascada |
 | `js/config.js` | `SCOUT_CONFIG` (nube apagada) |
 | `js/dialogo.js` | `dialogo()` / `aviso()` (reemplazan `alert`/`confirm`) |
 | `js/nube.js` | Cliente Neon (inactivo; si se activa, envuelve `saveStorage`) |
 | `js/datos-il.js` | `INDICADORES` (Manada 181, Tropa 197, Clan 143), `IND_BASE`, `ODS_LIST`, `AREA_CLS`, logos |
 | `js/estado.js` | Variables globales (`editMode`, `progRows`, `indRows`, `ramaActual`…), fechas, `saveStorage`/`loadStorage` (claves `sf_*`), `doReset` |
-| `js/ficha.js` | Render: `applyRama`, logos, `renderODS`, `renderInd`/`renderIndPanel`/`applyInd`, programa y días, drag, `syncSec`, `syncEmpty`, modo grupal, páginas extra |
-| `js/edicion.js` | `toggleEdit`, modal Configurar (`applyConfig`, `setCode`), I.L. manuales |
-| `js/exportar.js` | `buildExportData`, `doExportJSON`, `doImportJSON`, `doPDF` |
-| `js/ui.js` | `openM`/`closeM`, `st`, Escape, drawer móvil, `scalePages` |
+| `js/ficha.js` | Render: `applyRama`, logos, `renderODS`, `renderInd`/`renderIndPanel`/`applyInd`, programa (`renderProg`, `horasProg`; cada momento guarda su `dia`, los encabezados de día se generan solos con varios días, hora de inicio por día en `horasDia` → `sf_horas-dia`/`_horas_dia`; `normalizarProg` convierte los viejos `day-sep`), drag, `syncSec`, `syncEmpty`, modo grupal, páginas extra |
+| `js/edicion.js` | `toggleEdit`, código (`setCode`, `codigoAuto`), I.L. manuales |
+| `js/exportar.js` | `buildExportData` (incluye `_codigo`), `doExportJSON`, `doImportJSON` (respeta `_codigo` o lo genera), `doPDF` |
+| `js/ui.js` | `openM`/`closeM`, `st`, Escape, barra lateral (`toggleSidebar`, clave `ui_barra_colapsada`), menú ⋯, hoja «Más», `scalePages` (compensa barra lateral, header y panel) |
+| `js/config-panel.js` | Panel derecho (vistas `config` y `programa`, `panelMostrar`) y vista Configuración (`openConfigPanel`/`closeConfigPanel`/`toggleConfigPanel`, `cfgDeshacer`): aplica cada campo `cfg-*` en vivo. Reemplazó al modal `mConfig` y a `applyConfig` |
+| `js/programa-panel.js` | Vista Programa: momentos como tarjetas en tiempo real (día, hora de inicio del día, ↑↓, borrar, agregar). Reemplazó al modal `mProg` y a «Separar día» |
 | `js/principal.js` | `DOMContentLoaded` (carga + primer render) y autoguardado. **Siempre último** |
 | `programas.html` + `css/programas.css` + `js/programas.js` | Página Programas (aviso con nube apagada; acceso 🐺 a `promesa-ley-manada.html` en «Todas» y «Manada») |
 
@@ -44,7 +46,7 @@ Reglas: ediciones puntuales (nunca reescribir archivos grandes enteros; mover bl
 ## Cómo verificar
 1. `python3 -m http.server 8000` en la raíz y abrir `http://localhost:8000/`.
 2. Navegador headless (Playwright + Chromium) contra `index.html`, `programas.html`, `promesa-ley-manada.html`: **0 errores** de consola/`pageerror`/404; I.L. en el modal `mInd` por rama = **181 / 197 / 143 / 0** (Comunidad); importar `programas/2026-05-17.json` → 9 filas de programa, 5 I.L., 2 ODS; agregar 2 I.L. → 7; recargar → persiste; exportar → reimportar en contexto limpio → igual; capturas escritorio (1440) y móvil (375, con drawer); `emulateMedia('print')` y `page.pdf()` (6 páginas con ese programa).
-3. En este equipo (WSL) Chromium necesita `libnspr4`/`libnss3`: si falla al lanzar, usar `LD_LIBRARY_PATH` con las librerías extraídas o `npx playwright install-deps` (pide sudo).
+3. En este equipo (WSL) Chromium necesita `libnspr4`/`libnss3`/`libasound2t64`. Sin sudo: `apt-get download libnspr4 libnss3 libasound2t64`, extraer con `dpkg-deb -x <deb> /tmp/scout-libs/extracted` y correr con `LD_LIBRARY_PATH=/tmp/scout-libs/extracted/usr/lib/x86_64-linux-gnu`. Para que las capturas muestren emojis: `fonts-noto-color-emoji` extraído igual + `FONTCONFIG_FILE` apuntando a un `fonts.conf` que incluya esa carpeta. `playwright` está en `devDependencies` (`npm install`).
 4. Apagar el servidor al terminar.
 
 - Script listo: `_herramientas/verificar.mjs` (errores de consola, I.L. por rama, import/export, PDF, capturas). Uso en su cabecera.

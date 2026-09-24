@@ -10,8 +10,9 @@ function buildExportData() {
   const am = document.getElementById('hdr-ambientacion'); if (am) d['ambientacion'] = am.innerHTML || am.textContent;
   const epData = []; document.querySelectorAll('.extra-page-wrap').forEach(wrap => { epData.push({ id: wrap.dataset.epId, titulo: wrap.querySelector('.ep-titulo').innerHTML, body: wrap.querySelector('.ep-body').innerHTML }); });
   const dtExp = document.getElementById('doc-title')?.textContent?.trim() || 'FICHA TÉCNICA';
-  return { _data: d, _indicadores_extra: Object.fromEntries(Object.entries(INDICADORES).filter(([k]) => !IND_BASE.includes(k))), _ods: [...odsActivos], _prog: progRows, _ind: indRows, _logos: customLogos, _extra_pages: epData, _fechaIni: fechaIni, _fechaFin: fechaFin, _rama: ramaActual, _doc_title: dtExp, _hora_ini: horaIniDia1, _hora_cierre: horaCierreUltimo, _grupal_comunidad: localStorage.getItem(SF('grupal-comunidad')) === '1' };
+  return { _data: d, _indicadores_extra: Object.fromEntries(Object.entries(INDICADORES).filter(([k]) => !IND_BASE.includes(k))), _ods: [...odsActivos], _prog: progRows, _horas_dia: horasDia, _ind: indRows, _logos: customLogos, _extra_pages: epData, _fechaIni: fechaIni, _fechaFin: fechaFin, _rama: ramaActual, _doc_title: dtExp, _hora_ini: horaIniDia1, _hora_cierre: horaCierreUltimo, _grupal_comunidad: localStorage.getItem(SF('grupal-comunidad')) === '1', _codigo: codigoActual() };
 }
+function codigoActual() { const c = document.getElementById('cod-a')?.textContent?.trim(); return c && c !== '—' ? c : ''; }
 function doExportJSON() {
   const out = buildExportData();
   const na = document.getElementById('hdr-nombre-act');
@@ -31,7 +32,8 @@ function doImportJSON(file) {
       }
       if (d._indicadores_extra) Object.entries(d._indicadores_extra).forEach(([k, v]) => { if (!IND_BASE.includes(k)) INDICADORES[k] = v; });
       if (d._ods) { odsActivos = new Set(d._ods); renderODS(); }
-      if (d._prog) { progRows = d._prog; renderProg(); }
+      if (d._horas_dia) horasDia = d._horas_dia;
+      if (d._prog) progRows = d._prog;
       if (d._ind) { indRows = d._ind; renderInd(); }
       if (d._logos) { customLogos = d._logos; Object.entries(d._logos).forEach(([id, src]) => applyLogo(id, src)); }
       if (d._fechaIni) fechaIni = d._fechaIni;
@@ -40,8 +42,13 @@ function doImportJSON(file) {
       if (d._doc_title) document.querySelectorAll('.hdr-title-doc').forEach(el => el.textContent = d._doc_title);
       if (d._hora_ini) horaIniDia1 = d._hora_ini;
       if (d._hora_cierre) horaCierreUltimo = d._hora_cierre;
+      // El programa se dibuja después de fechas y horas: de ellas dependen los días y las horas de cada momento
+      if (d._prog) { renderProg(); enableProgEdit(editMode); }
+      // Código: se respeta si el JSON lo trae; si no, se genera desde la fecha de inicio y la rama
+      if (d._codigo) setCode(d._codigo); else if (fechaIni) setCode(codigoAuto());
       if (d._extra_pages && d._extra_pages.length) { document.getElementById('extraPagesContainer').innerHTML = ''; extraPages = []; d._extra_pages.forEach(p => addExtraPage(p.id, p.titulo, p.body)); autoSplitExtraPages(); }
       saveStorage(); syncSec(); st('JSON importado ✅');
+      if (typeof progPanelRefrescar === 'function') progPanelRefrescar();
     } catch (err) { if (window.aviso) aviso('El archivo no es un JSON válido de la ficha: ' + err.message, '📥 No se pudo importar'); else alert('Error JSON: ' + err.message); }
   };
   r.readAsText(file);

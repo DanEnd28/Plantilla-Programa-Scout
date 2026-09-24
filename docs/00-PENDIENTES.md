@@ -24,8 +24,10 @@
 | Barra lateral / superior / móvil | ✅ | `css/barra.css`, `js/ui.js` (`toggleSidebar`, `toggleMoreMenu`, `toggleBottomSheet`), `index.html` | — (verificado: escritorio con barra lateral retráctil, móvil con barra inferior + hoja "Más", 0 errores de consola, 360 px sin scroll horizontal, PDF sin barras) |
 | «Restablecer» no borraba las páginas extra | ✅ corregido 2026-09-23 | `js/estado.js` → `doReset()` | — (ahora vacía `#extraPagesContainer` y `extraPages`) |
 | Asistente de inicio + Tico | ⏭️ saltado | — | Danny decidió no hacerlo (2026-09-23) |
-| Configuración en vivo | ⏳ | modal `mConfig` | **P4**: panel derecho, modo edición se mantiene, código auto si viene vacío |
-| Código no se genera al importar JSON | ⏳ | `js/exportar.js` (no toca el código), `js/edicion.js` → `applyConfig` | Se hace en **P4** |
+| Configuración en vivo (P4) | ✅ | `js/config-panel.js`, `css/panel.css`, `index.html` (`#cfgPanel`) | — (panel derecho, una sola vista, en vivo, con Deshacer; modo edición se mantiene) |
+| Programa en el panel derecho + días automáticos | ✅ | `js/programa-panel.js`, `js/ficha.js` (programa) | — (tarjetas en tiempo real; sin «Separar día») |
+| `ayuda.html` menciona «Separar día» y el modal de agregar momento | ⏳ | `ayuda.html` | Actualizar el texto cuando Danny lo pida (regla: no tocar `ayuda.html` sin pedido) |
+| Código (se perdía al recargar, no se exportaba ni se generaba al importar) | ✅ corregido 2026-09-23 | `js/edicion.js` (`codigoAuto`), `js/exportar.js` (`_codigo`), `js/estado.js` (`loadStorage`, `doReset`) | — |
 | Índice con progreso | ⏳ | — | **P5** |
 | Selector I.L. y ODS | ⏳ | modal `mInd`, `ODS_LIST` | **P6** |
 | Exportar solo con contenido | ⏳ | barra | **P7** |

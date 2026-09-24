@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/barra.css">
   <link rel="stylesheet" href="css/ficha.css">
   <link rel="stylesheet" href="css/modales.css">
+  <link rel="stylesheet" href="css/panel.css">
   <link rel="stylesheet" href="css/impresion.css">
 </head>
 
@@ -50,13 +51,12 @@
           <span class="nav-ico"><span class="ico-off">✏️</span><span class="ico-on">✅</span></span>
           <span class="nav-txt"><span class="lbl-off">Editar ficha</span><span class="lbl-on">Guardar cambios</span></span>
         </button>
-        <button class="side-item" onclick="openM('mConfig')" title="Configurar"><span class="nav-ico">⚙️</span><span class="nav-txt">Configurar</span></button>
+        <button class="side-item" onclick="toggleConfigPanel()" title="Configurar"><span class="nav-ico">⚙️</span><span class="nav-txt">Configurar</span></button>
       </div>
       <div class="side-group">
         <span class="side-lbl">Contenido</span>
         <button class="side-item" onclick="openM('mInd')" title="Indicadores de logro"><span class="nav-ico">📊</span><span class="nav-txt">Indicadores de logro</span></button>
-        <button class="side-item" onclick="openM('mProg')" title="Agregar momento"><span class="nav-ico">➕</span><span class="nav-txt">Agregar momento</span></button>
-        <button class="side-item" onclick="addDaySep()" title="Separar día"><span class="nav-ico">📅</span><span class="nav-txt">Separar día</span></button>
+        <button class="side-item" onclick="toggleProgramaPanel()" title="Programa: ver y agregar momentos"><span class="nav-ico">🗓️</span><span class="nav-txt">Programa</span></button>
       </div>
       <div class="side-group">
         <span class="side-lbl">Datos</span>
@@ -83,7 +83,7 @@
       <span class="bb-lbl"><span class="lbl-off">Editar</span><span class="lbl-on">Guardar</span></span>
     </button>
     <button class="bb-item" onclick="openM('mInd')"><span class="nav-ico">📊</span><span class="bb-lbl">Indicadores</span></button>
-    <button class="bb-item" onclick="openM('mProg')"><span class="nav-ico">➕</span><span class="bb-lbl">Momento</span></button>
+    <button class="bb-item" onclick="toggleProgramaPanel()"><span class="nav-ico">🗓️</span><span class="bb-lbl">Programa</span></button>
     <button class="bb-item" onclick="doPDF()"><span class="nav-ico">📄</span><span class="bb-lbl">PDF</span></button>
     <button class="bb-item" id="bbMoreBtn" onclick="toggleBottomSheet()" aria-haspopup="true"><span class="nav-ico">⋯</span><span class="bb-lbl">Más</span></button>
   </div>
@@ -94,11 +94,7 @@
     <div class="bs-handle"></div>
     <span class="bs-lbl">Ficha</span>
     <div class="bs-row">
-      <button class="bs-item" onclick="openM('mConfig');closeBottomSheet()">⚙️ Configurar</button>
-    </div>
-    <span class="bs-lbl">Contenido</span>
-    <div class="bs-row">
-      <button class="bs-item" onclick="addDaySep();closeBottomSheet()">📅 Separar día</button>
+      <button class="bs-item" onclick="closeBottomSheet();openConfigPanel()">⚙️ Configurar</button>
     </div>
     <span class="bs-lbl">Datos</span>
     <div class="bs-row">
@@ -116,6 +112,47 @@
       <button class="bs-item bs-item-danger" onclick="openM('mReset');closeBottomSheet()">🗑️ Restablecer</button>
     </div>
   </div>
+
+  <!-- PANEL DE CONFIGURACIÓN (derecha, en vivo) -->
+  <aside class="cfg-panel" id="cfgPanel" aria-label="Configuración general">
+    <div class="cfg-h">
+      <span class="cfg-title" id="cfgTitle">⚙️ Configuración</span>
+      <button class="cfg-undo" id="cfgUndo" onclick="cfgDeshacer()" disabled title="Deshacer el último cambio">↶ Deshacer</button>
+      <button class="cfg-x" onclick="closeConfigPanel()" aria-label="Cerrar configuración">✕</button>
+    </div>
+    <div class="cfg-body" data-vista="config">
+      <div class="fg"><label class="fl" for="cfg-grupo">Nombre del grupo</label><input type="text" class="fi" id="cfg-grupo" placeholder="Grupo Scout La Salle Guaparo"></div>
+      <div class="fg"><label class="fl" for="cfg-rama">Rama</label>
+        <select class="fs" id="cfg-rama">
+          <option value="Manada">🟡 Manada</option>
+          <option value="Tropa">🟢 Tropa</option>
+          <option value="Comunidad">🟣 Comunidad</option>
+          <option value="Clan">🔴 Clan</option>
+          <option value="Grupal">⚪ Grupal</option>
+        </select>
+        <div id="cfg-grupal-opts" style="display:none">
+          <label class="cfg-check"><input type="checkbox" id="cfg-grupal-comunidad"> Incluir Comunidad (por defecto solo Manada, Tropa y Clan)</label>
+        </div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label class="fl" for="cfg-fecha-ini">Fecha de inicio</label><input type="date" class="fi" id="cfg-fecha-ini"></div>
+        <div class="fg"><label class="fl" for="cfg-fecha-fin">Fecha de fin</label><input type="date" class="fi" id="cfg-fecha-fin"></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label class="fl" for="cfg-hi">Hora de inicio</label><input type="time" class="fi" id="cfg-hi" value="10:00"></div>
+        <div class="fg"><label class="fl" for="cfg-hc">Hora de cierre</label><input type="time" class="fi" id="cfg-hc" value="13:00"></div>
+      </div>
+      <div id="multiday-info" class="cfg-info" style="display:none">
+        📅 <strong>Varios días</strong> — el programa se separa por día automáticamente.
+      </div>
+      <div class="fg"><label class="fl" for="cfg-resp">Responsable</label><input type="text" class="fi" id="cfg-resp" placeholder="Akela"></div>
+      <div class="fg"><label class="fl" for="cfg-titulo">Título del documento</label><input type="text" class="fi" id="cfg-titulo" placeholder="FICHA TÉCNICA"></div>
+      <div class="fg"><label class="fl" for="cfg-cod">Código</label><input type="text" class="fi" id="cfg-cod" placeholder="Automático (DDMMAA-R)">
+        <span class="cfg-hint">Vacío = se genera solo con la fecha de inicio y la rama.</span></div>
+    </div>
+    <div class="cfg-body prog-lista" data-vista="programa" id="progLista" hidden></div>
+    <div class="cfg-foot">Los cambios se aplican al instante y se guardan solos.</div>
+  </aside>
 
   <!-- PÁGINAS -->
   <div class="pages-wrap">
@@ -372,7 +409,7 @@
                 </thead>
                 <tbody id="prog-tbody"></tbody>
               </table>
-              <button class="add-btn" onclick="openM('mProg')">➕ Agregar momento</button>
+              <button class="add-btn" onclick="openProgramaPanel(true)">➕ Agregar momento</button>
             </div>
           </div>
           <div class="prog-edit-hint">
@@ -417,59 +454,6 @@
     </div>
   </div>
 
-    <div class="overlay" id="mConfig">
-      <div class="modal">
-        <div class="modal-h">
-          <div class="modal-title">⚙️ Configuración General</div><button class="modal-x"
-            onclick="closeM('mConfig')">✕</button>
-        </div>
-        <div class="frow">
-          <div class="fg"><label class="fl">Nombre del Grupo</label><input type="text" class="fi" id="cfg-grupo"
-              placeholder="Grupo Scout La Salle Guaparo"></div>
-          <div class="fg"><label class="fl">Rama</label>
-            <select class="fs" id="cfg-rama" onchange="onRamaChange(this.value)">
-              <option value="Manada">🟡 Manada</option>
-              <option value="Tropa">🟢 Tropa</option>
-              <option value="Comunidad">🟣 Comunidad</option>
-              <option value="Clan">🔴 Clan</option>
-              <option value="Grupal">⚪ Grupal</option>
-            </select>
-            <div id="cfg-grupal-opts">
-              <label style="display:flex;align-items:center;gap:6px;font-size:10px;color:#555;cursor:pointer;">
-                <input type="checkbox" id="cfg-grupal-comunidad">
-                Incluir Comunidad (por defecto solo Manada, Tropa y Clan)
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="frow">
-          <div class="fg"><label class="fl">Fecha de Inicio</label><input type="date" class="fi" id="cfg-fecha-ini">
-          </div>
-          <div class="fg"><label class="fl">Fecha de Fin</label><input type="date" class="fi" id="cfg-fecha-fin"></div>
-        </div>
-        <div class="frow">
-          <div class="fg"><label class="fl">Hora Inicio (Día 1)</label><input type="time" class="fi" id="cfg-hi"
-              value="10:00"></div>
-          <div class="fg"><label class="fl">Hora Cierre (último día)</label><input type="time" class="fi" id="cfg-hc"
-              value="13:00"></div>
-        </div>
-        <div class="fg"><label class="fl">Responsable</label><input type="text" class="fi" id="cfg-resp"
-            placeholder="Akela"></div>
-        <div class="fg"><label class="fl">Código (vacío = DDMMAA-R automático)</label><input type="text" class="fi"
-            id="cfg-cod" placeholder="Ej: 010526-M"></div>
-        <div class="fg"><label class="fl">Título del Documento</label><input type="text" class="fi" id="cfg-titulo"
-            value="FICHA TÉCNICA"></div>
-        <div id="multiday-info"
-          style="display:none;background:#f0f8ff;border:1px solid #aad;border-radius:6px;padding:9px 11px;font-size:10px;color:#336;margin-bottom:8px;">
-          📅 <strong>Multi-día detectado</strong> — el programa mostrará secciones separadas por día. Puedes agregar
-          filas
-          al programa de cada día con el botón <strong>➕ Programa</strong>.
-        </div>
-        <div class="mf"><button class="btn btn-g" onclick="closeM('mConfig')">Cancelar</button><button class="btn btn-y"
-            onclick="applyConfig()">Aplicar</button></div>
-      </div>
-    </div>
-
     <div class="overlay" id="mInd">
       <div class="modal" style="max-width:600px">
         <div class="modal-h">
@@ -506,36 +490,6 @@
       </div>
     </div>
 
-    <div class="overlay" id="mProg">
-      <div class="modal">
-        <div class="modal-h">
-          <div class="modal-title">➕ Agregar momento al programa</div><button class="modal-x"
-            onclick="closeM('mProg')">✕</button>
-        </div>
-        <div class="frow">
-          <div class="fg"><label class="fl">Hora <span style="font-weight:400;opacity:.6">(vacío =
-                automático)</span></label><input type="text" class="fi" id="p-hora"
-              placeholder="Ej: 10:30 — déjalo vacío para calcular solo"></div>
-          <div class="fg"><label class="fl">Duración</label><input type="text" class="fi" id="p-dur"
-              placeholder="30 min / 1h / 1h 30min"></div>
-        </div>
-        <div id="p-day-group" style="display:none">
-          <div class="fg"><label class="fl">Día (para multi-día)</label>
-            <select class="fs" id="p-day"></select>
-          </div>
-        </div>
-        <div class="fg"><label class="fl">Actividad</label><input type="text" class="fi" id="p-act"></div>
-        <div class="fg"><label class="fl">Descripción</label><textarea class="fta" id="p-desc"></textarea></div>
-        <div class="frow">
-          <div class="fg"><label class="fl">Materiales</label><input type="text" class="fi" id="p-mat"></div>
-          <div class="fg"><label class="fl">Responsable</label><input type="text" class="fi" id="p-resp"
-              placeholder="Akela"></div>
-        </div>
-        <div class="mf"><button class="btn btn-g" onclick="closeM('mProg')">Cancelar</button><button class="btn btn-y"
-            onclick="addProgRow()">Agregar</button></div>
-      </div>
-    </div>
-
     <div class="overlay" id="mReset">
       <div class="modal" style="max-width:440px">
         <div class="modal-h">
@@ -568,6 +522,8 @@
     <script src="js/edicion.js"></script>
     <script src="js/exportar.js"></script>
     <script src="js/ui.js"></script>
+    <script src="js/config-panel.js"></script>
+    <script src="js/programa-panel.js"></script>
     <script src="js/principal.js"></script>
 </body>
 

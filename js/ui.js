@@ -7,21 +7,6 @@
 function openM(id) {
   document.getElementById(id).classList.add('open');
   if (id === 'mInd') renderIndPanel();
-  if (id === 'mConfig') {
-    if (horaIniDia1) document.getElementById('cfg-hi').value = horaIniDia1;
-    if (horaCierreUltimo) document.getElementById('cfg-hc').value = horaCierreUltimo;
-    if (fechaIni) document.getElementById('cfg-fecha-ini').value = fechaIni;
-    if (fechaFin) document.getElementById('cfg-fecha-fin').value = fechaFin;
-    // Pre-fill text fields from current document values
-    const grupoEl = document.querySelector('[data-key="hdr-grupo"]');
-    const respEl = document.querySelector('[data-key="responsable"]');
-    const dtEl = document.getElementById('doc-title');
-    document.getElementById('cfg-grupo').value = grupoEl?.textContent?.trim() || 'Grupo Scout La Salle Guaparo';
-    document.getElementById('cfg-resp').value = respEl?.textContent?.trim() || 'Akela';
-    document.getElementById('cfg-titulo').value = dtEl?.textContent?.trim() || 'FICHA TÉCNICA';
-    const md = isMultiday();
-    document.getElementById('multiday-info').style.display = md ? 'block' : 'none';
-  }
 }
 function closeM(id) { document.getElementById(id).classList.remove('open'); }
 function scrollHelp() { document.getElementById('helpPage').scrollIntoView({ behavior: 'smooth' }); }
@@ -29,7 +14,7 @@ function st(msg) { const el = document.getElementById('tbSt'); el.textContent = 
 document.addEventListener('keydown', e => {
   if (e.key !== 'Escape') return;
   document.querySelectorAll('.overlay.open').forEach(m => m.classList.remove('open'));
-  closeMoreMenu(); closeBottomSheet();
+  closeMoreMenu(); closeBottomSheet(); closeConfigPanel();
 });
 
 /* ── BARRA LATERAL (escritorio): colapsar/expandir, recordado en localStorage ──
@@ -72,17 +57,20 @@ function scalePages() {
   if (!wrap) return;
   const blocks = document.querySelectorAll('.page-block');
   if (!blocks.length) return;
-  wrap.style.zoom = ''; wrap.style.marginLeft = ''; wrap.style.paddingTop = ''; wrap.style.paddingBottom = '';
+  wrap.style.zoom = ''; wrap.style.marginLeft = ''; wrap.style.marginRight = ''; wrap.style.paddingTop = ''; wrap.style.paddingBottom = '';
   const naturalW = blocks[0].getBoundingClientRect().width || 816;
   const css = getComputedStyle(document.documentElement);
   const visible = id => { const el = document.getElementById(id); return el && getComputedStyle(el).display !== 'none'; };
   const sideW = visible('sidebar') ? parseFloat(css.getPropertyValue(document.body.classList.contains('sidebar-colapsada') ? '--sidebar-w-collapsed' : '--sidebar-w')) : 0;
-  const avail = window.innerWidth - sideW;
+  // El panel de configuración solo empuja la ficha en escritorio (en móvil la cubre)
+  const panelW = sideW && document.body.classList.contains('cfg-abierto') ? parseFloat(css.getPropertyValue('--cfg-w')) : 0;
+  const avail = window.innerWidth - sideW - panelW;
   if (avail >= naturalW + 24) return;
   const z = avail / naturalW;
   // zoom también encoge márgenes y rellenos: se compensan para que la ficha no quede bajo el header ni la barra lateral
   wrap.style.zoom = z.toFixed(4);
   wrap.style.marginLeft = (sideW / z) + 'px';
+  if (panelW) wrap.style.marginRight = (panelW / z) + 'px';
   wrap.style.paddingTop = (parseFloat(css.getPropertyValue('--topbar-h')) / z) + 'px';
   if (visible('bottombar')) wrap.style.paddingBottom = (parseFloat(css.getPropertyValue('--bottombar-h')) / z) + 'px';
 }

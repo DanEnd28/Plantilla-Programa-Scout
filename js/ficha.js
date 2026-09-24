@@ -137,34 +137,63 @@ function addMins(time, mins) {
   return String(Math.floor(tot / 60) % 24).padStart(2, '0') + ':' + String(tot % 60).padStart(2, '0');
 }
 
+/* Cada momento guarda su día en `dia` (0 = día 1; se omite si es 0). Con varios días (fechas de la ficha), la tabla
+   muestra un encabezado por día, generado solo. Cada día empieza a la hora de `horasDia[d]` (día 1 = horaIniDia1) y
+   cada momento empieza donde termina el anterior de ese mismo día. */
+let horasDia = {};
+const escHTML = t => String(t ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+function numDias() { return isMultiday() ? getDays().length : 1; }
+// Si se acortan las fechas, el momento se muestra en el último día sin perder su día original
+function diaDe(r) { return Math.min(r.dia || 0, numDias() - 1); }
+function horaDia(d) { return d === 0 ? horaIniDia1 : (horasDia[d] || horaIniDia1); }
+
+// Datos viejos traen filas {type:'day-sep'}: se convierten a momentos con día
+function normalizarProg(rows) {
+  if (!rows.some(r => r.type === 'day-sep')) return rows;
+  let dia = -1; const out = [];
+  rows.forEach(r => {
+    if (r.type === 'day-sep') { dia++; if (dia > 0 && r.startTime && !horasDia[dia]) horasDia[dia] = r.startTime; return; }
+    const m = { ...r }; delete m.type;
+    if (dia > 0) m.dia = dia; else delete m.dia;
+    out.push(m);
+  });
+  return out;
+}
+
+function horasProg() {
+  const horas = [];
+  for (let d = 0; d < numDias(); d++) {
+    let cur = horaDia(d);
+    progRows.forEach((r, i) => {
+      if (diaDe(r) !== d) return;
+      horas[i] = cur;
+      const m = parseMins(r.dur || ''); if (m > 0) cur = addMins(cur, m);
+    });
+  }
+  return horas;
+}
+
 function recalcHoras() {
-  let cur = horaIniDia1;
+  const horas = horasProg();
   document.querySelectorAll('#prog-tbody tr').forEach(tr => {
-    if (tr.classList.contains('day-sep')) {
-      // El separador tiene su propia hora de inicio
-      const hEl = tr.querySelector('.day-hora');
-      if (hEl && hEl.textContent.trim()) cur = hEl.textContent.trim();
-      return;
-    }
-    const hEl = tr.querySelector('.p-hora'); if (hEl) hEl.textContent = cur;
-    const m = parseMins(tr.querySelector('.p-dur')?.textContent || ''); if (m > 0) cur = addMins(cur, m);
+    if (tr.classList.contains('day-sep')) { tr.querySelector('.day-hora').textContent = horaDia(+tr.dataset.dia); return; }
+    const h = tr.querySelector('.p-hora'); if (h) h.textContent = horas[+tr.dataset.idx] || '';
   });
   updateProgHdr();
 }
 
 function renderProg() {
+  progRows = normalizarProg(progRows);
   const tb = document.getElementById('prog-tbody'); tb.innerHTML = '';
-  let cur = horaIniDia1;
-  progRows.forEach(r => {
-    if (r.type === 'day-sep') {
-      const tr = makeDaySepTr(r.label || 'Día', r.startTime || '');
-      tb.appendChild(tr);
-      if (r.startTime) cur = r.startTime;
-      return;
-    }
-    tb.appendChild(makeProgTr(cur, r.dur || '', r.act || '', r.desc || '', r.mat || '', r.resp || ''));
-    const m = parseMins(r.dur || ''); if (m > 0) cur = addMins(cur, m);
-  });
+  const horas = horasProg(), n = numDias(), dias = getDays();
+  for (let d = 0; d < n; d++) {
+    if (n > 1) tb.appendChild(makeDaySepTr(d, dias[d].label, horaDia(d)));
+    progRows.forEach((r, i) => {
+      if (diaDe(r) !== d) return;
+      const tr = makeProgTr(horas[i], r.dur || '', r.act || '', r.desc || '', r.mat || '', r.resp || '');
+      tr.dataset.idx = i; tb.appendChild(tr);
+    });
+  }
   updateProgHdr();
 }
 
@@ -173,11 +202,11 @@ function makeProgTr(hora, dur, act, desc, mat, resp) {
   tr.innerHTML = `
     <td class="p-drag" title="Arrastrar">☰</td>
     <td class="p-hora">${hora}</td>
-    <td class="p-dur ${editMode ? 'editable' : ''}" contenteditable="${editMode}">${dur}</td>
-    <td class="p-act ${editMode ? 'editable' : ''}" contenteditable="${editMode}">${act}</td>
+    <td class="p-dur ${editMode ? 'editable' : ''}" contenteditable="${editMode}">${escHTML(dur)}</td>
+    <td class="p-act ${editMode ? 'editable' : ''}" contenteditable="${editMode}">${escHTML(act)}</td>
     <td class="p-desc-cell ${editMode ? 'editable' : ''}" contenteditable="${editMode}">${desc}</td>
-    <td class="p-mat ${editMode ? 'editable' : ''}" contenteditable="${editMode}">${mat}</td>
-    <td class="p-resp ${editMode ? 'editable' : ''}" contenteditable="${editMode}">${resp}</td>
+    <td class="p-mat ${editMode ? 'editable' : ''}" contenteditable="${editMode}">${escHTML(mat)}</td>
+    <td class="p-resp ${editMode ? 'editable' : ''}" contenteditable="${editMode}">${escHTML(resp)}</td>
     <td class="col-del"><button class="del-btn" onclick="delProgTr(this)">✕</button></td>`;
   tr.querySelectorAll('[contenteditable="true"]').forEach(td => {
     td.oninput = () => { syncProgRows(); if (td.classList.contains('p-dur')) recalcHoras(); };
@@ -185,81 +214,36 @@ function makeProgTr(hora, dur, act, desc, mat, resp) {
   return tr;
 }
 
-function makeDaySepTr(label, startTime) {
+function makeDaySepTr(d, label, hora) {
   const tr = document.createElement('tr');
-  tr.className = 'day-sep'; tr.draggable = true;
-  const horaDisplay = startTime ? ` <span style="font-size:9px;opacity:.75;font-weight:400">${startTime}</span>` : '';
+  tr.className = 'day-sep'; tr.dataset.dia = d;
   tr.innerHTML = `
-    <td class="p-drag" style="background:inherit;color:rgba(255,255,255,.5)">☰</td>
-    <td colspan="5" class="${editMode ? 'editable' : ''}" contenteditable="${editMode}">${label}</td>
-    <td class="day-hora" style="display:none">${startTime || ''}</td>
-    <td colspan="1" style="text-align:right;padding-right:6px;font-size:9px;opacity:.7;">${startTime || ''}</td>
-    <td class="col-del"><button class="del-btn" style="color:rgba(255,255,255,.6)" onclick="delProgTr(this)">✕</button></td>`;
+    <td class="p-drag" style="background:inherit"></td>
+    <td colspan="5">${escHTML(label)}</td>
+    <td class="day-hora" style="text-align:right;padding-right:6px;font-size:9px;opacity:.7;">${hora}</td>
+    <td class="col-del"></td>`;
   return tr;
 }
 
-function addDaySep() {
-  const days = getDays();
-  let label, startTime;
-  if (days.length > 0) {
-    // En multi-día, preguntar qué día
-    const opts = days.map((d, i) => `${i + 1}. ${d.label}`).join('\n');
-    const sel = prompt('¿Para qué día?\n' + opts, '1');
-    if (!sel) return;
-    const idx = parseInt(sel) - 1;
-    if (isNaN(idx) || idx < 0 || idx >= days.length) { st('Día inválido'); return; }
-    label = days[idx].label;
-    startTime = prompt('Hora de inicio de este día (Ej: 08:00):', '08:00');
-    if (!startTime) return;
-  } else {
-    label = prompt('Nombre del día (Ej: Viernes 01 mayo):', 'Día 1');
-    if (!label) return;
-    startTime = prompt('Hora de inicio de este día:', '08:00');
-    if (!startTime) return;
-  }
-  progRows.push({ type: 'day-sep', label, startTime });
-  renderProg(); enableProgEdit(editMode); saveStorage(); st('Separador de día agregado');
-}
-
 function syncProgRows() {
-  progRows = [];
+  const prev = progRows, rows = []; let dia = null;
   document.querySelectorAll('#prog-tbody tr').forEach(tr => {
-    if (tr.classList.contains('day-sep')) {
-      const td = tr.querySelectorAll('td');
-      progRows.push({
-        type: 'day-sep',
-        label: td[1]?.textContent || 'Día',
-        startTime: tr.querySelector('.day-hora')?.textContent || ''
-      });
-      return;
-    }
-    progRows.push({
+    if (tr.classList.contains('day-sep')) { dia = +tr.dataset.dia; return; }
+    const r = {
       dur: tr.querySelector('.p-dur')?.textContent || '',
       act: tr.querySelector('.p-act')?.textContent || '',
       desc: tr.querySelector('.p-desc-cell')?.innerHTML || '',
       mat: tr.querySelector('.p-mat')?.textContent || '',
       resp: tr.querySelector('.p-resp')?.textContent || ''
-    });
+    };
+    const d = dia !== null ? dia : (prev[+tr.dataset.idx]?.dia || 0);
+    if (d) r.dia = d;
+    tr.dataset.idx = rows.length; rows.push(r);
   });
+  progRows = rows;
+  if (typeof progPanelRefrescar === 'function') progPanelRefrescar();
 }
 
-function addProgRow() {
-  const dur = document.getElementById('p-dur').value;
-  const horaManual = document.getElementById('p-hora').value.trim();
-  const tb = document.getElementById('prog-tbody');
-  let cur = horaIniDia1;
-  tb.querySelectorAll('tr').forEach(tr => {
-    if (tr.classList.contains('day-sep')) { const h = tr.querySelector('.day-hora')?.textContent; if (h) cur = h; return; }
-    const m = parseMins(tr.querySelector('.p-dur')?.textContent || ''); if (m > 0) cur = addMins(cur, m);
-  });
-  if (horaManual) cur = horaManual;
-  const tr = makeProgTr(cur, dur, document.getElementById('p-act').value, document.getElementById('p-desc').value, document.getElementById('p-mat').value, document.getElementById('p-resp').value);
-  tb.appendChild(tr);
-  if (editMode) enableProgEdit(true);
-  syncProgRows(); recalcHoras(); closeM('mProg');
-  ['p-hora', 'p-dur', 'p-act', 'p-desc', 'p-mat', 'p-resp'].forEach(id => document.getElementById(id).value = '');
-  saveStorage(); st('Fila agregada');
-}
 function delProgTr(btn) { btn.closest('tr').remove(); syncProgRows(); recalcHoras(); saveStorage(); }
 function updateProgHdr() {
   const hi = document.querySelector('[data-key="hora-inicio"]')?.textContent?.trim() || horaIniDia1 || '';

@@ -1,0 +1,221 @@
+/* panel.css — Panel lateral derecho de Configuración general (paso P4, docs/00-PLAN.md). Reusa .fg/.fl/.fi/.fs/.frow de modales.css.
+   En escritorio empuja la ficha (margin-right de .pages-wrap); en móvil cubre la pantalla entre el header y la barra inferior. */
+
+:root { --cfg-w: 360px; }
+
+.cfg-panel {
+  position: fixed;
+  top: var(--topbar-h);
+  right: 0;
+  bottom: 0;
+  width: var(--cfg-w);
+  background: white;
+  border-left: 1px solid #e4dcef;
+  box-shadow: -8px 0 24px rgba(42, 20, 80, .12);
+  z-index: 950;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(105%);
+  visibility: hidden;
+  transition: transform .22s cubic-bezier(.4, 0, .2, 1), visibility .22s;
+}
+
+body.cfg-abierto .cfg-panel { transform: none; visibility: visible; }
+body.cfg-abierto .pages-wrap { margin-right: var(--cfg-w); }
+.pages-wrap { transition: width .18s, left .18s, margin-left .18s, margin-right .18s; }
+
+.cfg-h {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid #eee6f7;
+}
+
+.cfg-title {
+  flex: 1;
+  font-family: var(--ff-h);
+  font-weight: 800;
+  font-size: 15px;
+  color: #2a1450;
+}
+
+.cfg-undo {
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid #d4cce0;
+  border-radius: 8px;
+  background: white;
+  color: #3b3350;
+  font-family: var(--ff-b);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cfg-undo:hover:not(:disabled) { background: #f5f1fa; }
+.cfg-undo:disabled { opacity: .45; cursor: default; }
+
+.cfg-x {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: #f0e8fa;
+  color: #622599;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cfg-x:hover { background: #e2d3f5; }
+
+.cfg-body { flex: 1; overflow-y: auto; padding: 16px; }
+
+.cfg-panel .fg { margin-bottom: 14px; }
+.cfg-panel .fl { font-size: 10.5px; margin-bottom: 5px; color: #4e1d7a; }
+.cfg-panel .fi, .cfg-panel .fs { font-size: 13px; padding: 8px 10px; border-radius: 8px; border-color: #d4cce0; }
+.cfg-panel .fi:focus, .cfg-panel .fs:focus { border-color: #622599; box-shadow: 0 0 0 3px rgba(98, 37, 153, .12); }
+.cfg-panel .frow { gap: 10px; }
+
+.cfg-hint { display: block; margin-top: 5px; font-size: 11px; color: #8a7fa0; }
+
+.cfg-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #555;
+  cursor: pointer;
+}
+
+.cfg-info {
+  background: #f0f8ff;
+  border: 1px solid #b9cdee;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #334;
+  margin-bottom: 14px;
+}
+
+.cfg-foot {
+  padding: 10px 16px;
+  border-top: 1px solid #eee6f7;
+  font-size: 11.5px;
+  color: #8a7fa0;
+}
+
+/* ── Vista Programa: tarjetas de momentos ── */
+.prog-lista { background: #f7f4fb; }
+
+.pl-resumen { font-size: 12px; color: #8a7fa0; margin-bottom: 10px; }
+
+.pl-dia {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 6px 0 10px;
+  padding: 8px 10px;
+  background: #2a1450;
+  color: white;
+  border-radius: 8px;
+}
+
+.pl-dia-lbl { font-family: var(--ff-h); font-weight: 800; font-size: 12px; }
+.pl-dia-hora { display: flex; align-items: center; gap: 6px; font-size: 11px; color: rgba(255, 255, 255, .75); white-space: nowrap; }
+.pl-dia-hora input { font: inherit; font-size: 12px; color: #2a1450; border: none; border-radius: 6px; padding: 3px 6px; }
+
+.pc {
+  background: white;
+  border: 1px solid #e4dcef;
+  border-left: 4px solid #622599;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.pc:focus-within { border-color: #b9a2dc; border-left-color: #622599; box-shadow: 0 2px 10px rgba(98, 37, 153, .12); }
+
+.pc-top { display: flex; align-items: center; gap: 6px; }
+
+.pc-hora {
+  font-family: var(--ff-h);
+  font-weight: 800;
+  font-size: 13px;
+  color: #622599;
+  min-width: 42px;
+}
+
+.pc input, .pc textarea, .pc select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #e0d8ea;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-family: var(--ff-b);
+  font-size: 12.5px;
+  color: #2a2340;
+  background: white;
+  outline: none;
+}
+
+.pc input:focus, .pc textarea:focus, .pc select:focus { border-color: #622599; box-shadow: 0 0 0 2px rgba(98, 37, 153, .1); }
+.pc .pc-dur { flex: 1; }
+.pc .pc-dia { width: auto; flex-shrink: 0; padding: 5px 4px; }
+.pc .pc-act { font-weight: 600; font-size: 13.5px; }
+.pc textarea { resize: none; overflow: hidden; line-height: 1.4; }
+.pc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+.pc-grip { cursor: grab; color: #b3a6c8; font-size: 15px; line-height: 1; padding: 2px 1px; user-select: none; }
+.pc-grip:hover { color: #622599; }
+.pc.arrastrando { opacity: .45; }
+.pc.drop-antes { box-shadow: 0 -3px 0 #622599; }
+.pc.drop-despues { box-shadow: 0 3px 0 #622599; }
+.pl-dia.drop-dia { outline: 2px solid #F3E22B; }
+.pl-add.drop-dia { background: #f3eef9; border-color: #622599; }
+@media (hover: none) { .pc-grip { display: none; } }
+
+.pc-acc { display: flex; gap: 2px; flex-shrink: 0; }
+
+.pc-acc button {
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 6px;
+  background: #f3eef9;
+  color: #4e1d7a;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.pc-acc button:hover:not(:disabled) { background: #e6dcf3; }
+.pc-acc button:disabled { opacity: .35; cursor: default; }
+.pc-acc .pc-del:hover { background: #fdeeee; }
+
+.pl-add {
+  width: 100%;
+  margin: 2px 0 14px;
+  padding: 10px;
+  border: 1.5px dashed #b9a2dc;
+  border-radius: 10px;
+  background: white;
+  color: #622599;
+  font-family: var(--ff-b);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pl-add:hover { background: #f3eef9; border-color: #622599; }
+
+@media (max-width: 899px) {
+  .cfg-panel { width: 100%; bottom: var(--bottombar-h); border-left: none; }
+  body.cfg-abierto .pages-wrap { margin-right: 0; }
+}

@@ -42,6 +42,7 @@ function saveStorage() {
   localStorage.setItem(SF('logos'), JSON.stringify(customLogos));
   localStorage.setItem(SF('ods'), JSON.stringify([...odsActivos]));
   localStorage.setItem(SF('prog'), JSON.stringify(progRows));
+  localStorage.setItem(SF('horas-dia'), JSON.stringify(horasDia));
   localStorage.setItem(SF('ind'), JSON.stringify(indRows));
   localStorage.setItem(SF('rama'), ramaActual);
   localStorage.setItem(SF('fecha-ini'), fechaIni || '');
@@ -59,6 +60,7 @@ function loadStorage() {
   const logos = localStorage.getItem(SF('logos')); if (logos) { customLogos = JSON.parse(logos); Object.entries(customLogos).forEach(([id, src]) => applyLogo(id, src)); }
   const ods = localStorage.getItem(SF('ods')); if (ods) odsActivos = new Set(JSON.parse(ods));
   const prog = localStorage.getItem(SF('prog')); if (prog) progRows = JSON.parse(prog);
+  const hd = localStorage.getItem(SF('horas-dia')); if (hd) horasDia = JSON.parse(hd);
   const ind = localStorage.getItem(SF('ind')); if (ind) indRows = JSON.parse(ind);
   const rama = localStorage.getItem(SF('rama')); if (rama) { ramaActual = rama; applyRama(rama); }
   const gc = localStorage.getItem(SF('grupal-comunidad')); if (gc === '1' && ramaActual === 'grupal') { setComunidadGrupal(true); document.getElementById('cfg-grupal-comunidad').checked = true; }
@@ -68,6 +70,7 @@ function loadStorage() {
   horaIniDia1 = localStorage.getItem(SF('hora-ini-d1')) || '10:00';
   horaCierreUltimo = localStorage.getItem(SF('hora-cierre-ul')) || '13:00';
   // Load doc-title
+  const cod = localStorage.getItem(SF('codigo')); if (cod) setCode(cod);
   const dtLoad = localStorage.getItem(SF('doc-title'));
   if (dtLoad) document.querySelectorAll('.hdr-title-doc').forEach(el => el.textContent = dtLoad);
   // Apply defaults on first load
@@ -88,7 +91,7 @@ function doReset() {
   if (document.getElementById('rst-json').checked) doExportJSON();
   const keep = [SF('ind_extra'), SF('rama')];
   Object.keys(localStorage).filter(k => k.startsWith('sf_') && !keep.includes(k)).forEach(k => localStorage.removeItem(k));
-  customLogos = {}; odsActivos = new Set(); progRows = []; indRows = [];
+  customLogos = {}; odsActivos = new Set(); progRows = []; indRows = []; horasDia = {};
   fechaIni = null; fechaFin = null;
   document.querySelectorAll('[data-key]').forEach(el => el.innerHTML = '');
   ['hdr-nombre-act', 'hdr-ambientacion', 'p2-nombre'].forEach(id => { const el = document.getElementById(id); if (el) el.innerHTML = ''; });
@@ -97,6 +100,7 @@ function doReset() {
   document.getElementById('ind-tbody').innerHTML = '';
   document.getElementById('prog-tbody').innerHTML = '';
   document.getElementById('extraPagesContainer').innerHTML = ''; extraPages = [];
+  ['cod-a', 'cod-b', 'cod-c', 'cod-g2'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = '—'; });
   renderODS(); applyRama(ramaActual);
   document.querySelectorAll('img[id^="logo-grupo"]').forEach(el => el.src = LOGO_GRUPO_DEF); document.querySelectorAll('.ep-logo-g').forEach(el => el.src = LOGO_GRUPO_DEF);
   syncSec(); closeM('mReset'); st('Plantilla restablecida 🗑️');
