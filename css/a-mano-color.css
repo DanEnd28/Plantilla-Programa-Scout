@@ -1,0 +1,58 @@
+/* a-mano-color.css — Ficha a mano con el diseño de la ficha principal (ficha-a-mano-color.html).
+   Va DESPUÉS de base.css (paletas por rama) y a-mano.css (estructura). Solo cambia la piel: colores, encabezado y logo de rama. */
+
+body { background: #d8d4e8; }
+
+.hoja { padding: 0 .4in .4in; gap: 8px; }
+
+/* Encabezado: banda de degradado a todo el ancho de la hoja */
+.enc {
+  margin: 0 -.4in; padding: .16in .4in .14in;
+  background: linear-gradient(135deg, var(--hdr-a) 0%, var(--hdr-m) 45%, var(--hdr-b) 100%);
+  align-items: center; gap: 14px;
+}
+.logo-rama {
+  width: .95in; height: .95in; border-radius: 50%; object-fit: cover; flex-shrink: 0;
+  background: rgba(255,255,255,.12); border: 2px solid rgba(255,255,255,.3);
+}
+.enc-titulo { border: 0; padding: 0; text-align: center; align-items: center; }
+.enc-titulo h1 { color: #fff; font-size: 20px; letter-spacing: 6px; text-shadow: 0 1px 4px rgba(0,0,0,.3); }
+.enc-titulo .linea { background: var(--ca); box-shadow: 0 0 6px var(--ca); height: 2px; width: 38px; }
+.enc-titulo small { color: rgba(255,255,255,.75); }
+
+.cod { width: 3.1in; background: #fff; border: 1px solid rgba(255,255,255,.5); }
+.cod .celda { border-color: var(--cm-bd); min-height: .46in; }
+.cod .et { color: var(--cm-dk); }
+
+/* Cajas: rótulo tipo tira de color y espacio en blanco debajo */
+.caja { border: 1px solid var(--cm-bd); border-radius: 5px; padding: 0 0 6px; overflow: hidden; }
+.caja > .et {
+  margin: 0 0 4px; padding: 4px 9px;
+  background: linear-gradient(90deg, var(--hdr-a), var(--hdr-m));
+  color: #fff; font-size: 8px; letter-spacing: .1em;
+}
+
+/* Secciones */
+.sec-t {
+  background: linear-gradient(90deg, var(--hdr-a), var(--hdr-b));
+  color: #fff; border: 0; border-radius: 4px 4px 0 0;
+  font-size: 8.5px; letter-spacing: .14em; padding: 5px 10px;
+}
+.sec-c { border: 1px solid var(--cm-bd); border-top: 0; border-radius: 0 0 4px 4px; }
+
+/* Tablas */
+th {
+  background: linear-gradient(90deg, var(--hdr-a), var(--hdr-b));
+  color: #fff; border-color: rgba(255,255,255,.14);
+}
+td { border-color: var(--cm-bd); }
+th, td { border-color: var(--cm-bd); }
+th { border-color: rgba(255,255,255,.14); }
+.tabla-prog tbody tr:nth-child(even) { background: #faf8ff; }
+
+/* Barra superior con selector de rama */
+.barra label { font: 700 12px var(--ff-h); display: flex; align-items: center; gap: 6px; }
+.barra select {
+  font: 600 12px var(--ff-h); padding: 6px 8px; border-radius: 8px; border: 0; background: #fff; color: #1a0840;
+}
+.cod .celda[style] { border-bottom-color: var(--cm-bd) !important; }

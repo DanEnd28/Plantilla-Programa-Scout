@@ -1,0 +1,161 @@
+/* a-mano.css — Ficha para rellenar a mano (ficha-a-mano.html).
+   Página aparte: no comparte JS ni estado con la Ficha. Todo en blanco, cajas grandes, blanco y negro (ahorra tinta). */
+
+:root {
+  --ink: #1a1a2e;
+  --linea: #3b3b4f;
+  --suave: #8a8aa0;
+  --relleno: #ececf2;
+  --ff-h: 'Montserrat', sans-serif;
+  --ff-b: 'Noto Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--ff-b);
+  background: #d8d4e8;
+  color: var(--ink);
+}
+
+/* ── Barra superior (solo pantalla) ── */
+.barra {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 10px 16px;
+  background: #1a0840; color: #fff;
+  font-family: var(--ff-h);
+}
+.barra b { font-size: 14px; font-weight: 800; margin-right: auto; }
+.barra small { font-weight: 500; opacity: .75; font-size: 12px; }
+.barra a, .barra button {
+  font: 700 12px var(--ff-h); color: #1a0840; background: #F3E22B;
+  border: 0; border-radius: 8px; padding: 8px 14px; cursor: pointer; text-decoration: none;
+}
+.barra a.sec { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.5); }
+.barra :focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+
+/* ── Hojas ── */
+.hojas { display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 18px 0 40px; }
+
+.hoja {
+  width: 8.5in; height: 11in;
+  background: #fff;
+  padding: .38in .4in .4in;
+  display: flex; flex-direction: column; gap: 7px;
+  box-shadow: 0 2px 14px rgba(0,0,0,.18);
+  overflow: hidden;
+}
+
+/* ── Encabezado ── */
+.enc { display: flex; gap: 12px; align-items: stretch; }
+.enc-titulo {
+  flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 6px;
+  border: 2px solid var(--linea); border-radius: 6px; padding: 8px 14px;
+}
+.enc-titulo h1 { font: 900 24px var(--ff-h); letter-spacing: .04em; }
+.enc-titulo .linea { height: 3px; background: var(--ink); width: 64px; }
+.enc-titulo small { font: 600 10px var(--ff-h); color: var(--suave); letter-spacing: .08em; text-transform: uppercase; }
+
+.cod {
+  width: 3.3in; display: grid; grid-template-columns: 1fr 1fr;
+  border: 2px solid var(--linea); border-radius: 6px; overflow: hidden;
+}
+.cod .celda { padding: 4px 8px; min-height: .5in; border-right: 1px solid var(--linea); border-bottom: 1px solid var(--linea); }
+.cod .celda:nth-child(2n) { border-right: 0; }
+.cod .celda:nth-last-child(-n+2) { border-bottom: 0; }
+
+.et {
+  display: block;
+  font: 800 8px var(--ff-h); letter-spacing: .09em; text-transform: uppercase; color: var(--suave);
+}
+
+/* ── Cajas ── */
+.caja {
+  border: 2px solid var(--linea); border-radius: 6px;
+  padding: 4px 9px 6px;
+  display: flex; flex-direction: column;
+}
+.caja > .et { margin-bottom: 2px; }
+
+.grande { min-height: .46in; }
+.fila { display: grid; gap: 9px; }
+.fila-2 { grid-template-columns: 1fr 1fr; }
+.fila-datos { grid-template-columns: 2.2fr 1.2fr 1fr 1fr; }
+
+/* ── Secciones ── */
+.sec { display: flex; flex-direction: column; min-height: 0; }
+.sec-t {
+  background: var(--relleno);
+  border: 2px solid var(--linea); border-bottom: 0;
+  border-radius: 6px 6px 0 0;
+  padding: 3px 10px;
+  font: 800 10px var(--ff-h); letter-spacing: .06em; text-transform: uppercase;
+}
+.sec-c {
+  flex: 1; min-height: 0;
+  border: 2px solid var(--linea); border-radius: 0 0 6px 6px;
+}
+.sec-c.libre { min-height: .5in; }
+
+/* ── Tablas ── */
+table { width: 100%; border-collapse: collapse; }
+th {
+  background: var(--relleno);
+  font: 800 9px var(--ff-h); letter-spacing: .06em; text-transform: uppercase;
+  padding: 4px 6px; text-align: left;
+}
+th, td { border: 1px solid var(--linea); }
+
+.tabla-ind th, .tabla-ind td { border-top: 0; }
+.tabla-ind th:first-child, .tabla-ind td:first-child { border-left: 0; }
+.tabla-ind th:last-child, .tabla-ind td:last-child { border-right: 0; }
+.tabla-ind tbody tr:last-child td { border-bottom: 0; }
+
+.tabla-prog th, .tabla-prog td { border-top: 0; }
+.tabla-prog th:first-child, .tabla-prog td:first-child { border-left: 0; }
+.tabla-prog th:last-child, .tabla-prog td:last-child { border-right: 0; }
+.tabla-prog tbody tr:last-child td { border-bottom: 0; }
+
+.c-area { width: 1.25in; }
+.c-e { width: .42in; }
+.c-hora { width: .62in; }
+.c-dur { width: .62in; }
+.c-act { width: 1.35in; }
+.c-mat { width: 1.35in; }
+.c-resp { width: 1in; }
+
+.p1 .sec.ind { flex: none; }
+.tabla-ind tbody tr { height: .42in; }
+.tabla-prog tbody tr { height: .66in; }
+.p1 .sec.oport { flex: 2.2; }
+.p1 .sec.objg { flex: 1.8; }
+.p1 .sec.obje { flex: 3; }
+.p1 .sec.ods { flex: 2.2; }
+.p1 .sec.mund { flex: 2.6; }
+.p1 .sec.metas { flex: 3.2; }
+.p1 .sec.enf { flex: 2.6; }
+
+.p2 .sec.prog { flex: none; }
+.p2 .notas { flex: 1; }
+
+.pie { text-align: center; font: 600 8px var(--ff-h); color: var(--suave); letter-spacing: .06em; }
+
+/* ── Pantalla pequeña: la hoja se reduce con zoom (lo calcula el script) ── */
+@media screen and (max-width: 8.9in) {
+  .hojas { padding: 12px 0 30px; }
+}
+
+/* ── Impresión ── */
+@page { size: letter; margin: 0; }
+@media print {
+  .barra { display: none !important; }
+  body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .hojas { display: block; padding: 0; gap: 0; zoom: 1 !important; }
+  .hoja {
+    box-shadow: none; margin: 0;
+    height: 10.97in;
+    break-after: page; page-break-after: always;
+  }
+  .hoja:last-child { break-after: auto; page-break-after: auto; }
+}

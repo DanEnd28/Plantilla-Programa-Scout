@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Ficha Técnica a mano (color) — La Salle Guaparo</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Noto+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/a-mano.css">
+  <link rel="stylesheet" href="css/a-mano-color.css">
+</head>
+
+<body>
+  <header class="barra">
+    <b>🎨 Ficha Técnica a mano — con el diseño de la ficha <small>· en blanco, para imprimir y rellenar</small></b>
+    <label for="rama">Rama
+      <select id="rama">
+        <option value="manada">🟡 Manada</option>
+        <option value="tropa">🟢 Tropa</option>
+        <option value="comunidad">🟣 Comunidad</option>
+        <option value="clan">🔴 Clan</option>
+      </select>
+    </label>
+    <a class="sec" href="ficha-a-mano.html">✍️ Versión blanco y negro</a>
+    <a class="sec" href="index.html">← Volver a la ficha</a>
+    <a class="sec" href="ayuda.html">❓ Ayuda</a>
+    <button type="button" onclick="window.print()">🖨️ Imprimir</button>
+  </header>
+
+  <main class="hojas rama-manada" id="hojas">
+
+    <!-- ═══ HOJA 1 — DATOS, INDICADORES Y OBJETIVOS ═══ -->
+    <section class="hoja p1" aria-label="Hoja 1: datos, indicadores y objetivos">
+      <div class="enc">
+        <img class="logo-rama" src="images/rama-manada.jpg" alt="Logo de la rama">
+        <div class="enc-titulo">
+          <h1>FICHA TÉCNICA</h1>
+          <div class="linea"></div>
+          <small>Programa de la actividad</small>
+        </div>
+        <div class="cod">
+          <div class="celda"><span class="et">Grupo</span></div>
+          <div class="celda" style="border-bottom:1px solid var(--linea)"><span class="et">Unidad</span></div>
+          <div class="celda" style="grid-column:1 / -1;border-right:0"><span class="et">Responsable</span></div>
+        </div>
+      </div>
+
+      <div class="fila fila-2">
+        <div class="caja grande"><span class="et">Nombre de la actividad</span></div>
+        <div class="caja grande"><span class="et">Ambientación</span></div>
+      </div>
+
+      <div class="fila fila-datos">
+        <div class="caja grande"><span class="et">Lugar</span></div>
+        <div class="caja grande"><span class="et">Fecha</span></div>
+        <div class="caja grande"><span class="et">Inicio</span></div>
+        <div class="caja grande"><span class="et">Cierre</span></div>
+      </div>
+
+      <div class="sec ind">
+        <div class="sec-t">📊 Áreas de crecimiento e indicadores de logro</div>
+        <div class="sec-c">
+          <table class="tabla-ind">
+            <thead>
+              <tr><th class="c-area">Área</th><th class="c-e">E</th><th>Indicador de logro</th></tr>
+            </thead>
+            <tbody>
+              <tr><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec oport">
+        <div class="sec-t">🌱 Oportunidad de aprendizaje</div>
+        <div class="sec-c"></div>
+      </div>
+      <div class="sec objg">
+        <div class="sec-t">🎯 Objetivo general</div>
+        <div class="sec-c"></div>
+      </div>
+      <div class="sec obje">
+        <div class="sec-t">📋 Objetivos específicos</div>
+        <div class="sec-c"></div>
+      </div>
+      <div class="sec ods">
+        <div class="sec-t">🌍 ODS relacionados</div>
+        <div class="sec-c"></div>
+      </div>
+      <div class="sec mund">
+        <div class="sec-t">🌐 Programa mundial / iniciativas</div>
+        <div class="sec-c"></div>
+      </div>
+      <div class="sec metas">
+        <div class="sec-t">🏆 Metas</div>
+        <div class="sec-c"></div>
+      </div>
+      <div class="sec enf">
+        <div class="sec-t">💡 Enfoque de impacto</div>
+        <div class="sec-c"></div>
+      </div>
+    </section>
+
+    <!-- ═══ HOJA 2 — PROGRAMA ═══ -->
+    <section class="hoja p2" aria-label="Hoja 2: programa de la actividad">
+      <div class="enc">
+        <img class="logo-rama" src="images/rama-manada.jpg" alt="Logo de la rama">
+        <div class="enc-titulo">
+          <h1>FICHA TÉCNICA</h1>
+          <div class="linea"></div>
+          <small>Programa de la actividad</small>
+        </div>
+        <div class="cod">
+          <div class="celda" style="grid-column:1 / -1;border-right:0;border-bottom:1px solid var(--linea)"><span class="et">Unidad</span></div>
+          <div class="celda" style="grid-column:1 / -1;border-right:0"><span class="et">Nombre de la actividad</span></div>
+        </div>
+      </div>
+
+      <div class="sec prog">
+        <div class="sec-t">📋 Programa de la actividad</div>
+        <div class="sec-c">
+          <table class="tabla-prog">
+            <thead>
+              <tr>
+                <th class="c-hora">Hora</th>
+                <th class="c-dur">Dur.</th>
+                <th class="c-act">Actividad</th>
+                <th>Descripción</th>
+                <th class="c-mat">Materiales</th>
+                <th class="c-resp">Responsable</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="sec notas">
+        <div class="sec-t">📝 Notas</div>
+        <div class="sec-c"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // En pantallas angostas reduce las hojas para que se vean completas (no afecta la impresión).
+    (function () {
+      var el = document.getElementById('hojas');
+      var sel = document.getElementById('rama');
+      function rama() {
+        var r = sel.value;
+        el.className = 'hojas rama-' + r;
+        document.querySelectorAll('.logo-rama').forEach(function (i) { i.src = 'images/rama-' + r + '.jpg'; });
+        try { localStorage.setItem('mano_rama', r); } catch (e) {}
+      }
+      try {
+        var q = new URLSearchParams(location.search).get('rama') || localStorage.getItem('mano_rama');
+        if (q && sel.querySelector('option[value="' + q + '"]')) sel.value = q;
+      } catch (e) {}
+      sel.addEventListener('change', rama);
+      rama();
+      function ajustar() {
+        var ancho = 8.5 * 96 + 16;
+        var z = Math.min(1, window.innerWidth / ancho);
+        el.style.zoom = z < 1 ? z : '';
+      }
+      window.addEventListener('resize', ajustar);
+      ajustar();
+    })();
+  </script>
+</body>
+
+</html>
